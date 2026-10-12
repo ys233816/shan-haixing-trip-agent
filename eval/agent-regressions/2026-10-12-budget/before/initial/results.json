@@ -1,0 +1,293 @@
+{
+  "version": "before",
+  "revision": "initial",
+  "recordedAt": "2026-10-12T09:20:01.721Z",
+  "scope": "22条预算专项，固定结构化输入与受控候选，执行真实前端函数，不是36条全量任务完成率",
+  "sha256": "c3e64826e0fc43c38e4a256f93097710205b0b7eb65da820ed11a97f4dd2b404",
+  "total": 22,
+  "passed": 3,
+  "tests": [
+    {
+      "id": "Q01",
+      "group": "scope",
+      "caseIds": [
+        "B01"
+      ],
+      "description": "4人每人1500元转换成总预算6000元",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1500 !== 6000\n"
+    },
+    {
+      "id": "Q02",
+      "group": "scope",
+      "caseIds": [
+        "B01"
+      ],
+      "description": "显式人均口径不依赖特殊要求文本",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n800 !== 2400\n"
+    },
+    {
+      "id": "Q03",
+      "group": "scope",
+      "caseIds": [
+        "B01"
+      ],
+      "description": "全团1500元保持1500，不乘人数",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 2,
+          "travelers": 4,
+          "budget": {
+            "amount": 1500,
+            "includes": "all",
+            "basisRequested": "total"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "总预算1500元"
+        },
+        "questions": [],
+        "notes": []
+      }
+    },
+    {
+      "id": "Q04",
+      "group": "scope",
+      "caseIds": [
+        "B01"
+      ],
+      "description": "字段与文本金额冲突时提问，不生成确定需求",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(r.questions.length)\n"
+    },
+    {
+      "id": "Q05",
+      "group": "scope",
+      "caseIds": [
+        "B01"
+      ],
+      "description": "明确总额口径与人均文本冲突时提问",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(r.questions.length)\n"
+    },
+    {
+      "id": "Q06",
+      "group": "scope",
+      "caseIds": [
+        "B01"
+      ],
+      "description": "不能把每人每日餐饮费用当作人均总预算",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 2,
+          "travelers": 2,
+          "budget": {
+            "amount": 1000,
+            "currency": "CNY",
+            "includes": "all",
+            "basisRequested": "auto"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "每人每天餐饮120元"
+        },
+        "questions": [],
+        "notes": []
+      }
+    },
+    {
+      "id": "Q07",
+      "group": "scope",
+      "caseIds": [
+        "B01"
+      ],
+      "description": "重复规范化不重复乘人数",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1500 !== 6000\n"
+    },
+    {
+      "id": "Q08",
+      "group": "nights",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "两天两晚按两晚计算住宿700元",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 2\n"
+    },
+    {
+      "id": "Q09",
+      "group": "nights",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "住宿晚数显式0时不推成天数减一",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n700 !== 0\n"
+    },
+    {
+      "id": "Q10",
+      "group": "nights",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "没有指定住宿晚数时沿用默认天数减一并注明",
+      "pass": false,
+      "error": "The input did not match the regular expression /默认|未指定/. Input:\n\n''\n"
+    },
+    {
+      "id": "Q11",
+      "group": "nights",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "字段1晚与文本2晚冲突时要求确认",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(r.questions.length)\n"
+    },
+    {
+      "id": "Q12",
+      "group": "nights",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "不计住宿时保留晚数但排除住宿金额",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n350 !== 700\n"
+    },
+    {
+      "id": "Q13",
+      "group": "negotiation",
+      "caseIds": [
+        "A03"
+      ],
+      "description": "极低预算建议增加预算或缩短行程，不建议必需费用降至0",
+      "pass": false,
+      "error": "The input did not match the regular expression /增加.*预算|提高.*预算/. Input:\n\n'住宿降至 ¥0 每间 / 晚后，仍约差 ¥3,160 餐饮降至 ¥0 每人 / 天后，仍约差 ¥3,985 市内交通降至 ¥0 每人 / 天后，仍约差 ¥5,305'\n"
+    },
+    {
+      "id": "Q14",
+      "group": "negotiation",
+      "caseIds": [
+        "A02"
+      ],
+      "description": "五星酒店低预算即使没有景点资料也给出冲突取舍",
+      "pass": false,
+      "error": "The input did not match the regular expression /五星/. Input:\n\n'住宿降至 ¥0 每间 / 晚后，仍约差 ¥688 餐饮降至 ¥0 每人 / 天后，仍约差 ¥666 市内交通降至 ¥0 每人 / 天后，仍约差 ¥1,062'\n"
+    },
+    {
+      "id": "Q15",
+      "group": "negotiation",
+      "caseIds": [
+        "A12"
+      ],
+      "description": "0元预算通过表单，支持免费活动方向但不保证全程免费",
+      "pass": false,
+      "error": "The input did not match the regular expression /id=\"budget\"[^>]*min=\"0\"/. Input:\n\n'<!doctype html>\\n' +\n  '<html lang=\"zh-CN\">\\n' +\n  '<head>\\n' +\n  '  <meta charset=\"utf-8\" />\\n' +\n  '  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\\n' +\n  '  <meta name=\"theme-color\" content=\"#f6f4ef\" />\\n' +\n  '  <title>山海行 · 大陆旅行规划</title>\\n' +\n  '  <style>\\n' +\n  '    :root { color-scheme: light; --ink:#202722; --muted:#69736c; --line:#dce2db; --paper:#f6f4ef; --card:#fffefa; --green:#235c48; --mint:#e5eee7; --orange:#d9794e; }\\n' +\n  '    * { box-sizing:border-box; }\\n' +\n  '    body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter,\"PingFang SC\",\"Microsoft YaHei\",sans-serif; }\\n' +\n  '    .shell { max-width:1120px; margin:0 auto; padding:34px 26px 64px; }\\n' +\n  '    header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:23px; }\\n' +\n  '    .brand { display:flex; align-items:center; gap:12px; font-weight:750; letter-spacing:.03em; }\\n' +\n  '    .mark { width:38px; height:38px; display:grid; place-items:center; color:white; background:var(--green); border-radius:13px; font-size:20px; }\\n' +\n  '    .scope { color:var(--green); background:var(--mint); padding:8px 12px; border-radius:20px; font-size:12px; font-weight:700; }\\n' +\n  '    .hero { padding:58px 0 35px; max-width:700px; }\\n' +\n  '    .eyebrow { color:var(--orange); font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }\\n' +\n  '    h1 { margin:12px 0 12px; font-family:Georgia,\"Songti SC\",serif; font-weight:500; font-size:clamp(36px,6vw,62px); letter-spacing:-.04em; line-height:1.08; }\\n' +\n  '    .hero p { margin:0; color:var(--muted); line-height:1.8; font-size:15px; }\\n' +\n  '    .layout { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(250px,.75fr); gap:22px; align-items:start; }\\n' +\n  '    .card { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:26px; box-shadow:0 8px 30px #2c392a08; }\\n' +\n  '    h2 { margin:0 0 6px; font-size:19px; }\\n' +\n  '    .sub { color:var(--muted); font-size:13px; margin:0 0 23px; }\\n' +\n  '    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:17px 15px; }\\n' +\n  '    label { display:block; font-size:12px; color:#4d5850; font-weight:700; margin-bottom:7px; }\\n' +\n  '    input,select,textarea { width:100%; border:1px solid var(--line); background:#fff; border-radius:10px; padding:12px 13px; color:var(--ink); font:inherit; font-size:14px; outline:none; }\\n' +\n  '    input:focus,select:focus,textarea:focus { border-color:#6d9b7d; box-shadow:0 0 0 3px #6d9b7d1c; }\\n' +\n  '    textarea { min-height:82px; resize:vertical; }\\n' +\n  '    .full { grid-column:1/-1; }\\n' +\n  '    .chips { display:flex; flex-wrap:wrap; gap:8px; }\\n' +\n  '    .chip { cursor:pointer; border:1px solid var(--line); background:white; color:#536158; padding:8px 11px; border-radius:18px; font-size:12px; user-select:none; }\\n' +\n  '    .chip input { display:none; }\\n' +\n  '    .chip:has(input:checked) { color:var(--green); border-color:#84a891; background:var(--mint); }\\n' +\n  '    button { border:0; cursor:pointer; font:inherit; }\\n' +\n  '    .submit { margin-top:22px; width:100%; border-radius:11px; background:var(--green); color:white; padding:14px 18px; font-weight:750; transition:transform .15s,background .15s; }\\n' +\n  '    .submit:hover { background:#174634; transform:translateY(-1px); }\\n' +\n  '    .note { display:flex; gap:12px; padding:15px; border-radius:13px; background:#f1eee6; margin-top:18px; color:#62685f; font-size:12px; line-height:1.7; }\\n' +\n  '    .note b { color:var(--ink); }\\n' +\n  '    aside .card { position:sticky; top:20px; }\\n' +\n  '    .side-title { font-family:Georgia,\"Songti SC\",serif; font-size:25px; margin:5px 0 16px; }\\n' +\n  '    .feature { display:flex; gap:12px; padding:14px 0; border-top:1px solid var(--line); }\\n' +\n  '    .feature-icon { flex:0 0 34px; width:34px; height:34px; display:grid; place-items:center; background:var(--mint); border-radius:11px; }\\n' +\n  '    .feature strong { display:block; font-size:13px; margin:1px 0 5px; }\\n' +\n  '    .feature span { color:var(--muted); font-size:12px; line-height:1.55; }\\n' +\n  '    .status { display:none; margin-top:17px; border:1px solid #b8d3bd; border-radius:12px; background:#f1f8f1; padding:14px; color:#2b5b3f; font-size:13px; line-height:1.6; }\\n' +\n  '    .status.show { display:block; }\\n' +\n  '    .status pre { white-space:pre-wrap; overflow-wrap:anywhere; color:#405247; font-size:11px; max-height:180px; overflow:auto; }\\n' +\n  '    .itinerary { display:none; margin-top:22px; }\\n' +\n  '    .itinerary.show { display:block; }\\n' +\n  '    .plan-label { display:inline-block; margin:8px 0 15px; padding:6px 9px; background:#eef1e8; color:#53654c; border-radius:8px; font-size:11px; font-weight:700; }\\n' +\n  '    .day-card { border-top:1px solid var(--line); padding:17px 0 4px; }\\n' +\n  '    .day-head { display:flex; align-items:baseline; justify-content:space-between; gap:10px; }\\n' +\n  '    .day-head h3 { margin:0; font:500 21px Georgia,\"Songti SC\",serif; }\\n' +\n  '    .day-area { font-size:12px; color:var(--green); font-weight:700; }\\n' +\n  '    .day-note { color:var(--muted); font-size:12px; margin:7px 0 10px; }\\n' +\n  '    .stop { display:grid; grid-template-columns:62px 1fr; gap:10px; padding:9px 0; }\\n' +\n  '    .stop-time { color:var(--orange); font-size:12px; font-weight:750; }\\n' +\n  '    .stop-name { font-weight:750; font-size:14px; }\\n' +\n  '    .stop-meta { color:var(--muted); font-size:12px; line-height:1.6; margin-top:3px; }\\n' +\n  '    .why { margin-top:15px; background:#f5f2ea; padding:13px 15px; border-radius:11px; color:#62685f; font-size:12px; line-height:1.7; }\\n' +\n  '    .why strong { color:var(--ink); }\\n' +\n  '    .adjust-box { margin-top:20px; padding:18px; border:1px solid #d7c8a8; border-radius:14px; background:#fbf8ef; }\\n' +\n  '    .adjust-box h3 { margin:0 0 6px; font:500 20px Georgia,\"Songti SC\",serif; }\\n' +\n  '    .adjust-box p { color:var(--muted); font-size:12px; line-height:1.6; margin:0 0 12px; }\\n' +\n  '    .adjust-actions { display:flex; gap:10px; align-items:flex-start; }\\n' +\n  '    .adjust-actions textarea { min-height:48px; }\\n' +\n  '    .adjust-actions button { flex:0 0 auto; border-radius:10px; padding:13px 16px; background:var(--orange); color:white; font-weight:750; }\\n' +\n  '    .adjust-result { margin-top:12px; font-size:12px; line-height:1.7; color:#58624f; }\\n' +\n  '    .service-tools { margin-top:20px; padding-top:20px; border-top:1px solid var(--line); }\\n' +\n  '    .service-tools h3 { margin:0 0 6px; font:500 20px Georgia,\"Songti SC\",serif; }\\n' +\n  '    .service-tools > p { color:var(--muted); font-size:12px; line-height:1.6; }\\n' +\n  '    .service-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }\\n' +\n  '    .service-card { border:1px solid var(--line); border-radius:13px; padding:15px; background:#fff; }\\n' +\n  '    .service-card h4 { margin:0 0 10px; font-size:13px; }\\n' +\n  '    .service-card button { border-radius:9px; padding:10px 12px; background:var(--green); color:white; font-weight:700; font-size:12px; }\\n' +\n  '    .service-card input,.service-card select { margin-bottom:8px; padding:9px 10px; font-size:12px; }\\n' +\n  '    .service-output { color:#546158; font-size:12px; line-height:1.7; margin-top:10px; overflow-wrap:anywhere; }\\n' +\n  '    .service-output ul { margin:4px 0 0; padding-left:18px; }\\n' +\n  '    .export-actions { display:flex; justify-content:flex-end; gap:10px; flex-wrap:wrap; margin:16px 0 6px; }\\n' +\n  '    .export-actions button { border:1px solid var(--line); border-radius:9px; padding:10px 14px; background:white; color:var(--green); font-weight:700; }\\n' +\n  '    .export-actions button:hover { background:#f2f6f2; }\\n' +\n  '    .memory-row { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; border:1px solid var(--line); border-radius:11px; padding:12px 13px; background:#fbfaf6; }\\n' +\n  '    .memory-row label { margin:0; display:flex; align-items:center; gap:9px; cursor:pointer; color:var(--ink); }\\n' +\n  '    .memory-row input { width:16px; height:16px; accent-color:var(--green); }\\n' +\n  '    .clear-memory { color:#78634d; background:transparent; font-size:11px; text-decoration:underline; padding:5px; }\\n' +\n  '    .memory-note { margin-top:8px; color:var(--muted); font-size:11px; line-height:1.6; }\\n' +\n  '    @media(max-width:520px){.adjust-actions{display:block}.adjust-actions button{margin-top:8px;width:100%}}\\n' +\n  '    @media(max-width:700px){.service-grid{grid-template-columns:1fr}}\\n' +\n  '    footer { text-align:center; color:#899088; font-size:11px; padding-top:32px; }\\n' +\n  '    @media(max-width:760px) { .shell{padding:20px 15px 40px}.hero{padding:42px 0 26px}.layout{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}aside .card{position:static}header{padding-bottom:16px} }\\n' +\n  '  </style>\\n' +\n  '</head>\\n' +\n  '<body>\\n' +\n  '  <div class=\"shell\">\\n' +\n  '    <header>\\n' +\n  '      <div class=\"brand\"><div class=\"mark\">山</div><span>山海行</span></div>\\n' +\n  '      <div class=\"scope\">仅支持中国大陆景区</div>\\n' +\n  '    </header>\\n' +\n  '    <section class=\"hero\">\\n' +\n  '      <div class=\"eyebrow\">TRAVEL, THOUGHTFULLY</div>\\n' +\n  '      <h1>把旅程，交给<br>慢慢想清楚。</h1>\\n' +\n  '      <p>告诉我这趟旅行的想法。我会结合你的时间、预算和偏好，先搭出清晰的行程，再根据天气与临时变化灵活调整。</p>\\n' +\n  '    </section>\\n' +\n  '    <main class=\"layout\">\\n' +\n  '      <section class=\"card\">\\n' +\n  '        <h2>先说说这趟旅行</h2>\\n' +\n  '        <p class=\"sub\">带 <span style=\"color:#d9794e\">*</span> 的项目需要填写。其他信息可以之后再补充。</p>\\n' +\n  '        <form id=\"trip-form\">\\n' +\n  '          <div class=\"form-grid\">\\n' +\n  '            <div>\\n' +\n  '              <label for=\"destination\">目的地城市或地区 *</label>\\n' +\n  '              <input id=\"destination\" name=\"destination\" placeholder=\"例如：杭州、云南大理\" required />\\n' +\n  '            </div>\\n' +\n  '            <div>\\n' +\n  '              <label for=\"startDate\">出发日期</label>\\n' +\n  '              <input id=\"startDate\" name=\"startDate\" type=\"date\" />\\n' +\n  '            </div>\\n' +\n  '            <div>\\n' +\n  '              <label for=\"days\">旅行天数 *</label>\\n' +\n  '              <input id=\"days\" name=\"days\" type=\"number\" min=\"1\" max=\"60\" value=\"3\" required />\\n' +\n  '            </div>\\n' +\n  '            <div>\\n' +\n  '              <label for=\"travelers\">出行人数</label>\\n' +\n  '              <input id=\"travelers\" name=\"travelers\" type=\"number\" min=\"1\" max=\"30\" value=\"2\" />\\n' +\n  '            </div>\\n' +\n  '            <div>\\n' +\n  '              <label for=\"budget\">总预算（人民币）*</label>\\n' +\n  '              <input id=\"budget\" name=\"budget\" type=\"number\" min=\"1\" placeholder=\"例如：5000\" required />\\n' +\n  '            </div>\\n' +\n  '            <div>\\n' +\n  '              <label for=\"budgetIncludes\">预算包含</label>\\n' +\n  '              <select id=\"budgetIncludes\" name=\"budgetIncludes\">\\n' +\n  '                <option value=\"all\">住宿、市内交通、餐饮和门票（不含大交通）</option>\\n' +\n  '                <option value'... 65101 more characters\n"
+    },
+    {
+      "id": "Q16",
+      "group": "tickets",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "结构化参考票价存在时不能沿用过期cost=null",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n0 !== 40\n"
+    },
+    {
+      "id": "Q17",
+      "group": "tickets",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "免费0、收费20、未知票分别计费并列未知，不把空值当0",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n0 !== 40\n"
+    },
+    {
+      "id": "Q18",
+      "group": "tickets",
+      "caseIds": [
+        "A03"
+      ],
+      "description": "同名门票跨日重复时只收一次",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n80 !== 40\n"
+    },
+    {
+      "id": "Q19",
+      "group": "tickets",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "缺失cost和参考票价也必须列为待核实",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n0 !== 1\n"
+    },
+    {
+      "id": "Q20",
+      "group": "memory",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "保存/恢复不丢失0晚及零费用参数",
+      "pass": false,
+      "error": "The input was expected to not match the regular expression /savedRequest\\.assumptions\\?\\.hotelPerNight\\s*\\|\\|/. Input:\n\n'\\n' +\n  \"    const form = document.querySelector('#trip-form');\\n\" +\n  \"    const statusBox = document.querySelector('#status');\\n\" +\n  \"    const rememberHabits = document.querySelector('#remember-habits');\\n\" +\n  \"    const clearMemoryButton = document.querySelector('#clear-memory');\\n\" +\n  '    const budgetEstimateDefaults = {hotelPerNight:350,foodPerDay:120,localTransitPerDay:60};\\n' +\n  \"    const unsupported = ['香港','澳门','海外','国外','日本','韩国','美国','欧洲','台湾'];\\n\" +\n  '    try {\\n' +\n  \"      const remembered = JSON.parse(localStorage.getItem('travelHabits') || 'null');\\n\" +\n  '      if (remembered) {\\n' +\n  '        rememberHabits.checked = true;\\n' +\n  `        for (const option of form.querySelectorAll('input[name=\"preferences\"]')) option.checked = (remembered.preferences || []).includes(option.value);\\n` +\n  \"        if (remembered.pace) form.elements.namedItem('pace').value = remembered.pace;\\n\" +\n  \"        if (remembered.walkingTolerance) form.elements.namedItem('walking').value = remembered.walkingTolerance;\\n\" +\n  '      }\\n' +\n  \"    } catch (error) { localStorage.removeItem('travelHabits'); }\\n\" +\n  \"    clearMemoryButton.addEventListener('click', () => {\\n\" +\n  \"      localStorage.removeItem('travelHabits');\\n\" +\n  '      rememberHabits.checked = false;\\n' +\n  \"      statusBox.classList.add('show');\\n\" +\n  \"      statusBox.textContent = '已清除保存在此设备上的长期出行习惯。';\\n\" +\n  '    });\\n' +\n  '    function formatDate(startDate, offset) {\\n' +\n  '      if (!startDate) return `第 ${offset + 1} 天`;\\n' +\n  '      const date = new Date(`${dateFor(startDate, offset)}T12:00:00`);\\n' +\n  '      return `第 ${offset + 1} 天 · ${date.getMonth() + 1}月${date.getDate()}日`;\\n' +\n  '    }\\n' +\n  '    function dateFor(startDate, offset) {\\n' +\n  '      const date = new Date(`${startDate}T12:00:00`);\\n' +\n  '      date.setDate(date.getDate() + offset);\\n' +\n  \"      return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;\\n\" +\n  '    }\\n' +\n  '    function estimateInput(data, name) {\\n' +\n  \"      const value = String(data.get(name) ?? '').trim();\\n\" +\n  \"      if (value === '') return budgetEstimateDefaults[name];\\n\" +\n  '      const parsed = Number(value);\\n' +\n  '      return Number.isFinite(parsed) && parsed > 0 ? parsed : budgetEstimateDefaults[name];\\n' +\n  '    }\\n' +\n  '    function escapeHtml(value) {\\n' +\n  `      return String(value).replace(/[&<>\"']/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[char]));\\n` +\n  '    }\\n' +\n  '    function officialSourceLinks(value, label) {\\n' +\n  \"      const urls = [...new Set(String(value || '').match(/https?:\\\\/\\\\/[^\\\\s；;，,]+/g) || [])];\\n\" +\n  '      return urls.map((url) => {\\n' +\n  '        try {\\n' +\n  '          const parsed = new URL(url);\\n' +\n  \"          if (!['http:','https:'].includes(parsed.protocol)) return '';\\n\" +\n  '          return `<a href=\"${escapeHtml(parsed.href)}\" target=\"_blank\" rel=\"noopener noreferrer\">${escapeHtml(label)}官方来源</a>`;\\n' +\n  \"        } catch { return ''; }\\n\" +\n  \"      }).filter(Boolean).join('、');\\n\" +\n  '    }\\n' +\n  '    function knowledgeField(hit, field) {\\n' +\n  '      const prefix = `- ${field}：`;\\n' +\n  \"      const line = String(hit.content || '').split(/\\\\r?\\\\n/).find((entry) => entry.startsWith(prefix));\\n\" +\n  \"      return line ? line.slice(prefix.length).trim() : '';\\n\" +\n  '    }\\n' +\n  '    function durationMinutes(value) {\\n' +\n  '      const matches = [...String(value).matchAll(/\\\\d+/g)].map((match) => Number(match[0]));\\n' +\n  '      return matches.length > 1 ? Math.round((matches[0] + matches[1]) / 2) : matches[0] || 120;\\n' +\n  '    }\\n' +\n  '    function walkingLevel(value) {\\n' +\n  \"      if (value.includes('低') && value.includes('高')) return '低到高';\\n\" +\n  \"      if (value.includes('低') && value.includes('中')) return '低到中';\\n\" +\n  \"      if (value.includes('中') && value.includes('高')) return '中到高';\\n\" +\n  \"      return value.includes('高') ? '高' : value.includes('低') ? '低' : '中';\\n\" +\n  '    }\\n' +\n  '    async function makePlan(request) {\\n' +\n  \"      const retrievalQuery = [...request.preferences, request.walkingTolerance === 'low' ? '少走路' : '', request.avoid].filter(Boolean).join(' ');\\n\" +\n  \"      const searchParams = new URLSearchParams({city:request.destination,q:retrievalQuery,limit:'20'});\\n\" +\n  '      const retrieval = await getApi(`/api/attractions?${searchParams}`);\\n' +\n  '      const candidates = retrieval.hits.map((hit) => {\\n' +\n  \"        const kbContent = String(hit.content || '');\\n\" +\n  '        const priceFromContent = kbContent.match(/预算参考成人票价（元\\\\/人）[：:]\\\\s*(\\\\d+(?:\\\\.\\\\d+)?)/);\\n' +\n  '        const basisFromContent = kbContent.match(/预算票价口径[：:]\\\\s*([^\\\\r\\\\n]+)/);\\n' +\n  \"        const priceText = hit.ticketPriceCny != null && String(hit.ticketPriceCny).trim() !== '' ? String(hit.ticketPriceCny).trim() : priceFromContent?.[1] ?? '';\\n\" +\n  \"        const ticketPriceCny = priceText !== '' && Number.isFinite(Number(priceText)) ? Number(priceText) : null;\\n\" +\n  \"        const ticketPriceBasis = hit.ticketPriceBasis || basisFromContent?.[1] || '';\\n\" +\n  '        return ({\\n' +\n  '        name:hit.name,\\n' +\n  '        city:hit.cityName || hit.city || request.destination,\\n' +\n  '        area:hit.area,\\n' +\n  '        kind:hit.type,\\n' +\n  '        indoor:hit.indoorOutdoor,\\n' +\n  '        hours:durationMinutes(hit.recommendedDuration),\\n' +\n  '        walk:walkingLevel(hit.walkingIntensity),\\n' +\n  '        rain:hit.rainSuitability,\\n' +\n  '        cost:ticketPriceCny !== null ? ticketPriceCny : /^免费(?:\\\\s|[（(，,。]|$)/.test(hit.ticketInfo) || /公共区域通常免费|公共街区.*免费/.test(hit.ticketInfo) ? 0 : null,\\n' +\n  \"        reason:`知识库类型：${hit.type || '未标注'}；适合人群：${hit.suitability || '资料未注明'}；标签：${hit.tags || '未标注'}。`,\\n\" +\n  \"        suitability:hit.suitability || '',\\n\" +\n  \"        backup:hit.nearbyAttractions || '请从本地景点知识库检索附近备选。',\\n\" +\n  '        tags:hit.tags,\\n' +\n  '        openingHours:hit.openingHours,\\n' +\n  \"        reservationInfo:hit.reservationInfo || knowledgeField(hit,'预约要求'),\\n\" +\n  '        ticketInfo:hit.ticketInfo,\\n' +\n  \"        ticketPriceCny:ticketPriceCny === null ? '' : ticketPriceCny,\\n\" +\n  '        ticketPriceBasis,\\n' +\n  \"        openingSource:hit.openingSource || knowledgeField(hit,'开放时间来源'),\\n\" +\n  \"        ticketSource:hit.ticketSource || knowledgeField(hit,'预约票务来源'),\\n\" +\n  '        retrievalScore:hit.retrievalScore\\n' +\n  '      }); });\\n' +\n  '      const city = retrieval.hits[0]?.cityName || retrieval.hits[0]?.city || request.destination;\\n' +\n  '      let weatherData = null;\\n' +\n  \"      let weatherError = '';\\n\" +\n  '      if (request.startDate && candidates.length) {\\n' +\n  '        try { weatherData = await getApi(`/api/weather?city=${encodeURIComponent(city)}`); }\\n' +\n  '        catch (error) { weatherError = error.message; }\\n' +\n  '      }\\n' +\n  \"      const liked = (item) => request.preferences.some((pref) => item.tags.includes(pref) || item.kind.includes(pref) || (pref === '自然风光' && /自然|园林/.test(item.kind)) || (pref === '美食' && /美食|街区/.test(item.kind)) || (pref === '历史文化' && /历史|博物馆/.test(item.kind)) || (pref === '博物馆' && item.kind.includes('博物馆')));\\n\" +\n  \"      const walkingRank = {'低':1,'低到中':2,'中':2,'中到高':3,'低到高':3,'高':4};\\n\" +\n  '      candidates.sort((a,b) => Number(liked(b)) - Number(liked(a)) || walkingRank[a.walk] - walkingRank[b.walk] || b.retrievalScore - a.retrievalScore);\\n' +\n  \"      const paceCount = request.pace === 'relaxed' ? 1 : request.pace === 'packed' ? 3 : 2;\\n\" +\n  '      const walkRank = walkingRank;\\n' +\n  \"      const maxWalk = request.walkingTolerance === 'low' ? 2 : request.walkingTolerance === 'high' ? 4 : 3;\\n\" +\n  \"      let remaining = candidates.filter((item) => !(request.walkingTolerance === 'low' && walkRank[item.walk] >= 4));\\n\" +\n  '      if (!remaining.length) remaining = [...candidates];\\n' +\n  '      else remaining = [...remaining];\\n' +\n  '      const forecastByDate = new Map((weatherData?.forecast || []).map((item) => [item.date,item]));\\n' +\n  '      const daily = [];\\n' +\n  '      for (let day=0; day<request.days; day++) {\\n' +\n  '        const forecast = request.startDate ? forecastByDate.get(dateFor(request.startDate,day)) || null : null;\\n' +\n  \"        const weatherText = forecast ? `${forecast.dayWeather || ''} ${forecast.nightWeather || ''}` : '';\\n\" +\n  '        const adverseWeather = /雨|雪|台风|雷暴/.test(weatherText);\\n' +\n  '        const slots = [];\\n' +\n  '        for (let slot=0; slot<paceCount && remaining.length; slot++) {\\n' +\n  '          let choiceIndex = 0;\\n' +\n  '          if (adverseWeather) {\\n' +\n  \"            const indoorIndex = remaining.findIndex((item) => item.indoor.includes('室内'));\\n\" +\n  '            if (indoorIndex >= 0) choiceIndex = indoorIndex;\\n' +\n  '          }\\n' +\n  '          slots.push(remaining.splice(choiceIndex,1)[0]);\\n' +\n  '        }\\n' +\n  \"        const weatherNote = forecast ? `${forecast.dayWeather}（${forecast.lowC}–${forecast.highC}°C）` : !request.startDate ? '未提供日期，未按天气排序' : weatherError ? `天气查询失败：${weatherError}` : '该日期超出当前预报范围';\\n\" +\n  \"        const weatherReason = adverseWeather && slots.some((item) => item.indoor.includes('室内')) ? ` 日期天气为${forecast.dayWeather}，因此优先安排室内景点。` : adverseWeather ? ` 日期天气为${forecast.dayWeather}，本地知识库没有未排入日程的室内替代景点，请使用备选或调整日期。` : '';\\n\" +\n  \"        daily.push({date:formatDate(request.startDate,day),isoDate:request.startDate ? dateFor(request.startDate,day) : null,city,items:slots,weather:forecast,weatherNote,weatherUnavailable:Boolean(request.startDate && !forecast && !weatherError),walk:slots.some(x=>walkRank[x.walk]>maxWalk)?'偏高':'适中',reason:slots.length ? `按“${request.pace === 'relaxed' ? '慢节奏' : request.pace === 'packed' ? '紧凑' : '适中节奏'}”安排${slots.length}个主要景点；候选来自景点知识库，并按偏好标签、步行强度和检索相关度排序。${weatherReason}` : '知识库中没有更多已整理的景点，建议留出自由活动时间或补充目的地资料。' });\\n\" +\n  '      }\\n' +\n  \"      let plannerMode = 'rules';\\n\" +\n  \"      let modelNote = '';\\n\" +\n  '      try {\\n' +\n  \"        const modelStatus = await getApi('/api/llm/status');\\n\" +\n  '        if (modelStatus.configured) {\\n' +\n  \"          const arranged = await postApi('/api/llm/plan', {\\n\" +\n  '            destination:request.destination,\\n' +\n  \"            days:daily.map((day) => ({date:day.isoDate || day.date,weather:day.weather ? `${day.weather.dayWeather || ''} / ${day.weather.nightWeather || ''}` : '暂无该日期预报'})),\\n\" +\n  '            preferences:request.preferences,\\n' +\n  '            pace:request.pace,\\n' +\n  '            walkingTolerance:request.walkingTolerance,\\n' +\n  '            budgetCny:request.budget.amount,\\n' +\n  '            avoid:request.avoid,\\n' +\n  '            candidates:candidates.map((item,id) => ({id,name:item.name,area:item.area,kind:item.kind,indoor:item.indoor,hours:item.hours,walk:item.walk,rain:item.rain,tags:item.tags,suitability:item.suitability,ticketInfo:item.ticketInfo,ticketPriceCny:item.ticketPriceCny,openingHours:item.openingHours,reservationInfo:item.reservationInfo,openingSource:item.openingSource,ticketSource:item.ticketSource}))\\n' +\n  '          });\\n' +\n  '          daily.forEach((day,index) => {\\n' +\n  '            const resultDay = arranged.da'... 50508 more characters\n"
+    },
+    {
+      "id": "Q21",
+      "group": "negotiation",
+      "caseIds": [
+        "A03"
+      ],
+      "description": "没有超过预算时不提出超支协商",
+      "pass": true,
+      "evidence": {
+        "nights": 1,
+        "rooms": 1,
+        "lodgingRaw": 350,
+        "lodgingIncluded": true,
+        "lodging": 350,
+        "food": 480,
+        "localTransit": 240,
+        "knownTickets": 0,
+        "unknownTicketCount": 0,
+        "routeFareReference": 0,
+        "knownRouteFareLegCount": 0,
+        "unknownRouteFareLegCount": 0,
+        "subtotal": 1070,
+        "reserve": 107,
+        "estimate": 1177
+      }
+    },
+    {
+      "id": "Q22",
+      "group": "negotiation",
+      "caseIds": [
+        "A03"
+      ],
+      "description": "导出同步显示已估超支及取舍方向",
+      "pass": false,
+      "error": "The input did not match the regular expression /超过预算|超预算/. Input:\n\n'# 山海行｜北京 4 天游程\\n' +\n  '\\n' +\n  '- 出发日期：未指定\\n' +\n  '- 人数：5 人\\n' +\n  '- 预算上限：¥800\\n' +\n  '- 行程引擎：DeepSeek 大模型编排\\n' +\n  '- 景点来源：本地中国大陆景点知识库\\n' +\n  '\\n' +\n  '## 每日行程\\n' +\n  '\\n' +\n  '### 第1天 · 北京\\n' +\n  '天气：未查询\\n' +\n  '\\n' +\n  '预计当天占用：约 0.0 小时（景点游览、景点间交通及约 60 分钟午餐预留；未查全路线时，缺失路段按 45 分钟/段暂估）\\n' +\n  '\\n' +\n  '- 自由活动 / 休息\\n' +\n  '\\n' +\n  '## 预算估算\\n' +\n  '\\n' +\n  '- 住宿：¥3,150\\n' +\n  '- 餐饮：¥2,400\\n' +\n  '- 市内交通：¥1,200\\n' +\n  '- 已知门票参考（成人票 × 5 人）：¥0\\n' +\n  '- 待核实票价景点：0 个\\n' +\n  '- 机动预留：¥675\\n' +\n  '- **当前已估合计：¥7,425**\\n' +\n  '\\n' +\n  '## 预算调整参考\\n' +\n  '\\n' +\n  '- 住宿降至 ¥0 每间 / 晚后，仍约差 ¥3,160。\\n' +\n  '- 餐饮降至 ¥0 每人 / 天后，仍约差 ¥3,985。\\n' +\n  '- 市内交通降至 ¥0 每人 / 天后，仍约差 ¥5,305。\\n' +\n  '\\n' +\n  '## 出行前核对\\n' +\n  '\\n' +\n  '- 门票、预约、库存和开放时间请以景区官方渠道为准。\\n' +\n  '- 天气与路线结果会变化；确认地图匹配地点后再出发。\\n' +\n  '- 预算未包含往返目的地的大交通，实际费用可能变化。\\n' +\n  '- 本助手不代替用户订票、下单、付款或提交证件。\\n'\n"
+    }
+  ],
+  "ratePercent": 13.64
+}

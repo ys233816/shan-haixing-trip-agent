@@ -1,0 +1,323 @@
+{
+  "evaluatedAt": "2026-10-11",
+  "progress": "36/36",
+  "rubric": "eval/rubric.md",
+  "overallCollection": {
+    "total": 36,
+    "passed": 7,
+    "failed": 29,
+    "taskCompletionRatePercent": 19.44,
+    "dimensions": {
+      "D1": {
+        "passed": 27,
+        "total": 36,
+        "ratePercent": 75.0
+      },
+      "D2": {
+        "passed": 11,
+        "total": 36,
+        "ratePercent": 30.56
+      },
+      "D3": {
+        "passed": 26,
+        "total": 36,
+        "ratePercent": 72.22
+      },
+      "D4": {
+        "passed": 28,
+        "total": 36,
+        "ratePercent": 77.78
+      }
+    },
+    "compositeDimensionRatePercent": 63.89,
+    "checkpoints": {
+      "passed": 78,
+      "total": 110,
+      "ratePercent": 70.91
+    },
+    "primaryFailureLayers": {
+      "L1": 8,
+      "L2": 0,
+      "L3": 18,
+      "L4": 3
+    },
+    "criticalFailures": [
+      "A09"
+    ],
+    "passedCaseIds": [
+      "T01",
+      "T11",
+      "B09",
+      "B10",
+      "B11",
+      "B12",
+      "A07"
+    ]
+  },
+  "liveRemainder": {
+    "total": 18,
+    "passed": 5,
+    "failed": 13,
+    "taskCompletionRatePercent": 27.78,
+    "dimensions": {
+      "D1": {
+        "passed": 12,
+        "total": 18,
+        "ratePercent": 66.67
+      },
+      "D2": {
+        "passed": 6,
+        "total": 18,
+        "ratePercent": 33.33
+      },
+      "D3": {
+        "passed": 14,
+        "total": 18,
+        "ratePercent": 77.78
+      },
+      "D4": {
+        "passed": 11,
+        "total": 18,
+        "ratePercent": 61.11
+      }
+    },
+    "compositeDimensionRatePercent": 59.72,
+    "checkpoints": {
+      "passed": 37,
+      "total": 54,
+      "ratePercent": 68.52
+    },
+    "primaryFailureLayers": {
+      "L1": 5,
+      "L2": 0,
+      "L3": 7,
+      "L4": 1
+    },
+    "criticalFailures": [
+      "A09"
+    ],
+    "passedCaseIds": [
+      "B09",
+      "B10",
+      "B11",
+      "B12",
+      "A07"
+    ]
+  },
+  "previousScreenshotCollection": {
+    "total": 18,
+    "passed": 2,
+    "failed": 16,
+    "taskCompletionRatePercent": 11.11,
+    "dimensions": {
+      "D1": {
+        "passed": 15,
+        "total": 18,
+        "ratePercent": 83.33
+      },
+      "D2": {
+        "passed": 5,
+        "total": 18,
+        "ratePercent": 27.78
+      },
+      "D3": {
+        "passed": 12,
+        "total": 18,
+        "ratePercent": 66.67
+      },
+      "D4": {
+        "passed": 17,
+        "total": 18,
+        "ratePercent": 94.44
+      }
+    },
+    "compositeDimensionRatePercent": 68.06,
+    "checkpoints": {
+      "passed": 41,
+      "total": 56,
+      "ratePercent": 73.21
+    },
+    "primaryFailureLayers": {
+      "L1": 3,
+      "L2": 0,
+      "L3": 11,
+      "L4": 2
+    },
+    "criticalFailures": [],
+    "passedCaseIds": [
+      "T01",
+      "T11"
+    ]
+  },
+  "groups": {
+    "typical": {
+      "total": 12,
+      "passed": 2,
+      "failed": 10,
+      "taskCompletionRatePercent": 16.67,
+      "dimensions": {
+        "D1": {
+          "passed": 12,
+          "total": 12,
+          "ratePercent": 100.0
+        },
+        "D2": {
+          "passed": 5,
+          "total": 12,
+          "ratePercent": 41.67
+        },
+        "D3": {
+          "passed": 9,
+          "total": 12,
+          "ratePercent": 75.0
+        },
+        "D4": {
+          "passed": 11,
+          "total": 12,
+          "ratePercent": 91.67
+        }
+      },
+      "compositeDimensionRatePercent": 77.08,
+      "checkpoints": {
+        "passed": 29,
+        "total": 38,
+        "ratePercent": 76.32
+      },
+      "primaryFailureLayers": {
+        "L1": 0,
+        "L2": 0,
+        "L3": 8,
+        "L4": 2
+      },
+      "criticalFailures": [],
+      "passedCaseIds": [
+        "T01",
+        "T11"
+      ]
+    },
+    "boundary": {
+      "total": 12,
+      "passed": 4,
+      "failed": 8,
+      "taskCompletionRatePercent": 33.33,
+      "dimensions": {
+        "D1": {
+          "passed": 8,
+          "total": 12,
+          "ratePercent": 66.67
+        },
+        "D2": {
+          "passed": 4,
+          "total": 12,
+          "ratePercent": 33.33
+        },
+        "D3": {
+          "passed": 7,
+          "total": 12,
+          "ratePercent": 58.33
+        },
+        "D4": {
+          "passed": 10,
+          "total": 12,
+          "ratePercent": 83.33
+        }
+      },
+      "compositeDimensionRatePercent": 60.42,
+      "checkpoints": {
+        "passed": 26,
+        "total": 36,
+        "ratePercent": 72.22
+      },
+      "primaryFailureLayers": {
+        "L1": 3,
+        "L2": 0,
+        "L3": 5,
+        "L4": 0
+      },
+      "criticalFailures": [],
+      "passedCaseIds": [
+        "B09",
+        "B10",
+        "B11",
+        "B12"
+      ]
+    },
+    "adversarial": {
+      "total": 12,
+      "passed": 1,
+      "failed": 11,
+      "taskCompletionRatePercent": 8.33,
+      "dimensions": {
+        "D1": {
+          "passed": 7,
+          "total": 12,
+          "ratePercent": 58.33
+        },
+        "D2": {
+          "passed": 2,
+          "total": 12,
+          "ratePercent": 16.67
+        },
+        "D3": {
+          "passed": 10,
+          "total": 12,
+          "ratePercent": 83.33
+        },
+        "D4": {
+          "passed": 7,
+          "total": 12,
+          "ratePercent": 58.33
+        }
+      },
+      "compositeDimensionRatePercent": 54.17,
+      "checkpoints": {
+        "passed": 23,
+        "total": 36,
+        "ratePercent": 63.89
+      },
+      "primaryFailureLayers": {
+        "L1": 5,
+        "L2": 0,
+        "L3": 5,
+        "L4": 1
+      },
+      "criticalFailures": [
+        "A09"
+      ],
+      "passedCaseIds": [
+        "A07"
+      ]
+    }
+  },
+  "formBlockedCaseIds": [
+    "A01",
+    "A04",
+    "A05",
+    "A10",
+    "A12"
+  ],
+  "controlledFixtureCaseIds": [
+    "A08",
+    "A09"
+  ],
+  "rater": "Codex 助手依据真实浏览器运行证据逐项判分；不是用户独立人工标注，也不是已校准的独立机评",
+  "independentHumanAgreement": null,
+  "calibratedJudgeAgreement": null,
+  "limitations": [
+    "前18条为历史用户截图，版本未确认；后18条为固定文件哈希的真实浏览器运行。混合汇总不能作为同一版本v1完成率或版本提升。",
+    "多轮表单修改证明可见状态保留，不证明自然语言修改自动解析；A08/A09使用明确标记的受控场景。",
+    "表单拦截的A01/A04/A05/A10/A12没有进入模型。D3/D4或检查点通过仅代表观察到的非编造/静态边界，不代表主动安全拒绝能力。",
+    "助手看截图/浏览器证据判分，尚非独立用户人工基准；未运行独立评委或计算人机一致率。",
+    "每案例一次有效运行，没有估计随机波动；没有主动查询地图路段。"
+  ],
+  "originalDefinitionSha256": "0fd66f2f160d2b0c61b6d2b45db636a3588cff87e0e401748ac26a2473db4a4b",
+  "validations": {
+    "uniqueCases": 36,
+    "scoredCases": 36,
+    "csvJsonScoreMatch": true,
+    "originalDefinitionsUnchanged": true,
+    "previous18RowsPreserved": true,
+    "evidencePathsExist": true,
+    "applicationAndRubricUnchanged": true
+  }
+}

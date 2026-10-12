@@ -1,0 +1,18 @@
+{
+  "prompt_version": "judge-v1.2",
+  "workflow_version": "judge-validation-v1",
+  "rubric_version": "rubric-v1.1",
+  "prompt_file": "eval/judge-system-prompt-v1.2.md",
+  "rule_files": ["eval/rubric.md", "eval/rubric-v1.1-addendum.md"],
+  "canonical_schema_file": "eval/judge-output.schema.json",
+  "input_directory": "eval/judge-inputs/2026-10-11",
+  "input_manifest": "eval/judge-inputs/2026-10-11/manifest.json",
+  "case_ids": ["B07", "B09", "A01", "A03", "A08", "A09"],
+  "prepared_directory": "eval/judge-inputs/2026-10-12-v1.2",
+  "audit_directory": "eval/judge-audits/2026-10-12-validation-v1",
+  "source_judge_directory": "eval/judge-runs/2026-10-12-judge-v1.1",
+  "parameters": {"temperature": 0, "max_tokens": 8192, "response_format": {"type": "json_object"}, "thinking": {"type": "disabled"}},
+  "automatic_retries": 0,
+  "human_labels_sent": false,
+  "status": "offline_preparation_only_no_api"
+}

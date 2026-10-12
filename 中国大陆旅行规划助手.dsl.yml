@@ -1,0 +1,158 @@
+app:
+  description: 面向中国大陆景区的旅行规划 Agent，支持需求解析、行程规划、天气、路线、景点检索和预算计算。
+  icon: 🧭
+  icon_background: '#E8F3FF'
+  mode: advanced-chat
+  name: 中国大陆旅行规划助手
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.5
+workflow:
+  conversation_variables:
+    - id: trip_state
+      name: trip_state
+      value_type: object
+      value: {}
+      description: 当前对话的旅行状态，包括预算、天数、偏好和已确认行程。
+  environment_variables: []
+  features:
+    opening_statement: 欢迎使用中国大陆旅行规划助手。请告诉我目的地、天数、人数、预算和旅行偏好。
+    suggested_questions:
+      - 我想去杭州玩 3 天，两个人预算 5000 元，喜欢美食和历史。
+      - 帮我规划北京 4 天游，预算 8000 元，不想每天走太多路。
+    text_to_speech:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    file_upload:
+      enabled: false
+  graph:
+    edges:
+      - data:
+          isInLoop: false
+          sourceType: start
+          targetType: llm
+        id: start-source-llm-target
+        source: start
+        sourceHandle: source
+        target: parse_request
+        targetHandle: target
+        type: custom
+      - data:
+          isInLoop: false
+          sourceType: llm
+          targetType: answer
+        id: llm-source-answer-target
+        source: parse_request
+        sourceHandle: source
+        target: answer
+        targetHandle: target
+        type: custom
+    nodes:
+      - data:
+          desc: 接收用户的自然语言旅行需求。
+          selected: false
+          title: 开始
+          type: start
+          variables: []
+        height: 90
+        id: start
+        position:
+          x: 80
+          y: 220
+        positionAbsolute:
+          x: 80
+          y: 220
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+        type: custom
+        width: 244
+      - data:
+          context:
+            enabled: false
+            variable_selector: []
+          desc: 提取旅行需求，并遵守中国大陆景区范围和 Agent 边界。
+          model:
+            completion_params:
+              temperature: 0.2
+            mode: chat
+            name: gpt-4o-mini
+            provider: openai
+          prompt_template:
+            - id: system
+              role: system
+              text: |-
+                你是中国大陆旅行规划助手的需求解析节点。
+
+                规则：
+                1. 只支持中国大陆省、自治区和直辖市的景区；不支持香港、澳门、台湾及境外目的地。
+                2. 从用户消息中提取目的地、日期、天数、人数、预算、偏好和避开事项。
+                3. 缺少目的地、天数或预算时，明确列出需要补充的字段。
+                4. 不声称已经查询实时天气、路线、票价或完成预订。
+                5. 输出合法 JSON，不要输出 Markdown 代码围栏。
+
+                JSON 格式：
+                {
+                  "destination": "",
+                  "start_date": "",
+                  "days": null,
+                  "travelers": null,
+                  "budget": {"amount": null, "currency": "CNY", "includes": []},
+                  "preferences": [],
+                  "avoid": [],
+                  "mainland_scope_valid": true,
+                  "missing_fields": [],
+                  "assumptions": []
+                }
+            - id: user
+              role: user
+              text: '{{#sys.query#}}'
+          selected: false
+          title: 解析旅行需求
+          type: llm
+          vision:
+            enabled: false
+        height: 180
+        id: parse_request
+        position:
+          x: 410
+          y: 220
+        positionAbsolute:
+          x: 410
+          y: 220
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+        type: custom
+        width: 244
+      - data:
+          answer: |-
+            已收到你的旅行需求：
+
+            {{#parse_request.text#}}
+
+            下一步将根据结构化需求接入景点知识库、天气查询、地图路线和预算计算。
+          desc: 返回当前解析结果。
+          selected: false
+          title: 返回结果
+          type: answer
+          variables: []
+        height: 150
+        id: answer
+        position:
+          x: 750
+          y: 220
+        positionAbsolute:
+          x: 750
+          y: 220
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+        type: custom
+        width: 244
+  rag_pipeline_variables: []

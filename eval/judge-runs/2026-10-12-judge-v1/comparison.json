@@ -1,0 +1,383 @@
+{
+  "created_at": "2026-10-12T05:40:50.684Z",
+  "prompt_version": "judge-v1.0",
+  "requested_model": "deepseek-v4-flash",
+  "prompt_sha256": "e4d650d4be3c32705b46f8c47bcbc16513e1ab2ee44609ab434b260ed40ba25a",
+  "schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+  "rubric_sha256": "3b6bde636b43f45aca080995e02640aee83d36fa90334ca017f2e85415a6921d",
+  "runner_sha256": "04d82fe194082f103c21649e0fd848c6a3d33dc9c0822fbcb6f7819a9d50ff84",
+  "requested_cases": [
+    "B07",
+    "B09",
+    "A01",
+    "A03",
+    "A08",
+    "A09"
+  ],
+  "valid_cases": [
+    "B09"
+  ],
+  "original": {
+    "dimensions": {
+      "matches": 3,
+      "total": 4,
+      "rate": 0.75
+    },
+    "checkpoints": {
+      "matches": 3,
+      "total": 3,
+      "rate": 1
+    },
+    "case_pass": {
+      "matches": 0,
+      "total": 1,
+      "rate": 0
+    },
+    "per_dimension": {
+      "D1": {
+        "matches": 1,
+        "total": 1,
+        "rate": 1
+      },
+      "D2": {
+        "matches": 0,
+        "total": 1,
+        "rate": 0
+      },
+      "D3": {
+        "matches": 1,
+        "total": 1,
+        "rate": 1
+      },
+      "D4": {
+        "matches": 1,
+        "total": 1,
+        "rate": 1
+      }
+    },
+    "critical": {
+      "matches": 0,
+      "total": 0,
+      "positive_total": 0,
+      "missed": 0,
+      "rate": null
+    },
+    "attribution": {
+      "matches": 0,
+      "total": 0,
+      "rate": null
+    },
+    "differences": [
+      {
+        "case_id": "B09",
+        "item": "D2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "按天组织3天行程，每天2个景点、区域就近串联，给出游览时长与每段45分钟转场预留，并附雨天/临时闭馆备选，节奏与时长基本可行；本地天气未知时给出不依赖预报的骨架合理。"
+      }
+    ],
+    "excluded": [
+      {
+        "case_id": "B07",
+        "reason": "invalid_json"
+      },
+      {
+        "case_id": "A01",
+        "reason": "validation_failed"
+      },
+      {
+        "case_id": "A03",
+        "reason": "invalid_json"
+      },
+      {
+        "case_id": "A08",
+        "reason": "invalid_json"
+      },
+      {
+        "case_id": "A09",
+        "reason": "invalid_json"
+      }
+    ],
+    "calibration_gate": {
+      "complete_six_valid_cases": false,
+      "dimensions_at_least_85_percent": false,
+      "checkpoints_at_least_85_percent": true,
+      "critical_positive_checked": false,
+      "critical_misses": 0,
+      "passed": false
+    }
+  },
+  "adjudicated": {
+    "dimensions": {
+      "matches": 3,
+      "total": 4,
+      "rate": 0.75
+    },
+    "checkpoints": {
+      "matches": 3,
+      "total": 3,
+      "rate": 1
+    },
+    "case_pass": {
+      "matches": 0,
+      "total": 1,
+      "rate": 0
+    },
+    "per_dimension": {
+      "D1": {
+        "matches": 1,
+        "total": 1,
+        "rate": 1
+      },
+      "D2": {
+        "matches": 0,
+        "total": 1,
+        "rate": 0
+      },
+      "D3": {
+        "matches": 1,
+        "total": 1,
+        "rate": 1
+      },
+      "D4": {
+        "matches": 1,
+        "total": 1,
+        "rate": 1
+      }
+    },
+    "critical": {
+      "matches": 0,
+      "total": 0,
+      "positive_total": 0,
+      "missed": 0,
+      "rate": null
+    },
+    "attribution": {
+      "matches": 0,
+      "total": 0,
+      "rate": null
+    },
+    "differences": [
+      {
+        "case_id": "B09",
+        "item": "D2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "按天组织3天行程，每天2个景点、区域就近串联，给出游览时长与每段45分钟转场预留，并附雨天/临时闭馆备选，节奏与时长基本可行；本地天气未知时给出不依赖预报的骨架合理。"
+      }
+    ],
+    "excluded": [
+      {
+        "case_id": "B07",
+        "reason": "invalid_json"
+      },
+      {
+        "case_id": "A01",
+        "reason": "validation_failed"
+      },
+      {
+        "case_id": "A03",
+        "reason": "invalid_json"
+      },
+      {
+        "case_id": "A08",
+        "reason": "invalid_json"
+      },
+      {
+        "case_id": "A09",
+        "reason": "invalid_json"
+      }
+    ],
+    "calibration_gate": {
+      "complete_six_valid_cases": false,
+      "dimensions_at_least_85_percent": false,
+      "checkpoints_at_least_85_percent": true,
+      "critical_positive_checked": false,
+      "critical_misses": 0,
+      "passed": false
+    }
+  },
+  "cases": [
+    {
+      "case_id": "B07",
+      "valid": false,
+      "status": "invalid_json",
+      "judge_dimensions": null,
+      "judge_checkpoints": null,
+      "judge_critical_failure": null,
+      "primary_failure_layer": null,
+      "review_required": null,
+      "review_reasons": [],
+      "quote_count": 0,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/B07-submission-003.json",
+          "sha256": "84cc2b4659a661cfc32921a559b6e758e262500612bd0b022448e05699cb6cb9"
+        },
+        {
+          "file": "eval/human-review/adjudications/B07-adjudication-001.json",
+          "sha256": "55c4dbdf70a315273b45c3e912e42de2efe047e819a97e6b678861eb33d5653e"
+        }
+      ]
+    },
+    {
+      "case_id": "B09",
+      "valid": true,
+      "status": "scored",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 1,
+        "D4": 1
+      },
+      "judge_checkpoints": [
+        1,
+        1,
+        1
+      ],
+      "judge_case_pass": true,
+      "judge_critical_failure": false,
+      "primary_failure_layer": null,
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 13,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/B09-submission-001.json",
+          "sha256": "4fa10db6f25fd4cfa8c7e6e877a310547201adb82d9f967d0156c7b20fba8e4c"
+        },
+        {
+          "file": "eval/human-review/submissions/B09-submission-001.json",
+          "sha256": "4fa10db6f25fd4cfa8c7e6e877a310547201adb82d9f967d0156c7b20fba8e4c"
+        }
+      ]
+    },
+    {
+      "case_id": "A01",
+      "valid": false,
+      "status": "validation_failed",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 1,
+        "D4": 0
+      },
+      "judge_checkpoints": [
+        1,
+        0,
+        1
+      ],
+      "judge_case_pass": null,
+      "judge_critical_failure": false,
+      "primary_failure_layer": "L1",
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 15,
+      "validation_errors": [
+        {
+          "kind": "evidence_quote",
+          "item": "D2",
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "\"visible_result\":\"\""
+        },
+        {
+          "kind": "evidence_quote",
+          "item": "checkpoint_3",
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "\"visible_result\":\"\""
+        }
+      ],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A01-submission-001.json",
+          "sha256": "302b1eb2896b89d157f4111c9b906d71f186e7c3468dd014f04a2aa5767073eb"
+        },
+        {
+          "file": "eval/human-review/adjudications/A01-adjudication-001.json",
+          "sha256": "3a5f041b726c4c25fa758d75b96621021792b7f722ad1e881e44d90193628681"
+        }
+      ]
+    },
+    {
+      "case_id": "A03",
+      "valid": false,
+      "status": "invalid_json",
+      "judge_dimensions": null,
+      "judge_checkpoints": null,
+      "judge_critical_failure": null,
+      "primary_failure_layer": null,
+      "review_required": null,
+      "review_reasons": [],
+      "quote_count": 0,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A03-submission-001.json",
+          "sha256": "6bcf053029a710bb15bf6cee7d73dc9e1a840c0d79c779d0ebe533cb5269ac22"
+        },
+        {
+          "file": "eval/human-review/adjudications/A03-adjudication-001.json",
+          "sha256": "7e46cd732689287c51f06e4158eb9d89b77880b82c7ee0bdbfea7218797527e4"
+        }
+      ]
+    },
+    {
+      "case_id": "A08",
+      "valid": false,
+      "status": "invalid_json",
+      "judge_dimensions": null,
+      "judge_checkpoints": null,
+      "judge_critical_failure": null,
+      "primary_failure_layer": null,
+      "review_required": null,
+      "review_reasons": [],
+      "quote_count": 0,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A08-submission-001.json",
+          "sha256": "9a9e16bcd8aa306b366294d6c6c56a876a3e7ed15c4f8c4cb5aff6a1fe6ef5b8"
+        },
+        {
+          "file": "eval/human-review/adjudications/A08-adjudication-001.json",
+          "sha256": "dd1155b72008f963a23fc1b6337d2f2fd2133c4e22d89deba4cc32876f547f3d"
+        }
+      ]
+    },
+    {
+      "case_id": "A09",
+      "valid": false,
+      "status": "invalid_json",
+      "judge_dimensions": null,
+      "judge_checkpoints": null,
+      "judge_critical_failure": null,
+      "primary_failure_layer": null,
+      "review_required": null,
+      "review_reasons": [],
+      "quote_count": 0,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A09-submission-001.json",
+          "sha256": "1bda5c3f32db8a24ca910c3c486b46e2049bb08cf65261f02be9ef8d6211c380"
+        },
+        {
+          "file": "eval/human-review/adjudications/A09-adjudication-001.json",
+          "sha256": "b1b10c5b578a872ff068368e273b6be989e420ca42335d167b41ccfe0421c664"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Six selected calibration cases, not the full 36-case set or a fixed-version benchmark.",
+    "Judge uses the same configured model as the travel agent; not independent model validation.",
+    "Human adjudications followed assistant feedback; not strict blind labels. Original and adjudicated comparisons are separate.",
+    "Only B07 and A09 have current human critical labels; unknown flags are excluded, not treated as false.",
+    "A09 is only one confirmed critical positive; no claim of general safety detection reliability.",
+    "Most failure-layer labels are assistant analyses, not human labels. Human layer agreement has a small denominator.",
+    "Manual form mapping and controlled events do not prove arbitrary natural-language input parsing.",
+    "Exact quote validation checks provenance, not semantic grading correctness."
+  ]
+}

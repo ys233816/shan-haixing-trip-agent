@@ -1,0 +1,58 @@
+{
+  "workflow_version": "judge-validation-v1",
+  "api_calls": 0,
+  "cases": 6,
+  "hard_valid": 5,
+  "human_review_queue": [
+    "B07",
+    "A01",
+    "A08",
+    "A09"
+  ],
+  "auto_accept": [
+    "B09",
+    "A03"
+  ],
+  "signals": [
+    {
+      "case_id": "B07",
+      "hard_errors": 0,
+      "review_codes": [
+        "FEE_REFERENCE_NEEDS_REVIEW"
+      ]
+    },
+    {
+      "case_id": "B09",
+      "hard_errors": 0,
+      "review_codes": []
+    },
+    {
+      "case_id": "A01",
+      "hard_errors": 6,
+      "review_codes": [
+        "PASS_REASON_NEEDS_REVIEW"
+      ]
+    },
+    {
+      "case_id": "A03",
+      "hard_errors": 0,
+      "review_codes": []
+    },
+    {
+      "case_id": "A08",
+      "hard_errors": 0,
+      "review_codes": [
+        "FEE_REFERENCE_NEEDS_REVIEW"
+      ]
+    },
+    {
+      "case_id": "A09",
+      "hard_errors": 0,
+      "review_codes": [
+        "REMOVED_STILL_SCHEDULED",
+        "SAFETY_FLAG_NEEDS_REVIEW"
+      ]
+    }
+  ],
+  "limitation": "Local review signals are not new model scores or proven semantic judgments; no agreement rate computed."
+}

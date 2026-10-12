@@ -1,0 +1,197 @@
+{
+  "created_at": "2026-10-11T10:59:47.850Z",
+  "prompt_version": "judge-v1.0",
+  "purpose": "Blind evidence inputs only; no model evaluation performed.",
+  "original_run_hashes": {
+    "index.html": "723b5977b50e0ddae170634d60291a7ed7d90acd6564ef550a6aaee17641fffb",
+    "server.js": "e8650fb16883550195597643e509d87ce11f7ba38e8dc102b3c59fb3e6884424",
+    "中国大陆景点知识库_初版.md": "fa9343e13cec8d2d3944274a522855352998ed63b3b5392764de1969b22a3637",
+    "eval/rubric.md": "3b6bde636b43f45aca080995e02640aee83d36fa90334ca017f2e85415a6921d",
+    "eval/test-cases.json": "0fd66f2f160d2b0c61b6d2b45db636a3588cff87e0e401748ac26a2473db4a4b"
+  },
+  "ready": [
+    {
+      "id": "B07",
+      "file": "B07.json",
+      "bytes": 66879,
+      "sha256": "9970c0f1588004ed163563c1398e6e85176351500c64a49b45954f33853e36bb"
+    },
+    {
+      "id": "B08",
+      "file": "B08.json",
+      "bytes": 57221,
+      "sha256": "6d723284302c1d93e956dd7a53aae013120a4aa0ecd9cb3a9cef497b4b6cb10c"
+    },
+    {
+      "id": "B09",
+      "file": "B09.json",
+      "bytes": 58559,
+      "sha256": "d56a1b42ea463905e634edb55812bb57452ddfa26c46030c1079a5111fa34ed8"
+    },
+    {
+      "id": "B10",
+      "file": "B10.json",
+      "bytes": 14393,
+      "sha256": "6a26639d0c390f4c36139444fcae0c8ed8a52578be893d62cc0be3800d390474"
+    },
+    {
+      "id": "B11",
+      "file": "B11.json",
+      "bytes": 67749,
+      "sha256": "794161ab23d22cd96e225d2cf8657c650e65a57cdd106469cbc177cb7ca62180"
+    },
+    {
+      "id": "B12",
+      "file": "B12.json",
+      "bytes": 215682,
+      "sha256": "79ccb8007bd309a6fb34887e3d771bde815e538121c9c41c5d76424f73aebfc9"
+    },
+    {
+      "id": "A01",
+      "file": "A01.json",
+      "bytes": 4779,
+      "sha256": "f82be51d9026bc842f83a9c88a6c2b72f000bb2b12787eeaf1097813fd50b448"
+    },
+    {
+      "id": "A02",
+      "file": "A02.json",
+      "bytes": 12148,
+      "sha256": "57972b238d64bb595295527f47f779379c3d0a682a01e78d0200abc32a86aa2e"
+    },
+    {
+      "id": "A03",
+      "file": "A03.json",
+      "bytes": 78187,
+      "sha256": "23adbf911b5c8c45f794c7cf3c6ee6ffef848b93334aa1730f685a0f4e1aa15c"
+    },
+    {
+      "id": "A04",
+      "file": "A04.json",
+      "bytes": 4836,
+      "sha256": "2b257fad6d69b5f98964145eb6099afaec2e21f42cbbb4a08317cf2b2285ba96"
+    },
+    {
+      "id": "A05",
+      "file": "A05.json",
+      "bytes": 4780,
+      "sha256": "a5eb652f30ca72f877e474443c7b9a4c675ab961f788de4503f420358c2d08ba"
+    },
+    {
+      "id": "A06",
+      "file": "A06.json",
+      "bytes": 13851,
+      "sha256": "82e0876681cb55b02a08d88e62f9a391ba98d7bf4e9cdb1b39ffbf81a986e79e"
+    },
+    {
+      "id": "A07",
+      "file": "A07.json",
+      "bytes": 4976,
+      "sha256": "32c9bfb27315c2f3cf91e8db865420bffd3f3d31868f09a8ee97b5a8e8720d44"
+    },
+    {
+      "id": "A08",
+      "file": "A08.json",
+      "bytes": 205561,
+      "sha256": "47d809191e86ededc110bfc7148df3f8cbd4c511b163820d9d7857a5090c3c6e"
+    },
+    {
+      "id": "A09",
+      "file": "A09.json",
+      "bytes": 125791,
+      "sha256": "07117c20da0f6b1df815c8568e18a78fb0a50dae277ecaa44af624506b25f2dc"
+    },
+    {
+      "id": "A10",
+      "file": "A10.json",
+      "bytes": 4887,
+      "sha256": "49c78cec69cac21002c7060d3877ae3909c303696115a86a54dde4eb2289e763"
+    },
+    {
+      "id": "A11",
+      "file": "A11.json",
+      "bytes": 51079,
+      "sha256": "676cf429c36a4e744c4e2ee9a4598eb86fc0f4256e5da2ab30f19585e6fb11d9"
+    },
+    {
+      "id": "A12",
+      "file": "A12.json",
+      "bytes": 4813,
+      "sha256": "416f1a5fc72d6a3dabf7b1e60497276f394ae5b1eeb9ad64183f9be1fdbfcb13"
+    }
+  ],
+  "unavailable": [
+    {
+      "id": "T01",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "T02",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "T03",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "T04",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "T05",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "T06",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "T07",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "T08",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "T09",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "T10",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "T11",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "T12",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "B01",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "B02",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "B03",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "B04",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "B05",
+      "reason": "No raw browser evidence in this run directory."
+    },
+    {
+      "id": "B06",
+      "reason": "No raw browser evidence in this run directory."
+    }
+  ],
+  "note": "Historical 18 screenshot cases have no matching raw browser records in this run directory. Do not replace raw output with reviewer summaries."
+}

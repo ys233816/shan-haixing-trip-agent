@@ -1,0 +1,2362 @@
+{
+  "version": "after",
+  "recordedAt": "2026-10-12T09:02:29.589Z",
+  "method": "17条固定专项回归；受控候选和模型响应；运行真实前端函数，无付费API。不是36条全量或真实大模型成功率。",
+  "total": 17,
+  "passed": 17,
+  "tests": [
+    {
+      "id": "P01",
+      "caseIds": [
+        "T03",
+        "T06",
+        "A11"
+      ],
+      "description": "适中日程不超8小时，保留一个较长主景点",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "长景点A",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 300,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            },
+            {
+              "name": "长景点B",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 240,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [
+                {
+                  "name": "长景点A",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室外为主",
+                  "hours": 300,
+                  "walk": "中",
+                  "rain": "低",
+                  "cost": 20,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 20,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                }
+              ],
+              "weather": null,
+              "weatherNote": "未提供日期",
+              "walk": "适中",
+              "reason": "",
+              "routeCheck": null,
+              "constraintDeferred": [
+                {
+                  "name": "长景点B",
+                  "reason": "加入后预计超过每日 8 小时上限，未安排。"
+                }
+              ],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ],
+          "plannerMode": "rules",
+          "retrievalSource": "kb-hybrid-v4"
+        },
+        "hours": [
+          5
+        ],
+        "times": [
+          [
+            "09:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "P02",
+      "caseIds": [
+        "T07",
+        "B04"
+      ],
+      "description": "两个长场馆加转场和午餐超限时减少安排",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "场馆A",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 240,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            },
+            {
+              "name": "场馆B",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 180,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [
+                {
+                  "name": "场馆A",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室外为主",
+                  "hours": 240,
+                  "walk": "中",
+                  "rain": "低",
+                  "cost": 20,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 20,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                }
+              ],
+              "weather": null,
+              "weatherNote": "未提供日期",
+              "walk": "适中",
+              "reason": "",
+              "routeCheck": null,
+              "constraintDeferred": [
+                {
+                  "name": "场馆B",
+                  "reason": "加入后预计超过每日 8 小时上限，未安排。"
+                }
+              ],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ],
+          "plannerMode": "rules",
+          "retrievalSource": "kb-hybrid-v4"
+        },
+        "hours": [
+          4
+        ],
+        "times": [
+          [
+            "09:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "P03",
+      "caseIds": [
+        "T02",
+        "T04"
+      ],
+      "description": "少走路不安排中到高/高步行强度",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "low",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "受控户外A",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            },
+            {
+              "name": "受控室内B",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室内",
+              "hours": 120,
+              "walk": "低",
+              "rain": "高",
+              "cost": 30,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 30,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            },
+            {
+              "name": "高步行A",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "中到高",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            },
+            {
+              "name": "高步行B",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "高",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [
+                {
+                  "name": "受控户外A",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室外为主",
+                  "hours": 120,
+                  "walk": "中",
+                  "rain": "低",
+                  "cost": 20,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 20,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                },
+                {
+                  "name": "受控室内B",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室内",
+                  "hours": 120,
+                  "walk": "低",
+                  "rain": "高",
+                  "cost": 30,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 30,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                }
+              ],
+              "weather": null,
+              "weatherNote": "未提供日期",
+              "walk": "按少走路筛选，实际步行距离待核实",
+              "reason": "",
+              "routeCheck": null,
+              "constraintDeferred": [
+                {
+                  "name": "高步行A",
+                  "reason": "步行强度超过少走路限制，未安排。"
+                },
+                {
+                  "name": "高步行B",
+                  "reason": "步行强度超过少走路限制，未安排。"
+                }
+              ],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ],
+          "plannerMode": "rules",
+          "retrievalSource": "kb-hybrid-v4"
+        },
+        "hours": [
+          5.75
+        ],
+        "times": [
+          [
+            "09:00",
+            "13:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "P04",
+      "caseIds": [
+        "B06"
+      ],
+      "description": "没有低步行候选时留白，展示约束无法满足",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "low",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "高步行A",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "高",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [],
+              "weather": null,
+              "weatherNote": "未提供日期",
+              "walk": "按少走路筛选，实际步行距离待核实",
+              "reason": "",
+              "routeCheck": null,
+              "constraintDeferred": [
+                {
+                  "name": "高步行A",
+                  "reason": "步行强度超过少走路限制，未安排。"
+                }
+              ],
+              "constraintNotes": [
+                "当前候选无法满足本次限制，已留出休息时间；可调整日期、要求或补充景点资料。"
+              ],
+              "planningHoursLimit": 8
+            }
+          ],
+          "plannerMode": "rules",
+          "retrievalSource": "kb-hybrid-v4"
+        },
+        "hours": [
+          0
+        ],
+        "times": [
+          []
+        ]
+      }
+    },
+    {
+      "id": "P05",
+      "caseIds": [
+        "B07"
+      ],
+      "description": "轮椅需求保留单景点缓冲并提示核实无障碍",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "有轮椅使用者，必须有无障碍设施。",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "受控户外A",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            },
+            {
+              "name": "受控室内B",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室内",
+              "hours": 120,
+              "walk": "低",
+              "rain": "高",
+              "cost": 30,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 30,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [
+                {
+                  "name": "受控户外A",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室外为主",
+                  "hours": 120,
+                  "walk": "中",
+                  "rain": "低",
+                  "cost": 20,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 20,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                }
+              ],
+              "weather": null,
+              "weatherNote": "未提供日期",
+              "walk": "按少走路筛选，实际步行距离待核实",
+              "reason": "",
+              "routeCheck": null,
+              "constraintDeferred": [
+                {
+                  "name": "受控室内B",
+                  "reason": "为满足节奏或轮椅休息缓冲，未安排。"
+                }
+              ],
+              "constraintNotes": [
+                "知识库未核实无障碍设施，不能保证轮椅可达；出发前请向景区核实坡道、电梯、无障碍卫生间及抵达路线。每天最多安排一个候选，留出休息缓冲。"
+              ],
+              "planningHoursLimit": 8
+            }
+          ],
+          "plannerMode": "rules",
+          "retrievalSource": "kb-hybrid-v4"
+        },
+        "hours": [
+          2
+        ],
+        "times": [
+          [
+            "09:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "P06",
+      "caseIds": [
+        "B07"
+      ],
+      "description": "大模型主动少排时不强制补成每日数量",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "受控室内B",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室内",
+              "hours": 120,
+              "walk": "低",
+              "rain": "高",
+              "cost": 30,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 30,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            },
+            {
+              "name": "受控户外A",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [
+                {
+                  "name": "受控室内B",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室内",
+                  "hours": 120,
+                  "walk": "低",
+                  "rain": "高",
+                  "cost": 30,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 30,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                }
+              ],
+              "weather": null,
+              "weatherNote": "未提供日期",
+              "walk": "适中",
+              "reason": "",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ],
+          "plannerMode": "llm",
+          "retrievalSource": "kb-hybrid-v4"
+        },
+        "hours": [
+          2
+        ],
+        "times": [
+          [
+            "09:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "P07",
+      "caseIds": [
+        "T08"
+      ],
+      "description": "预报有雨时拒绝室外为主含室内展馆候选",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "混合展馆",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主，含室内展馆",
+              "hours": 120,
+              "walk": "中",
+              "rain": "中",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            },
+            {
+              "name": "受控室内B",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室内",
+              "hours": 120,
+              "walk": "低",
+              "rain": "高",
+              "cost": 30,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 30,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [
+                {
+                  "name": "受控室内B",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室内",
+                  "hours": 120,
+                  "walk": "低",
+                  "rain": "高",
+                  "cost": 30,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 30,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                }
+              ],
+              "weather": {
+                "dayWeather": "大雨"
+              },
+              "weatherNote": "未提供日期",
+              "walk": "适中",
+              "reason": "",
+              "routeCheck": null,
+              "constraintDeferred": [
+                {
+                  "name": "混合展馆",
+                  "reason": "受当天雨雪天气影响，无法确认适合避雨，未安排。"
+                }
+              ],
+              "constraintNotes": [
+                "当天仅保留知识库未标为明显户外或低雨天适合度的候选；开放状态和抵达路线安全仍需核实。没有适合候选时留作休息。"
+              ],
+              "planningHoursLimit": 8
+            }
+          ],
+          "plannerMode": "rules",
+          "retrievalSource": "kb-hybrid-v4"
+        },
+        "hours": [
+          2
+        ],
+        "times": [
+          [
+            "09:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "P08",
+      "caseIds": [
+        "T08"
+      ],
+      "description": "预报有雨且无安全候选时留白并提示",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "受控户外A",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [],
+              "weather": {
+                "dayWeather": "暴雨"
+              },
+              "weatherNote": "未提供日期",
+              "walk": "适中",
+              "reason": "",
+              "routeCheck": null,
+              "constraintDeferred": [
+                {
+                  "name": "受控户外A",
+                  "reason": "受当天雨雪天气影响，无法确认适合避雨，未安排。"
+                }
+              ],
+              "constraintNotes": [
+                "当天仅保留知识库未标为明显户外或低雨天适合度的候选；开放状态和抵达路线安全仍需核实。没有适合候选时留作休息。",
+                "当前候选无法满足本次限制，已留出休息时间；可调整日期、要求或补充景点资料。"
+              ],
+              "planningHoursLimit": 8
+            }
+          ],
+          "plannerMode": "rules",
+          "retrievalSource": "kb-hybrid-v4"
+        },
+        "hours": [
+          0
+        ],
+        "times": [
+          []
+        ]
+      }
+    },
+    {
+      "id": "P09",
+      "caseIds": [
+        "T08"
+      ],
+      "description": "没有出发日期时处理用户明确报告首日下雨",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "第一天下雨，优先室内。",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "受控户外A",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            },
+            {
+              "name": "受控室内B",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室内",
+              "hours": 120,
+              "walk": "低",
+              "rain": "高",
+              "cost": 30,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 30,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [
+                {
+                  "name": "受控室内B",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室内",
+                  "hours": 120,
+                  "walk": "低",
+                  "rain": "高",
+                  "cost": 30,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 30,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                }
+              ],
+              "weather": null,
+              "weatherNote": "未提供日期",
+              "walk": "适中",
+              "reason": "",
+              "userWeatherEvent": "第一天下雨",
+              "eventAlert": "天气变化后请先核对实时预警和景区公告，再决定是否出行。",
+              "routeCheck": null,
+              "constraintDeferred": [
+                {
+                  "name": "受控户外A",
+                  "reason": "受当天雨雪天气影响，无法确认适合避雨，未安排。"
+                }
+              ],
+              "constraintNotes": [
+                "当天仅保留知识库未标为明显户外或低雨天适合度的候选；开放状态和抵达路线安全仍需核实。没有适合候选时留作休息。"
+              ],
+              "planningHoursLimit": 8
+            }
+          ],
+          "plannerMode": "rules",
+          "retrievalSource": "kb-hybrid-v4"
+        },
+        "hours": [
+          2
+        ],
+        "times": [
+          [
+            "09:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "P10",
+      "caseIds": [
+        "T04"
+      ],
+      "description": "夜游专属景点建议时段不早于18点",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "夜游街区",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "夜游街区",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "夜间游览",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [
+                {
+                  "name": "夜游街区",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "夜游街区",
+                  "indoor": "室外为主",
+                  "hours": 120,
+                  "walk": "中",
+                  "rain": "低",
+                  "cost": 20,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "夜间游览",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 20,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                }
+              ],
+              "weather": null,
+              "weatherNote": "未提供日期",
+              "walk": "适中",
+              "reason": "",
+              "constraintDeferred": [],
+              "constraintNotes": [
+                "夜间体验暂按18:00之后开始、22:00前结束预留；这是建议时段，实际开放及表演时间请向官方核实。"
+              ],
+              "planningHoursLimit": 8
+            }
+          ],
+          "plannerMode": "rules",
+          "retrievalSource": "kb-hybrid-v4"
+        },
+        "hours": [
+          2
+        ],
+        "times": [
+          [
+            "18:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "P11",
+      "caseIds": [
+        "T04"
+      ],
+      "description": "白天场馆排在夜游前，避免夜游后补白天点",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "夜游街区",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "夜游街区",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "夜间游览",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            },
+            {
+              "name": "受控室内B",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室内",
+              "hours": 120,
+              "walk": "低",
+              "rain": "高",
+              "cost": 30,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 30,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [
+                {
+                  "name": "受控室内B",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室内",
+                  "hours": 120,
+                  "walk": "低",
+                  "rain": "高",
+                  "cost": 30,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 30,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                },
+                {
+                  "name": "夜游街区",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "夜游街区",
+                  "indoor": "室外为主",
+                  "hours": 120,
+                  "walk": "中",
+                  "rain": "低",
+                  "cost": 20,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "夜间游览",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 20,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                }
+              ],
+              "weather": null,
+              "weatherNote": "未提供日期",
+              "walk": "适中",
+              "reason": "",
+              "routeCheck": null,
+              "constraintDeferred": [],
+              "constraintNotes": [
+                "夜间体验暂按18:00之后开始、22:00前结束预留；这是建议时段，实际开放及表演时间请向官方核实。"
+              ],
+              "planningHoursLimit": 8
+            }
+          ],
+          "plannerMode": "rules",
+          "retrievalSource": "kb-hybrid-v4"
+        },
+        "hours": [
+          5.75
+        ],
+        "times": [
+          [
+            "09:00",
+            "18:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "P12",
+      "caseIds": [
+        "T03",
+        "B05"
+      ],
+      "description": "重复渲染结果稳定且跨日不重复",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 2,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "受控户外A",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            },
+            {
+              "name": "受控室内B",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室内",
+              "hours": 120,
+              "walk": "低",
+              "rain": "高",
+              "cost": 30,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 30,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            },
+            {
+              "name": "候选C",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            },
+            {
+              "name": "候选D",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [
+                {
+                  "name": "受控户外A",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室外为主",
+                  "hours": 120,
+                  "walk": "中",
+                  "rain": "低",
+                  "cost": 20,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 20,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                },
+                {
+                  "name": "受控室内B",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室内",
+                  "hours": 120,
+                  "walk": "低",
+                  "rain": "高",
+                  "cost": 30,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 30,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                }
+              ],
+              "weather": null,
+              "weatherNote": "未提供日期",
+              "walk": "适中",
+              "reason": "",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            },
+            {
+              "date": "第 2 天",
+              "city": "受控测试城市",
+              "items": [
+                {
+                  "name": "候选C",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室外为主",
+                  "hours": 120,
+                  "walk": "中",
+                  "rain": "低",
+                  "cost": 20,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 20,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                },
+                {
+                  "name": "候选D",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室外为主",
+                  "hours": 120,
+                  "walk": "中",
+                  "rain": "低",
+                  "cost": 20,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 20,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                }
+              ],
+              "weather": null,
+              "weatherNote": "未提供日期",
+              "walk": "适中",
+              "reason": "",
+              "routeCheck": null,
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ],
+          "plannerMode": "rules",
+          "retrievalSource": "kb-hybrid-v4"
+        },
+        "hours": [
+          5.75,
+          5.75
+        ],
+        "times": [
+          [
+            "09:00",
+            "13:00"
+          ],
+          [
+            "09:00",
+            "13:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "P13",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "删减的收费景点不再计门票，保留收费项目正确计费",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "长收费A",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 300,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            },
+            {
+              "name": "长收费B",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 240,
+              "walk": "中",
+              "rain": "低",
+              "cost": 100,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [
+                {
+                  "name": "长收费A",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室外为主",
+                  "hours": 300,
+                  "walk": "中",
+                  "rain": "低",
+                  "cost": 20,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 20,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                }
+              ],
+              "weather": null,
+              "weatherNote": "未提供日期",
+              "walk": "适中",
+              "reason": "",
+              "routeCheck": null,
+              "constraintDeferred": [
+                {
+                  "name": "长收费B",
+                  "reason": "加入后预计超过每日 8 小时上限，未安排。"
+                }
+              ],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ],
+          "plannerMode": "rules",
+          "retrievalSource": "kb-hybrid-v4"
+        },
+        "hours": [
+          5
+        ],
+        "times": [
+          [
+            "09:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "P14",
+      "caseIds": [
+        "T05",
+        "T09"
+      ],
+      "description": "普通短景点仍保持两个主要景点，不机械减成单点",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "受控户外A",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            },
+            {
+              "name": "受控室内B",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室内",
+              "hours": 120,
+              "walk": "低",
+              "rain": "高",
+              "cost": 30,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 30,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [
+                {
+                  "name": "受控户外A",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室外为主",
+                  "hours": 120,
+                  "walk": "中",
+                  "rain": "低",
+                  "cost": 20,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 20,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                },
+                {
+                  "name": "受控室内B",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室内",
+                  "hours": 120,
+                  "walk": "低",
+                  "rain": "高",
+                  "cost": 30,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+                  "suitability": "校园建筑、人文和城市漫步爱好者",
+                  "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+                  "tags": "厦门、校园、人文、建筑",
+                  "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+                  "reservationInfo": "入校及参观要求以学校官方渠道为准",
+                  "ticketInfo": "以学校官方信息为准",
+                  "ticketPriceCny": 30,
+                  "ticketPriceBasis": "",
+                  "openingSource": "https://www.xmu.edu.cn/",
+                  "ticketSource": "https://www.xmu.edu.cn/",
+                  "retrievalScore": 18
+                }
+              ],
+              "weather": null,
+              "weatherNote": "未提供日期",
+              "walk": "适中",
+              "reason": "",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ],
+          "plannerMode": "rules",
+          "retrievalSource": "kb-hybrid-v4"
+        },
+        "hours": [
+          5.75
+        ],
+        "times": [
+          [
+            "09:00",
+            "13:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "P15",
+      "caseIds": [
+        "A09"
+      ],
+      "description": "既有暴雨暂停记录不会被本轮约束迭代恢复",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "受控户外A",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [],
+              "weather": null,
+              "weatherNote": "未提供日期",
+              "walk": "适中",
+              "reason": " 天气变化影响当天户外安排：受控户外A 暂缓。",
+              "userWeatherEvent": "第1天暴雨",
+              "eventAlert": "暴雨 / 强对流天气下请优先保障安全，暂缓户外活动并留在安全地点休息，关注当地预警和景区公告。室内替代景点也需确认开放及抵达路线安全后再出行。",
+              "removedItems": [
+                {
+                  "name": "受控户外A",
+                  "reason": "天气变化后没有可用的未排入室内候选，已暂缓该景点。"
+                }
+              ],
+              "routeCheck": null
+            }
+          ],
+          "plannerMode": "rules",
+          "retrievalSource": "kb-hybrid-v4",
+          "changeSummary": "观察到：第1天暴雨。第 1 天检查了全部受天气影响的户外景点；受控户外A 暂缓。只修改了当天。"
+        },
+        "hours": [
+          0
+        ],
+        "times": [
+          []
+        ]
+      }
+    },
+    {
+      "id": "P16",
+      "caseIds": [
+        "T03"
+      ],
+      "description": "超长单景点无法在日上限内完成时不冒充可行",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "超长景点",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 600,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+              "suitability": "校园建筑、人文和城市漫步爱好者",
+              "backup": "南普陀寺、沙坡尾艺术西区、胡里山炮台",
+              "tags": "厦门、校园、人文、建筑",
+              "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+              "reservationInfo": "入校及参观要求以学校官方渠道为准",
+              "ticketInfo": "以学校官方信息为准",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "https://www.xmu.edu.cn/",
+              "ticketSource": "https://www.xmu.edu.cn/",
+              "retrievalScore": 18
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "city": "受控测试城市",
+              "items": [],
+              "weather": null,
+              "weatherNote": "未提供日期",
+              "walk": "适中",
+              "reason": "",
+              "routeCheck": null,
+              "constraintDeferred": [
+                {
+                  "name": "超长景点",
+                  "reason": "加入后预计超过每日 8 小时上限，未安排。"
+                }
+              ],
+              "constraintNotes": [
+                "当前候选无法满足本次限制，已留出休息时间；可调整日期、要求或补充景点资料。"
+              ],
+              "planningHoursLimit": 8
+            }
+          ],
+          "plannerMode": "rules",
+          "retrievalSource": "kb-hybrid-v4"
+        },
+        "hours": [
+          0
+        ],
+        "times": [
+          []
+        ]
+      }
+    },
+    {
+      "id": "P17",
+      "caseIds": [
+        "B07"
+      ],
+      "description": "makePlan的模型少排在生成阶段及渲染阶段都保留",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控测试城市",
+          "startDate": null,
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "currency": "CNY",
+            "includes": "all"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "轮椅使用者",
+          "scope": "mainland_china"
+        },
+        "plan": {
+          "city": "受控测试城市",
+          "candidates": [
+            {
+              "name": "受控室内B",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室内",
+              "hours": 120,
+              "walk": "低",
+              "rain": "高",
+              "cost": 30,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：资料未注明；标签：博物馆。",
+              "suitability": "",
+              "backup": "请从本地景点知识库检索附近备选。",
+              "tags": "博物馆",
+              "openingHours": "以官方为准",
+              "reservationInfo": "",
+              "ticketInfo": "参考成人票",
+              "ticketPriceCny": 30,
+              "ticketPriceBasis": "",
+              "openingSource": "",
+              "ticketSource": ""
+            },
+            {
+              "name": "受控户外A",
+              "city": "受控测试城市",
+              "area": "思明区",
+              "kind": "校园建筑、人文景观、城市休闲",
+              "indoor": "室外为主",
+              "hours": 120,
+              "walk": "中",
+              "rain": "低",
+              "cost": 20,
+              "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：资料未注明；标签：博物馆。",
+              "suitability": "",
+              "backup": "请从本地景点知识库检索附近备选。",
+              "tags": "博物馆",
+              "openingHours": "以官方为准",
+              "reservationInfo": "",
+              "ticketInfo": "参考成人票",
+              "ticketPriceCny": 20,
+              "ticketPriceBasis": "",
+              "openingSource": "",
+              "ticketSource": ""
+            }
+          ],
+          "daily": [
+            {
+              "date": "第 1 天",
+              "isoDate": null,
+              "city": "受控测试城市",
+              "items": [
+                {
+                  "name": "受控户外A",
+                  "city": "受控测试城市",
+                  "area": "思明区",
+                  "kind": "校园建筑、人文景观、城市休闲",
+                  "indoor": "室外为主",
+                  "hours": 120,
+                  "walk": "中",
+                  "rain": "低",
+                  "cost": 20,
+                  "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：资料未注明；标签：博物馆。",
+                  "suitability": "",
+                  "backup": "请从本地景点知识库检索附近备选。",
+                  "tags": "博物馆",
+                  "openingHours": "以官方为准",
+                  "reservationInfo": "",
+                  "ticketInfo": "参考成人票",
+                  "ticketPriceCny": 20,
+                  "ticketPriceBasis": "",
+                  "openingSource": "",
+                  "ticketSource": ""
+                }
+              ],
+              "weather": null,
+              "weatherNote": "未提供日期，未按天气排序",
+              "weatherUnavailable": false,
+              "walk": "按少走路筛选，实际步行距离待核实",
+              "reason": "大模型从知识库候选中安排了受控户外A；按适中节奏最多 2 个景点/天编排，并按偏好和天气排序。景点开放状态与价格仍需核实。",
+              "constraintDeferred": [],
+              "constraintNotes": [
+                "知识库未核实无障碍设施，不能保证轮椅可达；出发前请向景区核实坡道、电梯、无障碍卫生间及抵达路线。每天最多安排一个候选，留出休息缓冲。"
+              ],
+              "planningHoursLimit": 8
+            }
+          ],
+          "weatherData": null,
+          "weatherError": "",
+          "retrievalSource": "kb-hybrid-v4",
+          "retrievalMethod": "受控候选重放",
+          "retrievalQuery": "轮椅使用者",
+          "plannerMode": "llm",
+          "modelNote": "已由 受控模型 生成行程顺序；景点来自本地知识库，开放和票价信息仍需核实。"
+        },
+        "hours": [
+          2
+        ],
+        "times": [
+          [
+            "09:00"
+          ]
+        ]
+      }
+    }
+  ],
+  "sha256": "77c3a609c355561c44ecfba13d78deba3bef835192c46c5e949dfba3287e3790",
+  "passRatePercent": 100
+}

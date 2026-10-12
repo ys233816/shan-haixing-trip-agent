@@ -1,0 +1,32 @@
+{
+  "id": "C01",
+  "group": "missing",
+  "description": "信息全缺时最多3问，不规划",
+  "fields": {
+    "destination": "帮我规划一下出去玩",
+    "days": "",
+    "budget": ""
+  },
+  "need": [
+    "目的地",
+    "天数",
+    "预算"
+  ],
+  "checks": {
+    "noPageErrors": true,
+    "noOverflow": true,
+    "blocked": true,
+    "clarification": true,
+    "maxThree": true
+  },
+  "pass": true,
+  "calls": [],
+  "errors": [],
+  "status": "本次尚未生成，请先确认：\n请填写中国大陆的具体目的地城市。\n请填写本次天数（1至60天）。\n请填写人民币预算金额，并确认全团还是人均；0元可明确填写。",
+  "shown": false,
+  "text": "",
+  "request": null,
+  "plan": null,
+  "questions": 3,
+  "overflow": false
+}

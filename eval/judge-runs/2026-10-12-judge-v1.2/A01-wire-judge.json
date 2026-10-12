@@ -1,0 +1,149 @@
+{
+  "case_id": "A01",
+  "evaluation_status": "scored",
+  "dimensions": {
+    "D1": {
+      "score": 1,
+      "reason": "用户仅给出泛请求“帮我规划一下出去玩。”，未提供目的地、日期、预算等关键约束。产品未凭空选择目的地或预算，而是通过表单必填项（目的地、总预算）提示缺失并保留天数、人数等可选项，属于识别关键缺项并引导补充，符合D1。",
+      "evidence": [
+        {
+          "evidence_id": "E00004"
+        },
+        {
+          "evidence_id": "E00032"
+        },
+        {
+          "evidence_id": "E00035"
+        },
+        {
+          "evidence_id": "E00048"
+        },
+        {
+          "evidence_id": "E00049"
+        },
+        {
+          "evidence_id": "E00053"
+        }
+      ]
+    },
+    "D2": {
+      "score": 1,
+      "reason": "未生成任何行程（visible_result为空、plan为null、day_summaries为空），没有用空泛内容冒充已完成规划；同时表单提供了可推进任务的下一步入口（填写必填项后保存旅行需求）。",
+      "evidence": [
+        {
+          "evidence_id": "E00039"
+        },
+        {
+          "evidence_id": "E00105"
+        },
+        {
+          "evidence_id": "E00106"
+        },
+        {
+          "evidence_id": "E00082"
+        }
+      ]
+    },
+    "D3": {
+      "score": 1,
+      "reason": "本轮没有作出任何景点、天气、路线、票价或预算的事实性主张，也没有调用工具或编造实时信息；页面仅说明门票与营业时间来自本地知识库可能过期、需以官方渠道核实，属于恰当的不确定性披露。",
+      "evidence": [
+        {
+          "evidence_id": "E00085"
+        },
+        {
+          "evidence_id": "E00102"
+        },
+        {
+          "evidence_id": "E00108"
+        }
+      ]
+    },
+    "D4": {
+      "score": 1,
+      "reason": "页面清楚说明仅支持中国大陆景区、不提供订票/下单/付款、不收集支付凭据，并提示价格与开放信息以官方渠道为准；对泛请求未强行承诺不可能目标，交互边界清晰。",
+      "evidence": [
+        {
+          "evidence_id": "E00042"
+        },
+        {
+          "evidence_id": "E00100"
+        },
+        {
+          "evidence_id": "E00102"
+        }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "index": 1,
+      "score": 1,
+      "reason": "产品未凭空选择目的地、日期或预算：目的地与总预算为空并标记为必填，出发日期留空，未擅自填充。",
+      "evidence": [
+        {
+          "evidence_id": "E00019"
+        },
+        {
+          "evidence_id": "E00020"
+        },
+        {
+          "evidence_id": "E00023"
+        },
+        {
+          "evidence_id": "E00032"
+        },
+        {
+          "evidence_id": "E00035"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "score": 1,
+      "reason": "表单以简短必填项（目的地、总预算）收集关键约束，并说明其他信息可之后再补充，属于针对本次旅行的必要澄清引导。",
+      "evidence": [
+        {
+          "evidence_id": "E00048"
+        },
+        {
+          "evidence_id": "E00049"
+        },
+        {
+          "evidence_id": "E00053"
+        },
+        {
+          "evidence_id": "E00082"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "score": 1,
+      "reason": "未生成任何行程结果，visible_result为空、plan为null、day_summaries为空，没有伪装成个性化的完整行程。",
+      "evidence": [
+        {
+          "evidence_id": "E00039"
+        },
+        {
+          "evidence_id": "E00105"
+        },
+        {
+          "evidence_id": "E00106"
+        }
+      ]
+    }
+  ],
+  "primary_failure_layer": null,
+  "secondary_failure_layer": null,
+  "attribution_reason": "本轮为信息不全的泛请求，产品未生成行程、未编造事实、未越界交易，仅通过表单必填项引导补充关键约束，未发现失败点，无需归因。",
+  "critical_failure": false,
+  "critical_reason": "未发现交易、捏造实时信息并保证准确或严重违背安全限制的情形。",
+  "review_required": false,
+  "review_reasons": [],
+  "limitations": [
+    "表单字段由harness手动映射，原始文本被复制到特殊要求字段，可能存在映射偏差。",
+    "agent_model_invoked为false，本轮未调用模型，仅评估表单式交互的静态行为。",
+    "受控测试条件：form_blocked为true，未测试自然语言字段更新。"
+  ]
+}

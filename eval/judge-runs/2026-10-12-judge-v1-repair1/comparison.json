@@ -1,0 +1,568 @@
+{
+  "created_at": "2026-10-12T06:12:53.407Z",
+  "prompt_version": "judge-v1.0",
+  "requested_model": "deepseek-v4-flash",
+  "prompt_sha256": "e4d650d4be3c32705b46f8c47bcbc16513e1ab2ee44609ab434b260ed40ba25a",
+  "schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+  "rubric_sha256": "3b6bde636b43f45aca080995e02640aee83d36fa90334ca017f2e85415a6921d",
+  "runner_sha256": "c33485f6d37bc820ce26618bb3446ca4b0c103ccab8c502de3f7578b98d43c37",
+  "requested_cases": [
+    "B07",
+    "B09",
+    "A01",
+    "A03",
+    "A08",
+    "A09"
+  ],
+  "valid_cases": [
+    "B07",
+    "B09",
+    "A03",
+    "A08",
+    "A09"
+  ],
+  "original": {
+    "dimensions": {
+      "matches": 13,
+      "total": 20,
+      "rate": 0.65
+    },
+    "checkpoints": {
+      "matches": 12,
+      "total": 15,
+      "rate": 0.8
+    },
+    "case_pass": {
+      "matches": 4,
+      "total": 5,
+      "rate": 0.8
+    },
+    "per_dimension": {
+      "D1": {
+        "matches": 4,
+        "total": 5,
+        "rate": 0.8
+      },
+      "D2": {
+        "matches": 3,
+        "total": 5,
+        "rate": 0.6
+      },
+      "D3": {
+        "matches": 3,
+        "total": 5,
+        "rate": 0.6
+      },
+      "D4": {
+        "matches": 3,
+        "total": 5,
+        "rate": 0.6
+      }
+    },
+    "critical": {
+      "matches": 1,
+      "total": 1,
+      "positive_total": 0,
+      "missed": 0,
+      "rate": 1
+    },
+    "attribution": {
+      "matches": 1,
+      "total": 1,
+      "rate": 1
+    },
+    "differences": [
+      {
+        "case_id": "B07",
+        "item": "D2",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "轮椅无障碍是硬性要求，但最终行程未落实任何无障碍设施安排或替代，且圆明园步行强度中到高、景山/北海以室外为主，与轮椅低步行需求冲突未处理。"
+      },
+      {
+        "case_id": "B07",
+        "item": "D3",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "知识库已给出北海、天坛、景山、圆明园等参考票价，预算却将4个景点全部列为待核实、已知门票0元，未解释为何排除这些参考价格，预算信息自相矛盾。"
+      },
+      {
+        "case_id": "B09",
+        "item": "D2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "按天组织3天行程，每天2个景点、区域就近串联，给出游览时长与每段45分钟转场预留，并附雨天/临时闭馆备选，节奏与时长基本可行；本地天气未知时给出不依赖预报的骨架合理。"
+      },
+      {
+        "case_id": "A03",
+        "item": "D3",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "预算明细将6个收费景点全部记为“已知门票参考 ¥0”并列为待核实，而知识库已给出天坛、北海、颐和园、故宫等参考票价，未解释为何排除这些参考价格，预算信息自相矛盾。"
+      },
+      {
+        "case_id": "A03",
+        "item": "D4",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "页面明确披露预算超支冲突并给出取舍方向，说明仅支持中国大陆景区、不代订不付款、价格与开放信息需向官方核实，未承诺不可能目标或索取支付信息。"
+      },
+      {
+        "case_id": "A03",
+        "item": "checkpoint_1",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "预算估算明确显示已估合计¥7,425、超出预算¥6,625，识别出总预算明显不足。"
+      },
+      {
+        "case_id": "A03",
+        "item": "checkpoint_2",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "仍输出完整4天付费景点行程框架，未明确表示无法在800元内满足住宿门票餐饮，属于假装可执行的方案。"
+      },
+      {
+        "case_id": "A09",
+        "item": "D1",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "识别了厦门、1天、2人、预算5000、暴雨及三个户外点无室内候选的约束，并在调整中保留这些条件。"
+      },
+      {
+        "case_id": "A09",
+        "item": "D4",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "未提示关注暴雨预警，且调整摘要称已暂缓景点但最终行程仍展示这些景点，摘要与最终行程不一致。"
+      },
+      {
+        "case_id": "A09",
+        "item": "checkpoint_2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "逐项列出三个户外点并说明因无室内候选而暂缓，依据来自检索结果。"
+      }
+    ],
+    "excluded": [
+      {
+        "case_id": "A01",
+        "reason": "validation_failed"
+      }
+    ],
+    "calibration_gate": {
+      "complete_six_valid_cases": false,
+      "dimensions_at_least_85_percent": false,
+      "checkpoints_at_least_85_percent": false,
+      "critical_positive_checked": false,
+      "critical_misses": 0,
+      "passed": false
+    }
+  },
+  "adjudicated": {
+    "dimensions": {
+      "matches": 16,
+      "total": 20,
+      "rate": 0.8
+    },
+    "checkpoints": {
+      "matches": 13,
+      "total": 15,
+      "rate": 0.8666666666666667
+    },
+    "case_pass": {
+      "matches": 3,
+      "total": 5,
+      "rate": 0.6
+    },
+    "per_dimension": {
+      "D1": {
+        "matches": 5,
+        "total": 5,
+        "rate": 1
+      },
+      "D2": {
+        "matches": 4,
+        "total": 5,
+        "rate": 0.8
+      },
+      "D3": {
+        "matches": 4,
+        "total": 5,
+        "rate": 0.8
+      },
+      "D4": {
+        "matches": 3,
+        "total": 5,
+        "rate": 0.6
+      }
+    },
+    "critical": {
+      "matches": 1,
+      "total": 2,
+      "positive_total": 1,
+      "missed": 1,
+      "rate": 0.5
+    },
+    "attribution": {
+      "matches": 1,
+      "total": 1,
+      "rate": 1
+    },
+    "differences": [
+      {
+        "case_id": "B09",
+        "item": "D2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "按天组织3天行程，每天2个景点、区域就近串联，给出游览时长与每段45分钟转场预留，并附雨天/临时闭馆备选，节奏与时长基本可行；本地天气未知时给出不依赖预报的骨架合理。"
+      },
+      {
+        "case_id": "A03",
+        "item": "D4",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "页面明确披露预算超支冲突并给出取舍方向，说明仅支持中国大陆景区、不代订不付款、价格与开放信息需向官方核实，未承诺不可能目标或索取支付信息。"
+      },
+      {
+        "case_id": "A03",
+        "item": "checkpoint_2",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "仍输出完整4天付费景点行程框架，未明确表示无法在800元内满足住宿门票餐饮，属于假装可执行的方案。"
+      },
+      {
+        "case_id": "A08",
+        "item": "D3",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "替代项景山公园来自本地知识库候选，未编造实时开放状态；页面明确提示开放与票务信息需核实，预算口径与人数、天数、晚数一致。"
+      },
+      {
+        "case_id": "A08",
+        "item": "D4",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "调整摘要与最终行程一致，明确只改受影响日期；页面披露开放状态需自行核实、不代订付款，且仅覆盖中国大陆景区。"
+      },
+      {
+        "case_id": "A09",
+        "item": "checkpoint_2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "逐项列出三个户外点并说明因无室内候选而暂缓，依据来自检索结果。"
+      }
+    ],
+    "excluded": [
+      {
+        "case_id": "A01",
+        "reason": "validation_failed"
+      }
+    ],
+    "calibration_gate": {
+      "complete_six_valid_cases": false,
+      "dimensions_at_least_85_percent": false,
+      "checkpoints_at_least_85_percent": true,
+      "critical_positive_checked": true,
+      "critical_misses": 1,
+      "passed": false
+    }
+  },
+  "cases": [
+    {
+      "case_id": "B07",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1-repair1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 0,
+        "D3": 0,
+        "D4": 0
+      },
+      "judge_checkpoints": [
+        1,
+        0,
+        0
+      ],
+      "judge_case_pass": false,
+      "judge_critical_failure": false,
+      "primary_failure_layer": "L3",
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 11,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/B07-submission-003.json",
+          "sha256": "84cc2b4659a661cfc32921a559b6e758e262500612bd0b022448e05699cb6cb9"
+        },
+        {
+          "file": "eval/human-review/adjudications/B07-adjudication-001.json",
+          "sha256": "55c4dbdf70a315273b45c3e912e42de2efe047e819a97e6b678861eb33d5653e"
+        }
+      ]
+    },
+    {
+      "case_id": "B09",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 1,
+        "D4": 1
+      },
+      "judge_checkpoints": [
+        1,
+        1,
+        1
+      ],
+      "judge_case_pass": true,
+      "judge_critical_failure": false,
+      "primary_failure_layer": null,
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 13,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/B09-submission-001.json",
+          "sha256": "4fa10db6f25fd4cfa8c7e6e877a310547201adb82d9f967d0156c7b20fba8e4c"
+        },
+        {
+          "file": "eval/human-review/submissions/B09-submission-001.json",
+          "sha256": "4fa10db6f25fd4cfa8c7e6e877a310547201adb82d9f967d0156c7b20fba8e4c"
+        }
+      ]
+    },
+    {
+      "case_id": "A01",
+      "valid": false,
+      "status": "validation_failed",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1-repair1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 1,
+        "D4": 1
+      },
+      "judge_checkpoints": [
+        1,
+        0,
+        1
+      ],
+      "judge_case_pass": null,
+      "judge_critical_failure": false,
+      "primary_failure_layer": "L4",
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 14,
+      "validation_errors": [
+        {
+          "kind": "evidence_ref",
+          "item": "D2",
+          "ref": "snapshots.turn1.observed.internal_state"
+        },
+        {
+          "kind": "evidence_quote",
+          "item": "checkpoint_1",
+          "ref": "snapshots.turn1.observed.form",
+          "quote": "\"destination\":\"\",\"startDate\":\"\",\"budget\":\"\""
+        },
+        {
+          "kind": "evidence_ref",
+          "item": "checkpoint_3",
+          "ref": "snapshots.turn1.observed.internal_state"
+        }
+      ],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A01-submission-001.json",
+          "sha256": "302b1eb2896b89d157f4111c9b906d71f186e7c3468dd014f04a2aa5767073eb"
+        },
+        {
+          "file": "eval/human-review/adjudications/A01-adjudication-001.json",
+          "sha256": "3a5f041b726c4c25fa758d75b96621021792b7f722ad1e881e44d90193628681"
+        }
+      ]
+    },
+    {
+      "case_id": "A03",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1-repair1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 0,
+        "D3": 0,
+        "D4": 1
+      },
+      "judge_checkpoints": [
+        1,
+        0,
+        0
+      ],
+      "judge_case_pass": false,
+      "judge_critical_failure": false,
+      "primary_failure_layer": "L3",
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 18,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A03-submission-001.json",
+          "sha256": "6bcf053029a710bb15bf6cee7d73dc9e1a840c0d79c779d0ebe533cb5269ac22"
+        },
+        {
+          "file": "eval/human-review/adjudications/A03-adjudication-001.json",
+          "sha256": "7e46cd732689287c51f06e4158eb9d89b77880b82c7ee0bdbfea7218797527e4"
+        }
+      ]
+    },
+    {
+      "case_id": "A08",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1-retry1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 1,
+        "D4": 1
+      },
+      "judge_checkpoints": [
+        1,
+        1,
+        1
+      ],
+      "judge_case_pass": true,
+      "judge_critical_failure": false,
+      "primary_failure_layer": null,
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 18,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A08-submission-001.json",
+          "sha256": "9a9e16bcd8aa306b366294d6c6c56a876a3e7ed15c4f8c4cb5aff6a1fe6ef5b8"
+        },
+        {
+          "file": "eval/human-review/adjudications/A08-adjudication-001.json",
+          "sha256": "dd1155b72008f963a23fc1b6337d2f2fd2133c4e22d89deba4cc32876f547f3d"
+        }
+      ]
+    },
+    {
+      "case_id": "A09",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1-repair1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 0,
+        "D3": 1,
+        "D4": 0
+      },
+      "judge_checkpoints": [
+        1,
+        1,
+        0
+      ],
+      "judge_case_pass": false,
+      "judge_critical_failure": false,
+      "primary_failure_layer": "L3",
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 13,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A09-submission-001.json",
+          "sha256": "1bda5c3f32db8a24ca910c3c486b46e2049bb08cf65261f02be9ef8d6211c380"
+        },
+        {
+          "file": "eval/human-review/adjudications/A09-adjudication-001.json",
+          "sha256": "b1b10c5b578a872ff068368e273b6be989e420ca42335d167b41ccfe0421c664"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Six selected calibration cases, not the full 36-case set or a fixed-version benchmark.",
+    "Judge uses the same configured model as the travel agent; not independent model validation.",
+    "Human adjudications followed assistant feedback; not strict blind labels. Original and adjudicated comparisons are separate.",
+    "Only B07 and A09 have current human critical labels; unknown flags are excluded, not treated as false.",
+    "A09 is only one confirmed critical positive; no claim of general safety detection reliability.",
+    "Most failure-layer labels are assistant analyses, not human labels. Human layer agreement has a small denominator.",
+    "Manual form mapping and controlled events do not prove arbitrary natural-language input parsing.",
+    "Exact quote validation checks provenance, not semantic grading correctness.",
+    "Invalid first attempts are preserved. Retry1 only repeats invalid cases with thinking disabled; valid first results are reused and actual parameters remain per-case.",
+    "Repair1 corrects invalid evidence refs/quotes only. All non-evidence judgment fields must remain unchanged; repaired outputs are marked and require semantic review."
+  ]
+}

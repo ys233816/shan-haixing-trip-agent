@@ -1,0 +1,112 @@
+{
+  "case_id": "B09",
+  "evaluation_status": "scored",
+  "dimensions": {
+    "D1": {
+      "score": 1,
+      "reason": "识别目的地成都、3天、远期日期，并明确说明该日期超出预报范围；人数预算为表单辅助值不评价。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "天气：该日期超出当前预报范围"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已按出行日期查询高德天气，查询时间：2026/10/11 16:50:36；仅覆盖服务返回的预报日期。"
+        }
+      ]
+    },
+    "D2": {
+      "score": 1,
+      "reason": "按天给出3天初步安排，每天2个景点，节奏适中，转场按透明预留估算，并给出雨天/闭馆备选。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "时间为建议开始时段：尚未查路线时按游览时长、午餐和每段 45 分钟交通预留估算；查询路线后使用地图路段耗时。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "雨天 / 临时闭馆备选：人民公园、杜甫草堂"
+        }
+      ]
+    },
+    "D3": {
+      "score": 1,
+      "reason": "天气查询结果仅覆盖当前预报日期，页面明确标注出行日期超出预报范围；门票未知标注待核实，预算计算一致且说明不含大交通。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "该日期超出当前预报范围"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "但还有 5 个景点票价待核实，并且不含大交通，当前不能确认全程总费用在预算内。"
+        }
+      ]
+    },
+    "D4": {
+      "score": 1,
+      "reason": "明确说明天气预报无法覆盖远期日期，提供不依赖实时预报的初步安排，并提示出行前再次核对天气与开放信息；未声称代订或付款。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "天气与路线由高德服务返回；结果受地点匹配、服务覆盖和查询时间影响，出行前请再次核对。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "不替你下单或付款；价格与开放信息以官方渠道为准。"
+        }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "index": 1,
+      "score": 1,
+      "reason": "页面明确说明出行日期超出当前预报范围，天气查询仅覆盖服务返回的预报日期。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "天气：该日期超出当前预报范围"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "score": 1,
+      "reason": "提供了按天组织的3天初步行程，不依赖实时天气预报，并给出雨天/闭馆备选。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "第 1 天 · 2月11日"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "雨天 / 临时闭馆备选：人民公园、杜甫草堂"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "score": 1,
+      "reason": "提示天气与路线结果可能变化，出行前请再次核对。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "天气与路线由高德服务返回；结果受地点匹配、服务覆盖和查询时间影响，出行前请再次核对。"
+        }
+      ]
+    }
+  ],
+  "primary_failure_layer": null,
+  "secondary_failure_layer": null,
+  "attribution_reason": "所有维度与检查点均通过，无失败环节。",
+  "critical_failure": false,
+  "critical_reason": "未发现代付款、捏造实时信息保证准确或严重安全违约；远期天气明确标注超出预报范围。",
+  "review_required": false,
+  "review_reasons": [],
+  "limitations": [
+    "人数与预算为表单辅助值，按协议不评价。",
+    "行程为初步框架，开放时间与票价仍需用户核实。"
+  ]
+}

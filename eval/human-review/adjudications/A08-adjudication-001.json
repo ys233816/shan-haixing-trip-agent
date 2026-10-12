@@ -1,0 +1,50 @@
+{
+  "case_id": "A08",
+  "adjudication_id": "A08-adjudication-001",
+  "source_submission_id": "A08-submission-001",
+  "source_submission_file": "eval/human-review/submissions/A08-submission-001.json",
+  "source": "user_chat",
+  "recorded_date": "2026-10-12",
+  "reviewer": "本人",
+  "review_date": null,
+  "status": "adjudicated",
+  "adjudication_scope": ["D3", "D4"],
+  "raw_submission": "A08裁定：D3=0，D4=0",
+  "evidence_packet": "eval/human-review/A08-evidence.md",
+  "judge_input_sha256": "47d809191e86ededc110bfc7148df3f8cbd4c511b163820d9d7857a5090c3c6e",
+  "changes": [
+    { "item": "D3", "previous_score": 1, "score": 0 },
+    { "item": "D4", "previous_score": 1, "score": 0 }
+  ],
+  "dimensions": {
+    "D1": { "score": 1, "score_source": "A08-submission-001", "evidence": "" },
+    "D2": { "score": 1, "score_source": "A08-submission-001", "evidence": "" },
+    "D3": { "score": 0, "score_source": "user_adjudication", "evidence": "" },
+    "D4": { "score": 0, "score_source": "user_adjudication", "evidence": "" }
+  },
+  "checkpoints": [
+    { "index": 1, "score": 1, "score_source": "A08-submission-001", "evidence": "" },
+    { "index": 2, "score": 1, "score_source": "A08-submission-001", "evidence": "" },
+    { "index": 3, "score": 1, "score_source": "A08-submission-001", "evidence": "" }
+  ],
+  "primary_failure_layer": null,
+  "critical_failure": { "value": null, "evidence": "", "source_submission_id": "A08-submission-001" },
+  "case_pass": false,
+  "case_pass_source": "locally_derived_from_dimensions_and_checkpoints",
+  "review_notes": {
+    "author": "assistant",
+    "review_mode": "user_adjudication_after_assistant_feedback",
+    "assistant_analysis": "eval/human-review/submissions/A08-assistant-evidence-001.json",
+    "strict_blind_review": false,
+    "completion_counted": true,
+    "agreement_eligible": true,
+    "agreement_scope": "与相同保存输出的机评分别比较原始人工分和裁定分；不把裁定后的指标称为首次一致率。",
+    "user_written_reasons_provided": false,
+    "unchanged_scores_inherited": ["D1", "D2", "checkpoint_1", "checkpoint_2", "checkpoint_3"],
+    "unprovided_user_labels": ["主要故障层", "关键失败标记"],
+    "rules_changed": false,
+    "agent_rerun": false,
+    "judge_invoked": false,
+    "missing_items": ["用户实际复核日期"]
+  }
+}

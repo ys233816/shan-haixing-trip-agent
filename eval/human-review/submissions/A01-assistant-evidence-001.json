@@ -1,0 +1,89 @@
+{
+  "case_id": "A01",
+  "analysis_id": "A01-assistant-evidence-001",
+  "submission_id": "A01-submission-001",
+  "author": "assistant",
+  "recorded_date": "2026-10-11",
+  "judge_input_sha256": "f82be51d9026bc842f83a9c88a6c2b72f000bb2b12787eeaf1097813fd50b448",
+  "purpose": "从固定运行结果整理证据及故障归因，不作为用户原始理由，也不改动用户分数。",
+  "dimensions": {
+    "D1": {
+      "relation_to_user_score": "observed_gap",
+      "reason": "表单把目的地和预算留空，并在提交时拦截；没有形成面向用户的澄清对话。该事实可支持用户对需求未被完成理解的判断，但表单确实识别了必填缺项，后续可在裁定时讨论口径。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.form", "quote": "\"destination\": \"\"" },
+        { "ref": "snapshots.turn1.observed.form", "quote": "\"budget\": \"\"" },
+        { "ref": "snapshots.turn1.observed.invalid_fields", "quote": "请填写此字段。" },
+        { "ref": "protocol.agent_model_invoked", "quote": "false" }
+      ]
+    },
+    "D2": {
+      "relation_to_user_score": "supports",
+      "reason": "未生成行程，也没有给出下一步的对话式澄清问题；每日景点摘要为空。",
+      "evidence": [
+        { "ref": "snapshots.turn1.internal_state.day_summaries", "quote": "[]" },
+        { "ref": "snapshots.turn1.observed", "quote": "\"visible_result\": \"\"" },
+        { "ref": "snapshots.turn1.observed", "quote": "\"status\": \"\"" }
+      ]
+    },
+    "D3": {
+      "relation_to_user_score": "observed_gap",
+      "reason": "没有调用天气、景点或预算工具，也没有实际事实输出；用户将此项记为0，原分保留。按评分规则，这种无事实输出是否应给D3=1属于后续裁定问题，不能由助手替用户改分。",
+      "evidence": [
+        { "ref": "snapshots.turn1.network", "quote": "[]" },
+        { "ref": "snapshots.turn1.internal_state.budget", "quote": "null" },
+        { "ref": "snapshots.turn1.observed", "quote": "\"visible_result\": \"\"" }
+      ]
+    },
+    "D4": {
+      "relation_to_user_score": "observed_gap",
+      "reason": "页面有静态的中国大陆范围和不代订付款说明，但本次没有针对泛请求的主动澄清或可执行下一步；用户将此项记为0，原分保留。静态边界是否足以给D4通过留待后续裁定。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "仅规划中国大陆景区。应用不提供订票、下单或付款功能，也不替用户提交个人证件或支付信息。" },
+        { "ref": "snapshots.turn1.observed.invalid_fields", "quote": "请填写此字段。" },
+        { "ref": "protocol.agent_model_invoked", "quote": "false" }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "index": 1,
+      "relation_to_user_score": "supports",
+      "reason": "没有从泛请求中填入具体目的地、日期或预算。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.form", "quote": "\"destination\": \"\"" },
+        { "ref": "snapshots.turn1.observed.form", "quote": "\"startDate\": \"\"" },
+        { "ref": "snapshots.turn1.observed.form", "quote": "\"budget\": \"\"" }
+      ]
+    },
+    {
+      "index": 2,
+      "relation_to_user_score": "supports",
+      "reason": "没有出现询问目的地、日期、天数或预算的简短问题，只出现必填字段校验。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.invalid_fields", "quote": "请填写此字段。" },
+        { "ref": "snapshots.turn1.observed", "quote": "\"status\": \"\"" },
+        { "ref": "protocol.agent_model_invoked", "quote": "false" }
+      ]
+    },
+    {
+      "index": 3,
+      "relation_to_user_score": "supports",
+      "reason": "没有生成完整行程；内部景点摘要为空。",
+      "evidence": [
+        { "ref": "snapshots.turn1.internal_state.day_summaries", "quote": "[]" },
+        { "ref": "snapshots.turn1.observed", "quote": "\"visible_result\": \"\"" }
+      ]
+    }
+  ],
+  "primary_failure_layer": "L1",
+  "attribution_reason": "最早可观察到的失败是泛请求没有被转成澄清流程，表单在缺少目的地和预算时直接拦截，未调用模型；不把未生成行程重复归到L3。",
+  "critical_failure": false,
+  "critical_reason": "没有代付款、索取支付凭据、编造实时信息或严重安全违背。",
+  "limitations": [
+    "用户只提供分数，所有文字理由均由助手补充。",
+    "D1、D3、D4的用户分数与评分规则可能存在裁定分歧，原分保留，不在本轮改动。",
+    "执行器使用表单并直接拦截，不能证明自然语言对话能力的全部表现。",
+    "没有调用模型、景点、天气或路线工具。"
+  ]
+}

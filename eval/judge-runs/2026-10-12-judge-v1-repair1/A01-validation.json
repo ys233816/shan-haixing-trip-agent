@@ -1,0 +1,24 @@
+{
+  "valid": false,
+  "schema_valid": true,
+  "quote_count": 14,
+  "errors": [
+    {
+      "kind": "evidence_ref",
+      "item": "D2",
+      "ref": "snapshots.turn1.observed.internal_state"
+    },
+    {
+      "kind": "evidence_quote",
+      "item": "checkpoint_1",
+      "ref": "snapshots.turn1.observed.form",
+      "quote": "\"destination\":\"\",\"startDate\":\"\",\"budget\":\"\""
+    },
+    {
+      "kind": "evidence_ref",
+      "item": "checkpoint_3",
+      "ref": "snapshots.turn1.observed.internal_state"
+    }
+  ],
+  "non_evidence_fields_preserved": true
+}

@@ -1,0 +1,27 @@
+{
+  "valid": false,
+  "schema_valid": false,
+  "quote_count": 0,
+  "errors": [
+    {
+      "kind": "schema",
+      "path": "/dimensions/D2/evidence/0/quote",
+      "message": "must NOT have fewer than 1 characters"
+    },
+    {
+      "kind": "schema",
+      "path": "/dimensions/D3/evidence/0/quote",
+      "message": "must NOT have fewer than 1 characters"
+    },
+    {
+      "kind": "schema",
+      "path": "/checkpoints/1/evidence/1/quote",
+      "message": "must NOT have fewer than 1 characters"
+    },
+    {
+      "kind": "schema",
+      "path": "/checkpoints/2/evidence/0/quote",
+      "message": "must NOT have fewer than 1 characters"
+    }
+  ]
+}

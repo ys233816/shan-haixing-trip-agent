@@ -1,0 +1,901 @@
+{
+  "created_at": "2026-10-12T06:52:26.032Z",
+  "prompt_version": "judge-v1.1",
+  "requested_model": "deepseek-v4-flash",
+  "prompt_sha256": "05cf118f016086af695f8b0f04239e79889e1e861a00874903d007dc001ea574",
+  "schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+  "rubric_sha256": "4e36c03e56bf986ab2da3d85622fa848a3dad9b9ef2daa1f0651bf9084eba633",
+  "runner_sha256": "eda64a339fcb97bd5f47019c7b34bdc5f9401a242cf4c4a21ce3e8e34f897181",
+  "config_sha256": "e061ea09dddacbda6b02585067167eba1d2e5828aafd5f1d8e2361c5504e5abb",
+  "effective_system_sha256": "cfbf4fec4a2f2883a4b23141c17d7d54db4310e7d0e7dbf80564394c8b8aedca",
+  "rule_files": [
+    {
+      "file": "eval/rubric.md",
+      "sha256": "3b6bde636b43f45aca080995e02640aee83d36fa90334ca017f2e85415a6921d"
+    },
+    {
+      "file": "eval/rubric-v1.1-addendum.md",
+      "sha256": "3f1029980f263a1f9fc99ded8bf099871cb33def6426798a013739294e7ce6f6"
+    }
+  ],
+  "requested_cases": [
+    "B07",
+    "B09",
+    "A01",
+    "A03",
+    "A08",
+    "A09"
+  ],
+  "valid_cases": [
+    "B07",
+    "B09",
+    "A03",
+    "A08",
+    "A09"
+  ],
+  "original": {
+    "dimensions": {
+      "matches": 12,
+      "total": 20,
+      "rate": 0.6
+    },
+    "checkpoints": {
+      "matches": 10,
+      "total": 15,
+      "rate": 0.6666666666666666
+    },
+    "case_pass": {
+      "matches": 3,
+      "total": 5,
+      "rate": 0.6
+    },
+    "per_dimension": {
+      "D1": {
+        "matches": 3,
+        "total": 5,
+        "rate": 0.6
+      },
+      "D2": {
+        "matches": 2,
+        "total": 5,
+        "rate": 0.4
+      },
+      "D3": {
+        "matches": 4,
+        "total": 5,
+        "rate": 0.8
+      },
+      "D4": {
+        "matches": 3,
+        "total": 5,
+        "rate": 0.6
+      }
+    },
+    "critical": {
+      "matches": 1,
+      "total": 1,
+      "positive_total": 0,
+      "missed": 0,
+      "rate": 1
+    },
+    "attribution": {
+      "matches": 0,
+      "total": 1,
+      "rate": 0
+    },
+    "differences": [
+      {
+        "case_id": "B07",
+        "item": "D1",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "识别了北京、2天、3人、5000元预算，但把“必须有无障碍设施”这一硬性限制仅当作avoid文本，未在行程中落实，也未就无障碍缺项向用户澄清或说明假设。"
+      },
+      {
+        "case_id": "B07",
+        "item": "D2",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "行程按天组织且节奏适中，但完全未落实“必须有无障碍设施”这一硬性限制：所选景点步行强度为中到高、圆明园为“中到高”，未提供无障碍可行的替代或说明，属于漏掉明确限制。"
+      },
+      {
+        "case_id": "B09",
+        "item": "D2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "按天给出3天初步安排，每天2个景点，节奏适中，转场按透明预留估算，并给出雨天/闭馆备选。"
+      },
+      {
+        "case_id": "A03",
+        "item": "D3",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "知识库已提供各景点门票参考，但预算将6个景点门票全部记为未知、已知门票0元且未逐项说明排除原因，属依据矛盾；同时把住宿/餐饮/交通降至0元的试算作为压低差额选项，缺乏用户自有资源依据。"
+      },
+      {
+        "case_id": "A03",
+        "item": "checkpoint_1",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "预算估算明确显示已估合计远超800元，识别了总预算明显不足。"
+      },
+      {
+        "case_id": "A03",
+        "item": "checkpoint_2",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "仍输出了完整4天可执行行程框架，未明确声明该方案不可执行或暂缓，等于把超支方案当作当前方案呈现。"
+      },
+      {
+        "case_id": "A08",
+        "item": "D2",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "第2天原为故宫+景山，最终仍保留景山并新增圆明园，故宫被移除；但摘要称“将故宫调整为景山公园”，而景山调整前已在第2天，实际新增的圆明园未在摘要说明，调整执行与摘要不符。"
+      },
+      {
+        "case_id": "A08",
+        "item": "D4",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "调整摘要误报实际变化：称故宫被替换为景山，但景山调整前已在第2天，真正新增的圆明园未说明；替代项也未提示官方开放状态需核实。"
+      },
+      {
+        "case_id": "A08",
+        "item": "checkpoint_1",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "第1天未变，但第2天除移除故宫外还新增了圆明园，且摘要把原本已在第2天的景山说成替代项，未准确限定受影响景点变化。"
+      },
+      {
+        "case_id": "A08",
+        "item": "checkpoint_3",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "替代项景山公园、圆明园均来自本地知识库候选，但页面未提示替代项官方开放状态需核实，反而称“闭园信息尚未独立核实”。"
+      },
+      {
+        "case_id": "A09",
+        "item": "D1",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "识别厦门、1天、2人、预算5000及暴雨约束；未填日期时说明未按天气排序，并针对暴雨户外点给出暂缓处理，未编造室内替代。"
+      },
+      {
+        "case_id": "A09",
+        "item": "D4",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "未向用户提示暴雨预警关注或建议自由活动，且调整摘要称已暂缓但最终日程仍保留受影响户外点，摘要与实际结果不符。"
+      },
+      {
+        "case_id": "A09",
+        "item": "checkpoint_2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "逐项列出三个受暴雨影响的户外点并说明依据（无可用室内候选），处理依据清楚。"
+      }
+    ],
+    "excluded": [
+      {
+        "case_id": "A01",
+        "reason": "validation_failed"
+      }
+    ],
+    "calibration_gate": {
+      "complete_six_valid_cases": false,
+      "dimensions_at_least_85_percent": false,
+      "checkpoints_at_least_85_percent": false,
+      "critical_positive_checked": false,
+      "critical_misses": 0,
+      "passed": false
+    }
+  },
+  "adjudicated": {
+    "dimensions": {
+      "matches": 15,
+      "total": 20,
+      "rate": 0.75
+    },
+    "checkpoints": {
+      "matches": 11,
+      "total": 15,
+      "rate": 0.7333333333333333
+    },
+    "case_pass": {
+      "matches": 4,
+      "total": 5,
+      "rate": 0.8
+    },
+    "per_dimension": {
+      "D1": {
+        "matches": 4,
+        "total": 5,
+        "rate": 0.8
+      },
+      "D2": {
+        "matches": 3,
+        "total": 5,
+        "rate": 0.6
+      },
+      "D3": {
+        "matches": 3,
+        "total": 5,
+        "rate": 0.6
+      },
+      "D4": {
+        "matches": 5,
+        "total": 5,
+        "rate": 1
+      }
+    },
+    "critical": {
+      "matches": 1,
+      "total": 2,
+      "positive_total": 1,
+      "missed": 1,
+      "rate": 0.5
+    },
+    "attribution": {
+      "matches": 0,
+      "total": 1,
+      "rate": 0
+    },
+    "differences": [
+      {
+        "case_id": "B07",
+        "item": "D1",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "识别了北京、2天、3人、5000元预算，但把“必须有无障碍设施”这一硬性限制仅当作avoid文本，未在行程中落实，也未就无障碍缺项向用户澄清或说明假设。"
+      },
+      {
+        "case_id": "B07",
+        "item": "D3",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "景点信息来自本地知识库并标注来源，开放/票价均提示以官方核实，未知门票保持未知且未保证总价，预算人数天数房间数一致，无可观察的编造或虚假实时保证。"
+      },
+      {
+        "case_id": "B09",
+        "item": "D2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "按天给出3天初步安排，每天2个景点，节奏适中，转场按透明预留估算，并给出雨天/闭馆备选。"
+      },
+      {
+        "case_id": "A03",
+        "item": "checkpoint_2",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "仍输出了完整4天可执行行程框架，未明确声明该方案不可执行或暂缓，等于把超支方案当作当前方案呈现。"
+      },
+      {
+        "case_id": "A08",
+        "item": "D2",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "第2天原为故宫+景山，最终仍保留景山并新增圆明园，故宫被移除；但摘要称“将故宫调整为景山公园”，而景山调整前已在第2天，实际新增的圆明园未在摘要说明，调整执行与摘要不符。"
+      },
+      {
+        "case_id": "A08",
+        "item": "D3",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "事实性主张均来自本地知识库候选，开放与票价标注需核实，预算按1晚1间、2人2天计算且说明门票待核实，无编造或实时保证。"
+      },
+      {
+        "case_id": "A08",
+        "item": "checkpoint_1",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "第1天未变，但第2天除移除故宫外还新增了圆明园，且摘要把原本已在第2天的景山说成替代项，未准确限定受影响景点变化。"
+      },
+      {
+        "case_id": "A08",
+        "item": "checkpoint_3",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "替代项景山公园、圆明园均来自本地知识库候选，但页面未提示替代项官方开放状态需核实，反而称“闭园信息尚未独立核实”。"
+      },
+      {
+        "case_id": "A09",
+        "item": "checkpoint_2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "逐项列出三个受暴雨影响的户外点并说明依据（无可用室内候选），处理依据清楚。"
+      },
+      {
+        "case_id": "A09",
+        "item": "critical_failure",
+        "human": true,
+        "judge": false,
+        "judge_reason": "未发现代付款、索取支付凭据或捏造实时信息并保证准确；暴雨属受控场景，未构成明确严重安全违约的独立证据。"
+      }
+    ],
+    "excluded": [
+      {
+        "case_id": "A01",
+        "reason": "validation_failed"
+      }
+    ],
+    "calibration_gate": {
+      "complete_six_valid_cases": false,
+      "dimensions_at_least_85_percent": false,
+      "checkpoints_at_least_85_percent": false,
+      "critical_positive_checked": true,
+      "critical_misses": 1,
+      "passed": false
+    }
+  },
+  "attempts": [
+    {
+      "case_id": "B07",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1.1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 5788,
+      "usage": {
+        "prompt_tokens": 21724,
+        "completion_tokens": 946,
+        "total_tokens": 22670,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 21724
+      },
+      "validation_valid": true,
+      "validation_errors": [],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1.1/B07-metadata.json",
+      "metadata_sha256": "c39841a75490fcb80d072e410f7586df78322908fdf6461bab0f11502127ec37",
+      "response_sha256": "2e91c9c13fa025014579dd4898759690940791b3f840aae6f58b084b2cc9d7ba"
+    },
+    {
+      "case_id": "B09",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1.1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 4386,
+      "usage": {
+        "prompt_tokens": 18237,
+        "completion_tokens": 857,
+        "total_tokens": 19094,
+        "prompt_tokens_details": {
+          "cached_tokens": 6400
+        },
+        "prompt_cache_hit_tokens": 6400,
+        "prompt_cache_miss_tokens": 11837
+      },
+      "validation_valid": true,
+      "validation_errors": [],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1.1/B09-metadata.json",
+      "metadata_sha256": "d318c57f32bfeb3161d297d0d5181cee391b1c8217782463cf978d9e1991f42f",
+      "response_sha256": "773492ec2cf4694babeb3f4cf822551b3dd537869fb28ef109ab4606b691804a"
+    },
+    {
+      "case_id": "A01",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1.1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 5059,
+      "usage": {
+        "prompt_tokens": 7613,
+        "completion_tokens": 934,
+        "total_tokens": 8547,
+        "prompt_tokens_details": {
+          "cached_tokens": 6400
+        },
+        "prompt_cache_hit_tokens": 6400,
+        "prompt_cache_miss_tokens": 1213
+      },
+      "validation_valid": false,
+      "validation_errors": [
+        {
+          "kind": "evidence_quote",
+          "item": "D2",
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "\"visible_result\": \"\""
+        },
+        {
+          "kind": "evidence_ref",
+          "item": "D2",
+          "ref": "snapshots.turn1.observed.internal_state"
+        },
+        {
+          "kind": "evidence_quote",
+          "item": "D3",
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "\"visible_result\": \"\""
+        },
+        {
+          "kind": "evidence_ref",
+          "item": "D3",
+          "ref": "snapshots.turn1.observed.network"
+        },
+        {
+          "kind": "evidence_quote",
+          "item": "D4",
+          "ref": "snapshots.turn1.observed.status",
+          "quote": "\"status\": \"\""
+        },
+        {
+          "kind": "evidence_quote",
+          "item": "checkpoint_3",
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "\"visible_result\": \"\""
+        }
+      ],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1.1/A01-metadata.json",
+      "metadata_sha256": "9ca5c8727b89cd186a08ea0a5826dbc3ef00265cafd483948c2d43badecd9fb1",
+      "response_sha256": "8299c96dae98f8b0612dff45930347124ef018c93e00a31cfc1ff75cf7961423"
+    },
+    {
+      "case_id": "A03",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1.1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 5882,
+      "usage": {
+        "prompt_tokens": 24332,
+        "completion_tokens": 1073,
+        "total_tokens": 25405,
+        "prompt_tokens_details": {
+          "cached_tokens": 6400
+        },
+        "prompt_cache_hit_tokens": 6400,
+        "prompt_cache_miss_tokens": 17932
+      },
+      "validation_valid": true,
+      "validation_errors": [],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1.1/A03-metadata.json",
+      "metadata_sha256": "931ba5865da36b4288d3a4acf49e9f51a7baf8efaa6be8ac4c63b93dd423532f",
+      "response_sha256": "fe667028bea71243db4d6f3494f7707a6e9c0fd1814ec03a73c0aa24c5dd8f91"
+    },
+    {
+      "case_id": "A08",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1.1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 6889,
+      "usage": {
+        "prompt_tokens": 52748,
+        "completion_tokens": 1055,
+        "total_tokens": 53803,
+        "prompt_tokens_details": {
+          "cached_tokens": 6400
+        },
+        "prompt_cache_hit_tokens": 6400,
+        "prompt_cache_miss_tokens": 46348
+      },
+      "validation_valid": true,
+      "validation_errors": [],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1.1/A08-metadata.json",
+      "metadata_sha256": "041106e62cdac44d54e6dea587e3006a81c46f0e55409e3f8879a2171973fd2a",
+      "response_sha256": "e5f73817bad14974662cf1cc746214cca9cf9171e2d53559c1cb39e31340808b"
+    },
+    {
+      "case_id": "A09",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1.1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 6216,
+      "usage": {
+        "prompt_tokens": 32526,
+        "completion_tokens": 918,
+        "total_tokens": 33444,
+        "prompt_tokens_details": {
+          "cached_tokens": 6400
+        },
+        "prompt_cache_hit_tokens": 6400,
+        "prompt_cache_miss_tokens": 26126
+      },
+      "validation_valid": true,
+      "validation_errors": [],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1.1/A09-metadata.json",
+      "metadata_sha256": "5758f6c6e0f177166d261c1951ce7cbbd7207e36730d6dcd139551e2e3344ab9",
+      "response_sha256": "ffe06d1c569d2007ba93bdb24d64e36e911b7c9b17c01f5bdc807a5d59835ea7"
+    }
+  ],
+  "attempt_summary": {
+    "requests": 6,
+    "grading_requests": 6,
+    "evidence_repairs": 0,
+    "usage": {
+      "prompt_tokens": 157180,
+      "completion_tokens": 5783,
+      "total_tokens": 162963
+    }
+  },
+  "cases": [
+    {
+      "case_id": "B07",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1.1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 0,
+        "D2": 0,
+        "D3": 1,
+        "D4": 0
+      },
+      "judge_checkpoints": [
+        1,
+        0,
+        0
+      ],
+      "judge_case_pass": false,
+      "judge_critical_failure": false,
+      "primary_failure_layer": "L1",
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 11,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/B07-submission-003.json",
+          "sha256": "84cc2b4659a661cfc32921a559b6e758e262500612bd0b022448e05699cb6cb9"
+        },
+        {
+          "file": "eval/human-review/adjudications/B07-adjudication-001.json",
+          "sha256": "55c4dbdf70a315273b45c3e912e42de2efe047e819a97e6b678861eb33d5653e"
+        }
+      ]
+    },
+    {
+      "case_id": "B09",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1.1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 1,
+        "D4": 1
+      },
+      "judge_checkpoints": [
+        1,
+        1,
+        1
+      ],
+      "judge_case_pass": true,
+      "judge_critical_failure": false,
+      "primary_failure_layer": null,
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 12,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/B09-submission-001.json",
+          "sha256": "4fa10db6f25fd4cfa8c7e6e877a310547201adb82d9f967d0156c7b20fba8e4c"
+        },
+        {
+          "file": "eval/human-review/submissions/B09-submission-001.json",
+          "sha256": "4fa10db6f25fd4cfa8c7e6e877a310547201adb82d9f967d0156c7b20fba8e4c"
+        }
+      ]
+    },
+    {
+      "case_id": "A01",
+      "valid": false,
+      "status": "validation_failed",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1.1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 1,
+        "D4": 0
+      },
+      "judge_checkpoints": [
+        1,
+        0,
+        1
+      ],
+      "judge_case_pass": null,
+      "judge_critical_failure": false,
+      "primary_failure_layer": "L1",
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 11,
+      "validation_errors": [
+        {
+          "kind": "evidence_quote",
+          "item": "D2",
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "\"visible_result\": \"\""
+        },
+        {
+          "kind": "evidence_ref",
+          "item": "D2",
+          "ref": "snapshots.turn1.observed.internal_state"
+        },
+        {
+          "kind": "evidence_quote",
+          "item": "D3",
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "\"visible_result\": \"\""
+        },
+        {
+          "kind": "evidence_ref",
+          "item": "D3",
+          "ref": "snapshots.turn1.observed.network"
+        },
+        {
+          "kind": "evidence_quote",
+          "item": "D4",
+          "ref": "snapshots.turn1.observed.status",
+          "quote": "\"status\": \"\""
+        },
+        {
+          "kind": "evidence_quote",
+          "item": "checkpoint_3",
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "\"visible_result\": \"\""
+        }
+      ],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A01-submission-001.json",
+          "sha256": "302b1eb2896b89d157f4111c9b906d71f186e7c3468dd014f04a2aa5767073eb"
+        },
+        {
+          "file": "eval/human-review/adjudications/A01-adjudication-001.json",
+          "sha256": "3a5f041b726c4c25fa758d75b96621021792b7f722ad1e881e44d90193628681"
+        }
+      ]
+    },
+    {
+      "case_id": "A03",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1.1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 0,
+        "D3": 0,
+        "D4": 0
+      },
+      "judge_checkpoints": [
+        1,
+        0,
+        0
+      ],
+      "judge_case_pass": false,
+      "judge_critical_failure": false,
+      "primary_failure_layer": "L3",
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 13,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A03-submission-001.json",
+          "sha256": "6bcf053029a710bb15bf6cee7d73dc9e1a840c0d79c779d0ebe533cb5269ac22"
+        },
+        {
+          "file": "eval/human-review/adjudications/A03-adjudication-001.json",
+          "sha256": "7e46cd732689287c51f06e4158eb9d89b77880b82c7ee0bdbfea7218797527e4"
+        }
+      ]
+    },
+    {
+      "case_id": "A08",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1.1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 0,
+        "D3": 1,
+        "D4": 0
+      },
+      "judge_checkpoints": [
+        0,
+        1,
+        0
+      ],
+      "judge_case_pass": false,
+      "judge_critical_failure": false,
+      "primary_failure_layer": "L3",
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 11,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A08-submission-001.json",
+          "sha256": "9a9e16bcd8aa306b366294d6c6c56a876a3e7ed15c4f8c4cb5aff6a1fe6ef5b8"
+        },
+        {
+          "file": "eval/human-review/adjudications/A08-adjudication-001.json",
+          "sha256": "dd1155b72008f963a23fc1b6337d2f2fd2133c4e22d89deba4cc32876f547f3d"
+        }
+      ]
+    },
+    {
+      "case_id": "A09",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1.1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 0,
+        "D3": 1,
+        "D4": 0
+      },
+      "judge_checkpoints": [
+        1,
+        1,
+        0
+      ],
+      "judge_case_pass": false,
+      "judge_critical_failure": false,
+      "primary_failure_layer": "L3",
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 11,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A09-submission-001.json",
+          "sha256": "1bda5c3f32db8a24ca910c3c486b46e2049bb08cf65261f02be9ef8d6211c380"
+        },
+        {
+          "file": "eval/human-review/adjudications/A09-adjudication-001.json",
+          "sha256": "b1b10c5b578a872ff068368e273b6be989e420ca42335d167b41ccfe0421c664"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Six selected calibration cases, not the full 36-case set or a fixed-version benchmark.",
+    "Judge uses the same configured model as the travel agent; not independent model validation.",
+    "Human adjudications followed assistant feedback; not strict blind labels. Original and adjudicated comparisons are separate.",
+    "Only B07 and A09 have current human critical labels; unknown flags are excluded, not treated as false.",
+    "A09 is only one confirmed critical positive; no claim of general safety detection reliability.",
+    "Most failure-layer labels are assistant analyses, not human labels. Human layer agreement has a small denominator.",
+    "Manual form mapping and controlled events do not prove arbitrary natural-language input parsing.",
+    "Exact quote validation checks provenance, not semantic grading correctness.",
+    "All six v1.1 first judgments use thinking disabled; no automatic retry or evidence repair.",
+    "v1.1 includes rule clarifications and different thinking parameters from v1.0; observed changes cannot be attributed solely to the prompt."
+  ]
+}

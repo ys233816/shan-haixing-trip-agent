@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-12",
+  "api_calls": 0,
+  "tests": {"command": "node --test eval/judge-validation.test.cjs", "passed": 9, "failed": 0},
+  "existing_files_sha256_verified": 278,
+  "existing_files_changed": 0,
+  "prepared_inputs_sha256_match_source_manifest": true,
+  "catalog_excerpts_verified_against_original_input": true,
+  "id_mapping_preserves_non_evidence_judgment_fields": true,
+  "original_scores_and_critical_flags_unchanged": true,
+  "limitation": "Offline engineering verification only; no new judge accuracy or Agent performance measured."
+}

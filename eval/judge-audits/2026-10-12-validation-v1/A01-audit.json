@@ -1,0 +1,55 @@
+{
+  "case_id": "A01",
+  "source_judgment": "eval/judge-runs/2026-10-12-judge-v1.1/A01-judge.json",
+  "source_judgment_sha256": "4888bf9a7ec30e9517edc07824146467253c90b807a704b0bdc1fd323e780833",
+  "source_input_sha256": "f82be51d9026bc842f83a9c88a6c2b72f000bb2b12787eeaf1097813fd50b448",
+  "hard_valid": false,
+  "schema_valid": true,
+  "hard_errors": [
+    {
+      "code": "EVIDENCE_PROVENANCE",
+      "item": "D2",
+      "ref": "snapshots.turn1.observed.visible_result"
+    },
+    {
+      "code": "EVIDENCE_PROVENANCE",
+      "item": "D2",
+      "ref": "snapshots.turn1.observed.internal_state"
+    },
+    {
+      "code": "EVIDENCE_PROVENANCE",
+      "item": "D3",
+      "ref": "snapshots.turn1.observed.visible_result"
+    },
+    {
+      "code": "EVIDENCE_PROVENANCE",
+      "item": "D3",
+      "ref": "snapshots.turn1.observed.network"
+    },
+    {
+      "code": "EVIDENCE_PROVENANCE",
+      "item": "D4",
+      "ref": "snapshots.turn1.observed.status"
+    },
+    {
+      "code": "EVIDENCE_PROVENANCE",
+      "item": "checkpoint_3",
+      "ref": "snapshots.turn1.observed.visible_result"
+    }
+  ],
+  "review_signals": [
+    {
+      "code": "PASS_REASON_NEEDS_REVIEW",
+      "items": [
+        "D2"
+      ],
+      "reason": "Passing score reason says required next-step conditions are incomplete.",
+      "source_refs": [],
+      "action": "human_review_only"
+    }
+  ],
+  "model_review_required": false,
+  "effective_review_required": true,
+  "auto_accept": false,
+  "policy": "No score, reason, critical flag or original evidence is modified. Review signals do not establish failures."
+}

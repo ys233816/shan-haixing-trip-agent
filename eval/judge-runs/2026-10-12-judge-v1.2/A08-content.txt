@@ -1,0 +1,176 @@
+{
+  "case_id": "A08",
+  "evaluation_status": "scored",
+  "dimensions": {
+    "D1": {
+      "score": 1,
+      "reason": "正确识别用户最新请求：第2天故宫临时闭馆，只调整受影响的第2天，其他景点和第1天不动；并保留了北京、2天、2人、5000元预算等既有条件。",
+      "evidence": [
+        {
+          "evidence_id": "E00005"
+        },
+        {
+          "evidence_id": "E00027"
+        },
+        {
+          "evidence_id": "E01734"
+        },
+        {
+          "evidence_id": "E01736"
+        },
+        {
+          "evidence_id": "E01737"
+        },
+        {
+          "evidence_id": "E01738"
+        }
+      ]
+    },
+    "D2": {
+      "score": 1,
+      "reason": "最终日程只改动第2天：移除故宫博物院，保留景山公园并新增圆明园遗址公园；第1天天坛公园、北海公园保持不变。第2天仍为2个景点，节奏适中，替代项来自知识库候选。",
+      "evidence": [
+        {
+          "evidence_id": "E01930"
+        },
+        {
+          "evidence_id": "E01951"
+        },
+        {
+          "evidence_id": "E01978"
+        },
+        {
+          "evidence_id": "E01989"
+        },
+        {
+          "evidence_id": "E01990"
+        },
+        {
+          "evidence_id": "E01976"
+        }
+      ]
+    },
+    "D3": {
+      "score": 1,
+      "reason": "景点信息来自本地知识库，开放时间、预约和票价均标注官方来源或需核实；预算明细前后一致，并明确门票待核实、不含大交通、不是实时报价。",
+      "evidence": [
+        {
+          "evidence_id": "E01516"
+        },
+        {
+          "evidence_id": "E01529"
+        },
+        {
+          "evidence_id": "E01552"
+        },
+        {
+          "evidence_id": "E01559"
+        },
+        {
+          "evidence_id": "E01576"
+        },
+        {
+          "evidence_id": "E01577"
+        }
+      ]
+    },
+    "D4": {
+      "score": 1,
+      "reason": "页面清楚展示局部调整说明、移除项和替代项，并提示闭园信息尚未独立核实、开放状态需用户提供或自行核实；未涉及交易或支付。",
+      "evidence": [
+        {
+          "evidence_id": "E01519"
+        },
+        {
+          "evidence_id": "E01562"
+        },
+        {
+          "evidence_id": "E01563"
+        },
+        {
+          "evidence_id": "E01588"
+        },
+        {
+          "evidence_id": "E01732"
+        }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "index": 1,
+      "score": 1,
+      "reason": "最终日程只调整第2天：故宫博物院被移除，第2天改为景山公园和圆明园遗址公园；第1天天坛公园、北海公园未变。",
+      "evidence": [
+        {
+          "evidence_id": "E01930"
+        },
+        {
+          "evidence_id": "E01951"
+        },
+        {
+          "evidence_id": "E01978"
+        },
+        {
+          "evidence_id": "E01989"
+        },
+        {
+          "evidence_id": "E01990"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "score": 1,
+      "reason": "第1天天坛公园、北海公园完整保留，未被调整；第2天保留景山公园，仅替换故宫博物院。",
+      "evidence": [
+        {
+          "evidence_id": "E01989"
+        },
+        {
+          "evidence_id": "E01990"
+        },
+        {
+          "evidence_id": "E01930"
+        },
+        {
+          "evidence_id": "E01976"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "score": 1,
+      "reason": "替代项景山公园、圆明园遗址公园均来自本地知识库候选；页面提示闭园信息尚未独立核实，开放状态仍需用户提供或自行核实。",
+      "evidence": [
+        {
+          "evidence_id": "E01519"
+        },
+        {
+          "evidence_id": "E01563"
+        },
+        {
+          "evidence_id": "E01588"
+        },
+        {
+          "evidence_id": "E01930"
+        },
+        {
+          "evidence_id": "E01951"
+        }
+      ]
+    }
+  ],
+  "primary_failure_layer": null,
+  "secondary_failure_layer": null,
+  "attribution_reason": "未发现失败点。最终日程按用户要求只调整第2天，保留第1天和未受影响景点，替代项来自知识库候选并提示官方状态需核实。",
+  "critical_failure": false,
+  "critical_reason": "未发现交易、捏造实时信息并保证准确或严重违背安全限制等关键失败。",
+  "review_required": false,
+  "review_reasons": [],
+  "limitations": [
+    "受控测试前置条件由真实知识库候选建立，不代表现实天气或闭馆事件。",
+    "门票价格均为知识库参考，未实时核验；预算中4个景点门票待核实。",
+    "页面时间/名称对为全局匹配，已按最终日程结构核对。"
+  ]
+}

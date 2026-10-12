@@ -1,0 +1,272 @@
+{
+  "runAt": "2026-10-12T09:05:36.339Z",
+  "method": "历史结构化状态重放+两个受控场景；桌面/手机各一次，未重新调用真实规划模型或地图",
+  "versions": [
+    {
+      "version": "before",
+      "sha256": "2a3d5207eef027ff76bb00b172891fadc3f7b2113bb1ccc056ae5c09446f8d6e",
+      "total": 10,
+      "passed": 2
+    },
+    {
+      "version": "after",
+      "sha256": "c3e64826e0fc43c38e4a256f93097710205b0b7eb65da820ed11a97f4dd2b404",
+      "total": 10,
+      "passed": 10
+    }
+  ],
+  "records": [
+    {
+      "version": "before",
+      "id": "A11",
+      "viewport": "desktop",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "withinEightHours": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "A08-draft",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "withinEightHours": true
+      }
+    },
+    {
+      "version": "before",
+      "id": "B07",
+      "viewport": "desktop",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "singleStopBuffer": false,
+        "accessibilityVisible": false,
+        "accessibilityExported": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "night",
+      "viewport": "desktop",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "nightStartsAfter18": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "reported-rain",
+      "viewport": "desktop",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "onlyIndoor": false,
+        "userReportVisible": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "A11",
+      "viewport": "mobile",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "withinEightHours": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "A08-draft",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "withinEightHours": true
+      }
+    },
+    {
+      "version": "before",
+      "id": "B07",
+      "viewport": "mobile",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "singleStopBuffer": false,
+        "accessibilityVisible": false,
+        "accessibilityExported": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "night",
+      "viewport": "mobile",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "nightStartsAfter18": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "reported-rain",
+      "viewport": "mobile",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "onlyIndoor": false,
+        "userReportVisible": false
+      }
+    },
+    {
+      "version": "after",
+      "id": "A11",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "withinEightHours": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "A08-draft",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "withinEightHours": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "B07",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "singleStopBuffer": true,
+        "accessibilityVisible": true,
+        "accessibilityExported": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "night",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "nightStartsAfter18": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "reported-rain",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "onlyIndoor": true,
+        "userReportVisible": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "A11",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "withinEightHours": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "A08-draft",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "withinEightHours": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "B07",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "singleStopBuffer": true,
+        "accessibilityVisible": true,
+        "accessibilityExported": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "night",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "nightStartsAfter18": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "reported-rain",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "onlyIndoor": true,
+        "userReportVisible": true
+      }
+    }
+  ]
+}

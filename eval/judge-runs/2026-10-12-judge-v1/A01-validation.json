@@ -1,0 +1,19 @@
+{
+  "valid": false,
+  "schema_valid": true,
+  "quote_count": 15,
+  "errors": [
+    {
+      "kind": "evidence_quote",
+      "item": "D2",
+      "ref": "snapshots.turn1.observed.visible_result",
+      "quote": "\"visible_result\":\"\""
+    },
+    {
+      "kind": "evidence_quote",
+      "item": "checkpoint_3",
+      "ref": "snapshots.turn1.observed.visible_result",
+      "quote": "\"visible_result\":\"\""
+    }
+  ]
+}

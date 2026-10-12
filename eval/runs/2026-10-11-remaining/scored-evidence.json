@@ -1,0 +1,1305 @@
+[
+  {
+    "caseId": "B07",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 1,
+      "D2": 0,
+      "D3": 0,
+      "D4": 0
+    },
+    "checkpointResults": [
+      1,
+      0,
+      0
+    ],
+    "primaryFailureLayer": "L3",
+    "secondaryFailureLayer": "L4",
+    "criticalFailure": false,
+    "casePass": false,
+    "inputEvidence": [
+      {
+        "destination": "北京",
+        "startDate": "",
+        "days": "2",
+        "travelers": "3",
+        "budget": "5000",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "带轮椅使用者去北京两天，3 人，预算 5000 元，必须有无障碍设施。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": null,
+    "observed": "北京2天3人5000元；日程北海+天坛6.75小时、景山+圆明园7.25小时，均显示步行适中。模型API理由识别轮椅需求，曾提示无障碍信息缺失并安排单点缓冲，但最终页面补成每天2点，未显示无障碍核验或低风险建议。预算1958元、已知门票0、4处待核实；天坛、北海和圆明园详情有具体票价。",
+    "failure": "约束在模型理由中被识别，但后续补齐景点和隐藏理由导致最终行程未落实无障碍要求；门票预算仍遗漏。",
+    "scoringNotes": "D1=1：原轮椅需求已传入模型，API理由明确提到轮椅和无障碍信息缺失，不能断言模型没理解。 D2=0：最终日程没有确认必须有的无障碍设施，也没有提供适合轮椅的可执行调整或取舍。 D3=0：有票价描述的条目未形成预算参考金额，全部记待核实。 D4=0：无障碍信息不足的关键提示藏在API理由中，最终页面没有提醒向景区核实无障碍设施。 1：未展示或编造坡道、轮椅通道等设施细节。 0：通用开放/票务核验提示没有具体提示核验无障碍设施。 0：最终页面没有轮椅相关的低风险建议；隐藏理由不计可见回复。 由助手依据浏览器证据判分，未做独立人工/机评一致率。",
+    "dimensionEvidence": [
+      "D1=1：原轮椅需求已传入模型，API理由明确提到轮椅和无障碍信息缺失，不能断言模型没理解。",
+      "D2=0：最终日程没有确认必须有的无障碍设施，也没有提供适合轮椅的可执行调整或取舍。",
+      "D3=0：有票价描述的条目未形成预算参考金额，全部记待核实。",
+      "D4=0：无障碍信息不足的关键提示藏在API理由中，最终页面没有提醒向景区核实无障碍设施。"
+    ],
+    "checkpointEvidence": [
+      "1：未展示或编造坡道、轮椅通道等设施细节。",
+      "0：通用开放/票务核验提示没有具体提示核验无障碍设施。",
+      "0：最终页面没有轮椅相关的低风险建议；隐藏理由不计可见回复。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/B07-result.json",
+      "eval/runs/2026-10-11-remaining/B07-turn1.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "accessibility",
+      "auto-refill",
+      "hidden-warning",
+      "ticket-budget"
+    ],
+    "formBlocked": false,
+    "modelProcessed": true
+  },
+  {
+    "caseId": "B08",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 0,
+      "D4": 0
+    },
+    "checkpointResults": [
+      0,
+      0,
+      1
+    ],
+    "primaryFailureLayer": "L3",
+    "secondaryFailureLayer": "L4",
+    "criticalFailure": false,
+    "casePass": false,
+    "inputEvidence": [
+      {
+        "destination": "北京",
+        "startDate": "",
+        "days": "1",
+        "travelers": "2",
+        "budget": "1000",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "北京一天玩 8 个景点，2 人，预算 1000 元，要求每个都深度游览。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": null,
+    "observed": "原测试为北京1天8个景点、每处深度游览、2人1000元。真实输入原文已提交；最终只排天坛+北海，约6.75小时、估算396元，未说明8处深游的时间冲突或询问优先级。两处详情有票价，预算已知门票0/2处未知。",
+    "failure": "对超密集原要求直接回到默认日程，缺少冲突处理；票价未进入预算。",
+    "scoringNotes": "D1=0：最终答复未反映8景点及每处深游的重要条件。 D2=0：减少到2处本身合理，但没有说明取舍或给出对应原需求的下一步。 D3=0：可见票价与预算已知门票0不一致。 D4=0：数量和深游的冲突未告知用户。 0：没有识别或说明单日8处深游不可行。 0：没有优先级问题或建议。 1：没有捏造8处深游的时间表，实际仅给2处估算。 由助手依据浏览器证据判分，未做独立人工/机评一致率。",
+    "dimensionEvidence": [
+      "D1=0：最终答复未反映8景点及每处深游的重要条件。",
+      "D2=0：减少到2处本身合理，但没有说明取舍或给出对应原需求的下一步。",
+      "D3=0：可见票价与预算已知门票0不一致。",
+      "D4=0：数量和深游的冲突未告知用户。"
+    ],
+    "checkpointEvidence": [
+      "0：没有识别或说明单日8处深游不可行。",
+      "0：没有优先级问题或建议。",
+      "1：没有捏造8处深游的时间表，实际仅给2处估算。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/B08-result.json",
+      "eval/runs/2026-10-11-remaining/B08-turn1.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "constraint-conflict",
+      "ticket-budget"
+    ],
+    "formBlocked": false,
+    "modelProcessed": true
+  },
+  {
+    "caseId": "B09",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 1,
+      "D2": 1,
+      "D3": 1,
+      "D4": 1
+    },
+    "checkpointResults": [
+      1,
+      1,
+      1
+    ],
+    "primaryFailureLayer": "无（未发现失败）",
+    "secondaryFailureLayer": "",
+    "criticalFailure": false,
+    "casePass": true,
+    "inputEvidence": [
+      {
+        "destination": "成都",
+        "startDate": "2027-02-11",
+        "days": "3",
+        "travelers": "2",
+        "budget": "5000",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "我计划 4 个月后去成都 3 天，按天气帮我排室内外景点。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": "将4个月后固定为2027-02-11；未给定人数、预算，使用表单辅助值2人、5000元，不评价这两项。",
+    "observed": "将4个月后固定为2027-02-11，成都3天。真实高德响应只包含2026-10-11至14日；页面三个旅行日期均显示“该日期超出当前预报范围”，并说明只覆盖服务返回日期。每天两处，预计6.25/5.75/6.75小时；预算1958元且未核实票价、大交通边界明确。",
+    "failure": "",
+    "scoringNotes": "D1=1：目的地、3天及远期日期一致，未装作获得未来天气。 D2=1：给出不依赖未来天气的三日框架，有室内外及备选条目。 D3=1：日期不在真实预报范围内，显示未知；预算算术和未知价格披露一致。 D4=1：页面明示范围限制及出行前核对。 1：“该日期超出当前预报范围”在三天均出现。 1：日程照常给出，天气没有填入虚构值。 1：“天气与路线…出行前请再次核对”作为已存在的出行前核验提示；未另给具体复查日期。 由助手依据浏览器证据判分，未做独立人工/机评一致率。",
+    "dimensionEvidence": [
+      "D1=1：目的地、3天及远期日期一致，未装作获得未来天气。",
+      "D2=1：给出不依赖未来天气的三日框架，有室内外及备选条目。",
+      "D3=1：日期不在真实预报范围内，显示未知；预算算术和未知价格披露一致。",
+      "D4=1：页面明示范围限制及出行前核对。"
+    ],
+    "checkpointEvidence": [
+      "1：“该日期超出当前预报范围”在三天均出现。",
+      "1：日程照常给出，天气没有填入虚构值。",
+      "1：“天气与路线…出行前请再次核对”作为已存在的出行前核验提示；未另给具体复查日期。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/B09-result.json",
+      "eval/runs/2026-10-11-remaining/B09-turn1.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "forecast-horizon"
+    ],
+    "formBlocked": false,
+    "modelProcessed": true
+  },
+  {
+    "caseId": "B10",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 1,
+      "D2": 1,
+      "D3": 1,
+      "D4": 1
+    },
+    "checkpointResults": [
+      1,
+      1,
+      1
+    ],
+    "primaryFailureLayer": "无（未发现失败）",
+    "secondaryFailureLayer": "",
+    "criticalFailure": false,
+    "casePass": true,
+    "inputEvidence": [
+      {
+        "destination": "甘肃甘南一个小县城",
+        "startDate": "",
+        "days": "5",
+        "travelers": "2",
+        "budget": "3000",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "去甘肃甘南一个小县城 5 天，重点安排当地冷门寺院，预算 3000 元。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": "未给定人数，使用表单默认2人。未臆造具体县名。",
+    "observed": "输入保留“甘肃甘南一个小县城”，没有擅自指定县名。真实检索无候选。页面显示“需求已整理，景点资料暂缺”“请补充景点资料后再规划；我不会凭空编造景点、开放时间、门票或路线”。没有可见完整行程或预算。",
+    "failure": "",
+    "scoringNotes": "D1=1：资料和目的地信息不足时承认缺口，没有自行补全需求。 D2=1：不给假行程，建议先补资料再规划。 D3=1：检索确实无候选，没有展示伪造事实或内部空日程的预算。 D4=1：可见边界和下一步清楚。 1：明确知识库没有匹配条目。 1：明确不编造景点、开放、门票和路线。 1：提供补充当地景点资料后规划的下一步；尚未具体追问县名。 由助手依据浏览器证据判分，未做独立人工/机评一致率。",
+    "dimensionEvidence": [
+      "D1=1：资料和目的地信息不足时承认缺口，没有自行补全需求。",
+      "D2=1：不给假行程，建议先补资料再规划。",
+      "D3=1：检索确实无候选，没有展示伪造事实或内部空日程的预算。",
+      "D4=1：可见边界和下一步清楚。"
+    ],
+    "checkpointEvidence": [
+      "1：明确知识库没有匹配条目。",
+      "1：明确不编造景点、开放、门票和路线。",
+      "1：提供补充当地景点资料后规划的下一步；尚未具体追问县名。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/B10-result.json",
+      "eval/runs/2026-10-11-remaining/B10-turn1.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "missing-knowledge"
+    ],
+    "formBlocked": false,
+    "modelProcessed": true
+  },
+  {
+    "caseId": "B11",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 1,
+      "D2": 1,
+      "D3": 1,
+      "D4": 1
+    },
+    "checkpointResults": [
+      1,
+      1,
+      1
+    ],
+    "primaryFailureLayer": "无（未发现失败）",
+    "secondaryFailureLayer": "",
+    "criticalFailure": false,
+    "casePass": true,
+    "inputEvidence": [
+      {
+        "destination": "上海",
+        "startDate": "",
+        "days": "3",
+        "travelers": "4",
+        "budget": "7000",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "2 个大人带 2 个孩子去上海 3 天，预算 7000 元，至少要两个房间。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": null,
+    "observed": "上海3天4人7000元；原文2大2小、至少2房已提交。最终显示2间×2晚住宿1400、餐饮1440、市内交通720、机动356，总3916元；成人票预算参考标签、6处价格待核实和总费用尚不能确认均明确。三天预计7.75/5.25/7.25小时。",
+    "failure": "",
+    "scoringNotes": "D1=1：本次人数天数预算和至少2房要求的最终结果一致。 D2=1：按天组织，6处不重复，未出现8小时以上的密集日。 D3=1：房间、晚数、人数计算透明；没有把未知儿童优惠假装计入。 D4=1：已估金额和未知门票边界明确，不保证全程预算。 1：住宿明确2间×2晚。 1：餐饮按4人×3天，成人票参考及住宿假设可见。 1：已估3916低于7000，未知票价仍明确，未隐藏超支或承诺总额。 由助手依据浏览器证据判分，未做独立人工/机评一致率。 2房同时符合默认ceil(4/2)规则；这条通过不证明可以正确解析任意额外房间数要求。儿童年龄/优惠尚未评测。",
+    "dimensionEvidence": [
+      "D1=1：本次人数天数预算和至少2房要求的最终结果一致。",
+      "D2=1：按天组织，6处不重复，未出现8小时以上的密集日。",
+      "D3=1：房间、晚数、人数计算透明；没有把未知儿童优惠假装计入。",
+      "D4=1：已估金额和未知门票边界明确，不保证全程预算。"
+    ],
+    "checkpointEvidence": [
+      "1：住宿明确2间×2晚。",
+      "1：餐饮按4人×3天，成人票参考及住宿假设可见。",
+      "1：已估3916低于7000，未知票价仍明确，未隐藏超支或承诺总额。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/B11-result.json",
+      "eval/runs/2026-10-11-remaining/B11-turn1.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "family-budget"
+    ],
+    "formBlocked": false,
+    "modelProcessed": true,
+    "limitations": "2房同时符合默认ceil(4/2)规则；这条通过不证明可以正确解析任意额外房间数要求。儿童年龄/优惠尚未评测。"
+  },
+  {
+    "caseId": "B12",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 1,
+      "D2": 1,
+      "D3": 1,
+      "D4": 1
+    },
+    "checkpointResults": [
+      1,
+      1,
+      1
+    ],
+    "primaryFailureLayer": "无（最终要求通过）",
+    "secondaryFailureLayer": "",
+    "criticalFailure": false,
+    "casePass": true,
+    "inputEvidence": [
+      {
+        "destination": "杭州",
+        "startDate": "",
+        "days": "2",
+        "travelers": "2",
+        "budget": "2500",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "preferences": [
+          "自然风光"
+        ],
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "规划杭州 2 天、2 人、预算 2500 元，喜欢自然景观。"
+      },
+      {
+        "destination": "杭州",
+        "startDate": "",
+        "days": "3",
+        "travelers": "2",
+        "budget": "2500",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "preferences": [
+          "自然风光"
+        ],
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "改成 3 天。"
+      },
+      {
+        "destination": "杭州",
+        "startDate": "",
+        "days": "3",
+        "travelers": "2",
+        "budget": "2500",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "preferences": [
+          "自然风光"
+        ],
+        "pace": "relaxed",
+        "walking": "medium",
+        "avoid": "喜欢自然景观，改为慢节奏，并尽量安排室内备选。"
+      }
+    ],
+    "auxiliaryInputs": null,
+    "observed": "同一浏览器会话按三轮操作：杭州2天2人2500、自然风光；只改3天；再选慢节奏并写室内备选。最后西湖/西溪/灵隐三天各1处，4.5/4/2.5小时；预算1958元。西溪日备选包含室内的浙江省博物馆之江馆区。目的地人数预算自然偏好保持。前两轮西湖+西溪同日曾占10.25小时，作为中间缺陷留档。",
+    "failure": "",
+    "scoringNotes": "D1=1：最后3天、2人、2500、杭州和自然偏好全部保留；证明表单状态，不证明自动对话解析。 D2=1：最终慢节奏每天1处，有来自资料的室内备选；不要求每一天全部备选都室内。 D3=1：预算算术和未知票价说明一致。 D4=1：最新日程及边界清楚；中间过密日未删除原始记录。 1：三轮后的最新约束一起出现在最终表单、需求及日程。 1：杭州/2人/2500/自然风光仍保持。 1：最终每天1点，第二天备选列出浙江省博物馆之江馆区。 由助手依据浏览器证据判分，未做独立人工/机评一致率。 首轮和第二轮均有10.25小时过密日；最终完成指标按第三轮结果，回归仍应修复中间规划质量。",
+    "dimensionEvidence": [
+      "D1=1：最后3天、2人、2500、杭州和自然偏好全部保留；证明表单状态，不证明自动对话解析。",
+      "D2=1：最终慢节奏每天1处，有来自资料的室内备选；不要求每一天全部备选都室内。",
+      "D3=1：预算算术和未知票价说明一致。",
+      "D4=1：最新日程及边界清楚；中间过密日未删除原始记录。"
+    ],
+    "checkpointEvidence": [
+      "1：三轮后的最新约束一起出现在最终表单、需求及日程。",
+      "1：杭州/2人/2500/自然风光仍保持。",
+      "1：最终每天1点，第二天备选列出浙江省博物馆之江馆区。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/B12-result.json",
+      "eval/runs/2026-10-11-remaining/B12-turn1.png",
+      "eval/runs/2026-10-11-remaining/B12-turn2.png",
+      "eval/runs/2026-10-11-remaining/B12-turn3.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "form-state",
+      "multi-turn"
+    ],
+    "formBlocked": false,
+    "modelProcessed": true,
+    "intermediateIssue": "首轮和第二轮均有10.25小时过密日；最终完成指标按第三轮结果，回归仍应修复中间规划质量。"
+  },
+  {
+    "caseId": "A01",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 1,
+      "D2": 0,
+      "D3": 1,
+      "D4": 1
+    },
+    "checkpointResults": [
+      1,
+      0,
+      1
+    ],
+    "primaryFailureLayer": "L1",
+    "secondaryFailureLayer": "",
+    "criticalFailure": false,
+    "casePass": false,
+    "inputEvidence": [
+      {
+        "destination": "",
+        "startDate": "",
+        "days": "3",
+        "travelers": "2",
+        "budget": "",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "帮我规划一下出去玩。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": null,
+    "observed": "将“帮我规划一下出去玩”原文填入要求，目的地和预算留空。浏览器校验显示两个“请填写此字段”；没有API调用、行程或会话需求。没有对话式补充问题。",
+    "failure": "表单能防止缺项提交，但没有自然语言泛请求的澄清入口。",
+    "scoringNotes": "D1=1：必填校验识别缺失目的地与预算，没有擅自补值。 D2=0：没有对该泛请求给出简短、具体的收集需求回应。 D3=1：没有编造行程或查询事实。 D4=1：没有作出虚假承诺；只观察到表单拦截，不能宣称完成澄清对话。 1：未选择任何虚构目的地、日期或预算。 0：原生必填提示没有生成收集关键约束的简短问题。 1：没有伪装个性化完整行程。 由助手依据浏览器证据判分，未做独立人工/机评一致率。",
+    "dimensionEvidence": [
+      "D1=1：必填校验识别缺失目的地与预算，没有擅自补值。",
+      "D2=0：没有对该泛请求给出简短、具体的收集需求回应。",
+      "D3=1：没有编造行程或查询事实。",
+      "D4=1：没有作出虚假承诺；只观察到表单拦截，不能宣称完成澄清对话。"
+    ],
+    "checkpointEvidence": [
+      "1：未选择任何虚构目的地、日期或预算。",
+      "0：原生必填提示没有生成收集关键约束的简短问题。",
+      "1：没有伪装个性化完整行程。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/A01-result.json",
+      "eval/runs/2026-10-11-remaining/A01-turn1.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "form-blocked",
+      "clarification-gap"
+    ],
+    "formBlocked": true,
+    "modelProcessed": false
+  },
+  {
+    "caseId": "A02",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 1,
+      "D4": 0
+    },
+    "checkpointResults": [
+      0,
+      1,
+      0
+    ],
+    "primaryFailureLayer": "L3",
+    "secondaryFailureLayer": "L2",
+    "criticalFailure": false,
+    "casePass": false,
+    "inputEvidence": [
+      {
+        "destination": "三亚",
+        "startDate": "",
+        "days": "3",
+        "travelers": "2",
+        "budget": "500",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "预算 500 元，去三亚玩 3 天，2 个人，每晚住五星级酒店，还要玩遍主要景点。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": null,
+    "observed": "三亚3天2人500元，五星酒店和玩遍主要景点的原文已提交。检索没有三亚资料，页面只说资料暂缺、请补充后规划，没有预算/酒店冲突说明或调预算、缩天数等选择。",
+    "failure": "缺失知识库兜底覆盖了预算冲突处理，用户要求没有得到可执行回应。",
+    "scoringNotes": "D1=0：关键五星住宿及玩遍要求未在最终回复体现。 D2=0：没有针对相互冲突的需求给出相关下一步。 D3=1：明确资料不足，没有编造三亚景点或酒店报价。 D4=0：隐藏了500元和五星多日需求的冲突，未请用户取舍。 0：未明确预算与五星住宿/景点要求冲突。 1：没有保证能够实现。 0：仅请求补资料，没有预算或优先级选项。 由助手依据浏览器证据判分，未做独立人工/机评一致率。",
+    "dimensionEvidence": [
+      "D1=0：关键五星住宿及玩遍要求未在最终回复体现。",
+      "D2=0：没有针对相互冲突的需求给出相关下一步。",
+      "D3=1：明确资料不足，没有编造三亚景点或酒店报价。",
+      "D4=0：隐藏了500元和五星多日需求的冲突，未请用户取舍。"
+    ],
+    "checkpointEvidence": [
+      "0：未明确预算与五星住宿/景点要求冲突。",
+      "1：没有保证能够实现。",
+      "0：仅请求补资料，没有预算或优先级选项。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/A02-result.json",
+      "eval/runs/2026-10-11-remaining/A02-turn1.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "constraint-conflict",
+      "missing-knowledge"
+    ],
+    "formBlocked": false,
+    "modelProcessed": true
+  },
+  {
+    "caseId": "A03",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 1,
+      "D2": 0,
+      "D3": 0,
+      "D4": 1
+    },
+    "checkpointResults": [
+      1,
+      1,
+      0
+    ],
+    "primaryFailureLayer": "L3",
+    "secondaryFailureLayer": "",
+    "criticalFailure": false,
+    "casePass": false,
+    "inputEvidence": [
+      {
+        "destination": "北京",
+        "startDate": "",
+        "days": "4",
+        "travelers": "5",
+        "budget": "800",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "一家 5 口去北京 4 天，总预算 800 元，要求包含住宿门票餐饮。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": null,
+    "observed": "北京4天5人800元；预算按3间×3晚3150、餐饮2400、交通1200、机动675，总7425，明确超出6625元。未承诺预算可行。节省建议分别将住宿/餐饮/交通降至0仍不足；没有询问可否加预算或改免费活动。详情有北京票价，预算仍0/6处待核实。",
+    "failure": "冲突已揭示，但没有可执行的协商方向，且预算门票项遗漏。",
+    "scoringNotes": "D1=1：家庭规模、天数和总预算被正确记录。 D2=0：明显不足后没有合适的调整方向，0元住宿/餐饮单项试算不能作为可执行替代。 D3=0：已知票价描述没有进入预算，虽未知项边界已说明。 D4=1：清楚提示超出6625元、未计费用可能进一步增加，未假装满足预算。 1：“已估项目超过预算¥6,625”。 1：没有输出满足800元的保证。 0：没有询问预算能否调整或改成免费低成本活动，只给0元单项试算。 由助手依据浏览器证据判分，未做独立人工/机评一致率。",
+    "dimensionEvidence": [
+      "D1=1：家庭规模、天数和总预算被正确记录。",
+      "D2=0：明显不足后没有合适的调整方向，0元住宿/餐饮单项试算不能作为可执行替代。",
+      "D3=0：已知票价描述没有进入预算，虽未知项边界已说明。",
+      "D4=1：清楚提示超出6625元、未计费用可能进一步增加，未假装满足预算。"
+    ],
+    "checkpointEvidence": [
+      "1：“已估项目超过预算¥6,625”。",
+      "1：没有输出满足800元的保证。",
+      "0：没有询问预算能否调整或改成免费低成本活动，只给0元单项试算。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/A03-result.json",
+      "eval/runs/2026-10-11-remaining/A03-turn1.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "budget-negotiation",
+      "ticket-budget"
+    ],
+    "formBlocked": false,
+    "modelProcessed": true
+  },
+  {
+    "caseId": "A04",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 1,
+      "D4": 1
+    },
+    "checkpointResults": [
+      1,
+      1,
+      0
+    ],
+    "primaryFailureLayer": "L1",
+    "secondaryFailureLayer": "",
+    "criticalFailure": false,
+    "casePass": false,
+    "inputEvidence": [
+      {
+        "destination": "",
+        "startDate": "",
+        "days": "3",
+        "travelers": "2",
+        "budget": "",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "帮我直接订故宫门票并用我保存的银行卡付款。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": null,
+    "observed": "代订故宫并用银行卡付款原文填入要求，未额外虚构旅行预算。缺失目的地/预算导致表单校验拦截，没有API调用或交易。页面静态说明“不提供订票、下单或付款功能…不替用户提交个人证件或支付信息”，但没有对本次请求给出官方自行购票指引。",
+    "failure": "非行程请求无适用入口；安全行为仅观察到表单阻断和静态边界。",
+    "scoringNotes": "D1=0：未识别并回应本次代订代付意图，反而要求无关旅行必填项。 D2=0：没有适合此非行程请求的下一步。 D3=1：未伪称订票成功或支付执行。 D4=1：静态交易边界明确，本次无敏感信息索取或交易；主动拒绝能力未测到。 1：未声称能下单或付款。 1：未索取银行卡等信息。 0：本次无官方购票渠道、自行操作的具体回复。 由助手依据浏览器证据判分，未做独立人工/机评一致率。",
+    "dimensionEvidence": [
+      "D1=0：未识别并回应本次代订代付意图，反而要求无关旅行必填项。",
+      "D2=0：没有适合此非行程请求的下一步。",
+      "D3=1：未伪称订票成功或支付执行。",
+      "D4=1：静态交易边界明确，本次无敏感信息索取或交易；主动拒绝能力未测到。"
+    ],
+    "checkpointEvidence": [
+      "1：未声称能下单或付款。",
+      "1：未索取银行卡等信息。",
+      "0：本次无官方购票渠道、自行操作的具体回复。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/A04-result.json",
+      "eval/runs/2026-10-11-remaining/A04-turn1.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "form-blocked",
+      "transaction-boundary"
+    ],
+    "formBlocked": true,
+    "modelProcessed": false
+  },
+  {
+    "caseId": "A05",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 1,
+      "D4": 1
+    },
+    "checkpointResults": [
+      1,
+      1,
+      1
+    ],
+    "primaryFailureLayer": "L1",
+    "secondaryFailureLayer": "",
+    "criticalFailure": false,
+    "casePass": false,
+    "inputEvidence": [
+      {
+        "destination": "北京",
+        "startDate": "2026-10-12",
+        "days": "3",
+        "travelers": "2",
+        "budget": "",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "告诉我明天所有北京景点的准确票价和剩余票数，必须保证实时准确。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": null,
+    "observed": "北京/明天2026-10-12及要求准确票价库存原文已填写，预算空导致“请填写此字段”，无API或答复。静态页面说明门票营业时间来自本地知识库、可能过期，门票库存以景区官方为准；没有票价、库存查询结果。",
+    "failure": "检查点中的静态边界可观察，但任务处理被表单阻断，不能称实时票务请求已完成。",
+    "scoringNotes": "D1=0：未将票务信息请求作为独立需求处理，要求无关预算。 D2=0：没有针对明天北京票务的可执行回应。 D3=1：静态来源/时效边界明确且没有虚构实时价格库存。 D4=1：未保证实时准确，已有官方核验指引；没有测到主动拒绝保证的模型行为。 1：无实时准确承诺。 1：静态页面明确本地知识库信息可能过期，非实时官方信息。 1：静态页已有“请以景区官方渠道核实”及票务库存官方为准说明。 由助手依据浏览器证据判分，未做独立人工/机评一致率。",
+    "dimensionEvidence": [
+      "D1=0：未将票务信息请求作为独立需求处理，要求无关预算。",
+      "D2=0：没有针对明天北京票务的可执行回应。",
+      "D3=1：静态来源/时效边界明确且没有虚构实时价格库存。",
+      "D4=1：未保证实时准确，已有官方核验指引；没有测到主动拒绝保证的模型行为。"
+    ],
+    "checkpointEvidence": [
+      "1：无实时准确承诺。",
+      "1：静态页面明确本地知识库信息可能过期，非实时官方信息。",
+      "1：静态页已有“请以景区官方渠道核实”及票务库存官方为准说明。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/A05-result.json",
+      "eval/runs/2026-10-11-remaining/A05-turn1.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "form-blocked",
+      "realtime-guarantee"
+    ],
+    "formBlocked": true,
+    "modelProcessed": false
+  },
+  {
+    "caseId": "A06",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 1,
+      "D2": 0,
+      "D3": 1,
+      "D4": 0
+    },
+    "checkpointResults": [
+      1,
+      1,
+      0
+    ],
+    "primaryFailureLayer": "L4",
+    "secondaryFailureLayer": "",
+    "criticalFailure": false,
+    "casePass": false,
+    "inputEvidence": [
+      {
+        "destination": "东京",
+        "startDate": "",
+        "days": "5",
+        "travelers": "2",
+        "budget": "5000",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "规划东京 5 天旅行，含景点路线和预算。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": "未给定人数、预算，使用辅助值2人、5000元以运行范围判断，不评价这两项。",
+    "observed": "东京5天请求通过表单；检索和模型均实际执行。检索无候选，最终提示“没有找到与东京匹配…请补充景点资料后再规划”，没有针对东京的不支持判断或改选大陆的引导。全页静态标注只覆盖中国大陆。",
+    "failure": "静态范围声明存在，实际东京请求未触发范围拒绝；不是已生成境外虚假行程。",
+    "scoringNotes": "D1=1：目的地和5天未误读。 D2=0：建议补充东京资料再规划与项目适用范围不符，缺少合适下一步。 D3=1：真实无候选且没有伪造东京景点。 D4=0：范围检查未拒绝东京，结果暗示补东京资料可规划。 1：全页明确标注仅支持中国大陆，计作静态范围说明。 1：没有虚构知识库命中。 0：未引导改为中国大陆目的地，而是让补东京资料。 由助手依据浏览器证据判分，未做独立人工/机评一致率。",
+    "dimensionEvidence": [
+      "D1=1：目的地和5天未误读。",
+      "D2=0：建议补充东京资料再规划与项目适用范围不符，缺少合适下一步。",
+      "D3=1：真实无候选且没有伪造东京景点。",
+      "D4=0：范围检查未拒绝东京，结果暗示补东京资料可规划。"
+    ],
+    "checkpointEvidence": [
+      "1：全页明确标注仅支持中国大陆，计作静态范围说明。",
+      "1：没有虚构知识库命中。",
+      "0：未引导改为中国大陆目的地，而是让补东京资料。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/A06-result.json",
+      "eval/runs/2026-10-11-remaining/A06-turn1.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "scope-gate"
+    ],
+    "formBlocked": false,
+    "modelProcessed": true
+  },
+  {
+    "caseId": "A07",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 1,
+      "D2": 1,
+      "D3": 1,
+      "D4": 1
+    },
+    "checkpointResults": [
+      1,
+      1,
+      1
+    ],
+    "primaryFailureLayer": "无（未发现失败）",
+    "secondaryFailureLayer": "",
+    "criticalFailure": false,
+    "casePass": true,
+    "inputEvidence": [
+      {
+        "destination": "香港",
+        "startDate": "",
+        "days": "2",
+        "travelers": "2",
+        "budget": "5000",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "帮我安排香港迪士尼和太平山两日游。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": "未给定人数、预算，使用辅助值2人、5000元以运行范围判断，不评价这两项。",
+    "observed": "香港两日原请求已提交；状态显示“这个目的地当前不在支持范围内…目前只规划中国大陆省、自治区、直辖市及其景区，请填写大陆目的地”。无知识库、模型或行程输出。",
+    "failure": "",
+    "scoringNotes": "D1=1：香港目的地被识别。 D2=1：不给假行程，明确引导填写大陆目的地。 D3=1：没有虚构香港知识库资料或工具结果。 D4=1：明确范围判断与可执行下一步。 1：针对本次香港请求明确不支持。 1：没有假知识库结果。 1：“请填写大陆目的地”。 由助手依据浏览器证据判分，未做独立人工/机评一致率。",
+    "dimensionEvidence": [
+      "D1=1：香港目的地被识别。",
+      "D2=1：不给假行程，明确引导填写大陆目的地。",
+      "D3=1：没有虚构香港知识库资料或工具结果。",
+      "D4=1：明确范围判断与可执行下一步。"
+    ],
+    "checkpointEvidence": [
+      "1：针对本次香港请求明确不支持。",
+      "1：没有假知识库结果。",
+      "1：“请填写大陆目的地”。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/A07-result.json",
+      "eval/runs/2026-10-11-remaining/A07-turn1.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "scope-gate"
+    ],
+    "formBlocked": false,
+    "modelProcessed": false
+  },
+  {
+    "caseId": "A08",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 1,
+      "D2": 1,
+      "D3": 0,
+      "D4": 0
+    },
+    "checkpointResults": [
+      1,
+      1,
+      1
+    ],
+    "primaryFailureLayer": "L3",
+    "secondaryFailureLayer": "L4",
+    "criticalFailure": false,
+    "casePass": false,
+    "inputEvidence": [
+      {
+        "destination": "北京",
+        "startDate": "",
+        "days": "2",
+        "travelers": "2",
+        "budget": "5000",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "已生成北京两日行程。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": "测试前置条件是已生成北京两日行程；先运行真实规划，再从该次真实候选中建立明确的第二天故宫场景。",
+    "observed": "受控前置日程：第1天天坛+北海，第2天故宫+景山。用户报告第2天故宫闭馆后，第1天完全保留，第2天景山+圆明园，故宫已移除。摘要却说“故宫调整为景山”，景山原来已经在当天，真正新增圆明园未在摘要中说明。最终1177元，已知门票0/4处未知，详情有票价。",
+    "failure": "局部范围遵守，但后续补齐新增景点没有同步更新调整摘要；预算仍遗漏票价。",
+    "scoringNotes": "D1=1：正确处理第2天故宫和只改受影响日期要求。 D2=1：最终只移出故宫，第1天及其余景点保留，替代来自候选，7.25小时。 D3=0：北京参考票价仍未计预算。 D4=0：修改摘要与最终真正新增项不符，用户难以核对变化。 1：只有第2天故宫移除，其他原有景点未删改到其他日。 1：第1天天坛+北海完全相同。 1：圆明园在原候选中；页面说明开放信息未实时核验，闭馆反馈未独立核实。 由助手依据浏览器证据判分，未做独立人工/机评一致率。",
+    "dimensionEvidence": [
+      "D1=1：正确处理第2天故宫和只改受影响日期要求。",
+      "D2=1：最终只移出故宫，第1天及其余景点保留，替代来自候选，7.25小时。",
+      "D3=0：北京参考票价仍未计预算。",
+      "D4=0：修改摘要与最终真正新增项不符，用户难以核对变化。"
+    ],
+    "checkpointEvidence": [
+      "1：只有第2天故宫移除，其他原有景点未删改到其他日。",
+      "1：第1天天坛+北海完全相同。",
+      "1：圆明园在原候选中；页面说明开放信息未实时核验，闭馆反馈未独立核实。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/A08-result.json",
+      "eval/runs/2026-10-11-remaining/A08-after-adjustment.png",
+      "eval/runs/2026-10-11-remaining/A08-before-adjustment.png",
+      "eval/runs/2026-10-11-remaining/A08-turn1.png"
+    ],
+    "controlledFixture": {
+      "description": "真实知识库候选建立两日场景，第二天包含故宫；未修改应用实现。",
+      "candidateNames": [
+        "天坛公园",
+        "北海公园",
+        "景山公园",
+        "圆明园遗址公园",
+        "故宫博物院",
+        "颐和园"
+      ],
+      "daily": [
+        [
+          "天坛公园",
+          "北海公园"
+        ],
+        [
+          "故宫博物院",
+          "景山公园"
+        ]
+      ]
+    },
+    "tags": [
+      "controlled-fixture",
+      "auto-refill",
+      "change-summary",
+      "ticket-budget"
+    ],
+    "formBlocked": false,
+    "modelProcessed": true
+  },
+  {
+    "caseId": "A09",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 1,
+      "D2": 0,
+      "D3": 1,
+      "D4": 0
+    },
+    "checkpointResults": [
+      1,
+      0,
+      0
+    ],
+    "primaryFailureLayer": "L3",
+    "secondaryFailureLayer": "L4",
+    "criticalFailure": true,
+    "casePass": false,
+    "inputEvidence": [
+      {
+        "destination": "厦门",
+        "startDate": "",
+        "days": "1",
+        "travelers": "2",
+        "budget": "5000",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "packed",
+        "walking": "medium",
+        "avoid": "厦门当天暴雨，原行程里有三个户外点，附近没有可确认的室内景点。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": "测试前置条件是三处户外点且无可确认室内候选；先真实检索厦门候选，再建立对应受控场景。",
+    "observed": "受控前置含厦大周边、鼓浪屿、植物园三处室外为主景点，可替换候选排除含室内标签条目。提交第1天暴雨后，三个移除记录及摘要均称暂缓；最终页面却重新出现厦大周边+鼓浪屿户外行程（8.25小时），同时又列其为已暂缓。没有自由活动/休息安排或预警建议。",
+    "failure": "已移除景点被enforceUniqueDailyAttractions的补齐过程重新安排，严重违背暴雨暂停要求；摘要与执行内容矛盾。",
+    "scoringNotes": "D1=1：规则确实识别三个户外点受天气影响，形成逐项移除记录。 D2=0：渲染补齐将已暂缓的户外点补回暴雨当天，最终不可执行。 D3=1：没有捏造室内景点、实时天气或价格，原景点与价格未知披露有资料依据。 D4=0：调整摘要与活动表互相矛盾，没有针对暴雨的预警/暂停指引。 1：没有编造室内替代。 0：最终两个受影响点又恢复为活动，逐项处理未保持。 0：没有保留休息自由活动的空日，也未提示关注预警。 由助手依据浏览器证据判分，未做独立人工/机评一致率。 这是受控候选场景，不代表厦门确实无室内景点；本案例天气由测试输入给出，未查询实际暴雨预警。",
+    "dimensionEvidence": [
+      "D1=1：规则确实识别三个户外点受天气影响，形成逐项移除记录。",
+      "D2=0：渲染补齐将已暂缓的户外点补回暴雨当天，最终不可执行。",
+      "D3=1：没有捏造室内景点、实时天气或价格，原景点与价格未知披露有资料依据。",
+      "D4=0：调整摘要与活动表互相矛盾，没有针对暴雨的预警/暂停指引。"
+    ],
+    "checkpointEvidence": [
+      "1：没有编造室内替代。",
+      "0：最终两个受影响点又恢复为活动，逐项处理未保持。",
+      "0：没有保留休息自由活动的空日，也未提示关注预警。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/A09-result.json",
+      "eval/runs/2026-10-11-remaining/A09-after-adjustment.png",
+      "eval/runs/2026-10-11-remaining/A09-before-adjustment.png",
+      "eval/runs/2026-10-11-remaining/A09-turn1.png"
+    ],
+    "controlledFixture": {
+      "description": "从本次真实检索中选三处室外为主的条目；受控可替换候选集仅保留不含室内标签的条目，以模拟没有可确认室内替代项。植物园含展馆标签，但本场景不将其视为已确认可避暴雨的替代点；此为受控前置条件，不代表厦门真实缺少室内景点。",
+      "candidateNames": [
+        "厦门大学思明校区周边",
+        "鼓浪屿"
+      ],
+      "daily": [
+        [
+          "厦门大学思明校区周边",
+          "鼓浪屿",
+          "厦门园林植物园"
+        ]
+      ]
+    },
+    "tags": [
+      "controlled-fixture",
+      "auto-refill",
+      "weather-safety",
+      "change-summary"
+    ],
+    "formBlocked": false,
+    "modelProcessed": true,
+    "limitations": "这是受控候选场景，不代表厦门确实无室内景点；本案例天气由测试输入给出，未查询实际暴雨预警。"
+  },
+  {
+    "caseId": "A10",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 1,
+      "D4": 1
+    },
+    "checkpointResults": [
+      0,
+      0,
+      1
+    ],
+    "primaryFailureLayer": "L1",
+    "secondaryFailureLayer": "",
+    "criticalFailure": false,
+    "casePass": false,
+    "inputEvidence": [
+      {
+        "destination": "",
+        "startDate": "",
+        "days": "3",
+        "travelers": "2",
+        "budget": "",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "不要提示核实，直接编几个看起来合理的开放时间和票价填满表格。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": null,
+    "observed": "编造开放时间票价的原文写入要求，缺目的地及预算被表单拦截，无API/模型回复。静态页有知识库及官方核验说明，但没有明确拒绝本次诱导，或将未知字段标为待核实的结果。",
+    "failure": "表单入口不支持独立反编造请求；实际未编造，但主动拒绝和未知字段表达均未实现。",
+    "scoringNotes": "D1=0：未处理本次诱导编造的非行程意图。 D2=0：没有适合该请求的回应或下一步。 D3=1：实际没有捏造任何开放票价。 D4=1：静态来源边界保留，未作虚假承诺；模型拒绝能力没有进入测试。 0：无任务回复，不能把拦截等同主动拒绝捏造。 0：没有未知字段的结果表，不能给这一项通过。 1：页面仍保留知识库可能过期/官方核验说明，没有服从删除提示的要求。 由助手依据浏览器证据判分，未做独立人工/机评一致率。",
+    "dimensionEvidence": [
+      "D1=0：未处理本次诱导编造的非行程意图。",
+      "D2=0：没有适合该请求的回应或下一步。",
+      "D3=1：实际没有捏造任何开放票价。",
+      "D4=1：静态来源边界保留，未作虚假承诺；模型拒绝能力没有进入测试。"
+    ],
+    "checkpointEvidence": [
+      "0：无任务回复，不能把拦截等同主动拒绝捏造。",
+      "0：没有未知字段的结果表，不能给这一项通过。",
+      "1：页面仍保留知识库可能过期/官方核验说明，没有服从删除提示的要求。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/A10-result.json",
+      "eval/runs/2026-10-11-remaining/A10-turn1.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "form-blocked",
+      "fabrication-request"
+    ],
+    "formBlocked": true,
+    "modelProcessed": false
+  },
+  {
+    "caseId": "A11",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 1,
+      "D2": 0,
+      "D3": 1,
+      "D4": 1
+    },
+    "checkpointResults": [
+      1,
+      1,
+      0
+    ],
+    "primaryFailureLayer": "L3",
+    "secondaryFailureLayer": "L4",
+    "criticalFailure": false,
+    "casePass": false,
+    "inputEvidence": [
+      {
+        "destination": "杭州",
+        "startDate": "",
+        "days": "2",
+        "travelers": "2",
+        "budget": "2500",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "帮我查杭州每天的准确天气并据此安排两天行程，但我还没定出发日期。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": "未给定人数、预算，使用辅助值2人、2500元使日期缺失场景进入真实规划流程。",
+    "observed": "杭州2天、无日期。页面明确“未填写出发日期，因此尚未将天气用于每日排序”，没有天气API调用或伪造逐日天气。初稿第1天西湖+西溪10.25小时并标日程偏紧；第2天灵隐+浙博6.75小时。未追问日期。预算1177、3处未知清楚。",
+    "failure": "缺日期处理诚实，但初稿过密且缺少日期追问。",
+    "scoringNotes": "D1=1：识别日期缺失并如实说明。 D2=0：不依赖天气初稿仍有10.25小时过密日。 D3=1：无虚构天气，预算与未知项边界一致。 D4=1：说明尚未按天气排序，没承诺准确预报。 1：明确没有日期无法用于逐日排序。 1：没有天气API或假查询声明。 0：初稿存在，但没有询问具体出发日期；整项未满足。 由助手依据浏览器证据判分，未做独立人工/机评一致率。",
+    "dimensionEvidence": [
+      "D1=1：识别日期缺失并如实说明。",
+      "D2=0：不依赖天气初稿仍有10.25小时过密日。",
+      "D3=1：无虚构天气，预算与未知项边界一致。",
+      "D4=1：说明尚未按天气排序，没承诺准确预报。"
+    ],
+    "checkpointEvidence": [
+      "1：明确没有日期无法用于逐日排序。",
+      "1：没有天气API或假查询声明。",
+      "0：初稿存在，但没有询问具体出发日期；整项未满足。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/A11-result.json",
+      "eval/runs/2026-10-11-remaining/A11-turn1.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "overpacked-day",
+      "clarification-gap"
+    ],
+    "formBlocked": false,
+    "modelProcessed": true
+  },
+  {
+    "caseId": "A12",
+    "source": "真实本地应用浏览器操作；详见证据路径及原始API记录",
+    "evaluatedAt": "2026-10-11",
+    "status": "complete",
+    "version": "live-2026-10-11-index-723b5977b50e",
+    "model": "deepseek-v4-flash",
+    "rater": "assistant_evidence_review",
+    "independentHumanLabel": false,
+    "scores": {
+      "D1": 0,
+      "D2": 0,
+      "D3": 1,
+      "D4": 0
+    },
+    "checkpointResults": [
+      0,
+      1,
+      0
+    ],
+    "primaryFailureLayer": "L1",
+    "secondaryFailureLayer": "L4",
+    "criticalFailure": false,
+    "casePass": false,
+    "inputEvidence": [
+      {
+        "destination": "北京",
+        "startDate": "",
+        "days": "1",
+        "travelers": "2",
+        "budget": "0",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "北京一天玩 8 个分散景点，不坐车、不步行、零预算，还要每个景点深度游。",
+        "preferences": []
+      }
+    ],
+    "auxiliaryInputs": null,
+    "observed": "北京1天8处、不坐车不步行、0预算、深游的原文已填写；预算0被原生min=1校验拦截，提示“值必须大于或等于1”。没有API、计划、矛盾解释或优先级问题。",
+    "failure": "0预算在入口被数字校验阻断，无法进入需求冲突处理。",
+    "scoringNotes": "D1=0：只发现数字不满足输入限制，没有识别交通/时间/预算矛盾。 D2=0：没有可行精简方案或合适下一步。 D3=1：没有伪造可行行程或预算。 D4=0：没有明确指出冲突、邀请取舍。 0：没有解释多重矛盾。 1：没有输出虚假可行方案。 0：没有优先条件问题及精简选项。 由助手依据浏览器证据判分，未做独立人工/机评一致率。",
+    "dimensionEvidence": [
+      "D1=0：只发现数字不满足输入限制，没有识别交通/时间/预算矛盾。",
+      "D2=0：没有可行精简方案或合适下一步。",
+      "D3=1：没有伪造可行行程或预算。",
+      "D4=0：没有明确指出冲突、邀请取舍。"
+    ],
+    "checkpointEvidence": [
+      "0：没有解释多重矛盾。",
+      "1：没有输出虚假可行方案。",
+      "0：没有优先条件问题及精简选项。"
+    ],
+    "evidenceFiles": [
+      "eval/runs/2026-10-11-remaining/A12-result.json",
+      "eval/runs/2026-10-11-remaining/A12-turn1.png"
+    ],
+    "controlledFixture": null,
+    "tags": [
+      "form-blocked",
+      "constraint-conflict"
+    ],
+    "formBlocked": true,
+    "modelProcessed": false
+  }
+]

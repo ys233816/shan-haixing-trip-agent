@@ -1,0 +1,22 @@
+{
+  "prompt_version": "judge-v1.1",
+  "rubric_version": "rubric-v1.1",
+  "prompt_file": "eval/judge-system-prompt-v1.1.md",
+  "rule_files": ["eval/rubric.md", "eval/rubric-v1.1-addendum.md"],
+  "schema_file": "eval/judge-output.schema.json",
+  "input_directory": "eval/judge-inputs/2026-10-11",
+  "input_manifest": "eval/judge-inputs/2026-10-11/manifest.json",
+  "calibration_case_ids": ["B07", "B09", "A01", "A03", "A08", "A09"],
+  "output_directory": "eval/judge-runs/2026-10-12-judge-v1.1",
+  "parameters": {
+    "temperature": 0,
+    "max_tokens": 8192,
+    "response_format": {"type": "json_object"},
+    "thinking": {"type": "disabled"}
+  },
+  "automatic_retries": 0,
+  "human_labels_sent": false,
+  "assistant_analysis_sent": false,
+  "status": "prepared_not_run",
+  "runner_integration": "run-judge.cjs --v1.1"
+}

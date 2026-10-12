@@ -1,0 +1,79 @@
+{
+  "recordedAt": "2026-10-12T10:20:44.912Z",
+  "scope": "固定受控专项回归；执行真实应用函数，浏览器重放真实本地知识库候选与受控模型遗漏草稿；没有调用外部模型，不是36条全量任务完成率或独立人工评分。",
+  "sha256": "c8e04ce0de04dcd33805fd0fd8779fe708242a5b13c3d47cc36a04e5095d2439",
+  "before": {
+    "total": 18,
+    "passed": 2,
+    "rate": 11.11,
+    "sha256": "46f6859626c732be7ff9117184783b9939f304c0061095d60da26b326db541b2"
+  },
+  "after": {
+    "total": 18,
+    "passed": 18,
+    "rate": 100
+  },
+  "improvementPercentagePoints": 88.89,
+  "groups": [
+    {
+      "group": "coverage",
+      "total": 6,
+      "beforePassed": 0,
+      "afterPassed": 6
+    },
+    {
+      "group": "gaps",
+      "total": 6,
+      "beforePassed": 0,
+      "afterPassed": 6
+    },
+    {
+      "group": "constraints",
+      "total": 6,
+      "beforePassed": 2,
+      "afterPassed": 6
+    }
+  ],
+  "browser": [
+    {
+      "version": "before",
+      "sha256": "46f6859626c732be7ff9117184783b9939f304c0061095d60da26b326db541b2",
+      "total": 14,
+      "passed": 0
+    },
+    {
+      "version": "after",
+      "sha256": "c8e04ce0de04dcd33805fd0fd8779fe708242a5b13c3d47cc36a04e5095d2439",
+      "total": 14,
+      "passed": 14
+    }
+  ],
+  "nonregression": {
+    "budget": {
+      "total": 22,
+      "passed": 22
+    },
+    "planning": {
+      "total": 17,
+      "passed": 17
+    },
+    "weather": {
+      "total": 12,
+      "passed": 11,
+      "failures": [
+        "R12"
+      ],
+      "note": "R12要求强制补满每天2个景点，与上轮保留模型休息缓冲的政策冲突；上轮已经失败，本轮仍保留失败证据。11项天气/闭馆安全测试继续通过。"
+    },
+    "boundaries": {
+      "total": 6,
+      "passed": 6
+    }
+  },
+  "limitations": [
+    "关键词和知识库类型标签匹配，只覆盖当前支持的偏好类别，不能代替完整语义理解。",
+    "部分北京科技、厦门室内亲子候选资料不足；显示缺口不等于已满足偏好。",
+    "预算护栏仅基于已知费用；未知票价仍需核实，不能保证全程不超支。",
+    "未重跑36条全量评测，也没有重新进行真实DeepSeek或人工评分。"
+  ]
+}

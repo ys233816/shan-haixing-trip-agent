@@ -1,0 +1,53 @@
+{
+  "case_id": "B07",
+  "submission_id": "B07-submission-003",
+  "previous_submission_id": "B07-submission-002",
+  "source": "user_chat_confirmation",
+  "recorded_date": "2026-10-12",
+  "reviewer": "本人",
+  "review_date": null,
+  "status": "scored",
+  "evidence_packet": "eval/human-review/B07-evidence.md",
+  "judge_input_sha256": "9970c0f1588004ed163563c1398e6e85176351500c64a49b45954f33853e36bb",
+  "evidence_confirmation": {
+    "submitted_text": "保存材料",
+    "source": "user_chat",
+    "selection": "saved_evidence",
+    "resolved_issue": "用户确认按本次保存材料评分，结果来源确认完成。",
+    "historical_quote_note": "补充版所引故宫09:00、天坛14:15仍与保存时间表不符；本确认不把旧引文变成正确证据，也不推断存在新运行。原引文保存在B07-submission-002.json。"
+  },
+  "prior_score_exposure": {
+    "value": "未见",
+    "submitted_text": "未见 ）",
+    "provenance": "user_declared",
+    "source_submission_id": "B07-submission-002"
+  },
+  "dimensions": {
+    "D1": { "score": 1, "score_source": "B07-submission-002", "evidence": "" },
+    "D2": { "score": 1, "score_source": "B07-submission-002", "evidence": "" },
+    "D3": { "score": 1, "score_source": "B07-submission-002", "evidence": "" },
+    "D4": { "score": 0, "score_source": "B07-submission-002", "evidence": "" }
+  },
+  "checkpoints": [
+    { "index": 1, "score": 1, "score_source": "B07-submission-002", "evidence": "" },
+    { "index": 2, "score": 0, "score_source": "B07-submission-002", "evidence": "" },
+    { "index": 3, "score": 0, "score_source": "B07-submission-002", "evidence": "" }
+  ],
+  "primary_failure_layer": "L3",
+  "primary_failure_layer_source": "B07-submission-002",
+  "primary_failure_evidence": "",
+  "critical_failure": { "value": false, "evidence": "无", "source_submission_id": "B07-submission-002" },
+  "raw_submission": "保存材料",
+  "review_notes": {
+    "author": "assistant",
+    "review_mode": "user_revision_after_assistant_feedback_with_saved_evidence_confirmation",
+    "assistant_analysis": "eval/human-review/submissions/B07-assistant-evidence-001.json",
+    "strict_blind_review": false,
+    "strict_blind_review_note": "用户声明未看过旧分，但B07补充版在助手反馈后提交；不称为严格盲评。",
+    "completion_counted": true,
+    "agreement_eligible": true,
+    "agreement_scope": "七项人工分数及固定结果来源已确认，可在相同结果上比较机评分数；D2、D3的证据分歧另记，未裁定，不自动改分。",
+    "score_change": false,
+    "missing_items": ["用户实际复核日期"]
+  }
+}

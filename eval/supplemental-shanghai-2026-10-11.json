@@ -1,0 +1,33 @@
+{
+  "id": "S01",
+  "name": "上海预算含往返大交通（补充记录）",
+  "includedInOriginal36": false,
+  "reason": "此前助手误将此请求称为B08，用户按说明运行并交截图。原B08仍为北京一天8景点深游，已另行真实执行。",
+  "version": "screenshot-version-unverified",
+  "rater": "assistant_review_of_user_screenshots",
+  "input": {
+    "destination": "上海", "days": 2, "travelers": 2, "budgetCny": 1500,
+    "startDate": null, "origin": null,
+    "specialRequest": "预算1500元包含往返大交通，请把大交通费用计入预算。"
+  },
+  "observed": {
+    "day1": {"attractions": ["上海博物馆（人民广场馆）", "上海中心大厦观光厅"], "approximateHours": 6.3},
+    "day2": {"attractions": ["上海自然博物馆", "豫园"], "approximateHours": 6.8},
+    "budget": {"lodging": 350, "food": 480, "localTransit": 240, "knownTickets": 0, "unknownTicketCount": 4, "reserve": 107, "total": 1177},
+    "responseBoundary": "未包含往返目的地的大交通；不能确认全程总费用在预算内。",
+    "originQuestionAsked": false,
+    "intercityCostIncluded": false
+  },
+  "finding": "没有执行用户的含大交通要求，也没有询问出发地。用户未给出出发地，不能臆造往返票价；应说明缺项并提供保留待核实金额或补充出发地的下一步。现有排程和预算算术清楚，但未完成含大交通任务。",
+  "primaryFailureLayer": "L1",
+  "secondaryFailureLayer": "L3",
+  "criticalFailure": false,
+  "scoresExcludedFromOriginalMetrics": true,
+  "evidenceFiles": [
+    "eval/runs/2026-10-11-remaining/supplemental-S01/codex-clipboard-b22813d3-c1ff-4c54-b009-b8657c45d1e1.png",
+    "eval/runs/2026-10-11-remaining/supplemental-S01/codex-clipboard-28ba48cb-d8f3-475e-8d31-0ead87e943b1.png",
+    "eval/runs/2026-10-11-remaining/supplemental-S01/codex-clipboard-b26a53c8-31b5-4abb-ac5d-209dd8a5a68d.png",
+    "eval/runs/2026-10-11-remaining/supplemental-S01/codex-clipboard-768802c5-b60b-4a4f-86f9-6b863ebe94e5.png",
+    "eval/runs/2026-10-11-remaining/supplemental-S01/codex-clipboard-5d707f40-0e4f-4623-a3ba-fa7419d19a73.png"
+  ]
+}

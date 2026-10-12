@@ -1,0 +1,178 @@
+{
+  "version": "v1",
+  "scope": "12条固定天气/闭馆/渲染专项回归，不是36条全量任务完成率",
+  "runAt": "2026-10-12T07:48:28.169Z",
+  "method": "离线重放已存A09真实候选和受控邻近场景，执行应用原函数，无API付费调用。虚构名称仅为受控测试fixture。",
+  "sha256": "723b5977b50e0ddae170634d60291a7ed7d90acd6564ef550a6aaee17641fffb",
+  "total": 12,
+  "passed": 4,
+  "tests": [
+    {
+      "id": "R01",
+      "description": "A09原失败场景：三处户外、无室内候选，真正暂停且提示预警",
+      "pass": false,
+      "error": "The input did not match the regular expression /预警/. Input:\n\n''\n"
+    },
+    {
+      "id": "R02",
+      "description": "没有日期/预报时，暴雨后不新增其他户外候选",
+      "pass": true,
+      "evidence": {
+        "date": "第 1 天",
+        "isoDate": null,
+        "city": "厦门市",
+        "items": [],
+        "weather": null,
+        "weatherNote": "未提供日期，未按天气排序",
+        "weatherUnavailable": false,
+        "walk": "适中",
+        "reason": "大模型从知识库候选中安排了南普陀寺、沙坡尾艺术西区、胡里山炮台；按紧凑节奏最多 3 个景点/天编排，并按偏好和天气排序。景点开放状态与价格仍需核实。 天气变化影响当天户外安排：厦门大学思明校区周边 暂缓。",
+        "routeCheck": null,
+        "removedItems": [
+          {
+            "name": "厦门大学思明校区周边",
+            "reason": "天气变化后没有可用的未排入室内候选，已暂缓该景点。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "R03",
+      "description": "室外为主但含展馆的条目不作为可避暴雨替代",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "id": "R04",
+      "description": "真实室内候选可替换，但不得靠补齐重新排户外",
+      "pass": false,
+      "error": "Values have same structure but are not reference-equal:\n\n[\n  '受控测试室内候选'\n]\n"
+    },
+    {
+      "id": "R05",
+      "description": "调整第1天时，未满景点数的第2天也保持原样",
+      "pass": true,
+      "evidence": {
+        "date": "第 2 天",
+        "isoDate": null,
+        "city": "厦门市",
+        "items": [
+          {
+            "name": "受控测试第二天已排景点",
+            "city": "厦门市",
+            "area": "思明区",
+            "kind": "校园建筑、人文景观、城市休闲",
+            "indoor": "室内",
+            "hours": 90,
+            "walk": "中",
+            "rain": "高",
+            "cost": null,
+            "reason": "知识库类型：校园建筑、人文景观、城市休闲；适合人群：校园建筑、人文和城市漫步爱好者；标签：厦门、校园、人文、建筑。",
+            "suitability": "校园建筑、人文和城市漫步爱好者",
+            "backup": "",
+            "tags": "厦门、校园、人文、建筑",
+            "openingHours": "校园访客管理和开放范围可能调整，以学校官方公告为准",
+            "reservationInfo": "入校及参观要求以学校官方渠道为准",
+            "ticketInfo": "以学校官方信息为准",
+            "ticketPriceCny": "",
+            "ticketPriceBasis": "",
+            "openingSource": "https://www.xmu.edu.cn/",
+            "ticketSource": "https://www.xmu.edu.cn/",
+            "retrievalScore": 18
+          }
+        ],
+        "weather": null,
+        "weatherNote": "未提供日期，未按天气排序",
+        "weatherUnavailable": false,
+        "walk": "适中",
+        "reason": "大模型从知识库候选中安排了南普陀寺、沙坡尾艺术西区、胡里山炮台；按紧凑节奏最多 3 个景点/天编排，并按偏好和天气排序。景点开放状态与价格仍需核实。",
+        "routeCheck": null
+      }
+    },
+    {
+      "id": "R06",
+      "description": "重新渲染不再次补回已暂停的景点",
+      "pass": true,
+      "evidence": {
+        "date": "第 1 天",
+        "isoDate": null,
+        "city": "厦门市",
+        "items": [],
+        "weather": null,
+        "weatherNote": "未提供日期，未按天气排序",
+        "weatherUnavailable": false,
+        "walk": "适中",
+        "reason": "大模型从知识库候选中安排了南普陀寺、沙坡尾艺术西区、胡里山炮台；按紧凑节奏最多 3 个景点/天编排，并按偏好和天气排序。景点开放状态与价格仍需核实。 天气变化影响当天户外安排：厦门大学思明校区周边 暂缓；鼓浪屿 暂缓；厦门园林植物园 暂缓。",
+        "routeCheck": null,
+        "removedItems": [
+          {
+            "name": "厦门大学思明校区周边",
+            "reason": "天气变化后没有可用的未排入室内候选，已暂缓该景点。"
+          },
+          {
+            "name": "鼓浪屿",
+            "reason": "天气变化后没有可用的未排入室内候选，已暂缓该景点。"
+          },
+          {
+            "name": "厦门园林植物园",
+            "reason": "天气变化后没有可用的未排入室内候选，已暂缓该景点。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "R07",
+      "description": "旧会话中“已暂缓”与活动重复时移除活动，保留暂停",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "id": "R08",
+      "description": "闭馆且无候选时，不补回闭馆景点",
+      "pass": true,
+      "evidence": {
+        "date": "第 1 天",
+        "isoDate": null,
+        "city": "厦门市",
+        "items": [],
+        "weather": null,
+        "weatherNote": "未提供日期，未按天气排序",
+        "weatherUnavailable": false,
+        "walk": "适中",
+        "reason": "大模型从知识库候选中安排了南普陀寺、沙坡尾艺术西区、胡里山炮台；按紧凑节奏最多 3 个景点/天编排，并按偏好和天气排序。景点开放状态与价格仍需核实。 因“第1天厦门大学思明校区周边闭馆”将 厦门大学思明校区周边 移出当日可执行安排。 备选参考：南普陀寺、沙坡尾艺术西区、胡里山炮台（开放状态需确认）。",
+        "routeCheck": null,
+        "removedItems": [
+          {
+            "name": "厦门大学思明校区周边",
+            "reason": "用户报告闭馆，已移出当天计划。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "R09",
+      "description": "已因闭馆移除的室内候选不会被后续暴雨重新选中",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "id": "R10",
+      "description": "大模型选择留白时，页面保留留白并提示天气预警",
+      "pass": false,
+      "error": "The input did not match the regular expression /预警/. Input:\n\n''\n"
+    },
+    {
+      "id": "R11",
+      "description": "天气调整与暂停信息在导出中可见",
+      "pass": false,
+      "error": "The input did not match the regular expression /预警/. Input:\n\n'# 山海行｜厦门 1 天游程\\n' +\n  '\\n' +\n  '- 出发日期：未指定\\n' +\n  '- 人数：2 人\\n' +\n  '- 预算上限：¥5,000\\n' +\n  '- 行程引擎：DeepSeek 大模型编排\\n' +\n  '- 景点来源：本地中国大陆景点知识库\\n' +\n  '\\n' +\n  '## 每日行程\\n' +\n  '\\n' +\n  '### 第 1 天 · 厦门市\\n' +\n  '天气：未提供日期，未按天气排序\\n' +\n  '\\n' +\n  '预计当天占用：约 0.0 小时（景点游览、景点间交通及约 60 分钟午餐预留；未查全路线时，缺失路段按 45 分钟/段暂估）\\n' +\n  '\\n' +\n  '- 自由活动 / 休息\\n' +\n  '- 已暂缓 / 移除：厦门大学思明校区周边（天气变化后没有可用的未排入室内候选，已暂缓该景点。）\\n' +\n  '- 已暂缓 / 移除：鼓浪屿（天气变化后没有可用的未排入室内候选，已暂缓该景点。）\\n' +\n  '- 已暂缓 / 移除：厦门园林植物园（天气变化后没有可用的未排入室内候选，已暂缓该景点。）\\n' +\n  '\\n' +\n  '## 预算估算\\n' +\n  '\\n' +\n  '- 住宿：¥0\\n' +\n  '- 餐饮：¥240\\n' +\n  '- 市内交通：¥120\\n' +\n  '- 已知门票参考（成人票 × 2 人）：¥0\\n' +\n  '- 待核实票价景点：0 个\\n' +\n  '- 机动预留：¥36\\n' +\n  '- **当前已估合计：¥396**\\n' +\n  '\\n' +\n  '## 出行前核对\\n' +\n  '\\n' +\n  '- 门票、预约、库存和开放时间请以景区官方渠道为准。\\n' +\n  '- 天气与路线结果会变化；确认地图匹配地点后再出发。\\n' +\n  '- 预算未包含往返目的地的大交通，实际费用可能变化。\\n' +\n  '- 本助手不代替用户订票、下单、付款或提交证件。\\n'\n"
+    },
+    {
+      "id": "R12",
+      "description": "正常初次规划仍按节奏补齐并跨日去重",
+      "pass": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   1,\n+   1\n-   2,\n-   2\n  ]\n"
+    }
+  ],
+  "passRatePercent": 33.33
+}

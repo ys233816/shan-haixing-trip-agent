@@ -1,0 +1,92 @@
+{
+  "case_id": "A03",
+  "analysis_id": "A03-assistant-evidence-001",
+  "submission_id": "A03-submission-001",
+  "author": "assistant",
+  "recorded_date": "2026-10-12",
+  "judge_input_sha256": "23adbf911b5c8c45f794c7cf3c6ee6ffef848b93334aa1730f685a0f4e1aa15c",
+  "purpose": "整理固定结果中的证据和分歧，不冒充用户依据，不修改用户分数。",
+  "dimensions": {
+    "D1": {
+      "relation_to_user_score": "supports",
+      "reason": "页面保留北京、4天、5人和总预算800元，预算包含住宿、餐饮。模型实际返回提到控制预算，人数天数等由执行器手动映射，不证明自动解析自由文本。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "北京 4 天游程框架" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "5 人 · 预算上限 ¥800" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "住宿按 3 间 × 3 晚估算。" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "餐饮：¥2,400（5 人 × 4 天 × ¥120 / 人 / 天）" }
+      ]
+    },
+    "D2": {
+      "relation_to_user_score": "supports",
+      "reason": "虽然已展示明显超预算，仍生成常规四天收费景点安排；未提供可满足约束的方案，也未先收集预算可否调整的选择。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "北京 4 天游程框架" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "已估项目超过预算 ¥6,625。尚未计入的大交通及待核实票价可能进一步增加总额。" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "住宿降至 ¥0 每间 / 晚后，仍约差 ¥3,160" }
+      ]
+    },
+    "D3": {
+      "relation_to_user_score": "partially_supported_with_disagreement",
+      "reason": "预算算术一致且超额已披露：3150+2400+1200=6750，加675机动金得7425，超出800元6625元。但页面展示天坛、北海、颐和园、故宫的收费参考，已知门票仍为0且全部6个景点待核实，未解释这些参考金额的排除依据。按现有D3预算矛盾口径存在分歧，不能只用加法正确支持全项通过，也不代应用任选季节或票种价格。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "当前已估合计：¥7,425" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "已估项目超过预算 ¥6,625。" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "门票：官网价目表列明旺季门票15元、联票34元；淡季门票10元、联票28元；景点票20元。" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "已知门票参考（成人票 × 5 人）：¥0\n待核实门票：6 个景点" }
+      ]
+    },
+    "D4": {
+      "relation_to_user_score": "supports_with_qualification",
+      "reason": "页面已明确披露超预算，不能说隐瞒冲突；但提供的单项调整把住宿、餐饮或交通降为0元，仍明显超预算，没有给出有效取舍或询问用户优先级。助手把问题定位为冲突后的交互不足，而非不存在警告。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "已估项目超过预算 ¥6,625。" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "如需压低已估差额，可考虑（每项单独试算）：\n住宿降至 ¥0 每间 / 晚后，仍约差 ¥3,160\n餐饮降至 ¥0 每人 / 天后，仍约差 ¥3,985\n市内交通降至 ¥0 每人 / 天后，仍约差 ¥5,305。调整参考不包含待核实票价和大交通。" }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "index": 1,
+      "relation_to_user_score": "disagrees",
+      "reason": "用户给0，原分保留。保存页面明确说已估项目超过预算6625元，可作为识别总预算不足的可见证据；不是缺少警告，而是是否有效解决冲突的另一项问题。留待校准裁定。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "已估项目超过预算 ¥6,625。尚未计入的大交通及待核实票价可能进一步增加总额。" }
+      ]
+    },
+    {
+      "index": 2,
+      "relation_to_user_score": "supports",
+      "reason": "虽生成四天行程，但明确标注估算7425元并超预算6625元，没有声称该行程满足800元；这不代表行程满足约束。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "当前已估合计：¥7,425\n已估项目超过预算 ¥6,625。" }
+      ]
+    },
+    {
+      "index": 3,
+      "relation_to_user_score": "supports",
+      "reason": "先输出常规行程，再给0元参数试算；没有优先询问是否提高预算或提供实际免费低成本替代方向。静态可修改参数说明不等于针对本次冲突的优先澄清。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "如需压低已估差额，可考虑（每项单独试算）：" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "住宿降至 ¥0 每间 / 晚后，仍约差 ¥3,160" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "餐饮降至 ¥0 每人 / 天后，仍约差 ¥3,985" }
+      ]
+    }
+  ],
+  "primary_failure_layer": "L3",
+  "secondary_failure_layer": "L4",
+  "attribution_reason": "800元预算已传入模型并在页面保留，但规划未落实可行预算，且预算门票参考处理有矛盾；页面的冲突取舍不足另记L4。",
+  "critical_failure": false,
+  "critical_reason": "没有代交易、索取支付凭据或保证方案满足800元；普通预算规划失败及低质量调整建议不自动作为关键失败。",
+  "review_required": true,
+  "review_reasons": [
+    "检查点1用户给0，但页面明确显示超预算，应在校准裁定时核对本检查点是否只要求识别不足。",
+    "D3用户给1，算术正确但门票文字与预算处理存在矛盾，需按同一评分口径核对。"
+  ],
+  "limitations": [
+    "用户只提供分数，所有文字说明均为助手补充。",
+    "用户未提供本条旧分暴露情况，不宣称严格盲评。",
+    "未重跑应用、未实时联网核验景点信息、未调用模型评委。",
+    "复核对象为2026-10-11保存结果，本次评分录入日期为2026-10-12。"
+  ]
+}

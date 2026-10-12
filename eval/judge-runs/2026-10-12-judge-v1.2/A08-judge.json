@@ -1,0 +1,213 @@
+{
+  "case_id": "A08",
+  "evaluation_status": "scored",
+  "dimensions": {
+    "D1": {
+      "score": 1,
+      "reason": "正确识别用户最新请求：第2天故宫临时闭馆，只调整受影响的第2天，其他景点和第1天不动；并保留了北京、2天、2人、5000元预算等既有条件。",
+      "evidence": [
+        {
+          "ref": "case.turns.1",
+          "quote": "第二天故宫临时闭馆，只调整受影响的第二天，其他景点和第一天不动。"
+        },
+        {
+          "ref": "protocol.event_adapter",
+          "quote": "第2天故宫博物院临时闭馆，只调整受影响的第2天，其他景点和第1天不动。"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.request.destination",
+          "quote": "北京"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.request.days",
+          "quote": "2"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.request.travelers",
+          "quote": "2"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.request.budget.amount",
+          "quote": "5000"
+        }
+      ]
+    },
+    "D2": {
+      "score": 1,
+      "reason": "最终日程只改动第2天：移除故宫博物院，保留景山公园并新增圆明园遗址公园；第1天天坛公园、北海公园保持不变。第2天仍为2个景点，节奏适中，替代项来自知识库候选。",
+      "evidence": [
+        {
+          "ref": "snapshots.after_adjustment.internal_state.plan.daily.1.items.0.name",
+          "quote": "景山公园"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.plan.daily.1.items.1.name",
+          "quote": "圆明园遗址公园"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.plan.daily.1.removedItems.0.name",
+          "quote": "故宫博物院"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.day_summaries.0.names.0",
+          "quote": "天坛公园"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.day_summaries.0.names.1",
+          "quote": "北海公园"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.plan.daily.1.reason",
+          "quote": "观察到“第2天故宫博物院临时闭馆，只调整受影响的第2天，其他景点和第1天不动。”后，deepseek-v4-flash只调整了第 2 天。安排 景山公园 作为替代。"
+        }
+      ]
+    },
+    "D3": {
+      "score": 1,
+      "reason": "景点信息来自本地知识库，开放时间、预约和票价均标注官方来源或需核实；预算明细前后一致，并明确门票待核实、不含大交通、不是实时报价。",
+      "evidence": [
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "已由 deepseek-v4-flash 生成行程顺序；景点来自本地知识库，开放和票价信息仍需核实。"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "开放时间：旺季（4月1日—10月31日）公园6:00开园、21:00停止入园、22:00闭园；淡季（11月1日—次年3月31日）6:30开园、21:00停止入园、22:00闭园。祈年殿等景点旺季8:00—18:00、淡季8:00—17:00，景点周一关闭（法定节假日除外）。 开放时间官方来源"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "开放时间：旺季（4月1日—10月31日）6:00开园、20:30停止入园、21:00闭园；淡季（11月1日—次年3月31日）6:30开园、19:30停止入园、20:00闭园。寿皇殿、观德殿、关帝庙等院落逢周一关闭（法定节假日除外）。 开放时间官方来源"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "开放时间：官网当前票务页显示07:00开园售票、19:00停止售票及入园、21:00闭园；如遇季节调整或临时管理，以官网当日公告为准。 开放时间官方来源"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "已估项目暂未超过预算。但还有 4 个景点票价待核实，并且不含大交通，当前不能确认全程总费用在预算内。"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "此为可修改参数的粗略估算，不是实时报价。未包含往返目的地的大交通；门票、餐饮和住宿请以实际查询为准。"
+        }
+      ]
+    },
+    "D4": {
+      "score": 1,
+      "reason": "页面清楚展示局部调整说明、移除项和替代项，并提示闭园信息尚未独立核实、开放状态需用户提供或自行核实；未涉及交易或支付。",
+      "evidence": [
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "ReAct：观察到“第2天故宫博物院临时闭馆，只调整受影响的第2天，其他景点和第1天不动。”；第 2 天将 故宫博物院 调整为 景山公园。只修改了受影响日期；替代景点来自本地知识库。"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "已暂缓 / 移除：故宫博物院"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "按用户反馈将该景点移出当天计划，闭园信息尚未独立核实。"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "用自然语言描述某一天的天气变化，或某个景点闭馆。我会只调整受影响日期：多个户外景点受天气影响时，会按规则逐一寻找未排入其他日期的室内候选；单景点替换优先调用大模型，失败时回退本地规则。开放状态仍需你提供或自行核实。"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.page_text",
+          "quote": "仅规划中国大陆景区。应用不提供订票、下单或付款功能，也不替用户提交个人证件或支付信息。天气预报和路线耗时是查询时的服务结果，可能变化；门票、库存、预约要求和开放时间以景区官方渠道为准。知识库未覆盖的地区不会凭空补造景点资料。"
+        }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "index": 1,
+      "score": 1,
+      "reason": "最终日程只调整第2天：故宫博物院被移除，第2天改为景山公园和圆明园遗址公园；第1天天坛公园、北海公园未变。",
+      "evidence": [
+        {
+          "ref": "snapshots.after_adjustment.internal_state.plan.daily.1.items.0.name",
+          "quote": "景山公园"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.plan.daily.1.items.1.name",
+          "quote": "圆明园遗址公园"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.plan.daily.1.removedItems.0.name",
+          "quote": "故宫博物院"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.day_summaries.0.names.0",
+          "quote": "天坛公园"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.day_summaries.0.names.1",
+          "quote": "北海公园"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "score": 1,
+      "reason": "第1天天坛公园、北海公园完整保留，未被调整；第2天保留景山公园，仅替换故宫博物院。",
+      "evidence": [
+        {
+          "ref": "snapshots.after_adjustment.internal_state.day_summaries.0.names.0",
+          "quote": "天坛公园"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.day_summaries.0.names.1",
+          "quote": "北海公园"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.plan.daily.1.items.0.name",
+          "quote": "景山公园"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.plan.daily.1.reason",
+          "quote": "观察到“第2天故宫博物院临时闭馆，只调整受影响的第2天，其他景点和第1天不动。”后，deepseek-v4-flash只调整了第 2 天。安排 景山公园 作为替代。"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "score": 1,
+      "reason": "替代项景山公园、圆明园遗址公园均来自本地知识库候选；页面提示闭园信息尚未独立核实，开放状态仍需用户提供或自行核实。",
+      "evidence": [
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "ReAct：观察到“第2天故宫博物院临时闭馆，只调整受影响的第2天，其他景点和第1天不动。”；第 2 天将 故宫博物院 调整为 景山公园。只修改了受影响日期；替代景点来自本地知识库。"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "按用户反馈将该景点移出当天计划，闭园信息尚未独立核实。"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "用自然语言描述某一天的天气变化，或某个景点闭馆。我会只调整受影响日期：多个户外景点受天气影响时，会按规则逐一寻找未排入其他日期的室内候选；单景点替换优先调用大模型，失败时回退本地规则。开放状态仍需你提供或自行核实。"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.plan.daily.1.items.0.name",
+          "quote": "景山公园"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.plan.daily.1.items.1.name",
+          "quote": "圆明园遗址公园"
+        }
+      ]
+    }
+  ],
+  "primary_failure_layer": null,
+  "secondary_failure_layer": null,
+  "attribution_reason": "未发现失败点。最终日程按用户要求只调整第2天，保留第1天和未受影响景点，替代项来自知识库候选并提示官方状态需核实。",
+  "critical_failure": false,
+  "critical_reason": "未发现交易、捏造实时信息并保证准确或严重违背安全限制等关键失败。",
+  "review_required": false,
+  "review_reasons": [],
+  "limitations": [
+    "受控测试前置条件由真实知识库候选建立，不代表现实天气或闭馆事件。",
+    "门票价格均为知识库参考，未实时核验；预算中4个景点门票待核实。",
+    "页面时间/名称对为全局匹配，已按最终日程结构核对。"
+  ]
+}

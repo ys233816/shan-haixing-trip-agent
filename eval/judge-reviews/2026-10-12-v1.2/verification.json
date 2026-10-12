@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-12",
+  "api_calls": 0,
+  "disagreements_covered": 15,
+  "findings_match_saved_comparison_items": true,
+  "all_excerpts_verified_against_original_input": true,
+  "absence_claims_scoped_to_captured_visible_output": true,
+  "existing_files_sha256_verified": 346,
+  "existing_files_changed": 0,
+  "human_labels_changed": false,
+  "machine_judgments_changed": false,
+  "repeat_generation_identical": true,
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "new_performance_metrics": false
+}

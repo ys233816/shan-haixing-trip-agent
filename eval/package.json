@@ -1,0 +1,12 @@
+{
+  "name": "trip-agent-evaluation",
+  "private": true,
+  "scripts": {
+    "judge:preflight": "node run-judge.cjs --preflight",
+    "judge:run": "node run-judge.cjs",
+    "judge:report": "node run-judge.cjs --report"
+  },
+  "dependencies": {
+    "ajv": "8.17.1"
+  }
+}

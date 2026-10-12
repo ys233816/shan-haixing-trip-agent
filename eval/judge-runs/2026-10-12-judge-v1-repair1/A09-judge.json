@@ -1,0 +1,116 @@
+{
+  "case_id": "A09",
+  "evaluation_status": "scored",
+  "dimensions": {
+    "D1": {
+      "score": 1,
+      "reason": "识别了厦门、1天、2人、预算5000、暴雨及三个户外点无室内候选的约束，并在调整中保留这些条件。",
+      "evidence": [
+        {
+          "ref": "snapshots.after_adjustment.observed.form",
+          "quote": "\"destination\":\"厦门\",\"startDate\":\"\",\"days\":\"1\",\"travelers\":\"2\",\"budget\":\"5000\""
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "观察到：第1天厦门暴雨，原行程里三个户外点，附近没有可确认的室内景点。"
+        }
+      ]
+    },
+    "D2": {
+      "score": 0,
+      "reason": "调整后仍把已暂缓的厦门大学思明校区周边和鼓浪屿列为可执行行程项，且日程仍偏紧，未给出可行的替代安排。",
+      "evidence": [
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "已暂缓 / 移除：厦门大学思明校区周边"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "09:00\n厦门大学思明校区周边"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "预计景点、转场和午餐占用约 8.3 小时，日程偏紧，建议减少景点或缩短游览时间。"
+        }
+      ]
+    },
+    "D3": {
+      "score": 1,
+      "reason": "未编造室内景点或实时信息，预算按2人1天计算并标明门票待核实，来源与估算边界清楚。",
+      "evidence": [
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "天气变化后没有可用的未排入室内候选，已暂缓该景点。"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "当前已估合计：¥396\n已估项目暂未超过预算。但还有 2 个景点票价待核实"
+        }
+      ]
+    },
+    "D4": {
+      "score": 0,
+      "reason": "未提示关注暴雨预警，且调整摘要称已暂缓景点但最终行程仍展示这些景点，摘要与最终行程不一致。",
+      "evidence": [
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "厦门大学思明校区周边 暂缓；鼓浪屿 暂缓；厦门园林植物园 暂缓。只修改了当天。"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "09:00\n厦门大学思明校区周边"
+        }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "index": 1,
+      "score": 1,
+      "reason": "未编造室内替代景点，明确说明没有可用的未排入室内候选。",
+      "evidence": [
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "天气变化后没有可用的未排入室内候选，已暂缓该景点。"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "score": 1,
+      "reason": "逐项列出三个户外点并说明因无室内候选而暂缓，依据来自检索结果。",
+      "evidence": [
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "厦门大学思明校区周边 暂缓；鼓浪屿 暂缓；厦门园林植物园 暂缓。"
+        },
+        {
+          "ref": "snapshots.after_adjustment.network[0].response.hits[0].indoorOutdoor",
+          "quote": "室外为主"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "score": 0,
+      "reason": "允许暂缓已体现，但未提示关注暴雨预警。",
+      "evidence": [
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "已暂缓 / 移除：厦门大学思明校区周边"
+        }
+      ]
+    }
+  ],
+  "primary_failure_layer": "L3",
+  "secondary_failure_layer": "L4",
+  "attribution_reason": "主要失败在排程执行：暂缓景点后仍将其保留为可执行行程项；展示层未提示暴雨预警且摘要与最终行程不一致。",
+  "critical_failure": false,
+  "critical_reason": "未发现代付款、索取支付凭据或捏造实时信息等关键失败。",
+  "review_required": false,
+  "review_reasons": [],
+  "limitations": [
+    "未测试自然语言修改自动映射能力。",
+    "受控前置条件不代表厦门真实缺少室内景点。"
+  ]
+}

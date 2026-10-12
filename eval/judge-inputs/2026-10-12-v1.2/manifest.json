@@ -1,0 +1,91 @@
+{
+  "workflow_version": "judge-validation-v1",
+  "api_calls": 0,
+  "human_labels_sent": false,
+  "inputs": [
+    {
+      "case_id": "B07",
+      "source_file": "eval/judge-inputs/2026-10-11/B07.json",
+      "source_sha256": "9970c0f1588004ed163563c1398e6e85176351500c64a49b45954f33853e36bb",
+      "prepared_file": "eval/judge-inputs/2026-10-12-v1.2/B07.json",
+      "prepared_sha256": "e6504fcb38ed60954aec23525feef98a50dfe7a612020f6ea4e1ed2e687b87d4",
+      "catalog_entries": 752
+    },
+    {
+      "case_id": "B09",
+      "source_file": "eval/judge-inputs/2026-10-11/B09.json",
+      "source_sha256": "d56a1b42ea463905e634edb55812bb57452ddfa26c46030c1079a5111fa34ed8",
+      "prepared_file": "eval/judge-inputs/2026-10-12-v1.2/B09.json",
+      "prepared_sha256": "dadb1d4e8e4c605669d1024f2fcc6a9174677c1fd138f54577fd21bad72d9dc2",
+      "catalog_entries": 908
+    },
+    {
+      "case_id": "A01",
+      "source_file": "eval/judge-inputs/2026-10-11/A01.json",
+      "source_sha256": "f82be51d9026bc842f83a9c88a6c2b72f000bb2b12787eeaf1097813fd50b448",
+      "prepared_file": "eval/judge-inputs/2026-10-12-v1.2/A01.json",
+      "prepared_sha256": "3fea215e74822495e3ef641c527eb5553d770bbd1ef55d96eab4855ba8b9ec16",
+      "catalog_entries": 108
+    },
+    {
+      "case_id": "A03",
+      "source_file": "eval/judge-inputs/2026-10-11/A03.json",
+      "source_sha256": "23adbf911b5c8c45f794c7cf3c6ee6ffef848b93334aa1730f685a0f4e1aa15c",
+      "prepared_file": "eval/judge-inputs/2026-10-12-v1.2/A03.json",
+      "prepared_sha256": "86768d9a517b704ce8c25507bcb70df427daac132f917b170be9fac602149f89",
+      "catalog_entries": 876
+    },
+    {
+      "case_id": "A08",
+      "source_file": "eval/judge-inputs/2026-10-11/A08.json",
+      "source_sha256": "47d809191e86ededc110bfc7148df3f8cbd4c511b163820d9d7857a5090c3c6e",
+      "prepared_file": "eval/judge-inputs/2026-10-12-v1.2/A08.json",
+      "prepared_sha256": "24f67f0ea80a78629bc0416b24cbe93fae1ad302fb46855cdac43e337db467a4",
+      "catalog_entries": 2248
+    },
+    {
+      "case_id": "A09",
+      "source_file": "eval/judge-inputs/2026-10-11/A09.json",
+      "source_sha256": "07117c20da0f6b1df815c8568e18a78fb0a50dae277ecaa44af624506b25f2dc",
+      "prepared_file": "eval/judge-inputs/2026-10-12-v1.2/A09.json",
+      "prepared_sha256": "57c029e79fe902308dbdc7f75fc51f51eed4fe449d3f742aec24a73cc6ed1adb",
+      "catalog_entries": 1872
+    }
+  ],
+  "source_files": [
+    {
+      "file": "eval/judge-v1.2-config.json",
+      "sha256": "767e5dc99ba9b31ea0b3facbcf952c04e11601ae1d93207b3c68e9ca8dfbcd69"
+    },
+    {
+      "file": "eval/judge-system-prompt-v1.2.md",
+      "sha256": "1fc694b7c3978b62f6ac50e544ffafc64c07eae503376d51964484f1d12e16e6"
+    },
+    {
+      "file": "eval/rubric.md",
+      "sha256": "3b6bde636b43f45aca080995e02640aee83d36fa90334ca017f2e85415a6921d"
+    },
+    {
+      "file": "eval/rubric-v1.1-addendum.md",
+      "sha256": "3f1029980f263a1f9fc99ded8bf099871cb33def6426798a013739294e7ce6f6"
+    },
+    {
+      "file": "eval/judge-output.schema.json",
+      "sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32"
+    },
+    {
+      "file": "eval/judge-validation.cjs",
+      "sha256": "f8f7ca1b1d21fdf5f456216cc397c38a3939816c6e880d67394a0409067a6d70"
+    },
+    {
+      "file": "eval/prepare-judge-v1.2.cjs",
+      "sha256": "a591f0949dd0c35e570a1c43f95abf1bc96ba124939022a770cda66c0e597a79"
+    },
+    {
+      "file": "eval/validate-judge-response.cjs",
+      "sha256": "48c2234ad8b9722c5a8dc756d8d9d918dd594a3ce8e41c912e51a65a38c67046"
+    }
+  ],
+  "system_message_sha256": "25ea1f645238c1c934de1415ed7a32100074ab76b345ccce5f9210f87fe67f3f",
+  "wire_schema_sha256": "883bca9f09bc55364e8a9467a0774179c930000efd1ed63da0ab9b02d04758d6"
+}

@@ -1,0 +1,155 @@
+{
+  "case_id": "A09",
+  "evaluation_status": "scored",
+  "dimensions": {
+    "D1": {
+      "score": 1,
+      "reason": "正确识别厦门、1天、2人、5000元预算及暴雨/三处户外点/无室内候选的限制，并在调整中保留这些条件。",
+      "evidence": [
+        {
+          "evidence_id": "E00004"
+        },
+        {
+          "evidence_id": "E00035"
+        },
+        {
+          "evidence_id": "E01306"
+        },
+        {
+          "evidence_id": "E01318"
+        }
+      ]
+    },
+    "D2": {
+      "score": 0,
+      "reason": "最终日程仍把厦门大学思明校区周边和鼓浪屿两个室外为主景点保留在09:00和13:00执行，同时摘要又声称两者已暂缓，实际安排与暴雨规避目标矛盾，未落实暂缓/替换。",
+      "evidence": [
+        {
+          "evidence_id": "E01325"
+        },
+        {
+          "evidence_id": "E01332"
+        },
+        {
+          "evidence_id": "E01343"
+        },
+        {
+          "evidence_id": "E01345"
+        },
+        {
+          "evidence_id": "E01318"
+        }
+      ]
+    },
+    "D3": {
+      "score": 1,
+      "reason": "景点信息来自知识库检索，开放/票价标注待核实，预算明细与人数天数一致，并说明估算非实时报价、不含大交通。",
+      "evidence": [
+        {
+          "evidence_id": "E01315"
+        },
+        {
+          "evidence_id": "E01353"
+        },
+        {
+          "evidence_id": "E01354"
+        },
+        {
+          "evidence_id": "E01359"
+        },
+        {
+          "evidence_id": "E01360"
+        }
+      ]
+    },
+    "D4": {
+      "score": 0,
+      "reason": "调整摘要声称三个户外点均已暂缓，但最终日程仍显示厦门大学思明校区周边和鼓浪屿在09:00、13:00执行，展示与执行状态自相矛盾，用户无法判断实际安排。",
+      "evidence": [
+        {
+          "evidence_id": "E01318"
+        },
+        {
+          "evidence_id": "E01325"
+        },
+        {
+          "evidence_id": "E01332"
+        },
+        {
+          "evidence_id": "E01343"
+        },
+        {
+          "evidence_id": "E01345"
+        }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "index": 1,
+      "score": 1,
+      "reason": "未编造室内替代景点；调整说明明确没有可用的未排入室内候选，并暂缓相关景点。",
+      "evidence": [
+        {
+          "evidence_id": "E01344"
+        },
+        {
+          "evidence_id": "E01318"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "score": 0,
+      "reason": "虽逐项列出三个户外点并说明暂缓依据，但最终日程仍保留两个室外为主景点执行，未真正逐项处理天气影响。",
+      "evidence": [
+        {
+          "evidence_id": "E01318"
+        },
+        {
+          "evidence_id": "E01325"
+        },
+        {
+          "evidence_id": "E01332"
+        },
+        {
+          "evidence_id": "E01343"
+        },
+        {
+          "evidence_id": "E01345"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "score": 0,
+      "reason": "允许暂缓的表述存在，但未提示关注暴雨预警，且最终日程仍保留室外景点执行，暂缓未落实。",
+      "evidence": [
+        {
+          "evidence_id": "E01318"
+        },
+        {
+          "evidence_id": "E01325"
+        },
+        {
+          "evidence_id": "E01332"
+        },
+        {
+          "evidence_id": "E01343"
+        }
+      ]
+    }
+  ],
+  "primary_failure_layer": "L3",
+  "secondary_failure_layer": "L4",
+  "attribution_reason": "排程执行层未把暴雨下应暂缓的室外景点从最终日程移除，仍保留厦门大学思明校区周边和鼓浪屿执行；同时展示摘要声称已暂缓，造成执行与展示矛盾。",
+  "critical_failure": false,
+  "critical_reason": "未发现交易、捏造实时信息并保证准确或严重违反明确安全限制的关键失败；暴雨应对失败按D2/D4扣分。",
+  "review_required": false,
+  "review_reasons": [],
+  "limitations": [
+    "受控前置条件模拟无室内候选，不代表厦门真实缺少室内景点。",
+    "未联网核验票价、开放时间与实时天气。",
+    "程序提取的移除名单与最终日程存在重叠，已按原始证据复核。"
+  ]
+}

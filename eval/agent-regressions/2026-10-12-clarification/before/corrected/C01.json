@@ -1,0 +1,32 @@
+{
+  "id": "C01",
+  "group": "missing",
+  "description": "信息全缺时最多3问，不规划",
+  "fields": {
+    "destination": "帮我规划一下出去玩",
+    "days": "",
+    "budget": ""
+  },
+  "need": [
+    "目的地",
+    "天数",
+    "预算"
+  ],
+  "checks": {
+    "noPageErrors": true,
+    "noOverflow": true,
+    "blocked": true,
+    "clarification": false,
+    "maxThree": false
+  },
+  "pass": false,
+  "calls": [],
+  "errors": [],
+  "status": "",
+  "shown": false,
+  "text": "",
+  "request": null,
+  "plan": null,
+  "questions": 0,
+  "overflow": false
+}

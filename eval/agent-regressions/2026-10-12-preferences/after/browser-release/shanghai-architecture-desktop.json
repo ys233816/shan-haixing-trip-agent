@@ -1,0 +1,265 @@
+{
+  "version": "after",
+  "id": "shanghai-architecture",
+  "viewport": "desktop",
+  "checks": {
+    "noPageErrors": true,
+    "noHorizontalOverflow": true,
+    "fulfilled:博物馆": true,
+    "fulfilled:建筑": false,
+    "stableOnReload": true
+  },
+  "pass": false,
+  "errors": [],
+  "request": {
+    "destination": "上海",
+    "days": 1,
+    "travelers": 2,
+    "budget": {
+      "amount": 10000,
+      "includes": "all",
+      "inputAmount": 10000,
+      "basisRequested": "auto",
+      "basis": "total"
+    },
+    "assumptions": {
+      "hotelPerNight": 350,
+      "foodPerDay": 120,
+      "localTransitPerDay": 60
+    },
+    "preferences": [
+      "博物馆"
+    ],
+    "avoid": "想看城市建筑",
+    "pace": "balanced",
+    "walkingTolerance": "medium",
+    "lodgingNightsInput": null,
+    "lodgingNights": 0,
+    "budgetNotes": [
+      "按全团总预算 ¥10,000 估算。",
+      "未指定住宿晚数，默认按 1 天减1晚，共 0 晚。"
+    ]
+  },
+  "plan": {
+    "city": "上海",
+    "plannerMode": "llm",
+    "retrievalSource": "kb-hybrid-v4",
+    "candidates": [
+      {
+        "name": "外滩",
+        "city": "上海市",
+        "area": "黄浦区",
+        "kind": "城市地标、历史建筑、滨江景观、城市漫步",
+        "indoor": "室外为主",
+        "hours": 90,
+        "walk": "低",
+        "rain": "低",
+        "tags": "上海、外滩、滨江、建筑、夜景、摄影",
+        "suitability": "城市观景、建筑、人文和摄影爱好者",
+        "openingHours": "滨江公共空间开放安排以现场管理公告为准",
+        "reservationInfo": "公共步道通常无需预约；临时管控以现场公告为准",
+        "ticketInfo": "公共步道通常免费；周边场馆另行收费",
+        "ticketPriceCny": "",
+        "cost": null,
+        "openingSource": "https://www.shanghai.gov.cn/",
+        "ticketSource": "https://www.shanghai.gov.cn/"
+      },
+      {
+        "name": "豫园",
+        "city": "上海市",
+        "area": "黄浦区",
+        "kind": "古典园林、历史文化、传统建筑",
+        "indoor": "室外为主，含室内展陈空间",
+        "hours": 120,
+        "walk": "中",
+        "rain": "低到中",
+        "tags": "上海、豫园、园林、历史文化、传统建筑",
+        "suitability": "古典园林、传统建筑和历史文化爱好者",
+        "openingHours": "园林及周边区域开放时间可能不同，以官方公告为准",
+        "reservationInfo": "以官方渠道为准",
+        "ticketInfo": "园林及周边场馆票务以官方渠道公布为准",
+        "ticketPriceCny": "",
+        "cost": null,
+        "openingSource": "https://www.yugarden.com.cn/",
+        "ticketSource": "https://www.yugarden.com.cn/"
+      },
+      {
+        "name": "上海博物馆（人民广场馆）",
+        "city": "上海市",
+        "area": "黄浦区",
+        "kind": "博物馆、历史文化、艺术",
+        "indoor": "室内",
+        "hours": 180,
+        "walk": "低",
+        "rain": "高",
+        "tags": "上海、博物馆、室内、历史、艺术、雨天备选",
+        "suitability": "历史、艺术、文物和博物馆爱好者",
+        "openingHours": "以博物馆官方公告为准，部分展览可能另有安排",
+        "reservationInfo": "参观预约及入馆要求以官方渠道为准",
+        "ticketInfo": "常设展与特展安排以官方渠道公布为准",
+        "ticketPriceCny": "",
+        "cost": null,
+        "openingSource": "https://www.shanghaimuseum.net/",
+        "ticketSource": "https://www.shanghaimuseum.net/"
+      },
+      {
+        "name": "上海自然博物馆",
+        "city": "上海市",
+        "area": "静安区",
+        "kind": "自然博物馆、科普教育、亲子活动",
+        "indoor": "室内",
+        "hours": 180,
+        "walk": "低",
+        "rain": "高",
+        "tags": "上海、自然博物馆、室内、科普、亲子、雨天备选",
+        "suitability": "亲子家庭、自然科学和生物爱好者",
+        "openingHours": "以博物馆官方公告为准，留意闭馆日及展览安排",
+        "reservationInfo": "预约及入馆要求以官方渠道为准",
+        "ticketInfo": "票务及特展安排以官方渠道公布为准",
+        "ticketPriceCny": "",
+        "cost": null,
+        "openingSource": "https://www.snhm.org.cn/",
+        "ticketSource": "https://www.snhm.org.cn/"
+      },
+      {
+        "name": "上海迪士尼度假区",
+        "city": "上海市",
+        "area": "浦东新区",
+        "kind": "主题乐园、亲子活动、娱乐体验",
+        "indoor": "室内外结合",
+        "hours": 540,
+        "walk": "高",
+        "rain": "中",
+        "tags": "上海、迪士尼、主题乐园、亲子、全天、步行较多",
+        "suitability": "亲子家庭、主题乐园和娱乐体验爱好者",
+        "openingHours": "每日运营时间及项目开放情况以度假区官方公告为准",
+        "reservationInfo": "门票、入园和项目规则以官方渠道为准",
+        "ticketInfo": "票价按日期浮动，以官方渠道公布为准",
+        "ticketPriceCny": "",
+        "cost": null,
+        "openingSource": "https://www.shanghaidisneyresort.com/",
+        "ticketSource": "https://www.shanghaidisneyresort.com/"
+      },
+      {
+        "name": "上海中心大厦观光厅",
+        "city": "上海市",
+        "area": "浦东新区陆家嘴",
+        "kind": "城市观景、地标建筑、室内体验",
+        "indoor": "室内",
+        "hours": 90,
+        "walk": "低",
+        "rain": "中；能见度可能影响观景体验",
+        "tags": "上海、陆家嘴、观景、室内、地标、摄影",
+        "suitability": "城市观景、建筑和摄影爱好者",
+        "openingHours": "观光厅开放安排以场馆官方公告为准",
+        "reservationInfo": "预约及入场要求以官方渠道为准",
+        "ticketInfo": "票价及优惠以官方渠道公布为准",
+        "ticketPriceCny": "",
+        "cost": null,
+        "openingSource": "https://www.swfc-shanghai.com/",
+        "ticketSource": "https://www.swfc-shanghai.com/"
+      },
+      {
+        "name": "朱家角古镇",
+        "city": "上海市",
+        "area": "青浦区",
+        "kind": "古镇、历史文化、水乡风貌",
+        "indoor": "室内外结合",
+        "hours": 240,
+        "walk": "中",
+        "rain": "中",
+        "tags": "上海、青浦、古镇、水乡、历史文化、摄影",
+        "suitability": "水乡古镇、历史文化和摄影爱好者",
+        "openingHours": "古镇公共区域与收费场馆开放时间可能不同，以现场及官方公告为准",
+        "reservationInfo": "部分场馆或活动可能有单独要求，以官方渠道为准",
+        "ticketInfo": "公共区域及联票项目收费情况以官方渠道公布为准",
+        "ticketPriceCny": "",
+        "cost": null,
+        "openingSource": "https://www.zhujiajiao.com/",
+        "ticketSource": "https://www.zhujiajiao.com/"
+      },
+      {
+        "name": "上海欢乐谷",
+        "city": "上海市",
+        "area": "松江区",
+        "kind": "主题乐园、游乐设施、亲子活动",
+        "indoor": "室内外结合",
+        "hours": 420,
+        "walk": "高",
+        "rain": "低到中，部分户外项目可能受天气影响",
+        "tags": "上海、松江、主题乐园、亲子、全天、步行较多",
+        "suitability": "亲子家庭、游乐设施和主题娱乐爱好者",
+        "openingHours": "运营日期、时间和设备开放情况以园区官方公告为准",
+        "reservationInfo": "入园及项目规则以官方渠道为准",
+        "ticketInfo": "票价及优惠以官方渠道公布为准",
+        "ticketPriceCny": "",
+        "cost": null,
+        "openingSource": "https://www.happyvalley.cn/",
+        "ticketSource": "https://www.happyvalley.cn/"
+      }
+    ],
+    "daily": [
+      {
+        "date": "第1天",
+        "city": "上海",
+        "items": [
+          {
+            "name": "上海博物馆（人民广场馆）",
+            "city": "上海市",
+            "area": "黄浦区",
+            "kind": "博物馆、历史文化、艺术",
+            "indoor": "室内",
+            "hours": 180,
+            "walk": "低",
+            "rain": "高",
+            "tags": "上海、博物馆、室内、历史、艺术、雨天备选",
+            "suitability": "历史、艺术、文物和博物馆爱好者",
+            "openingHours": "以博物馆官方公告为准，部分展览可能另有安排",
+            "reservationInfo": "参观预约及入馆要求以官方渠道为准",
+            "ticketInfo": "常设展与特展安排以官方渠道公布为准",
+            "ticketPriceCny": "",
+            "cost": null,
+            "openingSource": "https://www.shanghaimuseum.net/",
+            "ticketSource": "https://www.shanghaimuseum.net/"
+          }
+        ],
+        "weather": null,
+        "walk": "适中",
+        "constraintDeferred": [],
+        "constraintNotes": [],
+        "planningHoursLimit": 8
+      }
+    ],
+    "preferenceCoverage": {
+      "requirements": [
+        {
+          "label": "博物馆",
+          "category": "博物馆"
+        },
+        {
+          "label": "建筑",
+          "category": "建筑"
+        }
+      ],
+      "fulfilled": [
+        {
+          "label": "博物馆",
+          "category": "博物馆",
+          "attractions": [
+            "上海博物馆（人民广场馆）"
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "label": "建筑",
+          "category": "建筑",
+          "reason": "已有匹配候选，但在当前时长、步行、天气、预算或局部调整限制下未排入；请确认取舍。"
+        }
+      ]
+    }
+  },
+  "text": "PLAN-AND-EXECUTE · 第 1 版\n上海 1 天游程框架\n\n2 人 · 预算上限 ¥10,000 · 偏好：博物馆\n\n规划：提取约束 → 混合检索景点 → 大模型编排 → 准备备选\n\n景点来源：本地景点知识库\n\n未填写出发日期，因此尚未将天气用于每日排序；可在下方手动查询预报。\n\n偏好覆盖\n\n已排入：博物馆（上海博物馆（人民广场馆））\n\n未覆盖：建筑；已有匹配候选，但在当前时长、步行、天气、预算或局部调整限制下未排入；请确认取舍。\n\n第1天\n上海 · 黄浦区\n\n区域：黄浦区　|　预计步行：适中　|　天气：未查询\n\n预计景点、转场和午餐占用约 3.0 小时，具体以现场为准。\n\n时间为建议开始时段：尚未查路线时按游览时长、午餐和每段 45 分钟交通预留估算；查询路线后使用地图路段耗时。\n\n09:00\n上海博物馆（人民广场馆）\n博物馆、历史文化、艺术 · 建议约 180 分钟 · 步行强度 低 · 室内\n开放时间：以博物馆官方公告为准，部分展览可能另有安排 开放时间官方来源\n预约：参观预约及入馆要求以官方渠道为准 预约官方来源\n门票：常设展与特展安排以官方渠道公布为准 票务官方来源\n雨天 / 临时闭馆备选：根据当天开放情况选择附近室内景点\n预算估算\n预留 10% 机动金\n\n按全团总预算 ¥10,000 估算。\n未指定住宿晚数，默认按 1 天减1晚，共 0 晚。\n住宿按 1 间 × 0 晚估算。\n\n明细\n住宿：¥0\n餐饮：¥240（2 人 × 1 天 × ¥120 / 人 / 天）\n市内交通：¥120（基于输入的每人每日估算参数）\n已知门票参考（成人票 × 2 人）：¥0\n待核实门票：1 个景点\n机动预留：¥36\n当前已估合计：¥396\n已估项目暂未超过预算。但还有 1 个景点票价待核实，并且不含大交通，当前不能确认全程总费用在预算内。\n\n此为可修改参数的粗略估算，不是实时报价。未包含往返目的地的大交通；门票、餐饮和住宿请以实际查询为准。\n下载行程 Markdown\n清除此行程\n\n开放时间与票务信息来自知识库，尚未实时核验；路线查询结果会显示查询时间与地图匹配地点。\n\n查询实时信息\n\n天气与路线由高德服务返回；结果受地点匹配、服务覆盖和查询时间影响，出行前请再次核对。配置大模型后，行程偏好、日期、预算和景点资料会发送给所选模型服务商。\n\n天气预报 · 上海\n查询天气\n两地路线 · 上海\n公共交通\n步行\n驾车\n查询路线\n遇到临时变化？\n\n用自然语言描述某一天的天气变化，或某个景点闭馆。我会只调整受影响日期：多个户外景点受天气影响时，会按规则逐一寻找未排入其他日期的室内候选；单景点替换优先调用大模型，失败时回退本地规则。开放状态仍需你提供或自行核实。\n\n局部调整",
+  "markdown": "# 山海行｜上海 1 天游程\n\n- 出发日期：未指定\n- 人数：2 人\n- 预算上限：¥10,000\n- 按全团总预算 ¥10,000 估算。\n- 未指定住宿晚数，默认按 1 天减1晚，共 0 晚。\n- 行程引擎：DeepSeek 大模型编排\n- 景点来源：本地中国大陆景点知识库\n\n## 偏好覆盖\n\n- 已排入：博物馆（上海博物馆（人民广场馆））\n- 未覆盖：建筑；已有匹配候选，但在当前时长、步行、天气、预算或局部调整限制下未排入；请确认取舍。\n\n## 每日行程\n\n### 第1天 · 上海\n天气：未查询\n\n预计当天占用：约 3.0 小时（景点游览、景点间交通及约 60 分钟午餐预留；未查全路线时，缺失路段按 45 分钟/段暂估）\n\n1. **上海博物馆（人民广场馆）**（黄浦区）\n   - 建议开始：09:00；类型：博物馆、历史文化、艺术；建议游览约 180 分钟；步行强度 低；室内\n   - 开放时间：以博物馆官方公告为准，部分展览可能另有安排\n   - 预约要求：参观预约及入馆要求以官方渠道为准\n   - 门票：常设展与特展安排以官方渠道公布为准\n   - 开放时间来源：https://www.shanghaimuseum.net/\n   - 预约 / 票务来源：https://www.shanghaimuseum.net/\n\n## 预算估算\n\n- 住宿：¥0\n- 餐饮：¥240\n- 市内交通：¥120\n- 已知门票参考（成人票 × 2 人）：¥0\n- 待核实票价景点：1 个\n- 机动预留：¥36\n- **当前已估合计：¥396**\n\n已估项目暂未超过预算；待核实票价和往返大交通可能增加总额。\n\n## 出行前核对\n\n- 门票、预约、库存和开放时间请以景区官方渠道为准。\n- 天气与路线结果会变化；确认地图匹配地点后再出发。\n- 预算未包含往返目的地的大交通，实际费用可能变化。\n- 本助手不代替用户订票、下单、付款或提交证件。\n",
+  "overflow": false
+}

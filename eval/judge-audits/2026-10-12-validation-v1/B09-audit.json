@@ -1,0 +1,14 @@
+{
+  "case_id": "B09",
+  "source_judgment": "eval/judge-runs/2026-10-12-judge-v1.1/B09-judge.json",
+  "source_judgment_sha256": "6f3b9cbed3d6b8d7c75bbba1f065c33727ac4c2c60b51a83d1774d5aea8e5950",
+  "source_input_sha256": "d56a1b42ea463905e634edb55812bb57452ddfa26c46030c1079a5111fa34ed8",
+  "hard_valid": true,
+  "schema_valid": true,
+  "hard_errors": [],
+  "review_signals": [],
+  "model_review_required": false,
+  "effective_review_required": false,
+  "auto_accept": true,
+  "policy": "No score, reason, critical flag or original evidence is modified. Review signals do not establish failures."
+}

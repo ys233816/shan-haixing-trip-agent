@@ -1,0 +1,536 @@
+{
+  "recordedAt": "2026-10-12T09:36:33.811Z",
+  "method": "真实表单提交+会话刷新+导出；知识检索重放已存北京候选，三亚无候选；模型禁用，无外部付费调用。10个场景×2视口。",
+  "versions": [
+    {
+      "version": "before",
+      "sha256": "c3e64826e0fc43c38e4a256f93097710205b0b7eb65da820ed11a97f4dd2b404",
+      "total": 20,
+      "passed": 0
+    },
+    {
+      "version": "after",
+      "sha256": "46f6859626c732be7ff9117184783b9939f304c0061095d60da26b326db541b2",
+      "total": 20,
+      "passed": 20
+    }
+  ],
+  "records": [
+    {
+      "version": "before",
+      "id": "B01-person",
+      "viewport": "desktop",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "total": false,
+        "scopeVisible": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "person-explicit",
+      "viewport": "desktop",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "total": false,
+        "scopeVisible": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "T10-two-nights",
+      "viewport": "desktop",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "nights": false,
+        "lodging": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "zero-nights",
+      "viewport": "desktop",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "nights": false,
+        "lodging": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "budget-conflict",
+      "viewport": "desktop",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "blocked": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "nights-conflict",
+      "viewport": "desktop",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "blocked": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "A03-low-budget",
+      "viewport": "desktop",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "negotiation": false,
+        "noZeroAdvice": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "A02-no-kb",
+      "viewport": "desktop",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "negotiation": false,
+        "noZeroAdvice": true,
+        "star": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "A12-zero-budget",
+      "viewport": "desktop",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "negotiation": false,
+        "noZeroAdvice": true,
+        "zeroAccepted": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "zero-cost-memory",
+      "viewport": "desktop",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "zeroCosts": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "B01-person",
+      "viewport": "mobile",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "total": false,
+        "scopeVisible": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "person-explicit",
+      "viewport": "mobile",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "total": false,
+        "scopeVisible": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "T10-two-nights",
+      "viewport": "mobile",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "nights": false,
+        "lodging": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "zero-nights",
+      "viewport": "mobile",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "nights": false,
+        "lodging": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "budget-conflict",
+      "viewport": "mobile",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "blocked": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "nights-conflict",
+      "viewport": "mobile",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "blocked": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "A03-low-budget",
+      "viewport": "mobile",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "negotiation": false,
+        "noZeroAdvice": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "A02-no-kb",
+      "viewport": "mobile",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "negotiation": false,
+        "noZeroAdvice": true,
+        "star": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "A12-zero-budget",
+      "viewport": "mobile",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "negotiation": false,
+        "noZeroAdvice": true,
+        "zeroAccepted": false
+      }
+    },
+    {
+      "version": "before",
+      "id": "zero-cost-memory",
+      "viewport": "mobile",
+      "pass": false,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "zeroCosts": false
+      }
+    },
+    {
+      "version": "after",
+      "id": "B01-person",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "total": true,
+        "scopeVisible": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "person-explicit",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "total": true,
+        "scopeVisible": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "T10-two-nights",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "nights": true,
+        "lodging": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "zero-nights",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "nights": true,
+        "lodging": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "budget-conflict",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "blocked": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "nights-conflict",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "blocked": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "A03-low-budget",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "negotiation": true,
+        "noZeroAdvice": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "A02-no-kb",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "negotiation": true,
+        "noZeroAdvice": true,
+        "star": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "A12-zero-budget",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "negotiation": true,
+        "noZeroAdvice": true,
+        "zeroAccepted": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "zero-cost-memory",
+      "viewport": "desktop",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "zeroCosts": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "B01-person",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "total": true,
+        "scopeVisible": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "person-explicit",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "total": true,
+        "scopeVisible": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "T10-two-nights",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "nights": true,
+        "lodging": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "zero-nights",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "nights": true,
+        "lodging": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "budget-conflict",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "blocked": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "nights-conflict",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "blocked": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "A03-low-budget",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "negotiation": true,
+        "noZeroAdvice": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "A02-no-kb",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "negotiation": true,
+        "noZeroAdvice": true,
+        "star": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "A12-zero-budget",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "negotiation": true,
+        "noZeroAdvice": true,
+        "zeroAccepted": true
+      }
+    },
+    {
+      "version": "after",
+      "id": "zero-cost-memory",
+      "viewport": "mobile",
+      "pass": true,
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "stableAfterReload": true,
+        "zeroCosts": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "C09",
+  "group": "state",
+  "description": "修改成冲突请求后清旧计划且刷新不恢复",
+  "kind": "blocked-revision",
+  "checks": {
+    "noPageErrors": true,
+    "noOverflow": true,
+    "oldPlanCleared": true,
+    "noOldPlanAfterReload": true
+  },
+  "pass": true,
+  "calls": [
+    "北京"
+  ],
+  "errors": [],
+  "status": "本次尚未生成，请先确认：\n预算金额与文字中的人均预算不一致，请修改金额或明确总预算。",
+  "shown": false,
+  "text": "",
+  "request": null,
+  "plan": null,
+  "questions": 1,
+  "overflow": false,
+  "restored": {
+    "status": "已恢复待确认的表单。请修改并提交；尚未生成新行程。",
+    "shown": false,
+    "text": "",
+    "request": null,
+    "plan": null,
+    "questions": 0,
+    "overflow": false
+  }
+}

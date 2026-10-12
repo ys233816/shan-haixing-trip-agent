@@ -1,0 +1,46 @@
+{
+  "created_at": "2026-10-12T06:12:36.783Z",
+  "prompt_version": "judge-v1.0",
+  "model": "deepseek-v4-flash",
+  "prompt_sha256": "e4d650d4be3c32705b46f8c47bcbc16513e1ab2ee44609ab434b260ed40ba25a",
+  "schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+  "rubric_sha256": "3b6bde636b43f45aca080995e02640aee83d36fa90334ca017f2e85415a6921d",
+  "runner_sha256": "c33485f6d37bc820ce26618bb3446ca4b0c103ccab8c502de3f7578b98d43c37",
+  "inputs": [
+    {
+      "id": "B07",
+      "file": "eval/judge-inputs/2026-10-11/B07.json",
+      "sha256": "9970c0f1588004ed163563c1398e6e85176351500c64a49b45954f33853e36bb"
+    },
+    {
+      "id": "B09",
+      "file": "eval/judge-inputs/2026-10-11/B09.json",
+      "sha256": "d56a1b42ea463905e634edb55812bb57452ddfa26c46030c1079a5111fa34ed8"
+    },
+    {
+      "id": "A01",
+      "file": "eval/judge-inputs/2026-10-11/A01.json",
+      "sha256": "f82be51d9026bc842f83a9c88a6c2b72f000bb2b12787eeaf1097813fd50b448"
+    },
+    {
+      "id": "A03",
+      "file": "eval/judge-inputs/2026-10-11/A03.json",
+      "sha256": "23adbf911b5c8c45f794c7cf3c6ee6ffef848b93334aa1730f685a0f4e1aa15c"
+    },
+    {
+      "id": "A08",
+      "file": "eval/judge-inputs/2026-10-11/A08.json",
+      "sha256": "47d809191e86ededc110bfc7148df3f8cbd4c511b163820d9d7857a5090c3c6e"
+    },
+    {
+      "id": "A09",
+      "file": "eval/judge-inputs/2026-10-11/A09.json",
+      "sha256": "07117c20da0f6b1df815c8568e18a78fb0a50dae277ecaa44af624506b25f2dc"
+    }
+  ],
+  "automatic_retries": 0,
+  "human_labels_sent": false,
+  "thinking": "disabled",
+  "prior_run": "eval/judge-runs/2026-10-12-judge-v1-retry1",
+  "purpose": "Six-case judge calibration; original travel runs unchanged."
+}

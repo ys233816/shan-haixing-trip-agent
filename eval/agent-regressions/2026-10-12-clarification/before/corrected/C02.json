@@ -1,0 +1,28 @@
+{
+  "id": "C02",
+  "group": "missing",
+  "description": "预算未填不能当作0元",
+  "fields": {
+    "budget": ""
+  },
+  "need": [
+    "预算"
+  ],
+  "checks": {
+    "noPageErrors": true,
+    "noOverflow": true,
+    "blocked": true,
+    "clarification": false,
+    "maxThree": false
+  },
+  "pass": false,
+  "calls": [],
+  "errors": [],
+  "status": "",
+  "shown": false,
+  "text": "",
+  "request": null,
+  "plan": null,
+  "questions": 0,
+  "overflow": false
+}

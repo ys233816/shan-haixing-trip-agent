@@ -1,0 +1,875 @@
+{
+  "version": "after",
+  "revision": "final",
+  "recordedAt": "2026-10-12T10:16:32.709Z",
+  "scope": "22条预算专项，固定结构化输入与受控候选，执行真实前端函数，不是36条全量任务完成率",
+  "sha256": "694d54f564e09df7b8f5374428427ef4723ab0c45e2369cd3d8e60e9a098d990",
+  "total": 22,
+  "passed": 22,
+  "tests": [
+    {
+      "id": "Q01",
+      "group": "scope",
+      "caseIds": [
+        "B01"
+      ],
+      "description": "4人每人1500元转换成总预算6000元",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 2,
+          "travelers": 4,
+          "budget": {
+            "amount": 6000,
+            "includes": "all",
+            "basisRequested": "auto",
+            "inputAmount": 1500,
+            "basis": "per_person"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "每人预算1500元",
+          "lodgingNightsInput": null,
+          "lodgingNights": 1,
+          "budgetNotes": [
+            "预算按每人 ¥1,500 × 4 人，换算为全团 ¥6,000。",
+            "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+          ]
+        },
+        "questions": [],
+        "notes": [
+          "预算按每人 ¥1,500 × 4 人，换算为全团 ¥6,000。",
+          "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+        ]
+      }
+    },
+    {
+      "id": "Q02",
+      "group": "scope",
+      "caseIds": [
+        "B01"
+      ],
+      "description": "显式人均口径不依赖特殊要求文本",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 2,
+          "travelers": 3,
+          "budget": {
+            "amount": 2400,
+            "includes": "all",
+            "basisRequested": "per_person",
+            "inputAmount": 800,
+            "basis": "per_person"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "lodgingNightsInput": null,
+          "lodgingNights": 1,
+          "budgetNotes": [
+            "预算按每人 ¥800 × 3 人，换算为全团 ¥2,400。",
+            "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+          ]
+        },
+        "questions": [],
+        "notes": [
+          "预算按每人 ¥800 × 3 人，换算为全团 ¥2,400。",
+          "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+        ]
+      }
+    },
+    {
+      "id": "Q03",
+      "group": "scope",
+      "caseIds": [
+        "B01"
+      ],
+      "description": "全团1500元保持1500，不乘人数",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 2,
+          "travelers": 4,
+          "budget": {
+            "amount": 1500,
+            "includes": "all",
+            "basisRequested": "total",
+            "inputAmount": 1500,
+            "basis": "total"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "总预算1500元",
+          "lodgingNightsInput": null,
+          "lodgingNights": 1,
+          "budgetNotes": [
+            "按全团总预算 ¥1,500 估算。",
+            "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+          ]
+        },
+        "questions": [],
+        "notes": [
+          "按全团总预算 ¥1,500 估算。",
+          "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+        ]
+      }
+    },
+    {
+      "id": "Q04",
+      "group": "scope",
+      "caseIds": [
+        "B01"
+      ],
+      "description": "字段与文本金额冲突时提问，不生成确定需求",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 2,
+          "travelers": 2,
+          "budget": {
+            "amount": 5000,
+            "includes": "all",
+            "basisRequested": "auto",
+            "inputAmount": 5000,
+            "basis": "total"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "每人预算1500元",
+          "lodgingNightsInput": null,
+          "lodgingNights": 1,
+          "budgetNotes": [
+            "按全团总预算 ¥5,000 估算。",
+            "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+          ]
+        },
+        "questions": [
+          "预算金额与文字中的人均预算不一致，请修改金额或明确总预算。"
+        ],
+        "notes": [
+          "按全团总预算 ¥5,000 估算。",
+          "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+        ]
+      }
+    },
+    {
+      "id": "Q05",
+      "group": "scope",
+      "caseIds": [
+        "B01"
+      ],
+      "description": "明确总额口径与人均文本冲突时提问",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 2,
+          "travelers": 2,
+          "budget": {
+            "amount": 1500,
+            "includes": "all",
+            "basisRequested": "total",
+            "inputAmount": 1500,
+            "basis": "total"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "每人1500元",
+          "lodgingNightsInput": null,
+          "lodgingNights": 1,
+          "budgetNotes": [
+            "按全团总预算 ¥1,500 估算。",
+            "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+          ]
+        },
+        "questions": [
+          "所选预算口径与人均要求冲突，请确认金额或修改口径。"
+        ],
+        "notes": [
+          "按全团总预算 ¥1,500 估算。",
+          "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+        ]
+      }
+    },
+    {
+      "id": "Q06",
+      "group": "scope",
+      "caseIds": [
+        "B01"
+      ],
+      "description": "不能把每人每日餐饮费用当作人均总预算",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 2,
+          "travelers": 2,
+          "budget": {
+            "amount": 1000,
+            "currency": "CNY",
+            "includes": "all",
+            "basisRequested": "auto",
+            "inputAmount": 1000,
+            "basis": "total"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "每人每天餐饮120元",
+          "lodgingNightsInput": null,
+          "lodgingNights": 1,
+          "budgetNotes": [
+            "按全团总预算 ¥1,000 估算。",
+            "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+          ]
+        },
+        "questions": [],
+        "notes": [
+          "按全团总预算 ¥1,000 估算。",
+          "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+        ]
+      }
+    },
+    {
+      "id": "Q07",
+      "group": "scope",
+      "caseIds": [
+        "B01"
+      ],
+      "description": "重复规范化不重复乘人数",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 2,
+          "travelers": 4,
+          "budget": {
+            "amount": 6000,
+            "includes": "all",
+            "basisRequested": "per_person",
+            "inputAmount": 1500,
+            "basis": "per_person"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "",
+          "lodgingNightsInput": null,
+          "lodgingNights": 1,
+          "budgetNotes": [
+            "预算按每人 ¥1,500 × 4 人，换算为全团 ¥6,000。",
+            "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+          ]
+        },
+        "questions": [],
+        "notes": [
+          "预算按每人 ¥1,500 × 4 人，换算为全团 ¥6,000。",
+          "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+        ]
+      }
+    },
+    {
+      "id": "Q08",
+      "group": "nights",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "两天两晚按两晚计算住宿700元",
+      "pass": true,
+      "evidence": {
+        "r": {
+          "request": {
+            "destination": "北京",
+            "days": 2,
+            "travelers": 2,
+            "budget": {
+              "amount": 1000,
+              "currency": "CNY",
+              "includes": "all",
+              "basisRequested": "auto",
+              "inputAmount": 1000,
+              "basis": "total"
+            },
+            "preferences": [],
+            "pace": "balanced",
+            "walkingTolerance": "medium",
+            "assumptions": {
+              "hotelPerNight": 350,
+              "foodPerDay": 120,
+              "localTransitPerDay": 60
+            },
+            "avoid": "两天两晚，预算包含住宿",
+            "lodgingNightsInput": null,
+            "lodgingNights": 2,
+            "budgetNotes": [
+              "按全团总预算 ¥1,000 估算。",
+              "住宿采用明确指定的 2 晚。"
+            ]
+          },
+          "questions": [],
+          "notes": [
+            "按全团总预算 ¥1,000 估算。",
+            "住宿采用明确指定的 2 晚。"
+          ]
+        },
+        "b": {
+          "nights": 2,
+          "rooms": 1,
+          "lodgingRaw": 700,
+          "lodgingIncluded": true,
+          "lodging": 700,
+          "food": 480,
+          "localTransit": 240,
+          "knownTickets": 0,
+          "unknownTicketCount": 0,
+          "routeFareReference": 0,
+          "knownRouteFareLegCount": 0,
+          "unknownRouteFareLegCount": 0,
+          "subtotal": 1420,
+          "reserve": 142,
+          "estimate": 1562
+        }
+      }
+    },
+    {
+      "id": "Q09",
+      "group": "nights",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "住宿晚数显式0时不推成天数减一",
+      "pass": true,
+      "evidence": {
+        "r": {
+          "request": {
+            "destination": "北京",
+            "days": 3,
+            "travelers": 2,
+            "budget": {
+              "amount": 1000,
+              "currency": "CNY",
+              "includes": "all",
+              "basisRequested": "auto",
+              "inputAmount": 1000,
+              "basis": "total"
+            },
+            "preferences": [],
+            "pace": "balanced",
+            "walkingTolerance": "medium",
+            "assumptions": {
+              "hotelPerNight": 350,
+              "foodPerDay": 120,
+              "localTransitPerDay": 60
+            },
+            "avoid": "",
+            "lodgingNights": 0,
+            "lodgingNightsInput": 0,
+            "budgetNotes": [
+              "按全团总预算 ¥1,000 估算。",
+              "住宿采用明确指定的 0 晚。"
+            ]
+          },
+          "questions": [],
+          "notes": [
+            "按全团总预算 ¥1,000 估算。",
+            "住宿采用明确指定的 0 晚。"
+          ]
+        },
+        "b": {
+          "nights": 0,
+          "rooms": 1,
+          "lodgingRaw": 0,
+          "lodgingIncluded": true,
+          "lodging": 0,
+          "food": 720,
+          "localTransit": 360,
+          "knownTickets": 0,
+          "unknownTicketCount": 0,
+          "routeFareReference": 0,
+          "knownRouteFareLegCount": 0,
+          "unknownRouteFareLegCount": 0,
+          "subtotal": 1080,
+          "reserve": 108,
+          "estimate": 1188
+        }
+      }
+    },
+    {
+      "id": "Q10",
+      "group": "nights",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "没有指定住宿晚数时沿用默认天数减一并注明",
+      "pass": true,
+      "evidence": {
+        "r": {
+          "request": {
+            "destination": "北京",
+            "days": 3,
+            "travelers": 2,
+            "budget": {
+              "amount": 1000,
+              "currency": "CNY",
+              "includes": "all",
+              "basisRequested": "auto",
+              "inputAmount": 1000,
+              "basis": "total"
+            },
+            "preferences": [],
+            "pace": "balanced",
+            "walkingTolerance": "medium",
+            "assumptions": {
+              "hotelPerNight": 350,
+              "foodPerDay": 120,
+              "localTransitPerDay": 60
+            },
+            "avoid": "",
+            "lodgingNightsInput": null,
+            "lodgingNights": 2,
+            "budgetNotes": [
+              "按全团总预算 ¥1,000 估算。",
+              "未指定住宿晚数，默认按 3 天减1晚，共 2 晚。"
+            ]
+          },
+          "questions": [],
+          "notes": [
+            "按全团总预算 ¥1,000 估算。",
+            "未指定住宿晚数，默认按 3 天减1晚，共 2 晚。"
+          ]
+        },
+        "b": {
+          "nights": 2,
+          "rooms": 1,
+          "lodgingRaw": 700,
+          "lodgingIncluded": true,
+          "lodging": 700,
+          "food": 720,
+          "localTransit": 360,
+          "knownTickets": 0,
+          "unknownTicketCount": 0,
+          "routeFareReference": 0,
+          "knownRouteFareLegCount": 0,
+          "unknownRouteFareLegCount": 0,
+          "subtotal": 1780,
+          "reserve": 178,
+          "estimate": 1958
+        }
+      }
+    },
+    {
+      "id": "Q11",
+      "group": "nights",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "字段1晚与文本2晚冲突时要求确认",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 2,
+          "travelers": 2,
+          "budget": {
+            "amount": 1000,
+            "currency": "CNY",
+            "includes": "all",
+            "basisRequested": "auto",
+            "inputAmount": 1000,
+            "basis": "total"
+          },
+          "preferences": [],
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "avoid": "住两晚",
+          "lodgingNights": 1,
+          "lodgingNightsInput": 1,
+          "budgetNotes": [
+            "按全团总预算 ¥1,000 估算。",
+            "住宿采用明确指定的 1 晚。"
+          ]
+        },
+        "questions": [
+          "住宿晚数与要求中的晚数冲突，请确认本次住几晚。"
+        ],
+        "notes": [
+          "按全团总预算 ¥1,000 估算。",
+          "住宿采用明确指定的 1 晚。"
+        ]
+      }
+    },
+    {
+      "id": "Q12",
+      "group": "nights",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "不计住宿时保留晚数但排除住宿金额",
+      "pass": true,
+      "evidence": {
+        "r": {
+          "request": {
+            "destination": "北京",
+            "days": 2,
+            "travelers": 2,
+            "budget": {
+              "amount": 1000,
+              "includes": "without_intercity",
+              "inputAmount": 1000,
+              "basisRequested": "auto",
+              "basis": "total"
+            },
+            "preferences": [],
+            "pace": "balanced",
+            "walkingTolerance": "medium",
+            "assumptions": {
+              "hotelPerNight": 350,
+              "foodPerDay": 120,
+              "localTransitPerDay": 60
+            },
+            "avoid": "",
+            "lodgingNights": 2,
+            "lodgingNightsInput": 2,
+            "budgetNotes": [
+              "按全团总预算 ¥1,000 估算。",
+              "住宿采用明确指定的 2 晚。",
+              "住宿费用按选择排除，不计入已估合计。"
+            ]
+          },
+          "questions": [],
+          "notes": [
+            "按全团总预算 ¥1,000 估算。",
+            "住宿采用明确指定的 2 晚。",
+            "住宿费用按选择排除，不计入已估合计。"
+          ]
+        },
+        "b": {
+          "nights": 2,
+          "rooms": 1,
+          "lodgingRaw": 700,
+          "lodgingIncluded": false,
+          "lodging": 0,
+          "food": 480,
+          "localTransit": 240,
+          "knownTickets": 0,
+          "unknownTicketCount": 0,
+          "routeFareReference": 0,
+          "knownRouteFareLegCount": 0,
+          "unknownRouteFareLegCount": 0,
+          "subtotal": 720,
+          "reserve": 72,
+          "estimate": 792
+        }
+      }
+    },
+    {
+      "id": "Q13",
+      "group": "negotiation",
+      "caseIds": [
+        "A03"
+      ],
+      "description": "极低预算建议增加预算或缩短行程，不建议必需费用降至0",
+      "pass": true,
+      "evidence": {
+        "b": {
+          "nights": 3,
+          "rooms": 3,
+          "lodgingRaw": 3150,
+          "lodgingIncluded": true,
+          "lodging": 3150,
+          "food": 2400,
+          "localTransit": 1200,
+          "knownTickets": 0,
+          "unknownTicketCount": 0,
+          "routeFareReference": 0,
+          "knownRouteFareLegCount": 0,
+          "unknownRouteFareLegCount": 0,
+          "subtotal": 6750,
+          "reserve": 675,
+          "estimate": 7425
+        },
+        "ideas": [
+          "增加总预算至至少 ¥7,425 可覆盖当前已估项目；待核实门票和往返大交通仍需另留预算，这不是全程报价。",
+          "选择缩短行程天数，并单独确认住宿晚数；按新的日期和晚数重新估算，不能只减少景点就认定住宿餐饮也降低。",
+          "选择减少收费活动、改为已确认免费的景点；交通、餐饮和住宿不会因此自动免费。",
+          "请确认以上取舍，修改表单后重新生成；原人数、天数和费用参数不会被自动改写。"
+        ]
+      }
+    },
+    {
+      "id": "Q14",
+      "group": "negotiation",
+      "caseIds": [
+        "A02"
+      ],
+      "description": "五星酒店低预算即使没有景点资料也给出冲突取舍",
+      "pass": true,
+      "evidence": {
+        "b": {
+          "nights": 2,
+          "rooms": 1,
+          "lodgingRaw": 700,
+          "lodgingIncluded": true,
+          "lodging": 700,
+          "food": 720,
+          "localTransit": 360,
+          "knownTickets": 0,
+          "unknownTicketCount": 0,
+          "routeFareReference": 0,
+          "knownRouteFareLegCount": 0,
+          "unknownRouteFareLegCount": 0,
+          "subtotal": 1780,
+          "reserve": 178,
+          "estimate": 1958
+        },
+        "ideas": [
+          "增加总预算至至少 ¥1,958 可覆盖当前已估项目；待核实门票和往返大交通仍需另留预算，这不是全程报价。",
+          "选择缩短行程天数，并单独确认住宿晚数；按新的日期和晚数重新估算，不能只减少景点就认定住宿餐饮也降低。",
+          "选择减少收费活动、改为已确认免费的景点；交通、餐饮和住宿不会因此自动免费。",
+          "五星酒店价格尚未查询，当前住宿参数不代表五星酒店报价。请确认增加预算，或放宽酒店星级要求。",
+          "请确认以上取舍，修改表单后重新生成；原人数、天数和费用参数不会被自动改写。"
+        ]
+      }
+    },
+    {
+      "id": "Q15",
+      "group": "negotiation",
+      "caseIds": [
+        "A12"
+      ],
+      "description": "0元预算通过表单，支持免费活动方向但不保证全程免费",
+      "pass": true,
+      "evidence": {
+        "b": {
+          "nights": 1,
+          "rooms": 1,
+          "lodgingRaw": 350,
+          "lodgingIncluded": true,
+          "lodging": 350,
+          "food": 480,
+          "localTransit": 240,
+          "knownTickets": 0,
+          "unknownTicketCount": 0,
+          "routeFareReference": 0,
+          "knownRouteFareLegCount": 0,
+          "unknownRouteFareLegCount": 0,
+          "subtotal": 1070,
+          "reserve": 107,
+          "estimate": 1177
+        },
+        "ideas": [
+          "增加总预算至至少 ¥1,177 可覆盖当前已估项目；待核实门票和往返大交通仍需另留预算，这不是全程报价。",
+          "选择缩短行程天数，并单独确认住宿晚数；按新的日期和晚数重新估算，不能只减少景点就认定住宿餐饮也降低。",
+          "选择减少收费活动、改为已确认免费的景点；交通、餐饮和住宿不会因此自动免费。",
+          "0元可作为免费活动目标，但当前餐饮、交通或住宿仍有预计支出。仅在已自备餐食、无需付费交通且已解决住宿等条件成立时，才能将相应参数设为0；不保证全程零费用。",
+          "请确认以上取舍，修改表单后重新生成；原人数、天数和费用参数不会被自动改写。"
+        ]
+      }
+    },
+    {
+      "id": "Q16",
+      "group": "tickets",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "结构化参考票价存在时不能沿用过期cost=null",
+      "pass": true,
+      "evidence": {
+        "nights": 1,
+        "rooms": 1,
+        "lodgingRaw": 350,
+        "lodgingIncluded": true,
+        "lodging": 350,
+        "food": 480,
+        "localTransit": 240,
+        "knownTickets": 40,
+        "unknownTicketCount": 0,
+        "routeFareReference": 0,
+        "knownRouteFareLegCount": 0,
+        "unknownRouteFareLegCount": 0,
+        "subtotal": 1110,
+        "reserve": 111,
+        "estimate": 1221
+      }
+    },
+    {
+      "id": "Q17",
+      "group": "tickets",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "免费0、收费20、未知票分别计费并列未知，不把空值当0",
+      "pass": true,
+      "evidence": {
+        "nights": 1,
+        "rooms": 1,
+        "lodgingRaw": 350,
+        "lodgingIncluded": true,
+        "lodging": 350,
+        "food": 480,
+        "localTransit": 240,
+        "knownTickets": 40,
+        "unknownTicketCount": 1,
+        "routeFareReference": 0,
+        "knownRouteFareLegCount": 0,
+        "unknownRouteFareLegCount": 0,
+        "subtotal": 1110,
+        "reserve": 111,
+        "estimate": 1221
+      }
+    },
+    {
+      "id": "Q18",
+      "group": "tickets",
+      "caseIds": [
+        "A03"
+      ],
+      "description": "同名门票跨日重复时只收一次",
+      "pass": true,
+      "evidence": {
+        "nights": 1,
+        "rooms": 1,
+        "lodgingRaw": 350,
+        "lodgingIncluded": true,
+        "lodging": 350,
+        "food": 480,
+        "localTransit": 240,
+        "knownTickets": 40,
+        "unknownTicketCount": 0,
+        "routeFareReference": 0,
+        "knownRouteFareLegCount": 0,
+        "unknownRouteFareLegCount": 0,
+        "subtotal": 1110,
+        "reserve": 111,
+        "estimate": 1221
+      }
+    },
+    {
+      "id": "Q19",
+      "group": "tickets",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "缺失cost和参考票价也必须列为待核实",
+      "pass": true,
+      "evidence": {
+        "nights": 1,
+        "rooms": 1,
+        "lodgingRaw": 350,
+        "lodgingIncluded": true,
+        "lodging": 350,
+        "food": 480,
+        "localTransit": 240,
+        "knownTickets": 0,
+        "unknownTicketCount": 1,
+        "routeFareReference": 0,
+        "knownRouteFareLegCount": 0,
+        "unknownRouteFareLegCount": 0,
+        "subtotal": 1070,
+        "reserve": 107,
+        "estimate": 1177
+      }
+    },
+    {
+      "id": "Q20",
+      "group": "memory",
+      "caseIds": [
+        "T10"
+      ],
+      "description": "保存/恢复不丢失0晚及零费用参数",
+      "pass": true,
+      "evidence": {
+        "zeroParameterPreserved": true
+      }
+    },
+    {
+      "id": "Q21",
+      "group": "negotiation",
+      "caseIds": [
+        "A03"
+      ],
+      "description": "没有超过预算时不提出超支协商",
+      "pass": true,
+      "evidence": {
+        "nights": 1,
+        "rooms": 1,
+        "lodgingRaw": 350,
+        "lodgingIncluded": true,
+        "lodging": 350,
+        "food": 480,
+        "localTransit": 240,
+        "knownTickets": 0,
+        "unknownTicketCount": 0,
+        "routeFareReference": 0,
+        "knownRouteFareLegCount": 0,
+        "unknownRouteFareLegCount": 0,
+        "subtotal": 1070,
+        "reserve": 107,
+        "estimate": 1177
+      }
+    },
+    {
+      "id": "Q22",
+      "group": "negotiation",
+      "caseIds": [
+        "A03"
+      ],
+      "description": "导出同步显示已估超支及取舍方向",
+      "pass": true,
+      "evidence": {
+        "markdown": "# 山海行｜北京 4 天游程\n\n- 出发日期：未指定\n- 人数：5 人\n- 预算上限：¥800\n- 行程引擎：DeepSeek 大模型编排\n- 景点来源：本地中国大陆景点知识库\n\n## 每日行程\n\n### 第1天 · 北京\n天气：未查询\n\n预计当天占用：约 0.0 小时（景点游览、景点间交通及约 60 分钟午餐预留；未查全路线时，缺失路段按 45 分钟/段暂估）\n\n- 自由活动 / 休息\n\n## 预算估算\n\n- 住宿：¥3,150\n- 餐饮：¥2,400\n- 市内交通：¥1,200\n- 已知门票参考（成人票 × 5 人）：¥0\n- 待核实票价景点：0 个\n- 机动预留：¥675\n- **当前已估合计：¥7,425**\n\n已估项目超过预算 ¥6,625，请确认取舍后再采用行程。\n\n## 预算调整参考\n\n- 增加总预算至至少 ¥7,425 可覆盖当前已估项目；待核实门票和往返大交通仍需另留预算，这不是全程报价。。\n- 选择缩短行程天数，并单独确认住宿晚数；按新的日期和晚数重新估算，不能只减少景点就认定住宿餐饮也降低。。\n- 选择减少收费活动、改为已确认免费的景点；交通、餐饮和住宿不会因此自动免费。。\n- 请确认以上取舍，修改表单后重新生成；原人数、天数和费用参数不会被自动改写。。\n\n## 出行前核对\n\n- 门票、预约、库存和开放时间请以景区官方渠道为准。\n- 天气与路线结果会变化；确认地图匹配地点后再出发。\n- 预算未包含往返目的地的大交通，实际费用可能变化。\n- 本助手不代替用户订票、下单、付款或提交证件。\n"
+      }
+    }
+  ],
+  "ratePercent": 100
+}

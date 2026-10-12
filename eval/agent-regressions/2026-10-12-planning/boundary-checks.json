@@ -1,0 +1,278 @@
+{
+  "method": "最终版额外边界检查，未建立修改前基准，不纳入17条改善指标",
+  "sha256": "c3e64826e0fc43c38e4a256f93097710205b0b7eb65da820ed11a97f4dd2b404",
+  "total": 5,
+  "passed": 5,
+  "records": [
+    {
+      "id": "E01",
+      "description": "两个夜游不导致跨午夜安排",
+      "pass": true,
+      "evidence": {
+        "plannerMode": "llm",
+        "candidates": [
+          {
+            "name": "夜游A",
+            "kind": "夜游",
+            "walk": "低",
+            "indoor": "室外",
+            "rain": "低",
+            "hours": 180,
+            "cost": 0
+          },
+          {
+            "name": "夜游B",
+            "kind": "夜游",
+            "walk": "低",
+            "indoor": "室外",
+            "rain": "低",
+            "hours": 120,
+            "cost": 0
+          }
+        ],
+        "daily": [
+          {
+            "items": [
+              {
+                "name": "夜游A",
+                "kind": "夜游",
+                "walk": "低",
+                "indoor": "室外",
+                "rain": "低",
+                "hours": 180,
+                "cost": 0
+              }
+            ],
+            "routeCheck": null,
+            "constraintDeferred": [
+              {
+                "name": "夜游B",
+                "reason": "安排后预计结束晚于22:00，未安排；夜游时段仍需核对官方开放信息。"
+              }
+            ],
+            "constraintNotes": [
+              "夜间体验暂按18:00之后开始、22:00前结束预留；这是建议时段，实际开放及表演时间请向官方核实。"
+            ],
+            "walk": "适中",
+            "planningHoursLimit": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "E02",
+      "description": "明确“不下雨”不触发雨天暂停",
+      "pass": true,
+      "evidence": {
+        "plannerMode": "llm",
+        "candidates": [
+          {
+            "name": "户外A",
+            "kind": "街区",
+            "walk": "低",
+            "indoor": "室外",
+            "rain": "低",
+            "hours": 120,
+            "cost": 0
+          }
+        ],
+        "daily": [
+          {
+            "items": [
+              {
+                "name": "户外A",
+                "kind": "街区",
+                "walk": "低",
+                "indoor": "室外",
+                "rain": "低",
+                "hours": 120,
+                "cost": 0
+              }
+            ],
+            "routeCheck": null,
+            "constraintDeferred": [],
+            "constraintNotes": [],
+            "walk": "适中",
+            "planningHoursLimit": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "E03",
+      "description": "用户报告雨天重渲染保持完全一致",
+      "pass": true,
+      "evidence": {
+        "plannerMode": "llm",
+        "candidates": [
+          {
+            "name": "户外A",
+            "kind": "街区",
+            "walk": "低",
+            "indoor": "室外",
+            "rain": "低",
+            "hours": 120,
+            "cost": 0
+          },
+          {
+            "name": "室内B",
+            "kind": "街区",
+            "walk": "低",
+            "indoor": "室内",
+            "rain": "高",
+            "hours": 120,
+            "cost": 0
+          }
+        ],
+        "daily": [
+          {
+            "items": [
+              {
+                "name": "室内B",
+                "kind": "街区",
+                "walk": "低",
+                "indoor": "室内",
+                "rain": "高",
+                "hours": 120,
+                "cost": 0
+              }
+            ],
+            "routeCheck": null,
+            "userWeatherEvent": "第一天下雨",
+            "eventAlert": "天气变化后请先核对实时预警和景区公告，再决定是否出行。",
+            "constraintDeferred": [
+              {
+                "name": "户外A",
+                "reason": "受当天雨雪天气影响，无法确认适合避雨，未安排。"
+              }
+            ],
+            "constraintNotes": [
+              "当天仅保留知识库未标为明显户外或低雨天适合度的候选；开放状态和抵达路线安全仍需核实。没有适合候选时留作休息。"
+            ],
+            "walk": "适中",
+            "planningHoursLimit": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "E04",
+      "description": "已知路线很长时不继续按45分钟估算冒充可行",
+      "pass": true,
+      "evidence": {
+        "plannerMode": "llm",
+        "candidates": [
+          {
+            "name": "场馆A",
+            "kind": "街区",
+            "walk": "低",
+            "indoor": "室外",
+            "rain": "低",
+            "hours": 210,
+            "cost": 0
+          },
+          {
+            "name": "场馆B",
+            "kind": "街区",
+            "walk": "低",
+            "indoor": "室外",
+            "rain": "低",
+            "hours": 180,
+            "cost": 0
+          }
+        ],
+        "daily": [
+          {
+            "items": [
+              {
+                "name": "场馆A",
+                "kind": "街区",
+                "walk": "低",
+                "indoor": "室外",
+                "rain": "低",
+                "hours": 210,
+                "cost": 0
+              }
+            ],
+            "routeCheck": null,
+            "constraintDeferred": [
+              {
+                "name": "场馆B",
+                "reason": "加入后预计超过每日 8 小时上限，未安排。"
+              }
+            ],
+            "constraintNotes": [],
+            "walk": "适中",
+            "planningHoursLimit": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "E05",
+      "description": "模型规划跨日重复会去重且不会强制补满",
+      "pass": true,
+      "evidence": {
+        "plannerMode": "llm",
+        "candidates": [
+          {
+            "name": "候选A",
+            "kind": "街区",
+            "walk": "低",
+            "indoor": "室外",
+            "rain": "低",
+            "hours": 120,
+            "cost": 0
+          },
+          {
+            "name": "候选B",
+            "kind": "街区",
+            "walk": "低",
+            "indoor": "室外",
+            "rain": "低",
+            "hours": 120,
+            "cost": 0
+          }
+        ],
+        "daily": [
+          {
+            "items": [
+              {
+                "name": "候选A",
+                "kind": "街区",
+                "walk": "低",
+                "indoor": "室外",
+                "rain": "低",
+                "hours": 120,
+                "cost": 0
+              }
+            ],
+            "routeCheck": null,
+            "constraintDeferred": [],
+            "constraintNotes": [],
+            "walk": "适中",
+            "planningHoursLimit": 8
+          },
+          {
+            "items": [
+              {
+                "name": "候选B",
+                "kind": "街区",
+                "walk": "低",
+                "indoor": "室外",
+                "rain": "低",
+                "hours": 120,
+                "cost": 0
+              }
+            ],
+            "routeCheck": null,
+            "constraintDeferred": [],
+            "constraintNotes": [],
+            "walk": "适中",
+            "planningHoursLimit": 8
+          }
+        ]
+      }
+    }
+  ]
+}

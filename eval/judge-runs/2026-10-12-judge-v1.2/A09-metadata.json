@@ -1,0 +1,52 @@
+{
+  "case_id": "A09",
+  "prompt_version": "judge-v1.2",
+  "runner_sha256": "af1cfe6e1d5441588b5faf3eb09127c7cbc4cba33aa098ef6ea04446814fa342",
+  "config_sha256": "767e5dc99ba9b31ea0b3facbcf952c04e11601ae1d93207b3c68e9ca8dfbcd69",
+  "prepared_manifest_sha256": "0456b24b26392ba67bccc2de359fea69c4fd97ac63cfd710c5ab428e66c9477c",
+  "effective_system_sha256": "25ea1f645238c1c934de1415ed7a32100074ab76b345ccce5f9210f87fe67f3f",
+  "wire_schema_sha256": "883bca9f09bc55364e8a9467a0774179c930000efd1ed63da0ab9b02d04758d6",
+  "canonical_schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+  "input_file": "eval/judge-inputs/2026-10-12-v1.2/A09.json",
+  "input_sha256": "57c029e79fe902308dbdc7f75fc51f51eed4fe449d3f742aec24a73cc6ed1adb",
+  "original_input_sha256": "07117c20da0f6b1df815c8568e18a78fb0a50dae277ecaa44af624506b25f2dc",
+  "request_body_sha256": "3439c5d7d5c7c9475d9c921a3ed9ebd8b81c634082eb00894f568140083e8506",
+  "requested_model": "deepseek-v4-flash",
+  "endpoint": "https://api.deepseek.com/chat/completions",
+  "parameters": {
+    "temperature": 0,
+    "max_tokens": 8192,
+    "response_format": {
+      "type": "json_object"
+    },
+    "thinking": {
+      "type": "disabled"
+    }
+  },
+  "status": "response_saved",
+  "started_at": "2026-10-12T07:19:59.622Z",
+  "human_labels_sent": false,
+  "prior_judgments_sent": false,
+  "assistant_analysis_sent": false,
+  "derived_observations_sent": true,
+  "evidence_catalog_sent": true,
+  "automatic_retries": 0,
+  "mode": "grading",
+  "response_sha256": "6a1b7a5ff769193430e34d8a7b993d50b78b8396e32414fe2fcd2a82207270f1",
+  "http_status": 200,
+  "response_model": "deepseek-flash",
+  "response_id": "897b4f37-95af-4862-8ae9-7621d0982955",
+  "usage": {
+    "prompt_tokens": 102202,
+    "completion_tokens": 997,
+    "total_tokens": 103199,
+    "prompt_tokens_details": {
+      "cached_tokens": 4480
+    },
+    "prompt_cache_hit_tokens": 4480,
+    "prompt_cache_miss_tokens": 97722
+  },
+  "finish_reason": "stop",
+  "duration_ms": 6813,
+  "completed_at": "2026-10-12T07:20:06.435Z"
+}

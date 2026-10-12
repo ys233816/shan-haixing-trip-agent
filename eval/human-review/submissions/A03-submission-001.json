@@ -1,0 +1,36 @@
+{
+  "case_id": "A03",
+  "submission_id": "A03-submission-001",
+  "source": "user_chat",
+  "recorded_date": "2026-10-12",
+  "reviewer": "本人",
+  "review_date": null,
+  "status": "scored",
+  "evidence_packet": "eval/human-review/A03-evidence.md",
+  "judge_input_sha256": "23adbf911b5c8c45f794c7cf3c6ee6ffef848b93334aa1730f685a0f4e1aa15c",
+  "prior_score_exposure": { "value": null, "provenance": "not_provided" },
+  "dimensions": {
+    "D1": { "score": 1, "evidence": "" },
+    "D2": { "score": 0, "evidence": "" },
+    "D3": { "score": 1, "evidence": "" },
+    "D4": { "score": 0, "evidence": "" }
+  },
+  "checkpoints": [
+    { "index": 1, "score": 0, "evidence": "" },
+    { "index": 2, "score": 1, "evidence": "" },
+    { "index": 3, "score": 0, "evidence": "" }
+  ],
+  "primary_failure_layer": null,
+  "critical_failure": { "value": null, "evidence": "" },
+  "raw_submission": "A03\nD1=1，D2=0，D3=1，D4=0\n检查点1=0，检查点2=1，检查点3=0",
+  "review_notes": {
+    "author": "assistant",
+    "review_mode": "user_scores_with_assistant_evidence",
+    "assistant_analysis": "eval/human-review/submissions/A03-assistant-evidence-001.json",
+    "strict_blind_review": false,
+    "strict_blind_review_note": "用户未声明本条是否见过旧分，不宣称严格盲评。",
+    "completion_counted": true,
+    "agreement_eligible": true,
+    "agreement_scope": "人工分数已收到；证据与规则分歧另记，不因分歧改动或排除用户评分。"
+  }
+}

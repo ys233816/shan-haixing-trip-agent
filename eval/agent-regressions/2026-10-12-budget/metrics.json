@@ -1,0 +1,155 @@
+{
+  "recordedAt": "2026-10-12T09:44:47.625Z",
+  "iteration": "budget-understanding-and-negotiation",
+  "fixedRegression": {
+    "total": 22,
+    "beforePassed": 3,
+    "afterPassed": 22,
+    "beforeRatePercent": 13.64,
+    "afterRatePercent": 100,
+    "gainPercentagePoints": 86.36,
+    "newlyPassed": [
+      "Q01",
+      "Q02",
+      "Q04",
+      "Q05",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10",
+      "Q11",
+      "Q12",
+      "Q13",
+      "Q14",
+      "Q15",
+      "Q16",
+      "Q17",
+      "Q18",
+      "Q19",
+      "Q20",
+      "Q22"
+    ],
+    "groups": [
+      {
+        "group": "scope",
+        "total": 7,
+        "beforePassed": 2,
+        "afterPassed": 7,
+        "beforeRatePercent": 28.57,
+        "afterRatePercent": 100
+      },
+      {
+        "group": "nights",
+        "total": 5,
+        "beforePassed": 0,
+        "afterPassed": 5,
+        "beforeRatePercent": 0,
+        "afterRatePercent": 100
+      },
+      {
+        "group": "negotiation",
+        "total": 5,
+        "beforePassed": 1,
+        "afterPassed": 5,
+        "beforeRatePercent": 20,
+        "afterRatePercent": 100
+      },
+      {
+        "group": "tickets",
+        "total": 4,
+        "beforePassed": 0,
+        "afterPassed": 4,
+        "beforeRatePercent": 0,
+        "afterRatePercent": 100
+      },
+      {
+        "group": "memory",
+        "total": 1,
+        "beforePassed": 0,
+        "afterPassed": 1,
+        "beforeRatePercent": 0,
+        "afterRatePercent": 100
+      }
+    ],
+    "scope": "22条预算专项，固定结构化输入与受控候选，执行真实前端函数，不是36条全量任务完成率"
+  },
+  "browser": {
+    "method": "真实表单提交+会话刷新+导出；知识检索重放已存北京候选，三亚无候选；模型禁用，无外部付费调用。10个场景×2视口。",
+    "versions": [
+      {
+        "version": "before",
+        "sha256": "c3e64826e0fc43c38e4a256f93097710205b0b7eb65da820ed11a97f4dd2b404",
+        "total": 20,
+        "passed": 0
+      },
+      {
+        "version": "after",
+        "sha256": "46f6859626c732be7ff9117184783b9939f304c0061095d60da26b326db541b2",
+        "total": 20,
+        "passed": 20
+      }
+    ],
+    "independentScenarios": 10,
+    "viewportsPerScenario": 2,
+    "note": "检查完整表单、规范化结果、显示或冲突拦截、刷新稳定；修改前0/20不代表全量Agent成功率为0"
+  },
+  "examples": {
+    "perPerson": {
+      "beforeTotal": 1500,
+      "afterTotal": 6000,
+      "travelers": 4,
+      "inputPerPerson": 1500
+    },
+    "twoNights": {
+      "beforeNights": 1,
+      "afterNights": 2,
+      "beforeLodging": 350,
+      "afterLodging": 700
+    },
+    "lowBudget": {
+      "estimated": 7425,
+      "budgetLimit": 800,
+      "zeroEssentialCostAdviceRemoved": true
+    },
+    "zeroBudget": {
+      "formAccepted": true,
+      "fullTripFreeGuaranteed": false
+    },
+    "noKnowledgeBase": {
+      "budgetNegotiationVisible": true,
+      "fiveStarPriceQueried": false
+    }
+  },
+  "nonRegression": {
+    "planning": {
+      "passed": 17,
+      "total": 17
+    },
+    "weather": {
+      "passed": 11,
+      "total": 12,
+      "legacyConflict": "R12强制填满的旧要求与保留模型缓冲冲突，与上一轮相同，其余11条全部通过"
+    },
+    "extraBudgetBoundaries": {
+      "passed": 10,
+      "total": 10,
+      "scope": "额外最终版边界检查，不计入22条改善指标"
+    }
+  },
+  "full36CaseTaskCompletionRate": null,
+  "limitations": [
+    "专项固定受控输入，浏览器重放已存北京知识候选，模型关闭，无付费模型/天气/路线调用。",
+    "解析只覆盖明确的人均/总额及晚数表达，不宣称任意自然语言理解、完整多轮预算修改已解决。",
+    "参考门票只支持已有结构化成人参考票或旧cost数值，不自动解析季节、优惠和联票，也没有实时查票价/库存。",
+    "0元参数必须有用户实际条件依据；免费活动不代表交通餐饮住宿全免费。",
+    "预算冲突给出确认方向，用户修改后重算，没有自动执行预算取舍或保证方案可行。"
+  ],
+  "hashes": {
+    "before": "c3e64826e0fc43c38e4a256f93097710205b0b7eb65da820ed11a97f4dd2b404",
+    "after": "46f6859626c732be7ff9117184783b9939f304c0061095d60da26b326db541b2",
+    "runner": "c911ce5de83d0b16fba54cfabf0e1851c91c3c6727e64dafd58d101c98adf0d7",
+    "browserRunner": "0973b91c17aed35d7dfa99db017dce42eba9590e9e71dad74b8e4d4dbbd02681",
+    "testCases": "f26784d5f653ed769a0fbc3afe5b4a0001759a95389619615c0e0f3b0d88c188",
+    "rubric": "3b6bde636b43f45aca080995e02640aee83d36fa90334ca017f2e85415a6921d"
+  }
+}

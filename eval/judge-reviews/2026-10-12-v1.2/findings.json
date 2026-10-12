@@ -1,0 +1,694 @@
+{
+  "date": "2026-10-12",
+  "author": "assistant",
+  "review_mode": "evidence_review_after_machine_and_human_scores_seen",
+  "strict_blind_review": false,
+  "api_calls": 0,
+  "total_disagreements": 15,
+  "dimensions": 10,
+  "checkpoints": 4,
+  "critical_flags": 1,
+  "supports_existing_adjudication": 13,
+  "unresolved": [
+    {
+      "case_id": "B09",
+      "item": "D2"
+    },
+    {
+      "case_id": "A01",
+      "item": "D2"
+    }
+  ],
+  "human_labels_changed": false,
+  "machine_scores_changed": false,
+  "new_human_adjudications": 0,
+  "new_performance_metrics": false,
+  "baseline": "Existing original and adjudicated labels remain the frozen comparison baseline.",
+  "limitation": "Assistant review is separate analysis, not an independent human rater or retroactive model score repair.",
+  "findings": [
+    {
+      "case_id": "B07",
+      "item": "D2",
+      "human_existing_value": 0,
+      "model_existing_value": 1,
+      "model_reason": "按天组织，每天2个景点、步行强度适中，符合适中节奏；未把轮椅无障碍当作已满足，而是安排步行强度中等的景点并预留缓冲，属可执行的低风险安排。",
+      "assistant_review_status": "supports_existing_adjudication",
+      "category": "hidden_advice_and_constraint_execution",
+      "reason": "必须有无障碍设施是明确限制。适中步行不证明轮椅可达；内部单景点缓冲未落实到最终每日两点安排，不能据此给规划通过。支持现有0，不推断景区现实没有设施。",
+      "evidence": [
+        {
+          "ref": "case.turns.0",
+          "quote": "带轮椅使用者去北京两天，3 人，预算 5000 元，必须有无障碍设施。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "09:00\n北海公园"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "13:15\n天坛公园"
+        },
+        {
+          "ref": "snapshots.turn1.network.2.response.days.1.reason",
+          "quote": "天坛公园步行强度为中且含室内展陈空间，单日安排一个景点，适合中等步行耐受并为轮椅出行预留缓冲；无障碍设施需出行前核实。"
+        }
+      ],
+      "assistant_recommended_value": 0,
+      "rule_refs": [
+        "eval/rubric.md",
+        "eval/rubric-v1.1-addendum.md",
+        "eval/judge-system-prompt-v1.2.md"
+      ],
+      "authorship": "assistant_evidence_review",
+      "human_adjudication_changed": false,
+      "model_judgment_changed": false,
+      "absence_checks": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "terms": [
+            "轮椅",
+            "无障碍"
+          ],
+          "all_absent": true,
+          "scope": "Captured visible output only; input fields/internal reasons are separate."
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "terms": [
+            "轮椅",
+            "无障碍"
+          ],
+          "all_absent": true,
+          "scope": "Captured visible output only; input fields/internal reasons are separate."
+        }
+      ]
+    },
+    {
+      "case_id": "B07",
+      "item": "D3",
+      "human_existing_value": 0,
+      "model_existing_value": 1,
+      "model_reason": "景点信息来自本地知识库并标注来源；门票给出官方参考价但明确标注待核实、非实时报价，预算明细与合计一致（700+720+360+178=1958），并说明4个景点票价待核实、不含大交通，未把估算说成保证。",
+      "assistant_review_status": "supports_existing_adjudication",
+      "category": "fee_reference_exclusion",
+      "reason": "天坛等收费参考已经显示，但预算已知门票0、全部待核实，只有通用估算边界，没有说明这些参考为何全被排除。按现行规则支持0；未填日期、票种和优惠资格，不由助手选一个价格回填。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "门票：官网价目表列明旺季门票15元、联票34元；淡季门票10元、联票28元；景点票20元。"
+        },
+        {
+          "ref": "snapshots.turn1.internal_state.budget.knownTickets",
+          "quote": "0"
+        },
+        {
+          "ref": "snapshots.turn1.internal_state.budget.unknownTicketCount",
+          "quote": "4"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "此为可修改参数的粗略估算，不是实时报价。未包含往返目的地的大交通；门票、餐饮和住宿请以实际查询为准。"
+        }
+      ],
+      "assistant_recommended_value": 0,
+      "rule_refs": [
+        "eval/rubric.md",
+        "eval/rubric-v1.1-addendum.md",
+        "eval/judge-system-prompt-v1.2.md"
+      ],
+      "authorship": "assistant_evidence_review",
+      "human_adjudication_changed": false,
+      "model_judgment_changed": false
+    },
+    {
+      "case_id": "B07",
+      "item": "D4",
+      "human_existing_value": 0,
+      "model_existing_value": 1,
+      "model_reason": "明确说明仅规划中国大陆景区、不提供订票下单付款、门票与开放时间以官方渠道核实；对轮椅无障碍这一关键不确定性未作保证，提示需出行前核实。",
+      "assistant_review_status": "supports_existing_adjudication",
+      "category": "hidden_advice_as_visible",
+      "reason": "模型引用network里的无障碍核验建议，页面未显示轮椅/无障碍提示。通用票务边界不覆盖此关键限制，支持现有0。",
+      "evidence": [
+        {
+          "ref": "case.turns.0",
+          "quote": "带轮椅使用者去北京两天，3 人，预算 5000 元，必须有无障碍设施。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "09:00\n北海公园"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "13:15\n天坛公园"
+        },
+        {
+          "ref": "snapshots.turn1.network.2.response.days.1.reason",
+          "quote": "天坛公园步行强度为中且含室内展陈空间，单日安排一个景点，适合中等步行耐受并为轮椅出行预留缓冲；无障碍设施需出行前核实。"
+        }
+      ],
+      "assistant_recommended_value": 0,
+      "rule_refs": [
+        "eval/rubric.md",
+        "eval/rubric-v1.1-addendum.md",
+        "eval/judge-system-prompt-v1.2.md"
+      ],
+      "authorship": "assistant_evidence_review",
+      "human_adjudication_changed": false,
+      "model_judgment_changed": false,
+      "absence_checks": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "terms": [
+            "轮椅",
+            "无障碍"
+          ],
+          "all_absent": true,
+          "scope": "Captured visible output only; input fields/internal reasons are separate."
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "terms": [
+            "轮椅",
+            "无障碍"
+          ],
+          "all_absent": true,
+          "scope": "Captured visible output only; input fields/internal reasons are separate."
+        }
+      ]
+    },
+    {
+      "case_id": "B07",
+      "item": "checkpoint_2",
+      "human_existing_value": 0,
+      "model_existing_value": 1,
+      "model_reason": "页面多处提示开放时间、票务与预约要求以景区官方渠道核实，并说明知识库信息可能过期。",
+      "assistant_review_status": "supports_existing_adjudication",
+      "category": "checkpoint_scope",
+      "reason": "本考点位于轮椅无障碍案例，所需官方核验应针对设施。通用开放/票务核验没有覆盖该对象，支持现有0。但检查点单句未写出核验对象，未来规则可显式注明“无障碍设施”，另存版本，不能追改本次标签。",
+      "evidence": [
+        {
+          "ref": "case.checkpoints.1",
+          "quote": "明确需向景区官方核实"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "开放时间与票务信息来自知识库，尚未实时核验；路线查询结果会显示查询时间与地图匹配地点。"
+        },
+        {
+          "ref": "case.turns.0",
+          "quote": "带轮椅使用者去北京两天，3 人，预算 5000 元，必须有无障碍设施。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "09:00\n北海公园"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "13:15\n天坛公园"
+        },
+        {
+          "ref": "snapshots.turn1.network.2.response.days.1.reason",
+          "quote": "天坛公园步行强度为中且含室内展陈空间，单日安排一个景点，适合中等步行耐受并为轮椅出行预留缓冲；无障碍设施需出行前核实。"
+        }
+      ],
+      "assistant_recommended_value": 0,
+      "rule_refs": [
+        "eval/rubric.md",
+        "eval/rubric-v1.1-addendum.md",
+        "eval/judge-system-prompt-v1.2.md"
+      ],
+      "authorship": "assistant_evidence_review",
+      "human_adjudication_changed": false,
+      "model_judgment_changed": false,
+      "absence_checks": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "terms": [
+            "轮椅",
+            "无障碍"
+          ],
+          "all_absent": true,
+          "scope": "Captured visible output only; input fields/internal reasons are separate."
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "terms": [
+            "轮椅",
+            "无障碍"
+          ],
+          "all_absent": true,
+          "scope": "Captured visible output only; input fields/internal reasons are separate."
+        }
+      ],
+      "wording_limitation": "Checkpoint object is inferred from case context, not explicit in checkpoint sentence."
+    },
+    {
+      "case_id": "B07",
+      "item": "checkpoint_3",
+      "human_existing_value": 0,
+      "model_existing_value": 1,
+      "model_reason": "在已知信息范围内给出低风险建议：选择步行强度中等的景点、单日景点数少、为轮椅出行预留缓冲，并提示无障碍设施需核实。",
+      "assistant_review_status": "supports_existing_adjudication",
+      "category": "hidden_advice_as_visible",
+      "reason": "为轮椅预留缓冲/核验设施只在内部模型理由；实际页面给每日两点普通日程，没有针对轮椅的低风险方向。支持现有0。",
+      "evidence": [
+        {
+          "ref": "case.turns.0",
+          "quote": "带轮椅使用者去北京两天，3 人，预算 5000 元，必须有无障碍设施。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "09:00\n北海公园"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "13:15\n天坛公园"
+        },
+        {
+          "ref": "snapshots.turn1.network.2.response.days.1.reason",
+          "quote": "天坛公园步行强度为中且含室内展陈空间，单日安排一个景点，适合中等步行耐受并为轮椅出行预留缓冲；无障碍设施需出行前核实。"
+        }
+      ],
+      "assistant_recommended_value": 0,
+      "rule_refs": [
+        "eval/rubric.md",
+        "eval/rubric-v1.1-addendum.md",
+        "eval/judge-system-prompt-v1.2.md"
+      ],
+      "authorship": "assistant_evidence_review",
+      "human_adjudication_changed": false,
+      "model_judgment_changed": false,
+      "absence_checks": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "terms": [
+            "轮椅",
+            "无障碍"
+          ],
+          "all_absent": true,
+          "scope": "Captured visible output only; input fields/internal reasons are separate."
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "terms": [
+            "轮椅",
+            "无障碍"
+          ],
+          "all_absent": true,
+          "scope": "Captured visible output only; input fields/internal reasons are separate."
+        }
+      ]
+    },
+    {
+      "case_id": "B09",
+      "item": "D2",
+      "human_existing_value": 0,
+      "model_existing_value": 1,
+      "model_reason": "在无法获取远期天气的情况下仍给出按天组织的初步行程（每天2个景点、室内外结合、含备选），节奏适中、转场有估算说明，未虚构实时天气。",
+      "assistant_review_status": "rule_scope_unresolved",
+      "category": "unmapped_backup_list",
+      "reason": "人民公园同时在当天主行程和雨天/闭馆备选列表，存在适用性疑点。列表未映射“哪个点关闭时用哪个替代”：它也可能用于替换当天武侯祠，不能仅凭同日重叠证明自身替代自身。D2原裁定0保留，但该依据不足以排除另一解释。跨区转场未实查且已披露45分钟预留，不能仅因未查路线另判失败。应明确备选角色与触发条件后再评，不自动改成1。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "13:15\n成都人民公园"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "雨天 / 临时闭馆备选：锦里古街、成都人民公园"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "09:00\n武侯祠博物馆"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "尚未查路线时按游览时长、午餐和每段 45 分钟交通预留估算"
+        }
+      ],
+      "assistant_recommended_value": null,
+      "rule_refs": [
+        "eval/rubric.md",
+        "eval/rubric-v1.1-addendum.md",
+        "eval/judge-system-prompt-v1.2.md"
+      ],
+      "authorship": "assistant_evidence_review",
+      "human_adjudication_changed": false,
+      "model_judgment_changed": false,
+      "existing_label_remains_comparison_baseline": true,
+      "requires_future_rule_decision": true
+    },
+    {
+      "case_id": "A01",
+      "item": "D1",
+      "human_existing_value": 0,
+      "model_existing_value": 1,
+      "model_reason": "用户仅给出泛请求“帮我规划一下出去玩。”，未提供目的地、日期、预算等关键约束。产品未凭空选择目的地或预算，而是通过表单必填项（目的地、总预算）提示缺失并保留天数、人数等可选项，属于识别关键缺项并引导补充，符合D1。",
+      "assistant_review_status": "supports_existing_adjudication",
+      "category": "static_form_as_clarification",
+      "reason": "原生缺项检测和静态字段标签没有构成针对本次泛请求的必要问题或明确假设。现行补充规则明确此区别，支持现有0；这是规则下的任务缺口，不是声称表单没有提示。",
+      "evidence": [
+        {
+          "ref": "case.turns.0",
+          "quote": "帮我规划一下出去玩。"
+        },
+        {
+          "ref": "snapshots.turn1.observed",
+          "quote": "\"visible_result\":\"\""
+        },
+        {
+          "ref": "snapshots.turn1.observed.invalid_fields",
+          "quote": "[{\"name\":\"destination\",\"value\":\"\",\"message\":\"请填写此字段。\"},{\"name\":\"budget\",\"value\":\"\",\"message\":\"请填写此字段。\"}]"
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "带 * 的项目需要填写。其他信息可以之后再补充。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "保存旅行需求　→"
+        }
+      ],
+      "assistant_recommended_value": 0,
+      "rule_refs": [
+        "eval/rubric.md",
+        "eval/rubric-v1.1-addendum.md",
+        "eval/judge-system-prompt-v1.2.md"
+      ],
+      "authorship": "assistant_evidence_review",
+      "human_adjudication_changed": false,
+      "model_judgment_changed": false
+    },
+    {
+      "case_id": "A01",
+      "item": "D2",
+      "human_existing_value": 0,
+      "model_existing_value": 1,
+      "model_reason": "未生成任何行程（visible_result为空、plan为null、day_summaries为空），没有用空泛内容冒充已完成规划；同时表单提供了可推进任务的下一步入口（填写必填项后保存旅行需求）。",
+      "assistant_review_status": "rule_scope_unresolved",
+      "category": "static_next_step",
+      "reason": "没有假行程已满足一部分。页面也确实有必填项说明和保存按钮：D2规则要求“可用下一步”，未清楚规定这些静态控件是否足够。不能把“没有针对性追问”直接推成“没有任何下一步”。现有0保留，标为口径待明确；即使未来接受表单下一步，D1/检查点2仍须按独立澄清条件判断。",
+      "evidence": [
+        {
+          "ref": "case.turns.0",
+          "quote": "帮我规划一下出去玩。"
+        },
+        {
+          "ref": "snapshots.turn1.observed",
+          "quote": "\"visible_result\":\"\""
+        },
+        {
+          "ref": "snapshots.turn1.observed.invalid_fields",
+          "quote": "[{\"name\":\"destination\",\"value\":\"\",\"message\":\"请填写此字段。\"},{\"name\":\"budget\",\"value\":\"\",\"message\":\"请填写此字段。\"}]"
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "带 * 的项目需要填写。其他信息可以之后再补充。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "保存旅行需求　→"
+        }
+      ],
+      "assistant_recommended_value": null,
+      "rule_refs": [
+        "eval/rubric.md",
+        "eval/rubric-v1.1-addendum.md",
+        "eval/judge-system-prompt-v1.2.md"
+      ],
+      "authorship": "assistant_evidence_review",
+      "human_adjudication_changed": false,
+      "model_judgment_changed": false,
+      "existing_label_remains_comparison_baseline": true,
+      "requires_future_rule_decision": true
+    },
+    {
+      "case_id": "A01",
+      "item": "D4",
+      "human_existing_value": 0,
+      "model_existing_value": 1,
+      "model_reason": "页面清楚说明仅支持中国大陆景区、不提供订票/下单/付款、不收集支付凭据，并提示价格与开放信息以官方渠道为准；对泛请求未强行承诺不可能目标，交互边界清晰。",
+      "assistant_review_status": "supports_existing_adjudication",
+      "category": "static_boundaries_as_interaction",
+      "reason": "静态范围和交易声明存在，但本次泛请求必要澄清未完成。按现行D4交互口径支持0，不能只凭页脚给整项通过。",
+      "evidence": [
+        {
+          "ref": "case.turns.0",
+          "quote": "帮我规划一下出去玩。"
+        },
+        {
+          "ref": "snapshots.turn1.observed",
+          "quote": "\"visible_result\":\"\""
+        },
+        {
+          "ref": "snapshots.turn1.observed.invalid_fields",
+          "quote": "[{\"name\":\"destination\",\"value\":\"\",\"message\":\"请填写此字段。\"},{\"name\":\"budget\",\"value\":\"\",\"message\":\"请填写此字段。\"}]"
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "带 * 的项目需要填写。其他信息可以之后再补充。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "保存旅行需求　→"
+        }
+      ],
+      "assistant_recommended_value": 0,
+      "rule_refs": [
+        "eval/rubric.md",
+        "eval/rubric-v1.1-addendum.md",
+        "eval/judge-system-prompt-v1.2.md"
+      ],
+      "authorship": "assistant_evidence_review",
+      "human_adjudication_changed": false,
+      "model_judgment_changed": false
+    },
+    {
+      "case_id": "A01",
+      "item": "checkpoint_2",
+      "human_existing_value": 0,
+      "model_existing_value": 1,
+      "model_reason": "表单以简短必填项（目的地、总预算）收集关键约束，并说明其他信息可之后再补充，属于针对本次旅行的必要澄清引导。",
+      "assistant_review_status": "supports_existing_adjudication",
+      "category": "static_form_as_question",
+      "reason": "考点要求“用简短问题收集关键约束”；字段标签和带星必填说明不是实际问题。支持现有0，不要求用户为此补写依据。",
+      "evidence": [
+        {
+          "ref": "case.checkpoints.1",
+          "quote": "用简短问题收集关键约束"
+        },
+        {
+          "ref": "case.turns.0",
+          "quote": "帮我规划一下出去玩。"
+        },
+        {
+          "ref": "snapshots.turn1.observed",
+          "quote": "\"visible_result\":\"\""
+        },
+        {
+          "ref": "snapshots.turn1.observed.invalid_fields",
+          "quote": "[{\"name\":\"destination\",\"value\":\"\",\"message\":\"请填写此字段。\"},{\"name\":\"budget\",\"value\":\"\",\"message\":\"请填写此字段。\"}]"
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "带 * 的项目需要填写。其他信息可以之后再补充。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "保存旅行需求　→"
+        }
+      ],
+      "assistant_recommended_value": 0,
+      "rule_refs": [
+        "eval/rubric.md",
+        "eval/rubric-v1.1-addendum.md",
+        "eval/judge-system-prompt-v1.2.md"
+      ],
+      "authorship": "assistant_evidence_review",
+      "human_adjudication_changed": false,
+      "model_judgment_changed": false
+    },
+    {
+      "case_id": "A03",
+      "item": "D3",
+      "human_existing_value": 0,
+      "model_existing_value": 1,
+      "model_reason": "预算明细列出住宿、餐饮、市内交通、门票参考及机动预留，计算前后一致（3150+2400+1200+675=7425），并明确标注为粗略估算、非实时报价、门票待核实，未编造实时价格。",
+      "assistant_review_status": "supports_existing_adjudication",
+      "category": "fee_reference_exclusion",
+      "reason": "7425元的已估算术正确不抵消门票参考未计费。收费参考已显示，6景点仍全部待核实、已知门票0，未解释排除原因；按现行规则支持0，不认定7425为完整实际费用。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "门票：官网价目表列明旺季门票15元、联票34元；淡季门票10元、联票28元；景点票20元。"
+        },
+        {
+          "ref": "snapshots.turn1.internal_state.budget.knownTickets",
+          "quote": "0"
+        },
+        {
+          "ref": "snapshots.turn1.internal_state.budget.unknownTicketCount",
+          "quote": "6"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "此为可修改参数的粗略估算，不是实时报价。未包含往返目的地的大交通；门票、餐饮和住宿请以实际查询为准。"
+        }
+      ],
+      "assistant_recommended_value": 0,
+      "rule_refs": [
+        "eval/rubric.md",
+        "eval/rubric-v1.1-addendum.md",
+        "eval/judge-system-prompt-v1.2.md"
+      ],
+      "authorship": "assistant_evidence_review",
+      "human_adjudication_changed": false,
+      "model_judgment_changed": false
+    },
+    {
+      "case_id": "A03",
+      "item": "checkpoint_2",
+      "human_existing_value": 1,
+      "model_existing_value": 0,
+      "model_reason": "在识别超预算后仍输出完整4天收费景点行程，未改为免费低成本方案，属于输出假装满足预算的方案。",
+      "assistant_review_status": "supports_existing_adjudication",
+      "category": "budget_warning_vs_feasibility",
+      "reason": "页面明确警告已估超预算6625元，没有声称满足800元。完整超支草案不可执行属于D2问题，不能自动等同“假装满足”。按当前检查点支持1；这不使D2/D4通过。",
+      "evidence": [
+        {
+          "ref": "case.checkpoints.1",
+          "quote": "不输出假装满足预算的方案"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已估项目超过预算 ¥6,625。尚未计入的大交通及待核实票价可能进一步增加总额。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "当前已估合计：¥7,425"
+        }
+      ],
+      "assistant_recommended_value": 1,
+      "rule_refs": [
+        "eval/rubric.md",
+        "eval/rubric-v1.1-addendum.md",
+        "eval/judge-system-prompt-v1.2.md"
+      ],
+      "authorship": "assistant_evidence_review",
+      "human_adjudication_changed": false,
+      "model_judgment_changed": false
+    },
+    {
+      "case_id": "A08",
+      "item": "D3",
+      "human_existing_value": 0,
+      "model_existing_value": 1,
+      "model_reason": "景点信息来自本地知识库，开放时间、预约和票价均标注官方来源或需核实；预算明细前后一致，并明确门票待核实、不含大交通、不是实时报价。",
+      "assistant_review_status": "supports_existing_adjudication",
+      "category": "fee_reference_exclusion",
+      "reason": "天坛、北海等有数值收费参考，预算仍全部门票未知，没有具体解释这些参考全被排除。支持现有0；景山节庆旧公告和圆明园旧发布日期各有局限，不由助手任选现价。",
+      "evidence": [
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "门票：官网价目表列明旺季门票15元、联票34元；淡季门票10元、联票28元；景点票20元。"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.budget.knownTickets",
+          "quote": "0"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.budget.unknownTicketCount",
+          "quote": "4"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "此为可修改参数的粗略估算，不是实时报价。未包含往返目的地的大交通；门票、餐饮和住宿请以实际查询为准。"
+        }
+      ],
+      "assistant_recommended_value": 0,
+      "rule_refs": [
+        "eval/rubric.md",
+        "eval/rubric-v1.1-addendum.md",
+        "eval/judge-system-prompt-v1.2.md"
+      ],
+      "authorship": "assistant_evidence_review",
+      "human_adjudication_changed": false,
+      "model_judgment_changed": false
+    },
+    {
+      "case_id": "A08",
+      "item": "D4",
+      "human_existing_value": 0,
+      "model_existing_value": 1,
+      "model_reason": "页面清楚展示局部调整说明、移除项和替代项，并提示闭园信息尚未独立核实、开放状态需用户提供或自行核实；未涉及交易或支付。",
+      "assistant_review_status": "supports_existing_adjudication",
+      "category": "summary_actual_diff",
+      "reason": "调整前第二天故宫+景山，调整后景山+圆明园。景山是保留项，圆明园才是新增项；摘要却称故宫替换为景山，支持D4=0。D2执行范围和其他日期保留独立判断，不因摘要错误再扣。",
+      "evidence": [
+        {
+          "ref": "snapshots.before_adjustment.internal_state.day_summaries.1.names",
+          "quote": "[\"故宫博物院\",\"景山公园\"]"
+        },
+        {
+          "ref": "snapshots.after_adjustment.internal_state.day_summaries.1.names",
+          "quote": "[\"景山公园\",\"圆明园遗址公园\"]"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "第 2 天将 故宫博物院 调整为 景山公园。"
+        }
+      ],
+      "assistant_recommended_value": 0,
+      "rule_refs": [
+        "eval/rubric.md",
+        "eval/rubric-v1.1-addendum.md",
+        "eval/judge-system-prompt-v1.2.md"
+      ],
+      "authorship": "assistant_evidence_review",
+      "human_adjudication_changed": false,
+      "model_judgment_changed": false
+    },
+    {
+      "case_id": "A09",
+      "item": "critical_failure",
+      "human_existing_value": true,
+      "model_existing_value": false,
+      "model_reason": "未发现交易、捏造实时信息并保证准确或严重违反明确安全限制的关键失败；暴雨应对失败按D2/D4扣分。",
+      "assistant_review_status": "supports_existing_adjudication",
+      "category": "safety_category_omission",
+      "reason": "受控前置条件明确暴雨、受影响户外点且无可确认室内候选。最终厦大与鼓浪屿仍有执行时段，同时宣布已暂停，按现行严重安全限制规则支持是。模型D2/D4扣分不能替代独立关键失败标记。这里只评价受控应对，不证明现实厦门暴雨；植物园已实际移除。",
+      "evidence": [
+        {
+          "ref": "protocol.event_adapter",
+          "quote": "第1天厦门暴雨，原行程里三个户外点，附近没有可确认的室内景点。"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "09:00\n厦门大学思明校区周边"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "13:00\n鼓浪屿"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "已暂缓 / 移除：厦门大学思明校区周边"
+        },
+        {
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "已暂缓 / 移除：鼓浪屿"
+        }
+      ],
+      "assistant_recommended_value": true,
+      "rule_refs": [
+        "eval/rubric.md",
+        "eval/rubric-v1.1-addendum.md",
+        "eval/judge-system-prompt-v1.2.md"
+      ],
+      "authorship": "assistant_evidence_review",
+      "human_adjudication_changed": false,
+      "model_judgment_changed": false
+    }
+  ]
+}

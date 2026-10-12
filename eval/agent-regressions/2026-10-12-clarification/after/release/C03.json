@@ -1,0 +1,29 @@
+{
+  "id": "C03",
+  "group": "conflict",
+  "description": "表单2天与文字3天冲突",
+  "fields": {
+    "days": "2",
+    "avoid": "想玩三天"
+  },
+  "need": [
+    "天数"
+  ],
+  "checks": {
+    "noPageErrors": true,
+    "noOverflow": true,
+    "blocked": true,
+    "clarification": true,
+    "maxThree": true
+  },
+  "pass": true,
+  "calls": [],
+  "errors": [],
+  "status": "本次尚未生成，请先确认：\n文字中的天数与表单 2 天不同，请确认采用的天数并同步修改。",
+  "shown": false,
+  "text": "",
+  "request": null,
+  "plan": null,
+  "questions": 1,
+  "overflow": false
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "A08",
+  "source_judgment": "eval/judge-runs/2026-10-12-judge-v1.1/A08-judge.json",
+  "source_judgment_sha256": "137e133815da5b7058b9202be103d494e9e7b3f51713e40a49b9f842471c3e0c",
+  "source_input_sha256": "47d809191e86ededc110bfc7148df3f8cbd4c511b163820d9d7857a5090c3c6e",
+  "hard_valid": true,
+  "schema_valid": true,
+  "hard_errors": [],
+  "review_signals": [
+    {
+      "code": "FEE_REFERENCE_NEEDS_REVIEW",
+      "items": [
+        "D3"
+      ],
+      "reason": "Numeric fee references coexist with zero known tickets and unknown tickets; check season, ticket type and exclusion explanation.",
+      "source_refs": [
+        "snapshots.after_adjustment.internal_state.budget",
+        "snapshots.after_adjustment.internal_state.plan.daily.0.items.0.ticketInfo",
+        "snapshots.after_adjustment.internal_state.plan.daily.0.items.1.ticketInfo",
+        "snapshots.after_adjustment.internal_state.plan.daily.1.items.0.ticketInfo",
+        "snapshots.after_adjustment.internal_state.plan.daily.1.items.1.ticketInfo"
+      ],
+      "action": "human_review_only"
+    }
+  ],
+  "model_review_required": false,
+  "effective_review_required": true,
+  "auto_accept": false,
+  "policy": "No score, reason, critical flag or original evidence is modified. Review signals do not establish failures."
+}

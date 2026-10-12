@@ -1,0 +1,71 @@
+{
+  "caseId": "B04",
+  "recordedAt": "2026-10-11",
+  "status": "resolved_after_rerun",
+  "version": "screenshot-version-unverified",
+  "includedInBaselineMetrics": true,
+  "expectedInput": "首轮：苏州2天、2人、预算2000元。第二轮：改去南京；天数、人数、预算不变；偏好历史景点。",
+  "observedInput": {
+    "firstTurn": {
+      "destination": "苏州",
+      "days": 1,
+      "travelers": 2,
+      "budgetCny": 2000,
+      "preferences": "未指定"
+    },
+    "secondTurn": {
+      "destination": "南京",
+      "days": 1,
+      "travelers": 2,
+      "budgetCny": 2000,
+      "preferences": [
+        "历史文化"
+      ]
+    }
+  },
+  "observedOutput": {
+    "firstTurn": "苏州1天行程；拙政园、苏州博物馆",
+    "secondTurn": "南京1天行程；南京博物院、侵华日军南京大屠杀遇难同胞纪念馆；未见苏州景点残留",
+    "budgetCny": 396,
+    "unknownTicketCount": 2
+  },
+  "reason": "测试定义要求首轮苏州2天，但表单截图实际为1天。第二轮也为1天，无法据此验证天数是否按预期保留，因此本次运行不计入基准评分与完成进度。目的地改为南京、偏好历史文化且未见旧城市景点残留，作为观察证据保留。",
+  "rerunInstructions": "重新运行B04。首轮填写苏州、旅行天数2、出行人数2、总预算2000，偏好留空后生成并截图；第二轮改目的地为南京，天数仍为2、人数2、预算2000，选择历史文化后生成并截图。确认日数输入框为2。",
+  "sources": [
+    "C:/Users/17330/AppData/Local/Temp/codex-clipboard-2fa338f1-1f8a-42dd-9daf-9e4fc0997bb6.png",
+    "C:/Users/17330/AppData/Local/Temp/codex-clipboard-e67dead5-a2f1-4412-bbd4-1c9d729f1512.png",
+    "C:/Users/17330/AppData/Local/Temp/codex-clipboard-debb3f07-a566-4038-a933-1bd028601d7e.png",
+    "C:/Users/17330/AppData/Local/Temp/codex-clipboard-6b7a039e-3bf0-449b-a6f7-27b2606f7c70.png",
+    "C:/Users/17330/AppData/Local/Temp/codex-clipboard-a7577652-466c-4473-ac7d-014642908c8a.png",
+    "C:/Users/17330/AppData/Local/Temp/codex-clipboard-76baa62b-a4a8-4402-bc19-845afe791132.png",
+    "C:/Users/17330/AppData/Local/Temp/codex-clipboard-f67a0b8a-6430-463b-b748-ffd806bbb726.png",
+    "C:/Users/17330/AppData/Local/Temp/codex-clipboard-692521ad-4e7b-4ce0-8fb4-55f26b371472.png"
+  ],
+  "rerun": {
+    "status": "complete",
+    "recordedAt": "2026-10-11",
+    "includedInBaselineMetrics": true,
+    "firstTurnInput": "苏州2天、2人、预算2000元",
+    "secondTurnInput": "南京2天、2人、预算2000元、偏好历史文化",
+    "scores": {
+      "D1": 1,
+      "D2": 0,
+      "D3": 1,
+      "D4": 1
+    },
+    "checkpointResults": [
+      1,
+      1,
+      1
+    ],
+    "failure": "南京第1天约8.3小时且提示日程偏紧；主要归因L3。",
+    "sources": [
+      "C:/Users/17330/AppData/Local/Temp/codex-clipboard-1904d869-70ab-4bf4-b4c7-cefdcd2e511a.png",
+      "C:/Users/17330/AppData/Local/Temp/codex-clipboard-abb34ca5-9ba2-4635-bdb0-5114b7425826.png",
+      "C:/Users/17330/AppData/Local/Temp/codex-clipboard-2e97b686-429b-4416-ae25-acef75e2a7bc.png",
+      "C:/Users/17330/AppData/Local/Temp/codex-clipboard-d898961d-7b3e-47f3-99ab-327175bce8d6.png",
+      "C:/Users/17330/AppData/Local/Temp/codex-clipboard-41e54ef6-1de1-447b-bc35-c5aaf5990121.png",
+      "C:/Users/17330/AppData/Local/Temp/codex-clipboard-d5e532c6-2fc4-436f-a35a-2dc5f06fb563.png"
+    ]
+  }
+}

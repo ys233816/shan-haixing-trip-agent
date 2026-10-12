@@ -1,0 +1,334 @@
+{
+  "method": "额外最终版边界检查，不计入22条改善指标",
+  "recordedAt": "2026-10-12T09:36:00.875Z",
+  "sha256": "46f6859626c732be7ff9117184783b9939f304c0061095d60da26b326db541b2",
+  "passed": 10,
+  "total": 10,
+  "records": [
+    {
+      "id": "E01",
+      "avoid": "每人1500元/天",
+      "amount": 1500,
+      "expected": 1500,
+      "pass": true,
+      "result": {
+        "request": {
+          "days": 2,
+          "travelers": 4,
+          "budget": {
+            "amount": 1500,
+            "basisRequested": "auto",
+            "includes": "all",
+            "inputAmount": 1500,
+            "basis": "total"
+          },
+          "avoid": "每人1500元/天",
+          "lodgingNightsInput": null,
+          "lodgingNights": 1,
+          "budgetNotes": [
+            "按全团总预算 ¥1,500 估算。",
+            "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+          ]
+        },
+        "questions": [],
+        "notes": [
+          "按全团总预算 ¥1,500 估算。",
+          "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+        ]
+      }
+    },
+    {
+      "id": "E02",
+      "avoid": "每人 总预算1500元",
+      "amount": 1500,
+      "expected": 6000,
+      "pass": true,
+      "result": {
+        "request": {
+          "days": 2,
+          "travelers": 4,
+          "budget": {
+            "amount": 6000,
+            "basisRequested": "auto",
+            "includes": "all",
+            "inputAmount": 1500,
+            "basis": "per_person"
+          },
+          "avoid": "每人 总预算1500元",
+          "lodgingNightsInput": null,
+          "lodgingNights": 1,
+          "budgetNotes": [
+            "预算按每人 ¥1,500 × 4 人，换算为全团 ¥6,000。",
+            "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+          ]
+        },
+        "questions": [],
+        "notes": [
+          "预算按每人 ¥1,500 × 4 人，换算为全团 ¥6,000。",
+          "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+        ]
+      }
+    },
+    {
+      "id": "E03",
+      "avoid": "每人预算1.5万元",
+      "amount": 15000,
+      "expected": 60000,
+      "pass": true,
+      "result": {
+        "request": {
+          "days": 2,
+          "travelers": 4,
+          "budget": {
+            "amount": 60000,
+            "basisRequested": "auto",
+            "includes": "all",
+            "inputAmount": 15000,
+            "basis": "per_person"
+          },
+          "avoid": "每人预算1.5万元",
+          "lodgingNightsInput": null,
+          "lodgingNights": 1,
+          "budgetNotes": [
+            "预算按每人 ¥15,000 × 4 人，换算为全团 ¥60,000。",
+            "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+          ]
+        },
+        "questions": [],
+        "notes": [
+          "预算按每人 ¥15,000 × 4 人，换算为全团 ¥60,000。",
+          "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+        ]
+      }
+    },
+    {
+      "id": "E04",
+      "avoid": "不住两晚，住一晚",
+      "amount": 1500,
+      "question": true,
+      "pass": true,
+      "result": {
+        "request": {
+          "days": 2,
+          "travelers": 4,
+          "budget": {
+            "amount": 1500,
+            "basisRequested": "auto",
+            "includes": "all",
+            "inputAmount": 1500,
+            "basis": "total"
+          },
+          "avoid": "不住两晚，住一晚",
+          "lodgingNightsInput": null,
+          "lodgingNights": 2,
+          "budgetNotes": [
+            "按全团总预算 ¥1,500 估算。",
+            "住宿采用明确指定的 2 晚。"
+          ]
+        },
+        "questions": [
+          "住宿晚数与要求中的晚数冲突，请确认本次住几晚。"
+        ],
+        "notes": [
+          "按全团总预算 ¥1,500 估算。",
+          "住宿采用明确指定的 2 晚。"
+        ]
+      }
+    },
+    {
+      "id": "E05",
+      "avoid": "房费350元/晚",
+      "amount": 1500,
+      "nights": 1,
+      "pass": true,
+      "result": {
+        "request": {
+          "days": 2,
+          "travelers": 4,
+          "budget": {
+            "amount": 1500,
+            "basisRequested": "auto",
+            "includes": "all",
+            "inputAmount": 1500,
+            "basis": "total"
+          },
+          "avoid": "房费350元/晚",
+          "lodgingNightsInput": null,
+          "lodgingNights": 1,
+          "budgetNotes": [
+            "按全团总预算 ¥1,500 估算。",
+            "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+          ]
+        },
+        "questions": [],
+        "notes": [
+          "按全团总预算 ¥1,500 估算。",
+          "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+        ]
+      }
+    },
+    {
+      "id": "E06",
+      "avoid": "住宿0晚",
+      "amount": 1500,
+      "nights": 0,
+      "pass": true,
+      "result": {
+        "request": {
+          "days": 2,
+          "travelers": 4,
+          "budget": {
+            "amount": 1500,
+            "basisRequested": "auto",
+            "includes": "all",
+            "inputAmount": 1500,
+            "basis": "total"
+          },
+          "avoid": "住宿0晚",
+          "lodgingNightsInput": null,
+          "lodgingNights": 0,
+          "budgetNotes": [
+            "按全团总预算 ¥1,500 估算。",
+            "住宿采用明确指定的 0 晚。"
+          ]
+        },
+        "questions": [],
+        "notes": [
+          "按全团总预算 ¥1,500 估算。",
+          "住宿采用明确指定的 0 晚。"
+        ]
+      }
+    },
+    {
+      "id": "E07",
+      "avoid": "人均预算1500元，总预算6000元",
+      "amount": 1500,
+      "expected": 6000,
+      "pass": true,
+      "result": {
+        "request": {
+          "days": 2,
+          "travelers": 4,
+          "budget": {
+            "amount": 6000,
+            "basisRequested": "auto",
+            "includes": "all",
+            "inputAmount": 1500,
+            "basis": "per_person"
+          },
+          "avoid": "人均预算1500元，总预算6000元",
+          "lodgingNightsInput": null,
+          "lodgingNights": 1,
+          "budgetNotes": [
+            "预算按每人 ¥1,500 × 4 人，换算为全团 ¥6,000。",
+            "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+          ]
+        },
+        "questions": [],
+        "notes": [
+          "预算按每人 ¥1,500 × 4 人，换算为全团 ¥6,000。",
+          "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+        ]
+      }
+    },
+    {
+      "id": "E08",
+      "avoid": "每人1500元，总预算6000元",
+      "amount": 6000,
+      "expected": 6000,
+      "pass": true,
+      "result": {
+        "request": {
+          "days": 2,
+          "travelers": 4,
+          "budget": {
+            "amount": 6000,
+            "basisRequested": "auto",
+            "includes": "all",
+            "inputAmount": 6000,
+            "basis": "total"
+          },
+          "avoid": "每人1500元，总预算6000元",
+          "lodgingNightsInput": null,
+          "lodgingNights": 1,
+          "budgetNotes": [
+            "按全团总预算 ¥6,000 估算。",
+            "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+          ]
+        },
+        "questions": [],
+        "notes": [
+          "按全团总预算 ¥6,000 估算。",
+          "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+        ]
+      }
+    },
+    {
+      "id": "E09",
+      "avoid": "住二十晚",
+      "amount": 10000,
+      "nights": 20,
+      "pass": true,
+      "result": {
+        "request": {
+          "days": 2,
+          "travelers": 4,
+          "budget": {
+            "amount": 10000,
+            "basisRequested": "auto",
+            "includes": "all",
+            "inputAmount": 10000,
+            "basis": "total"
+          },
+          "avoid": "住二十晚",
+          "lodgingNightsInput": null,
+          "lodgingNights": 20,
+          "budgetNotes": [
+            "按全团总预算 ¥10,000 估算。",
+            "住宿采用明确指定的 20 晚。"
+          ]
+        },
+        "questions": [],
+        "notes": [
+          "按全团总预算 ¥10,000 估算。",
+          "住宿采用明确指定的 20 晚。"
+        ]
+      }
+    },
+    {
+      "id": "E10",
+      "avoid": "每人500元，再改成每人800元",
+      "amount": 800,
+      "question": true,
+      "pass": true,
+      "result": {
+        "request": {
+          "days": 2,
+          "travelers": 4,
+          "budget": {
+            "amount": 800,
+            "basisRequested": "auto",
+            "includes": "all",
+            "inputAmount": 800,
+            "basis": "total"
+          },
+          "avoid": "每人500元，再改成每人800元",
+          "lodgingNightsInput": null,
+          "lodgingNights": 1,
+          "budgetNotes": [
+            "按全团总预算 ¥800 估算。",
+            "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+          ]
+        },
+        "questions": [
+          "要求里出现了不同预算金额，请保留本次采用的金额和口径。",
+          "预算金额与文字中的人均预算不一致，请修改金额或明确总预算。"
+        ],
+        "notes": [
+          "按全团总预算 ¥800 估算。",
+          "未指定住宿晚数，默认按 2 天减1晚，共 1 晚。"
+        ]
+      }
+    }
+  ]
+}

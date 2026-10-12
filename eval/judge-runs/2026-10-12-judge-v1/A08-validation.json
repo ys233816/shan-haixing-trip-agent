@@ -1,0 +1,9 @@
+{
+  "valid": false,
+  "errors": [
+    {
+      "kind": "json_parse",
+      "message": "Entire message is not a JSON object"
+    }
+  ]
+}

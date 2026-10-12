@@ -1,0 +1,33 @@
+{
+  "version": "after",
+  "id": "budget-conflict",
+  "viewport": "mobile",
+  "fields": {
+    "destination": "北京",
+    "days": "2",
+    "travelers": "2",
+    "budget": "5000",
+    "avoid": "每人预算1500元"
+  },
+  "expected": {
+    "blocked": true
+  },
+  "checks": {
+    "noPageErrors": true,
+    "noHorizontalOverflow": true,
+    "stableAfterReload": true,
+    "blocked": true
+  },
+  "pass": true,
+  "calls": [],
+  "errors": [],
+  "request": null,
+  "plan": null,
+  "status": "本次尚未生成，请先确认：预算金额与文字中的人均预算不一致，请修改金额或明确总预算。",
+  "text": "",
+  "budget": null,
+  "markdown": null,
+  "invalid": [],
+  "overflow": false,
+  "restored": null
+}

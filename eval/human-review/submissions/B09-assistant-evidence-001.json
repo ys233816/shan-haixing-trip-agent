@@ -1,0 +1,88 @@
+{
+  "case_id": "B09",
+  "analysis_id": "B09-assistant-evidence-001",
+  "submission_id": "B09-submission-001",
+  "author": "assistant",
+  "recorded_date": "2026-10-11",
+  "judge_input_sha256": "d56a1b42ea463905e634edb55812bb57452ddfa26c46030c1079a5111fa34ed8",
+  "purpose": "从固定运行结果整理与用户分数相关的证据及故障归因，不作为用户原始理由，也不改动用户分数。",
+  "dimensions": {
+    "D1": {
+      "relation_to_user_score": "supports",
+      "reason": "结果保留成都、3天及映射后的出行日期，日期天气在工具输入和可见日程中均标为未知。2人、5000元是执行辅助值，不作为需求理解能力证据。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "成都 3 天游程框架" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "2027-02-11 出发" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "天气：该日期超出当前预报范围" }
+      ]
+    },
+    "D2": {
+      "relation_to_user_score": "supports",
+      "reason": "可见备选清单包含当天已经安排的成都人民公园，该景点闭馆时无法把它自身作为替代。此为助手定位的规划问题，不代表用户原来扣分的理由。都江堰与锦里的跨区域转场未实际查询，另记可行性核验缺口，不编造路程或实际耗时。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "13:15\n成都人民公园" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "雨天 / 临时闭馆备选：锦里古街、成都人民公园" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "区域：都江堰市、武侯区" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "尚未查路线时按游览时长、午餐和每段 45 分钟交通预留估算" }
+      ]
+    },
+    "D3": {
+      "relation_to_user_score": "supports",
+      "reason": "没有把近期预报冒充2027年天气，路线采用估计预留的边界已说明。已知门票0元并列5个待核实景点，资料未给这些景点可用于计算的收费金额，不因0元本身扣分。辅助预算为700+720+360=1780，加10%机动金178，合计1958；未保证全程费用在预算内。只确认与保存工具及知识库资料一致，不宣称实时核实官网。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "该日期超出当前预报范围" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "已知门票参考（成人票 × 2 人）：¥0\n待核实门票：5 个景点" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "当前已估合计：¥1,958" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "当前不能确认全程总费用在预算内。" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "开放时间与票务信息来自知识库，尚未实时核验" }
+      ]
+    },
+    "D4": {
+      "relation_to_user_score": "supports",
+      "reason": "用户可见每一天超出预报范围的提示，并看到出行前核对、范围和交易边界说明。部分提醒属于页面静态说明，不代表主动进行了个性化追问。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "该日期超出当前预报范围" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "天气与路线由高德服务返回；结果受地点匹配、服务覆盖和查询时间影响，出行前请再次核对。" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "仅规划中国大陆景区。应用不提供订票、下单或付款功能，也不替用户提交个人证件或支付信息。" }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "index": 1,
+      "relation_to_user_score": "supports",
+      "reason": "可见每日天气明确说明该出行日期不在当前预报覆盖范围。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "天气：该日期超出当前预报范围" }
+      ]
+    },
+    {
+      "index": 2,
+      "relation_to_user_score": "supports",
+      "reason": "天气未知时仍提供三天初步安排，包含室内外结合的博物馆与户外景点，没有依赖虚构的远期预报。初步安排存在不代表整体执行质量通过。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "第 1 天 · 2月11日" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "杜甫草堂博物馆\n博物馆、历史文化、园林 · 建议约 150 分钟 · 步行强度 中 · 室内外结合" },
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "第 3 天 · 2月13日" }
+      ]
+    },
+    {
+      "index": 3,
+      "relation_to_user_score": "supports",
+      "reason": "页面静态说明明确提醒出行前再次核对天气；可支持边界提醒类检查点，不证明主动执行了临近出行的查询。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.page_text", "quote": "天气与路线由高德服务返回；结果受地点匹配、服务覆盖和查询时间影响，出行前请再次核对。" }
+      ]
+    }
+  ],
+  "primary_failure_layer": "L3",
+  "attribution_reason": "已安排景点再次出现在同日闭馆备选中，证据能定位到计划和备选生成；不假定天气接口或需求识别错误。",
+  "critical_failure": false,
+  "critical_reason": "保存结果没有声称或执行代交易，也没有保证虚构的远期天气；上述备选安排问题未触发明确的严重安全事件。",
+  "limitations": [
+    "用户只提供分数，所有文字理由均由助手补充，不能冒充独立人工理由。",
+    "是否见过旧分未提供，不宣称严格盲评。",
+    "执行器手动映射表单字段，不能证明自由文本需求被自动解析。",
+    "未核验真实路线耗时或未来票价，不联网补充事实。"
+  ]
+}

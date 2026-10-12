@@ -1,0 +1,60 @@
+{
+  "case_id": "B07",
+  "input_file": "eval/judge-inputs/2026-10-11/B07.json",
+  "input_sha256": "9970c0f1588004ed163563c1398e6e85176351500c64a49b45954f33853e36bb",
+  "prompt_version": "judge-v1.1",
+  "prompt_sha256": "05cf118f016086af695f8b0f04239e79889e1e861a00874903d007dc001ea574",
+  "schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+  "rubric_sha256": "4e36c03e56bf986ab2da3d85622fa848a3dad9b9ef2daa1f0651bf9084eba633",
+  "runner_sha256": "eda64a339fcb97bd5f47019c7b34bdc5f9401a242cf4c4a21ce3e8e34f897181",
+  "config_sha256": "e061ea09dddacbda6b02585067167eba1d2e5828aafd5f1d8e2361c5504e5abb",
+  "effective_system_sha256": "cfbf4fec4a2f2883a4b23141c17d7d54db4310e7d0e7dbf80564394c8b8aedca",
+  "rule_files": [
+    {
+      "file": "eval/rubric.md",
+      "sha256": "3b6bde636b43f45aca080995e02640aee83d36fa90334ca017f2e85415a6921d"
+    },
+    {
+      "file": "eval/rubric-v1.1-addendum.md",
+      "sha256": "3f1029980f263a1f9fc99ded8bf099871cb33def6426798a013739294e7ce6f6"
+    }
+  ],
+  "system_message_sha256": "cfbf4fec4a2f2883a4b23141c17d7d54db4310e7d0e7dbf80564394c8b8aedca",
+  "request_body_sha256": "5edc107859327d6db836a5d3a964cda8ca85299953a8fcfee4f9309a6e2386c6",
+  "requested_model": "deepseek-v4-flash",
+  "endpoint": "https://api.deepseek.com/chat/completions",
+  "parameters": {
+    "temperature": 0,
+    "max_tokens": 8192,
+    "response_format": {
+      "type": "json_object"
+    },
+    "thinking": {
+      "type": "disabled"
+    }
+  },
+  "started_at": "2026-10-12T06:51:51.728Z",
+  "status": "response_saved",
+  "attempt": 1,
+  "human_labels_sent": false,
+  "assistant_analysis_sent": false,
+  "automatic_retries": 0,
+  "prior_attempt": null,
+  "mode": "grading",
+  "http_status": 200,
+  "response_model": "deepseek-flash",
+  "response_id": "c33d8dfc-11bb-4044-b6a6-1ca4eb6c2ba8",
+  "usage": {
+    "prompt_tokens": 21724,
+    "completion_tokens": 946,
+    "total_tokens": 22670,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 21724
+  },
+  "finish_reason": "stop",
+  "completed_at": "2026-10-12T06:51:57.517Z",
+  "duration_ms": 5788
+}

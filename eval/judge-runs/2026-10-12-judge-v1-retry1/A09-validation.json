@@ -1,0 +1,19 @@
+{
+  "valid": false,
+  "schema_valid": true,
+  "quote_count": 13,
+  "errors": [
+    {
+      "kind": "evidence_quote",
+      "item": "D1",
+      "ref": "snapshots.after_adjustment.observed.form",
+      "quote": "\"destination\":\"厦门\",\"days\":\"1\",\"travelers\":\"2\",\"budget\":\"5000\""
+    },
+    {
+      "kind": "evidence_quote",
+      "item": "D3",
+      "ref": "snapshots.after_adjustment.observed.visible_result",
+      "quote": "当前已估合计：¥396。但还有 2 个景点票价待核实"
+    }
+  ]
+}

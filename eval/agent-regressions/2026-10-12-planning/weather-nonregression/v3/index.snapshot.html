@@ -1,0 +1,1013 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f4ef" />
+  <title>山海行 · 大陆旅行规划</title>
+  <style>
+    :root { color-scheme: light; --ink:#202722; --muted:#69736c; --line:#dce2db; --paper:#f6f4ef; --card:#fffefa; --green:#235c48; --mint:#e5eee7; --orange:#d9794e; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter,"PingFang SC","Microsoft YaHei",sans-serif; }
+    .shell { max-width:1120px; margin:0 auto; padding:34px 26px 64px; }
+    header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:23px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:750; letter-spacing:.03em; }
+    .mark { width:38px; height:38px; display:grid; place-items:center; color:white; background:var(--green); border-radius:13px; font-size:20px; }
+    .scope { color:var(--green); background:var(--mint); padding:8px 12px; border-radius:20px; font-size:12px; font-weight:700; }
+    .hero { padding:58px 0 35px; max-width:700px; }
+    .eyebrow { color:var(--orange); font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+    h1 { margin:12px 0 12px; font-family:Georgia,"Songti SC",serif; font-weight:500; font-size:clamp(36px,6vw,62px); letter-spacing:-.04em; line-height:1.08; }
+    .hero p { margin:0; color:var(--muted); line-height:1.8; font-size:15px; }
+    .layout { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(250px,.75fr); gap:22px; align-items:start; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:26px; box-shadow:0 8px 30px #2c392a08; }
+    h2 { margin:0 0 6px; font-size:19px; }
+    .sub { color:var(--muted); font-size:13px; margin:0 0 23px; }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:17px 15px; }
+    label { display:block; font-size:12px; color:#4d5850; font-weight:700; margin-bottom:7px; }
+    input,select,textarea { width:100%; border:1px solid var(--line); background:#fff; border-radius:10px; padding:12px 13px; color:var(--ink); font:inherit; font-size:14px; outline:none; }
+    input:focus,select:focus,textarea:focus { border-color:#6d9b7d; box-shadow:0 0 0 3px #6d9b7d1c; }
+    textarea { min-height:82px; resize:vertical; }
+    .full { grid-column:1/-1; }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .chip { cursor:pointer; border:1px solid var(--line); background:white; color:#536158; padding:8px 11px; border-radius:18px; font-size:12px; user-select:none; }
+    .chip input { display:none; }
+    .chip:has(input:checked) { color:var(--green); border-color:#84a891; background:var(--mint); }
+    button { border:0; cursor:pointer; font:inherit; }
+    .submit { margin-top:22px; width:100%; border-radius:11px; background:var(--green); color:white; padding:14px 18px; font-weight:750; transition:transform .15s,background .15s; }
+    .submit:hover { background:#174634; transform:translateY(-1px); }
+    .note { display:flex; gap:12px; padding:15px; border-radius:13px; background:#f1eee6; margin-top:18px; color:#62685f; font-size:12px; line-height:1.7; }
+    .note b { color:var(--ink); }
+    aside .card { position:sticky; top:20px; }
+    .side-title { font-family:Georgia,"Songti SC",serif; font-size:25px; margin:5px 0 16px; }
+    .feature { display:flex; gap:12px; padding:14px 0; border-top:1px solid var(--line); }
+    .feature-icon { flex:0 0 34px; width:34px; height:34px; display:grid; place-items:center; background:var(--mint); border-radius:11px; }
+    .feature strong { display:block; font-size:13px; margin:1px 0 5px; }
+    .feature span { color:var(--muted); font-size:12px; line-height:1.55; }
+    .status { display:none; margin-top:17px; border:1px solid #b8d3bd; border-radius:12px; background:#f1f8f1; padding:14px; color:#2b5b3f; font-size:13px; line-height:1.6; }
+    .status.show { display:block; }
+    .status pre { white-space:pre-wrap; overflow-wrap:anywhere; color:#405247; font-size:11px; max-height:180px; overflow:auto; }
+    .itinerary { display:none; margin-top:22px; }
+    .itinerary.show { display:block; }
+    .plan-label { display:inline-block; margin:8px 0 15px; padding:6px 9px; background:#eef1e8; color:#53654c; border-radius:8px; font-size:11px; font-weight:700; }
+    .day-card { border-top:1px solid var(--line); padding:17px 0 4px; }
+    .day-head { display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
+    .day-head h3 { margin:0; font:500 21px Georgia,"Songti SC",serif; }
+    .day-area { font-size:12px; color:var(--green); font-weight:700; }
+    .day-note { color:var(--muted); font-size:12px; margin:7px 0 10px; }
+    .stop { display:grid; grid-template-columns:62px 1fr; gap:10px; padding:9px 0; }
+    .stop-time { color:var(--orange); font-size:12px; font-weight:750; }
+    .stop-name { font-weight:750; font-size:14px; }
+    .stop-meta { color:var(--muted); font-size:12px; line-height:1.6; margin-top:3px; }
+    .why { margin-top:15px; background:#f5f2ea; padding:13px 15px; border-radius:11px; color:#62685f; font-size:12px; line-height:1.7; }
+    .why strong { color:var(--ink); }
+    .adjust-box { margin-top:20px; padding:18px; border:1px solid #d7c8a8; border-radius:14px; background:#fbf8ef; }
+    .adjust-box h3 { margin:0 0 6px; font:500 20px Georgia,"Songti SC",serif; }
+    .adjust-box p { color:var(--muted); font-size:12px; line-height:1.6; margin:0 0 12px; }
+    .adjust-actions { display:flex; gap:10px; align-items:flex-start; }
+    .adjust-actions textarea { min-height:48px; }
+    .adjust-actions button { flex:0 0 auto; border-radius:10px; padding:13px 16px; background:var(--orange); color:white; font-weight:750; }
+    .adjust-result { margin-top:12px; font-size:12px; line-height:1.7; color:#58624f; }
+    .service-tools { margin-top:20px; padding-top:20px; border-top:1px solid var(--line); }
+    .service-tools h3 { margin:0 0 6px; font:500 20px Georgia,"Songti SC",serif; }
+    .service-tools > p { color:var(--muted); font-size:12px; line-height:1.6; }
+    .service-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .service-card { border:1px solid var(--line); border-radius:13px; padding:15px; background:#fff; }
+    .service-card h4 { margin:0 0 10px; font-size:13px; }
+    .service-card button { border-radius:9px; padding:10px 12px; background:var(--green); color:white; font-weight:700; font-size:12px; }
+    .service-card input,.service-card select { margin-bottom:8px; padding:9px 10px; font-size:12px; }
+    .service-output { color:#546158; font-size:12px; line-height:1.7; margin-top:10px; overflow-wrap:anywhere; }
+    .service-output ul { margin:4px 0 0; padding-left:18px; }
+    .export-actions { display:flex; justify-content:flex-end; gap:10px; flex-wrap:wrap; margin:16px 0 6px; }
+    .export-actions button { border:1px solid var(--line); border-radius:9px; padding:10px 14px; background:white; color:var(--green); font-weight:700; }
+    .export-actions button:hover { background:#f2f6f2; }
+    .memory-row { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; border:1px solid var(--line); border-radius:11px; padding:12px 13px; background:#fbfaf6; }
+    .memory-row label { margin:0; display:flex; align-items:center; gap:9px; cursor:pointer; color:var(--ink); }
+    .memory-row input { width:16px; height:16px; accent-color:var(--green); }
+    .clear-memory { color:#78634d; background:transparent; font-size:11px; text-decoration:underline; padding:5px; }
+    .memory-note { margin-top:8px; color:var(--muted); font-size:11px; line-height:1.6; }
+    @media(max-width:520px){.adjust-actions{display:block}.adjust-actions button{margin-top:8px;width:100%}}
+    @media(max-width:700px){.service-grid{grid-template-columns:1fr}}
+    footer { text-align:center; color:#899088; font-size:11px; padding-top:32px; }
+    @media(max-width:760px) { .shell{padding:20px 15px 40px}.hero{padding:42px 0 26px}.layout{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}aside .card{position:static}header{padding-bottom:16px} }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="brand"><div class="mark">山</div><span>山海行</span></div>
+      <div class="scope">仅支持中国大陆景区</div>
+    </header>
+    <section class="hero">
+      <div class="eyebrow">TRAVEL, THOUGHTFULLY</div>
+      <h1>把旅程，交给<br>慢慢想清楚。</h1>
+      <p>告诉我这趟旅行的想法。我会结合你的时间、预算和偏好，先搭出清晰的行程，再根据天气与临时变化灵活调整。</p>
+    </section>
+    <main class="layout">
+      <section class="card">
+        <h2>先说说这趟旅行</h2>
+        <p class="sub">带 <span style="color:#d9794e">*</span> 的项目需要填写。其他信息可以之后再补充。</p>
+        <form id="trip-form">
+          <div class="form-grid">
+            <div>
+              <label for="destination">目的地城市或地区 *</label>
+              <input id="destination" name="destination" placeholder="例如：杭州、云南大理" required />
+            </div>
+            <div>
+              <label for="startDate">出发日期</label>
+              <input id="startDate" name="startDate" type="date" />
+            </div>
+            <div>
+              <label for="days">旅行天数 *</label>
+              <input id="days" name="days" type="number" min="1" max="60" value="3" required />
+            </div>
+            <div>
+              <label for="travelers">出行人数</label>
+              <input id="travelers" name="travelers" type="number" min="1" max="30" value="2" />
+            </div>
+            <div>
+              <label for="budget">总预算（人民币）*</label>
+              <input id="budget" name="budget" type="number" min="1" placeholder="例如：5000" required />
+            </div>
+            <div>
+              <label for="budgetIncludes">预算包含</label>
+              <select id="budgetIncludes" name="budgetIncludes">
+                <option value="all">住宿、市内交通、餐饮和门票（不含大交通）</option>
+                <option value="without_intercity">市内交通、餐饮和门票（不含住宿与大交通）</option>
+                <option value="custom">暂不确定，先按全部估算</option>
+              </select>
+            </div>
+            <div class="full" style="padding:13px 14px;background:#f7f5ef;border-radius:12px">
+              <label style="margin-bottom:10px">预算估算参考（可按你的预期修改）</label>
+              <div class="form-grid">
+                <div><label for="hotelPerNight">每间住宿 / 晚（元）</label><input id="hotelPerNight" name="hotelPerNight" type="number" min="0" placeholder="默认 350"></div>
+                <div><label for="foodPerDay">每人餐饮 / 天（元）</label><input id="foodPerDay" name="foodPerDay" type="number" min="0" placeholder="默认 120"></div>
+                <div><label for="localTransitPerDay">每人市内交通 / 天（元）</label><input id="localTransitPerDay" name="localTransitPerDay" type="number" min="0" placeholder="默认 60"></div>
+                <div style="align-self:end;color:#69736c;font-size:11px;line-height:1.55">留空或填 0 时按住宿 ¥350 / 间 / 晚、餐饮 ¥120 / 人 / 天、市内交通 ¥60 / 人 / 天估算。住宿按每间最多 2 人、天数减 1 晚估算。大交通费用暂不计入。</div>
+              </div>
+            </div>
+            <div class="full">
+              <label>旅行偏好（可多选）</label>
+              <div class="chips">
+                <label class="chip"><input type="checkbox" name="preferences" value="历史文化">历史文化</label>
+                <label class="chip"><input type="checkbox" name="preferences" value="自然风光">自然风光</label>
+                <label class="chip"><input type="checkbox" name="preferences" value="美食">美食</label>
+                <label class="chip"><input type="checkbox" name="preferences" value="亲子活动">亲子活动</label>
+                <label class="chip"><input type="checkbox" name="preferences" value="博物馆">博物馆</label>
+                <label class="chip"><input type="checkbox" name="preferences" value="拍照打卡">拍照打卡</label>
+              </div>
+            </div>
+            <div>
+              <label for="pace">旅行节奏</label>
+              <select id="pace" name="pace">
+                <option value="relaxed">慢节奏：每天约 1 个主要景点</option>
+                <option value="balanced" selected>适中：每天约 2 个主要景点</option>
+                <option value="packed">紧凑：每天最多 3 个主要景点</option>
+              </select>
+            </div>
+            <div>
+              <label for="walking">步行接受度</label>
+              <select id="walking" name="walking">
+                <option value="low">少走路</option>
+                <option value="medium" selected>适中</option>
+                <option value="high">可以多步行</option>
+              </select>
+            </div>
+            <div class="full">
+              <div class="memory-row"><label><input id="remember-habits" type="checkbox"><span>在此设备记住我的出行习惯</span></label><button class="clear-memory" type="button" id="clear-memory">清除已记住的习惯</button></div>
+              <div class="memory-note">只保存你选择的旅行偏好、旅行节奏和步行接受度，用于下次预填。仅存于当前浏览器设备；不保存预算、日期、目的地、人数或特殊要求。默认不启用。</div>
+            </div>
+            <div class="full">
+              <label for="avoid">不想安排的内容或其他要求</label>
+              <textarea id="avoid" name="avoid" placeholder="例如：不早起、避免爬山、需要适合老人休息的安排"></textarea>
+            </div>
+          </div>
+          <button class="submit" type="submit">保存旅行需求　→</button>
+          <div class="note"><span>✳</span><div><b>行程范围与信息说明</b><br>目前只规划中国大陆景区。天气和路线可查询高德服务；门票与营业时间来自本地知识库，可能过期，请以景区官方渠道核实。</div></div>
+          <div class="status" id="status" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+      <aside>
+        <div class="card">
+          <div class="eyebrow">HOW IT WORKS</div>
+          <div class="side-title">认真计划，<br>也留一点余地。</div>
+          <div class="feature"><div class="feature-icon">⌖</div><div><strong>先规划整体</strong><span>先按天数、区域和预算形成行程骨架。</span></div></div>
+          <div class="feature"><div class="feature-icon">☼</div><div><strong>变化时再调整</strong><span>遇到天气或闭馆变化，只重排受影响的部分。</span></div></div>
+          <div class="feature"><div class="feature-icon">¥</div><div><strong>预算清楚可查</strong><span>拆分交通、餐饮、门票和住宿，展示估算依据。</span></div></div>
+          <div class="feature"><div class="feature-icon">◇</div><div><strong>由你做最后决定</strong><span>不替你下单或付款；价格与开放信息以官方渠道为准。</span></div></div>
+        </div>
+      </aside>
+    </main>
+    <section id="itinerary" class="card itinerary" aria-live="polite"></section>
+    <section class="card" style="margin-top:20px">
+      <h2>服务范围与使用边界</h2>
+      <p class="sub" style="margin-bottom:0">仅规划中国大陆景区。应用不提供订票、下单或付款功能，也不替用户提交个人证件或支付信息。天气预报和路线耗时是查询时的服务结果，可能变化；门票、库存、预约要求和开放时间以景区官方渠道为准。知识库未覆盖的地区不会凭空补造景点资料。</p>
+    </section>
+    <footer>山海行 · 中国大陆旅行规划助手</footer>
+  </div>
+  <script>
+    const form = document.querySelector('#trip-form');
+    const statusBox = document.querySelector('#status');
+    const rememberHabits = document.querySelector('#remember-habits');
+    const clearMemoryButton = document.querySelector('#clear-memory');
+    const budgetEstimateDefaults = {hotelPerNight:350,foodPerDay:120,localTransitPerDay:60};
+    const unsupported = ['香港','澳门','海外','国外','日本','韩国','美国','欧洲','台湾'];
+    try {
+      const remembered = JSON.parse(localStorage.getItem('travelHabits') || 'null');
+      if (remembered) {
+        rememberHabits.checked = true;
+        for (const option of form.querySelectorAll('input[name="preferences"]')) option.checked = (remembered.preferences || []).includes(option.value);
+        if (remembered.pace) form.elements.namedItem('pace').value = remembered.pace;
+        if (remembered.walkingTolerance) form.elements.namedItem('walking').value = remembered.walkingTolerance;
+      }
+    } catch (error) { localStorage.removeItem('travelHabits'); }
+    clearMemoryButton.addEventListener('click', () => {
+      localStorage.removeItem('travelHabits');
+      rememberHabits.checked = false;
+      statusBox.classList.add('show');
+      statusBox.textContent = '已清除保存在此设备上的长期出行习惯。';
+    });
+    function formatDate(startDate, offset) {
+      if (!startDate) return `第 ${offset + 1} 天`;
+      const date = new Date(`${dateFor(startDate, offset)}T12:00:00`);
+      return `第 ${offset + 1} 天 · ${date.getMonth() + 1}月${date.getDate()}日`;
+    }
+    function dateFor(startDate, offset) {
+      const date = new Date(`${startDate}T12:00:00`);
+      date.setDate(date.getDate() + offset);
+      return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+    }
+    function estimateInput(data, name) {
+      const value = String(data.get(name) ?? '').trim();
+      if (value === '') return budgetEstimateDefaults[name];
+      const parsed = Number(value);
+      return Number.isFinite(parsed) && parsed > 0 ? parsed : budgetEstimateDefaults[name];
+    }
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+    }
+    function officialSourceLinks(value, label) {
+      const urls = [...new Set(String(value || '').match(/https?:\/\/[^\s；;，,]+/g) || [])];
+      return urls.map((url) => {
+        try {
+          const parsed = new URL(url);
+          if (!['http:','https:'].includes(parsed.protocol)) return '';
+          return `<a href="${escapeHtml(parsed.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}官方来源</a>`;
+        } catch { return ''; }
+      }).filter(Boolean).join('、');
+    }
+    function knowledgeField(hit, field) {
+      const prefix = `- ${field}：`;
+      const line = String(hit.content || '').split(/\r?\n/).find((entry) => entry.startsWith(prefix));
+      return line ? line.slice(prefix.length).trim() : '';
+    }
+    function durationMinutes(value) {
+      const matches = [...String(value).matchAll(/\d+/g)].map((match) => Number(match[0]));
+      return matches.length > 1 ? Math.round((matches[0] + matches[1]) / 2) : matches[0] || 120;
+    }
+    function walkingLevel(value) {
+      if (value.includes('低') && value.includes('高')) return '低到高';
+      if (value.includes('低') && value.includes('中')) return '低到中';
+      if (value.includes('中') && value.includes('高')) return '中到高';
+      return value.includes('高') ? '高' : value.includes('低') ? '低' : '中';
+    }
+    async function makePlan(request) {
+      const retrievalQuery = [...request.preferences, request.walkingTolerance === 'low' ? '少走路' : '', request.avoid].filter(Boolean).join(' ');
+      const searchParams = new URLSearchParams({city:request.destination,q:retrievalQuery,limit:'20'});
+      const retrieval = await getApi(`/api/attractions?${searchParams}`);
+      const candidates = retrieval.hits.map((hit) => {
+        const kbContent = String(hit.content || '');
+        const priceFromContent = kbContent.match(/预算参考成人票价（元\/人）[：:]\s*(\d+(?:\.\d+)?)/);
+        const basisFromContent = kbContent.match(/预算票价口径[：:]\s*([^\r\n]+)/);
+        const priceText = hit.ticketPriceCny != null && String(hit.ticketPriceCny).trim() !== '' ? String(hit.ticketPriceCny).trim() : priceFromContent?.[1] ?? '';
+        const ticketPriceCny = priceText !== '' && Number.isFinite(Number(priceText)) ? Number(priceText) : null;
+        const ticketPriceBasis = hit.ticketPriceBasis || basisFromContent?.[1] || '';
+        return ({
+        name:hit.name,
+        city:hit.cityName || hit.city || request.destination,
+        area:hit.area,
+        kind:hit.type,
+        indoor:hit.indoorOutdoor,
+        hours:durationMinutes(hit.recommendedDuration),
+        walk:walkingLevel(hit.walkingIntensity),
+        rain:hit.rainSuitability,
+        cost:ticketPriceCny !== null ? ticketPriceCny : /^免费(?:\s|[（(，,。]|$)/.test(hit.ticketInfo) || /公共区域通常免费|公共街区.*免费/.test(hit.ticketInfo) ? 0 : null,
+        reason:`知识库类型：${hit.type || '未标注'}；适合人群：${hit.suitability || '资料未注明'}；标签：${hit.tags || '未标注'}。`,
+        suitability:hit.suitability || '',
+        backup:hit.nearbyAttractions || '请从本地景点知识库检索附近备选。',
+        tags:hit.tags,
+        openingHours:hit.openingHours,
+        reservationInfo:hit.reservationInfo || knowledgeField(hit,'预约要求'),
+        ticketInfo:hit.ticketInfo,
+        ticketPriceCny:ticketPriceCny === null ? '' : ticketPriceCny,
+        ticketPriceBasis,
+        openingSource:hit.openingSource || knowledgeField(hit,'开放时间来源'),
+        ticketSource:hit.ticketSource || knowledgeField(hit,'预约票务来源'),
+        retrievalScore:hit.retrievalScore
+      }); });
+      const city = retrieval.hits[0]?.cityName || retrieval.hits[0]?.city || request.destination;
+      let weatherData = null;
+      let weatherError = '';
+      if (request.startDate && candidates.length) {
+        try { weatherData = await getApi(`/api/weather?city=${encodeURIComponent(city)}`); }
+        catch (error) { weatherError = error.message; }
+      }
+      const liked = (item) => request.preferences.some((pref) => item.tags.includes(pref) || item.kind.includes(pref) || (pref === '自然风光' && /自然|园林/.test(item.kind)) || (pref === '美食' && /美食|街区/.test(item.kind)) || (pref === '历史文化' && /历史|博物馆/.test(item.kind)) || (pref === '博物馆' && item.kind.includes('博物馆')));
+      const walkingRank = {'低':1,'低到中':2,'中':2,'中到高':3,'低到高':3,'高':4};
+      candidates.sort((a,b) => Number(liked(b)) - Number(liked(a)) || walkingRank[a.walk] - walkingRank[b.walk] || b.retrievalScore - a.retrievalScore);
+      const paceCount = request.pace === 'relaxed' ? 1 : request.pace === 'packed' ? 3 : 2;
+      const walkRank = walkingRank;
+      const maxWalk = request.walkingTolerance === 'low' ? 2 : request.walkingTolerance === 'high' ? 4 : 3;
+      let remaining = candidates.filter((item) => !(request.walkingTolerance === 'low' && walkRank[item.walk] >= 4));
+      if (!remaining.length) remaining = [...candidates];
+      else remaining = [...remaining];
+      const forecastByDate = new Map((weatherData?.forecast || []).map((item) => [item.date,item]));
+      const daily = [];
+      for (let day=0; day<request.days; day++) {
+        const forecast = request.startDate ? forecastByDate.get(dateFor(request.startDate,day)) || null : null;
+        const weatherText = forecast ? `${forecast.dayWeather || ''} ${forecast.nightWeather || ''}` : '';
+        const adverseWeather = /雨|雪|台风|雷暴/.test(weatherText);
+        const slots = [];
+        for (let slot=0; slot<paceCount && remaining.length; slot++) {
+          let choiceIndex = 0;
+          if (adverseWeather) {
+            const indoorIndex = remaining.findIndex((item) => item.indoor.includes('室内'));
+            if (indoorIndex >= 0) choiceIndex = indoorIndex;
+          }
+          slots.push(remaining.splice(choiceIndex,1)[0]);
+        }
+        const weatherNote = forecast ? `${forecast.dayWeather}（${forecast.lowC}–${forecast.highC}°C）` : !request.startDate ? '未提供日期，未按天气排序' : weatherError ? `天气查询失败：${weatherError}` : '该日期超出当前预报范围';
+        const weatherReason = adverseWeather && slots.some((item) => item.indoor.includes('室内')) ? ` 日期天气为${forecast.dayWeather}，因此优先安排室内景点。` : adverseWeather ? ` 日期天气为${forecast.dayWeather}，本地知识库没有未排入日程的室内替代景点，请使用备选或调整日期。` : '';
+        daily.push({date:formatDate(request.startDate,day),isoDate:request.startDate ? dateFor(request.startDate,day) : null,city,items:slots,weather:forecast,weatherNote,weatherUnavailable:Boolean(request.startDate && !forecast && !weatherError),walk:slots.some(x=>walkRank[x.walk]>maxWalk)?'偏高':'适中',reason:slots.length ? `按“${request.pace === 'relaxed' ? '慢节奏' : request.pace === 'packed' ? '紧凑' : '适中节奏'}”安排${slots.length}个主要景点；候选来自景点知识库，并按偏好标签、步行强度和检索相关度排序。${weatherReason}` : '知识库中没有更多已整理的景点，建议留出自由活动时间或补充目的地资料。' });
+      }
+      let plannerMode = 'rules';
+      let modelNote = '';
+      try {
+        const modelStatus = await getApi('/api/llm/status');
+        if (modelStatus.configured) {
+          const arranged = await postApi('/api/llm/plan', {
+            destination:request.destination,
+            days:daily.map((day) => ({date:day.isoDate || day.date,weather:day.weather ? `${day.weather.dayWeather || ''} / ${day.weather.nightWeather || ''}` : '暂无该日期预报'})),
+            preferences:request.preferences,
+            pace:request.pace,
+            walkingTolerance:request.walkingTolerance,
+            budgetCny:request.budget.amount,
+            avoid:request.avoid,
+            candidates:candidates.map((item,id) => ({id,name:item.name,area:item.area,kind:item.kind,indoor:item.indoor,hours:item.hours,walk:item.walk,rain:item.rain,tags:item.tags,suitability:item.suitability,ticketInfo:item.ticketInfo,ticketPriceCny:item.ticketPriceCny,openingHours:item.openingHours,reservationInfo:item.reservationInfo,openingSource:item.openingSource,ticketSource:item.ticketSource}))
+          });
+          const assignedAttractions = new Set();
+          daily.forEach((day,index) => {
+            const resultDay = arranged.days[index];
+            const selected = resultDay.attractionIds.map((id) => candidates[id]);
+            day.items = selected;
+            selected.forEach((item) => assignedAttractions.add(item.name));
+            day.reason = `大模型从知识库候选中安排了${day.items.map(item => item.name).join('、') || '自由活动'}；按${request.pace === 'relaxed' ? '慢节奏 1 个' : request.pace === 'packed' ? '紧凑节奏最多 3 个' : '适中节奏最多 2 个'}景点/天编排，并按偏好和天气排序。景点开放状态与价格仍需核实。`;
+            day.walk = day.items.some(item => walkingRank[item.walk] > maxWalk) ? '偏高' : '适中';
+          });
+          plannerMode = 'llm';
+          modelNote = `已由 ${modelStatus.model} 生成行程顺序；景点来自本地知识库，开放和票价信息仍需核实。`;
+        } else {
+          modelNote = '尚未配置大模型，当前使用本地规则生成计划。';
+        }
+      } catch (error) {
+        modelNote = `大模型本次未完成编排，已回退到本地规则：${error.message}`;
+      }
+      const plan = {city,candidates,daily,weatherData,weatherError,retrievalSource:'kb-hybrid-v4',retrievalMethod:retrieval.method,retrievalQuery,plannerMode,modelNote};
+      enforceUniqueDailyAttractions(request, plan);
+      return plan;
+    }
+    function calculateBudget(request, plan) {
+      const nights = Math.max(0, request.days - 1);
+      const rooms = Math.ceil(request.travelers / 2);
+      const lodgingRaw = rooms * nights * request.assumptions.hotelPerNight;
+      const lodgingIncluded = request.budget.includes !== 'without_intercity';
+      const lodging = lodgingIncluded ? lodgingRaw : 0;
+      const food = request.days * request.travelers * request.assumptions.foodPerDay;
+      const localTransit = request.days * request.travelers * request.assumptions.localTransitPerDay;
+      const plannedItems = plan.daily.flatMap((day) => day.items);
+      const knownTickets = plannedItems.reduce((sum,item) => sum + (Number.isFinite(item.cost) ? item.cost * request.travelers : 0), 0);
+      const unknownTicketCount = plannedItems.filter((item) => item.cost === null).length;
+      const transitLegs = plan.daily.flatMap((day) => day.routeCheck?.mode === 'transit' ? day.routeCheck.legs : []);
+      const knownRouteFareLegs = transitLegs.filter((leg) => leg.route && typeof leg.route.costCny === 'number' && Number.isFinite(leg.route.costCny));
+      const routeFareReference = knownRouteFareLegs.reduce((sum,leg) => sum + leg.route.costCny * request.travelers, 0);
+      const subtotal = lodging + food + localTransit + knownTickets;
+      const reserve = Math.round(subtotal * 0.1);
+      const estimate = subtotal + reserve;
+      return {nights,rooms,lodgingRaw,lodgingIncluded,lodging,food,localTransit,knownTickets,unknownTicketCount,routeFareReference,knownRouteFareLegCount:knownRouteFareLegs.length,unknownRouteFareLegCount:transitLegs.filter((leg) => !leg.route || typeof leg.route.costCny !== 'number' || !Number.isFinite(leg.route.costCny)).length,subtotal,reserve,estimate};
+    }
+    function routeFareBudgetHtml(budget) {
+      const known = budget.knownRouteFareLegCount ? `<br>已查公交路段费用参考：${money(budget.routeFareReference)}（${budget.knownRouteFareLegCount} 段，按人数折算，仅作参考、不重复计入合计）` : '';
+      const missing = budget.unknownRouteFareLegCount ? `<br>公交路段费用未返回：${budget.unknownRouteFareLegCount} 段` : '';
+      return known + missing;
+    }
+    function budgetAdjustmentIdeas(request, budget) {
+      const gap = Math.max(0, budget.estimate - request.budget.amount);
+      if (!gap) return [];
+      const ideas = [];
+      const addIdea = (name, current, multiplier, unit) => {
+        if (!(current > 0) || !(multiplier > 0)) return;
+        const reduction = Math.min(current, Math.ceil(gap / (1.1 * multiplier)));
+        const target = Math.max(0, current - reduction);
+        const recoverable = Math.round(reduction * multiplier * 1.1);
+        const text = recoverable >= gap
+          ? `${name}降至约 ${money(target)} ${unit}可覆盖已估差额`
+          : `${name}降至 ${money(target)} ${unit}后，仍约差 ${money(gap - recoverable)}`;
+        ideas.push(text);
+      };
+      if (budget.lodgingIncluded) addIdea('住宿', request.assumptions.hotelPerNight, budget.rooms * budget.nights, '每间 / 晚');
+      addIdea('餐饮', request.assumptions.foodPerDay, request.days * request.travelers, '每人 / 天');
+      addIdea('市内交通', request.assumptions.localTransitPerDay, request.days * request.travelers, '每人 / 天');
+      return ideas;
+    }
+    function markdownValue(value) { return String(value == null ? '' : value).replace(/[\r\n]+/g,' ').replace(/\|/g,'／').trim(); }
+    function buildPlanMarkdown(request, plan) {
+      const budget = calculateBudget(request, plan);
+      const lines = [
+        `# 山海行｜${markdownValue(request.destination)} ${request.days} 天游程`,
+        '',
+        `- 出发日期：${markdownValue(request.startDate || '未指定')}`,
+        `- 人数：${request.travelers} 人`,
+        `- 预算上限：¥${Math.round(request.budget.amount).toLocaleString('zh-CN')}`,
+        `- 行程引擎：${plan.plannerMode === 'llm' ? 'DeepSeek 大模型编排' : '本地规则编排'}`,
+        '- 景点来源：本地中国大陆景点知识库',
+        '',
+        '## 每日行程', ''
+      ];
+      if (plan.changeSummary) lines.splice(lines.indexOf('## 每日行程'),0,'## 临时变化','',markdownValue(plan.changeSummary),'');
+      for (const day of plan.daily) {
+        lines.push(`### ${markdownValue(day.date)} · ${markdownValue(day.city)}`);
+        lines.push(`天气：${markdownValue(day.weatherNote || '未查询')}`,'');
+        if (day.userWeatherEvent) lines.push(`用户报告天气变化：${markdownValue(day.userWeatherEvent)}（未独立核实）`,'');
+        if (day.eventAlert) lines.push(markdownValue(day.eventAlert),'');
+        for (const note of day.constraintNotes || []) lines.push(`- 行程限制：${markdownValue(note)}`);
+        for (const item of day.constraintDeferred || []) lines.push(`- 未排入：${markdownValue(item.name)}（${markdownValue(item.reason)}）`);
+        const dailyUseHours = estimatedDayUseHours(day);
+        lines.push(`预计当天占用：约 ${dailyUseHours.toFixed(1)} 小时（景点游览、景点间交通及约 60 分钟午餐预留；未查全路线时，缺失路段按 45 分钟/段暂估）`,'');
+        if (!day.items.length) lines.push('- 自由活动 / 休息');
+        const suggestedTimes = suggestedStopTimes(day);
+        for (const [index,item] of day.items.entries()) {
+          lines.push(`${index + 1}. **${markdownValue(item.name)}**（${markdownValue(item.area)}）`);
+          lines.push(`   - 建议开始：${suggestedTimes[index] || '时间待安排'}；类型：${markdownValue(item.kind)}；建议游览约 ${item.hours} 分钟；步行强度 ${markdownValue(item.walk)}；${markdownValue(item.indoor)}`);
+          lines.push(`   - 开放时间：${markdownValue(item.openingHours || '知识库未注明，请查官方公告')}`);
+          lines.push(`   - 预约要求：${markdownValue(item.reservationInfo || '知识库未注明，请查官方购票页面')}`);
+          lines.push(`   - 门票：${markdownValue(item.ticketInfo || '知识库未注明，请查官方渠道')}`);
+          if (item.ticketPriceCny !== '' && Number.isFinite(Number(item.ticketPriceCny))) lines.push(`   - 预算参考成人票价：¥${Number(item.ticketPriceCny)} / 人（${markdownValue(item.ticketPriceBasis || '以官方售票页为准')}）`);
+          if (item.openingSource) lines.push(`   - 开放时间来源：${markdownValue(item.openingSource)}`);
+          if (item.ticketSource) lines.push(`   - 预约 / 票务来源：${markdownValue(item.ticketSource)}`);
+        }
+        if (day.routeCheck) {
+          const modeLabel = ({transit:'公共交通',walking:'步行',driving:'驾车'})[day.routeCheck.mode] || day.routeCheck.mode;
+          lines.push(`- 景点间路线（${modeLabel}；查询时间 ${markdownValue(new Date(day.routeCheck.queriedAt).toLocaleString('zh-CN'))}）：`);
+          for (const leg of day.routeCheck.legs) {
+            lines.push(leg.route
+              ? `   - ${markdownValue(leg.origin)} → ${markdownValue(leg.destination)}：${(leg.route.distanceMeters/1000).toFixed(1)} 公里，约 ${(leg.route.durationSeconds/60).toFixed(0)} 分钟；地图匹配 ${markdownValue(leg.route.resolvedOrigin || leg.origin)} → ${markdownValue(leg.route.resolvedDestination || leg.destination)}`
+              : `   - ${markdownValue(leg.origin)} → ${markdownValue(leg.destination)}：查询失败，${markdownValue(leg.error)}`);
+          }
+          lines.push(`   - 游览与路线估算：约 ${Number(day.routeCheck.totalHours).toFixed(1)} 小时；${markdownValue(day.routeCheck.feasibility)}`);
+        }
+        for (const item of day.removedItems || []) lines.push(`- 已暂缓 / 移除：${markdownValue(item.name)}（${markdownValue(item.reason)}）`);
+        lines.push('');
+      }
+      lines.push('## 预算估算','',
+        `- 住宿：¥${Math.round(budget.lodging).toLocaleString('zh-CN')}${budget.lodgingIncluded ? '' : '（未计入）'}`,
+        `- 餐饮：¥${Math.round(budget.food).toLocaleString('zh-CN')}`,
+        `- 市内交通：¥${Math.round(budget.localTransit).toLocaleString('zh-CN')}`,
+        ...(budget.knownRouteFareLegCount ? [`- 已查公共交通路段费用参考：¥${Math.round(budget.routeFareReference).toLocaleString('zh-CN')}（${budget.knownRouteFareLegCount} 段，按人数估算；仅供参考，未另行计入合计）`] : []),
+        ...(budget.unknownRouteFareLegCount ? [`- 公共交通路段费用未返回：${budget.unknownRouteFareLegCount} 段`] : []),
+        `- 已知门票参考（成人票 × ${request.travelers} 人）：¥${Math.round(budget.knownTickets).toLocaleString('zh-CN')}`,
+        `- 待核实票价景点：${budget.unknownTicketCount} 个`,
+        `- 机动预留：¥${Math.round(budget.reserve).toLocaleString('zh-CN')}`,
+        `- **当前已估合计：¥${Math.round(budget.estimate).toLocaleString('zh-CN')}**`,'',
+        '## 出行前核对','',
+        '- 门票、预约、库存和开放时间请以景区官方渠道为准。',
+        '- 天气与路线结果会变化；确认地图匹配地点后再出发。',
+        '- 预算未包含往返目的地的大交通，实际费用可能变化。',
+        '- 本助手不代替用户订票、下单、付款或提交证件。',''
+      );
+      const savingsIdeas = budgetAdjustmentIdeas(request,budget);
+      if (savingsIdeas.length) lines.splice(lines.indexOf('## 出行前核对'),0,'## 预算调整参考','',...savingsIdeas.map((idea) => `- ${markdownValue(idea)}。`),'');
+      return lines.join('\n');
+    }
+    function downloadPlan(request, plan) {
+      const filenameCity = markdownValue(request.destination).replace(/[\\/:*?"<>|]/g,'_').slice(0,40) || '行程';
+      const blob = new Blob(['\uFEFF',buildPlanMarkdown(request,plan)], {type:'text/markdown;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `山海行_${filenameCity}_${request.days}天.md`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url),1000);
+    }
+    function money(value) { return `¥${Math.round(value).toLocaleString('zh-CN')}`; }
+    async function getApi(path) {
+      const response = await fetch(path, {headers:{'accept':'application/json'}});
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || `查询失败（HTTP ${response.status}）`);
+      return data;
+    }
+    async function postApi(path, body) {
+      const response = await fetch(path, {method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify(body)});
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || `查询失败（HTTP ${response.status}）`);
+      return data;
+    }
+    function isRainAffected(item) {
+      const indoorOutdoor = String(item.indoor || '');
+      return indoorOutdoor.startsWith('室外') || !indoorOutdoor.includes('室内') || item.rain === '低';
+    }
+    function canReplaceForEvent(day, candidate, eventType) {
+      const removed = new Set((day.removedItems || []).map(normalizeAttractionName));
+      return !removed.has(normalizeAttractionName(candidate))
+        && (!(eventType === 'rain' || day.userWeatherEvent) || !isRainAffected(candidate));
+    }
+    function recordWeatherEvent(day, observation) {
+      day.userWeatherEvent = observation;
+      day.eventAlert = /暴雨|台风|雷暴/.test(observation)
+        ? '暴雨 / 强对流天气下请优先保障安全，暂缓户外活动并留在安全地点休息，关注当地预警和景区公告。室内替代景点也需确认开放及抵达路线安全后再出行。'
+        : '天气变化后请先核对实时预警和景区公告，再决定是否出行。';
+    }
+    function adjustPlanForEvent(request, sourcePlan, observation) {
+      const updated = JSON.parse(JSON.stringify(sourcePlan));
+      const text = observation.trim();
+      const isRain = /雨|降水|暴雨|台风|高温|大风|雪/.test(text);
+      const isClosure = /闭馆|闭园|关闭|停业|临时不开|不开放/.test(text);
+      if (!isRain && !isClosure) return {plan:updated, message:'我暂时无法把这条变化归类为天气或闭馆事件。请说明具体哪一天、发生了什么。'};
+      const dayMatch = text.match(/第\s*(\d+)\s*天/);
+      let dayIndex = dayMatch ? Math.max(0, Number(dayMatch[1]) - 1) : /明天/.test(text) ? 1 : 0;
+      dayIndex = Math.min(dayIndex, updated.daily.length - 1);
+      const placeText = text.replace(/第\s*\d+\s*天|明天|下雨|降雨|降水|暴雨|台风|高温|大风|闭馆|闭园|关闭|停业|临时不开|不开放|景点|博物馆/g, '').trim();
+      if (isClosure) {
+        const matchedDay = updated.daily.findIndex((entry) => entry.items.some((item) => (placeText && (text.includes(item.name) || item.name.includes(placeText))) || (/博物馆/.test(text) && item.kind.includes('博物馆'))));
+        if (matchedDay >= 0) dayIndex = matchedDay;
+        else if (!placeText) return {plan:updated,message:'请说明闭馆的是哪个景点，我才能准确移除它并调整对应日期。'};
+      }
+      const day = updated.daily[dayIndex];
+      if (!day || !day.items.length) return {plan:updated,message:`第 ${dayIndex+1} 天当前没有已安排的景点，我没有改动行程。`};
+      if (isRain) recordWeatherEvent(day, text);
+      if (isRain && !isClosure) {
+        const affectedItems = day.items.filter(isRainAffected);
+        if (!affectedItems.length) return {plan:updated,message:`第 ${dayIndex+1} 天安排的景点均未被知识库标为明显户外或低雨天适合度，暂时保留行程；请按现场天气决定是否调整。`};
+        const affectedNames = new Set(affectedItems.map((item) => item.name));
+        const usedElsewhere = new Set(updated.daily.flatMap((entry,index) => index === dayIndex ? entry.items.filter((item) => !affectedNames.has(item.name)).map((item) => item.name) : entry.items.map((item) => item.name)));
+        const changed = [];
+        const removed = [];
+        for (const affected of affectedItems) {
+          const itemIndex = day.items.findIndex((item) => item.name === affected.name);
+          if (itemIndex < 0) continue;
+          const replacement = [...sourcePlan.candidates].filter((candidate) => candidate.name !== affected.name && canReplaceForEvent(day,candidate,'rain') && !usedElsewhere.has(candidate.name)).sort((a,b) => Number(Boolean(affected.backup && affected.backup.includes(b.name))) - Number(Boolean(affected.backup && affected.backup.includes(a.name))) || Number(b.rain === '高') - Number(a.rain === '高') || Number(b.retrievalScore || 0) - Number(a.retrievalScore || 0))[0];
+          if (replacement) {
+            day.items[itemIndex] = replacement;
+            usedElsewhere.add(replacement.name);
+            changed.push(`${affected.name} → ${replacement.name}`);
+            day.removedItems = [...(day.removedItems || []), {name:affected.name,reason:`按用户报告的天气，将户外景点替换为 ${replacement.name}。`}];
+          } else {
+            day.items.splice(itemIndex,1);
+            removed.push(affected.name);
+            day.removedItems = [...(day.removedItems || []), {name:affected.name,reason:'天气变化后没有可用的未排入室内候选，已暂缓该景点。'}];
+          }
+        }
+        day.routeCheck = null;
+        const details = [...changed,...removed.map((name) => `${name} 暂缓` )];
+        day.reason = `${day.reason} 天气变化影响当天户外安排：${details.join('；') || '没有合适的替代景点'}。`;
+        updated.changeSummary = `观察到：${text}。第 ${dayIndex+1} 天检查了全部受天气影响的户外景点；${details.join('；') || '没有合适的替代景点'}。只修改了当天。`;
+        return {plan:updated,message:updated.changeSummary};
+      }
+      let affected;
+      if (isClosure) {
+        affected = day.items.find((item) => (placeText && (text.includes(item.name) || item.name.includes(placeText))) || (/博物馆/.test(text) && item.kind.includes('博物馆')));
+        if (!affected) return {plan:updated,message:`第 ${dayIndex+1} 天没有找到“${placeText}”这个已安排景点，我没有误改其他活动。请核对景点名称或日期。`};
+      } else {
+        affected = day.items.find((item) => item.indoor.includes('室外')) || day.items[0];
+      }
+      let replacement = null;
+      const scheduledElsewhere = new Set(updated.daily.flatMap((entry,index) => index === dayIndex ? [] : entry.items.map((item) => item.name)));
+      const candidates = sourcePlan.candidates.filter((item) => canReplaceForEvent(day,item,isRain ? 'rain' : 'closure') && !scheduledElsewhere.has(item.name));
+      if (isRain) {
+        replacement = candidates.find((item) => item.name !== affected.name && affected.backup && affected.backup.includes(item.name));
+        if (!replacement) replacement = candidates.find((item) => item.name !== affected.name);
+      } else {
+        replacement = candidates.find((item) => affected.backup && affected.backup.includes(item.name) && item.name !== affected.name);
+        if (!replacement) replacement = candidates.find((item) => item.name !== affected.name);
+      }
+      const otherDayIndex = replacement ? updated.daily.findIndex((entry,index) => index !== dayIndex && entry.items.some((item) => item.name === replacement.name)) : -1;
+      if (replacement && day.items.some((item) => item.name === replacement.name)) {
+        day.items = day.items.filter((item) => item.name !== affected.name);
+        day.removedItems = [...(day.removedItems || []), {name:affected.name,reason:isClosure ? '用户报告闭馆，已移出当天计划。' : '当天已有室内替代景点，因此暂缓户外活动。'}];
+        day.reason = `${day.reason} 因“${text}”保留当天已有的 ${replacement.name}，并移除 ${affected.name}。`;
+        updated.changeSummary = `观察到：${text}。第 ${dayIndex+1} 天保留已安排的 ${replacement.name}，并将 ${affected.name} 移出当天计划。`;
+        return {plan:updated,message:updated.changeSummary};
+      }
+      if (replacement) {
+        if (otherDayIndex >= 0) {
+          const otherDay = updated.daily[otherDayIndex];
+          otherDay.items = otherDay.items.filter((item) => item.name !== replacement.name);
+          if (isRain) otherDay.items.push(affected);
+          otherDay.reason = isRain ? `${otherDay.reason} 为避开第 ${dayIndex+1} 天的天气影响，与该日交换了 ${affected.name} 和 ${replacement.name}。` : `${otherDay.reason} 将 ${replacement.name} 调至第 ${dayIndex+1} 天，以替换闭馆景点。`;
+        }
+        day.items = day.items.filter((item) => item.name !== affected.name);
+        day.items.push(replacement);
+        day.reason = `${day.reason} 已根据“${text}”把 ${affected.name} 替换为 ${replacement.name}。`;
+        if (isClosure) day.removedItems = [...(day.removedItems || []), {name:affected.name,reason:'用户报告景点闭馆，已从可执行行程中移除。'}];
+        const moved = otherDayIndex >= 0 ? ` 同时调整第 ${otherDayIndex+1} 天：${replacement.name} 与 ${isRain ? affected.name : '自由时间'} 进行了局部调换。` : '';
+        updated.changeSummary = `观察到：${text}。第 ${dayIndex+1} 天将 ${affected.name} 改为 ${replacement.name}。原因：${isRain ? '优先安排知识库中已记录的室内景点。' : '将闭馆景点替换为知识库中的其他景点。'}${moved}`;
+        return {plan:updated,message:updated.changeSummary};
+      }
+      day.items = day.items.filter((item) => item.name !== affected.name);
+      day.removedItems = [...(day.removedItems || []), {name:affected.name,reason:isClosure ? '用户报告闭馆，已移出当天计划。' : '天气变化明显，知识库中没有已核实的室内替换项，已暂缓户外活动。'}];
+      day.reason = `${day.reason} 因“${text}”将 ${affected.name} 移出当日可执行安排。${affected.backup ? ` 备选参考：${affected.backup}（开放状态需确认）。` : ''}`;
+      updated.changeSummary = `观察到：${text}。第 ${dayIndex+1} 天已移除受影响景点 ${affected.name}。本地知识库没有可以核实并直接替换的景点${affected.backup ? `；附近备选资料为 ${affected.backup}，请先核对开放状态` : ''}。`;
+      return {plan:updated,message:updated.changeSummary};
+    }
+    function findAdjustmentContext(sourcePlan, observation) {
+      const text = observation.trim();
+      const isRain = /雨|降水|暴雨|台风|高温|大风|雪/.test(text);
+      const isClosure = /闭馆|闭园|关闭|停业|临时不开|不开放/.test(text);
+      if (isRain === isClosure) return null;
+      const dayMatch = text.match(/第\s*(\d+)\s*天/);
+      let dayIndex = dayMatch ? Math.max(0, Number(dayMatch[1]) - 1) : /明天/.test(text) ? 1 : 0;
+      dayIndex = Math.min(dayIndex, sourcePlan.daily.length - 1);
+      const placeText = text.replace(/第\s*\d+\s*天|明天|下雨|降雨|降水|暴雨|台风|高温|大风|下雪|雨|雪|闭馆|闭园|关闭|停业|临时不开|不开放|景点|博物馆/g, '').trim();
+      if (isClosure) {
+        const matchedDay = sourcePlan.daily.findIndex((entry) => entry.items.some((item) => (placeText && (text.includes(item.name) || item.name.includes(placeText))) || (/博物馆/.test(text) && item.kind.includes('博物馆'))));
+        if (matchedDay >= 0) dayIndex = matchedDay;
+        else if (!placeText) return null;
+      }
+      const day = sourcePlan.daily[dayIndex];
+      if (!day) return null;
+      let affected;
+      if (isClosure) affected = day.items.find((item) => (placeText && (text.includes(item.name) || item.name.includes(placeText))) || (/博物馆/.test(text) && item.kind.includes('博物馆')));
+      else affected = day.items.find(isRainAffected);
+      if (!affected) return null;
+      const affectedId = sourcePlan.candidates.findIndex((item) => item.name === affected.name);
+      if (affectedId < 0) return null;
+      const scheduledElsewhere = new Set(sourcePlan.daily.flatMap((entry,index) => index === dayIndex ? [] : entry.items.map((item) => item.name)));
+      const eligibleCandidates = sourcePlan.candidates.map((item,id) => ({item,id})).filter(({item,id}) => {
+        if (id === affectedId || scheduledElsewhere.has(item.name)) return false;
+        return canReplaceForEvent(day,item,isRain ? 'rain' : 'closure');
+      }).map(({item,id}) => ({id,...item}));
+      const affectedCount = isRain && !isClosure ? day.items.filter(isRainAffected).length : 1;
+      return {eventType:isRain ? 'rain' : 'closure',dayIndex,affected,affectedId,eligibleCandidates,affectedCount};
+    }
+    function applyLlmAdjustment(sourcePlan, context, replacementId, observation, modelName) {
+      const updated = JSON.parse(JSON.stringify(sourcePlan));
+      const day = updated.daily[context.dayIndex];
+      const affected = day.items.find((item) => item.name === context.affected.name);
+      if (!affected) return {plan:updated,message:'计划已变化，我没有应用过期的调整建议；请重新提交变化。'};
+      day.items = day.items.filter((item) => item.name !== affected.name);
+      const replacement = replacementId === null ? null : sourcePlan.candidates[replacementId];
+      if (replacementId !== null && (!replacement || !context.eligibleCandidates.some((item) => item.id === replacementId))) throw new Error('模型返回了不符合本次调整约束的候选，已回退本地规则。');
+      if (replacement && !day.items.some((item) => item.name === replacement.name)) day.items.push(replacement);
+      const closed = context.eventType === 'closure';
+      if (!closed) recordWeatherEvent(day, observation);
+      day.removedItems = [...(day.removedItems || []), {name:affected.name,reason:closed ? '按用户反馈将该景点移出当天计划，闭园信息尚未独立核实。' : '按天气变化暂缓该户外景点。'}];
+      day.reason = `观察到“${observation}”后，${modelName}只调整了第 ${context.dayIndex+1} 天。${replacement ? `安排 ${replacement.name} 作为替代。` : '没有合适的未排入候选，已移除受影响景点并留出自由时间。'}`;
+      updated.changeSummary = `ReAct：观察到“${observation}”；${replacement ? `第 ${context.dayIndex+1} 天将 ${affected.name} 调整为 ${replacement.name}` : `第 ${context.dayIndex+1} 天暂缓 ${affected.name} 并留出自由时间`}。只修改了受影响日期；替代景点来自本地知识库。`;
+      return {plan:updated,message:updated.changeSummary};
+    }
+    function normalizeAttractionName(item) {
+      return String(item?.name || '').toLocaleLowerCase('zh-CN').replace(/[\s·、，。:：()（）]/g, '');
+    }
+    function isEveningExperience(item) {
+      return /夜游|夜间游览|夜间漫步|不夜城/.test(`${item.kind || ''} ${item.suitability || ''} ${item.name || ''}`);
+    }
+    function validateInitialPlan(request, plan) {
+      const ranks = {'低':1,'低到中':2,'中':2,'中到高':3,'低到高':3,'高':4};
+      const wheelchair = /轮椅|无障碍/.test(request.avoid || '');
+      const lowWalking = wheelchair || request.walkingTolerance === 'low' || /少走路|少爬坡|膝盖/.test(request.avoid || '');
+      const limit = wheelchair || request.pace === 'relaxed' ? 1 : request.pace === 'packed' ? 3 : 2;
+      const hoursLimit = request.pace === 'relaxed' ? 6 : 8;
+      const weatherReports = [...String(request.avoid || '').matchAll(/(?:第\s*(\d+)\s*天|第一天|首日|首天)[^，。；\n]{0,12}(?:下雨|大雨|暴雨|雨天|台风|下雪)/g)];
+      const used = new Set();
+      plan.daily.forEach((day,index) => {
+        const report = weatherReports.find((match) => (match[1] ? Number(match[1]) - 1 : 0) === index);
+        if (report && !day.userWeatherEvent) recordWeatherEvent(day,report[0]);
+        const rainy = Boolean(day.userWeatherEvent) || /雨|雪|台风|雷暴/.test(`${day.weather?.dayWeather || ''} ${day.weather?.nightWeather || ''}`);
+        const notes = [];
+        if (wheelchair) notes.push('知识库未核实无障碍设施，不能保证轮椅可达；出发前请向景区核实坡道、电梯、无障碍卫生间及抵达路线。每天最多安排一个候选，留出休息缓冲。');
+        if (rainy) notes.push('当天仅保留知识库未标为明显户外或低雨天适合度的候选；开放状态和抵达路线安全仍需核实。没有适合候选时留作休息。');
+        const deferred = new Map((day.constraintDeferred || []).map((item) => [normalizeAttractionName(item),item]));
+        const kept = [];
+        const futureNames = new Set(plan.daily.slice(index+1).flatMap((d) => d.items || []).map(normalizeAttractionName));
+        const consider = (item, filling=false) => {
+          const name = normalizeAttractionName(item);
+          if (!name || used.has(name) || (filling && futureNames.has(name))) return;
+          let reason = '';
+          if (lowWalking && (ranks[item.walk] || 4) > 2) reason = '步行强度超过少走路限制，未安排。';
+          else if (rainy && isRainAffected(item)) reason = '受当天雨雪天气影响，无法确认适合避雨，未安排。';
+          else if (kept.length >= limit) reason = '为满足节奏或轮椅休息缓冲，未安排。';
+          else if (isEveningExperience(item) && (Number(item.hours) || 120) > 240) reason = '夜间体验按18:00至22:00预留无法容纳建议游览时长，请单独确认时段。';
+          else if (estimatedDayUseHours({items:[...kept,item],routeCheck:null}) > hoursLimit) reason = `加入后预计超过每日 ${hoursLimit} 小时上限，未安排。`;
+          if (reason) { if (!filling) deferred.set(name,{name:item.name,reason}); return; }
+          kept.push(item);
+          used.add(name);
+          deferred.delete(name);
+        };
+        for (const item of day.items || []) consider(item);
+        // Preserve deliberate model omissions; only rule-based drafts receive safe filler candidates.
+        if (plan.plannerMode !== 'llm') for (const item of plan.candidates || []) {
+          if (kept.length >= limit) break;
+          consider(item,true);
+        }
+        kept.sort((a,b) => Number(isEveningExperience(a)) - Number(isEveningExperience(b)));
+        if ((day.items || []).map(normalizeAttractionName).join('|') !== kept.map(normalizeAttractionName).join('|')) day.routeCheck = null;
+        day.items = kept;
+        if (!kept.length) notes.push('当前候选无法满足本次限制，已留出休息时间；可调整日期、要求或补充景点资料。');
+        day.constraintDeferred = [...deferred.values()];
+        day.constraintNotes = notes;
+        day.walk = lowWalking ? '按少走路筛选，实际步行距离待核实' : kept.some((item) => (ranks[item.walk] || 4) > 3) ? '偏高' : '适中';
+        day.planningHoursLimit = hoursLimit;
+      });
+    }
+    function enforceUniqueDailyAttractions(request, plan) {
+      const limit = request.pace === 'relaxed' ? 1 : request.pace === 'packed' ? 3 : 2;
+      const used = new Set();
+      const eventAdjusted = Boolean(plan.changeSummary) || plan.daily.some((day) => day.removedItems?.length);
+      if (!eventAdjusted) {
+        validateInitialPlan(request, plan);
+        return;
+      }
+      plan.daily.forEach((day, index) => {
+        const unique = [];
+        const blocked = new Set((day.removedItems || []).map(normalizeAttractionName));
+        for (const item of day.items || []) {
+          const name = normalizeAttractionName(item);
+          if (!name || blocked.has(name) || used.has(name) || unique.length >= limit) continue;
+          unique.push(item);
+          used.add(name);
+        }
+        day.items = unique;
+        if (day.routeCheck && (day.routeCheck.attractionNames || []).join('|') !== unique.map(normalizeAttractionName).join('|')) day.routeCheck = null;
+      });
+      plan.daily.forEach((day, index) => {
+        // A local adjustment may intentionally leave time empty; rendering must preserve it.
+        if (eventAdjusted) return;
+        const futureNames = new Set(plan.daily.slice(index + 1).flatMap((later) => later.items || []).map(normalizeAttractionName));
+        const rainy = day.weather && /雨|雪|台风|雷暴/.test(`${day.weather.dayWeather || ''} ${day.weather.nightWeather || ''}`);
+        for (const candidate of plan.candidates || []) {
+          if (day.items.length >= limit) break;
+          const name = normalizeAttractionName(candidate);
+          if (!name || used.has(name) || futureNames.has(name)) continue;
+          if (rainy && !String(candidate.indoor || '').includes('室内')) continue;
+          day.items.push(candidate);
+          used.add(name);
+        }
+      });
+    }
+    function dailyRouteResultHtml(check) {
+      if (!check) return '';
+      const routeList = check.legs.map((leg) => leg.route
+        ? `<li>${escapeHtml(leg.origin)} → ${escapeHtml(leg.destination)}：${(leg.route.distanceMeters/1000).toFixed(1)} 公里，约 ${(leg.route.durationSeconds/60).toFixed(0)} 分钟；地图匹配 ${escapeHtml(leg.route.resolvedOrigin || leg.origin)} → ${escapeHtml(leg.route.resolvedDestination || leg.destination)}</li>`
+        : `<li>${escapeHtml(leg.origin)} → ${escapeHtml(leg.destination)}：查询失败，${escapeHtml(leg.error)}</li>`).join('');
+      return `<ul>${routeList}</ul><strong>${check.complete ? '景点游览与路段交通' : '景点游览与已查到路段'}合计约 ${Number(check.totalHours).toFixed(1)} 小时。</strong> ${escapeHtml(check.feasibility)}${check.mode === 'transit' && check.knownFareLegCount ? `<br>已返回的公交路段费用约 ¥${Number(check.knownFareCny).toFixed(2)} / 人。` : ''}<br><small>按知识库建议游览时长和本次地图路线估算，含约 60 分钟午餐预留；不含排队、候车、额外休息及景区内交通。请核对地图匹配地点。查询时间：${escapeHtml(new Date(check.queriedAt).toLocaleString('zh-CN'))}。</small>`;
+    }
+    function suggestedStopTimes(day) {
+      let cursor = 9 * 60;
+      return day.items.map((item,index) => {
+        if (index > 0) {
+          const route = day.routeCheck?.legs?.[index - 1]?.route;
+          const transferMinutes = route ? Math.max(5, Math.ceil(route.durationSeconds / 60)) : 45;
+          if (index === 1) cursor += 60;
+          cursor += transferMinutes;
+          if (index === 1) cursor = Math.max(cursor, 13 * 60);
+        }
+        if (isEveningExperience(item)) cursor = Math.max(cursor,18 * 60);
+        const start = cursor;
+        cursor += Number(item.hours) || 120;
+        return `${String(Math.floor(start / 60) % 24).padStart(2,'0')}:${String(start % 60).padStart(2,'0')}`;
+      });
+    }
+    function estimatedDayUseHours(day) {
+      const legsNeeded = Math.max(0, day.items.length - 1);
+      const visitMinutes = day.items.reduce((sum,item) => sum + (Number(item.hours) || 0), 0);
+      const routeMinutes = day.routeCheck?.complete
+        ? day.routeCheck.legs.reduce((sum,leg) => sum + leg.route.durationSeconds / 60, 0)
+        : legsNeeded * 45;
+      const lunchMinutes = legsNeeded ? 60 : 0;
+      return (visitMinutes + routeMinutes + lunchMinutes) / 60;
+    }
+    function renderPlan(request, plan) {
+      enforceUniqueDailyAttractions(request, plan);
+      const panel = document.querySelector('#itinerary');
+      panel.classList.add('show');
+      if (!plan.city || !plan.candidates.length) {
+        panel.innerHTML = `<div class="eyebrow">PLAN DRAFT</div><h2>需求已整理，景点资料暂缺</h2><p class="sub">本地知识库中暂时没有找到与“${escapeHtml(request.destination)}”匹配的景点条目。请补充景点资料后再规划；我不会凭空编造景点、开放时间、门票或路线。</p><div class="why"><strong>规划原则</strong><br>只根据本地景点知识库中的条目生成日程。</div>`;
+        return;
+      }
+      const prefText = request.preferences.length ? request.preferences.join('、') : '未指定，按代表性景点安排';
+      const dailyHtml = plan.daily.map((day, index) => {
+        const timeSlots = suggestedStopTimes(day);
+        const dailyUseHours = estimatedDayUseHours(day);
+        const timeFitNote = day.routeCheck && !day.routeCheck.complete
+          ? `有路线未查到；按缺失路段 45 分钟/段暂估约 ${dailyUseHours.toFixed(1)} 小时，请核实。`
+          : dailyUseHours > 8
+            ? `预计景点、转场和午餐占用约 ${dailyUseHours.toFixed(1)} 小时，日程偏紧，建议减少景点或缩短游览时间。`
+            : `预计景点、转场和午餐占用约 ${dailyUseHours.toFixed(1)} 小时，具体以现场为准。`;
+        const stops = day.items.length ? day.items.map((item, itemIndex) => `<div class="stop"><div class="stop-time">${timeSlots[itemIndex] || '17:00'}</div><div><div class="stop-name">${escapeHtml(item.name)}</div><div class="stop-meta">${escapeHtml(item.kind)} · 建议约 ${item.hours} 分钟 · 步行强度 ${escapeHtml(item.walk)} · ${escapeHtml(item.indoor)}<br>开放时间：${escapeHtml(item.openingHours || '知识库未注明，以官方公告为准')} ${officialSourceLinks(item.openingSource,'开放时间')}<br>预约：${escapeHtml(item.reservationInfo || '知识库未注明，请查官方购票页面')} ${officialSourceLinks(item.ticketSource,'预约')}<br>门票：${escapeHtml(item.ticketInfo || '知识库未注明，以官方渠道为准')} ${officialSourceLinks(item.ticketSource,'票务')}${item.ticketPriceCny !== '' && Number.isFinite(Number(item.ticketPriceCny)) ? `<br>预算参考成人票：¥${Number(item.ticketPriceCny)} / 人（${escapeHtml(item.ticketPriceBasis || '以官方售票页为准')}）` : ''}</div></div></div>`).join('') : '<p class="day-note">当天暂未安排新景点，建议留作休息、自由活动或补充本地体验。</p>';
+        const removedHtml = (day.removedItems || []).map((item) => `<div class="why"><strong>已暂缓 / 移除：${escapeHtml(item.name)}</strong><br>${escapeHtml(item.reason)}</div>`).join('');
+        const backup = day.userWeatherEvent
+          ? '未确认可避当前天气影响的备选；请先核对开放状态及路线安全。'
+          : day.removedItems?.length
+            ? '本次已移除的景点不再作为当天备选；新候选须先核实开放状态。'
+            : day.items[0]?.backup || '根据当天开放情况选择附近室内景点';
+        const weatherAlert = day.eventAlert ? `<p class="day-note"><strong>天气变化提醒：</strong>${escapeHtml(day.eventAlert)}<br>用户报告：${escapeHtml(day.userWeatherEvent)}（未独立核实）</p>` : '';
+        const constraintsHtml = (day.constraintNotes || []).map((note) => `<p class="day-note">${escapeHtml(note)}</p>`).join('')
+          + (day.constraintDeferred || []).map((item) => `<p class="day-note">未排入：${escapeHtml(item.name)}；${escapeHtml(item.reason)}</p>`).join('');
+        const dailyRoute = day.items.length > 1 ? `<div class="service-card"><h4>当日景点间路线</h4><select class="daily-route-mode" aria-label="第 ${index+1} 天路线方式"><option value="transit"${day.routeCheck?.mode === 'transit' ? ' selected' : ''}>公共交通</option><option value="walking"${day.routeCheck?.mode === 'walking' ? ' selected' : ''}>步行</option><option value="driving"${day.routeCheck?.mode === 'driving' ? ' selected' : ''}>驾车</option></select><button type="button" data-daily-route="${index}">查询景点间路线与用时</button><div class="service-output" id="daily-route-output-${index}" aria-live="polite">${dailyRouteResultHtml(day.routeCheck)}</div></div>` : '';
+        return `<article class="day-card"><div class="day-head"><h3>${escapeHtml(day.date)}</h3><span class="day-area">${escapeHtml(day.city)} · ${escapeHtml(day.items[0]?.area || '自由安排')}</span></div><p class="day-note">区域：${escapeHtml(day.items.map(x=>x.area).filter((v,i,a)=>a.indexOf(v)===i).join('、') || '灵活安排')}　|　预计步行：${escapeHtml(day.walk)}　|　天气：${escapeHtml(day.weatherNote || '未查询')}</p>${weatherAlert}${constraintsHtml}<p class="day-note">${escapeHtml(timeFitNote)}</p><p class="day-note">时间为建议开始时段：尚未查路线时按游览时长、午餐和每段 45 分钟交通预留估算；查询路线后使用地图路段耗时。</p>${stops}${dailyRoute}${removedHtml}<div class="stop-meta">雨天 / 临时闭馆备选：${escapeHtml(backup)}</div></article>`;
+      }).join('');
+      const budget = calculateBudget(request, plan);
+      const budgetStatus = budget.estimate > request.budget.amount
+        ? `<strong>已估项目超过预算 ${money(budget.estimate - request.budget.amount)}。</strong>尚未计入的大交通及待核实票价可能进一步增加总额。`
+        : budget.unknownTicketCount > 0
+          ? `<strong>已估项目暂未超过预算。</strong>但还有 ${budget.unknownTicketCount} 个景点票价待核实，并且不含大交通，当前不能确认全程总费用在预算内。`
+          : `<strong>已估项目暂未超过预算。</strong>大交通和实际价格尚未核实，仍需预留变化空间。`;
+      const savingsIdeas = budgetAdjustmentIdeas(request,budget);
+      const savingsHtml = savingsIdeas.length ? `<br><br><strong>如需压低已估差额，可考虑（每项单独试算）：</strong><br>${savingsIdeas.map(escapeHtml).join('<br>')}。调整参考不包含待核实票价和大交通。` : '';
+      const budgetHtml = `<div class="day-card"><div class="day-head"><h3>预算估算</h3><span class="day-area">预留 10% 机动金</span></div><p class="day-note">${request.budget.includes === 'without_intercity' ? '按你的选择，不计住宿。' : `住宿按 ${budget.rooms} 间 × ${budget.nights} 晚估算。`}</p><div class="stop"><div class="stop-time">明细</div><div class="stop-meta">住宿：${budget.lodgingIncluded ? money(budget.lodging) : `${money(budget.lodgingRaw)}（未计入）`}<br>餐饮：${money(budget.food)}（${request.travelers} 人 × ${request.days} 天 × ${money(request.assumptions.foodPerDay)} / 人 / 天）<br>市内交通：${money(budget.localTransit)}（基于输入的每人每日估算参数）<span id="route-fare-summary">${routeFareBudgetHtml(budget)}</span><br>已知门票参考（成人票 × ${request.travelers} 人）：${money(budget.knownTickets)}${budget.unknownTicketCount ? `<br>待核实门票：${budget.unknownTicketCount} 个景点` : ''}<br>机动预留：${money(budget.reserve)}<br><strong>当前已估合计：${money(budget.estimate)}</strong></div></div><div class="why">${budgetStatus}${savingsHtml}<br><br>此为可修改参数的粗略估算，不是实时报价。未包含往返目的地的大交通；门票、餐饮和住宿请以实际查询为准。</div></div>`;
+      panel.innerHTML = `<div class="eyebrow">PLAN-AND-EXECUTE · ${plan.changeSummary ? '已调整' : '第 1 版'}</div><h2>${escapeHtml(request.destination)} ${request.days} 天游程框架</h2><p class="sub">${request.travelers} 人 · 预算上限 ${money(request.budget.amount)} · 偏好：${escapeHtml(prefText)}${request.startDate ? ` · ${escapeHtml(request.startDate)} 出发` : ''}</p><div class="plan-label">规划：提取约束 → 混合检索景点 → ${plan.plannerMode === 'llm' ? '大模型编排' : '本地规则排程'} → 准备备选</div><p class="day-note">景点来源：${escapeHtml(plan.retrievalMethod || '本地景点知识库')}</p>${plan.modelNote ? `<p class="day-note">${escapeHtml(plan.modelNote)}</p>` : ''}${plan.weatherData ? `<p class="day-note">已按出行日期查询高德天气，查询时间：${escapeHtml(new Date(plan.weatherData.queriedAt).toLocaleString('zh-CN'))}；仅覆盖服务返回的预报日期。</p>` : plan.weatherError ? `<p class="day-note">自动天气查询未成功：${escapeHtml(plan.weatherError)}。可使用下方天气按钮重试。</p>` : request.startDate ? '' : '<p class="day-note">未填写出发日期，因此尚未将天气用于每日排序；可在下方手动查询预报。</p>'}${plan.changeSummary ? `<div class="why"><strong>ReAct 局部调整</strong><br>${escapeHtml(plan.changeSummary)}</div>` : ''}${dailyHtml}${budgetHtml}<div class="export-actions"><button type="button" id="download-plan">下载行程 Markdown</button><button type="button" id="clear-current-trip">清除此行程</button></div><p class="day-note">开放时间与票务信息来自知识库，尚未实时核验；路线查询结果会显示查询时间与地图匹配地点。</p><section class="service-tools"><h3>查询实时信息</h3><p>天气与路线由高德服务返回；结果受地点匹配、服务覆盖和查询时间影响，出行前请再次核对。配置大模型后，行程偏好、日期、预算和景点资料会发送给所选模型服务商。</p><div class="service-grid"><div class="service-card"><h4>天气预报 · ${escapeHtml(plan.city)}</h4><button type="button" id="weather-button">查询天气</button><div id="weather-output" class="service-output" aria-live="polite"></div></div><div class="service-card"><h4>两地路线 · ${escapeHtml(plan.city)}</h4><form id="route-form"><input name="origin" required placeholder="出发地，例如：西湖区湖滨步行街"><input name="destination" required placeholder="目的地，例如：西湖区灵隐寺"><select name="mode"><option value="transit">公共交通</option><option value="walking">步行</option><option value="driving">驾车</option></select><button type="submit">查询路线</button></form><div id="route-output" class="service-output" aria-live="polite"></div></div></div></section><div class="adjust-box"><h3>遇到临时变化？</h3><p>用自然语言描述某一天的天气变化，或某个景点闭馆。我会只调整受影响日期：多个户外景点受天气影响时，会按规则逐一寻找未排入其他日期的室内候选；单景点替换优先调用大模型，失败时回退本地规则。开放状态仍需你提供或自行核实。</p><form id="adjust-form"><div class="adjust-actions"><textarea name="event" required placeholder="例如：第 1 天下雨 / 第 2 天兵马俑闭馆"></textarea><button type="submit">局部调整</button></div></form><div id="adjust-result" class="adjust-result"></div></div>`;
+      panel.querySelector('#download-plan').addEventListener('click', () => downloadPlan(request, plan));
+      panel.querySelector('#clear-current-trip').addEventListener('click', () => {
+        sessionStorage.removeItem('tripRequest');
+        sessionStorage.removeItem('tripPlan');
+        panel.classList.remove('show');
+        panel.replaceChildren();
+        statusBox.classList.add('show');
+        statusBox.textContent = '已清除本次行程及本标签页中的恢复记录；表单内容与已选择的长期出行习惯保留。';
+      });
+      panel.querySelector('#weather-button').addEventListener('click', async (event) => {
+        const button = event.currentTarget;
+        const output = panel.querySelector('#weather-output');
+        button.disabled = true;
+        output.textContent = '正在查询天气…';
+        try {
+          const weather = await getApi(`/api/weather?city=${encodeURIComponent(plan.city)}`);
+          const forecast = weather.forecast.map((day) => `<li>${escapeHtml(day.date)} · ${escapeHtml(day.dayWeather)} / 夜间${escapeHtml(day.nightWeather)} · ${escapeHtml(String(day.lowC))}–${escapeHtml(String(day.highC))}°C · 风${escapeHtml(day.dayWindPower)}</li>`).join('');
+          output.innerHTML = `<strong>${escapeHtml(weather.city)} · ${escapeHtml(weather.provider)}</strong><br>查询时间：${escapeHtml(new Date(weather.queriedAt).toLocaleString('zh-CN'))}<ul>${forecast || '<li>暂无预报数据</li>'}</ul><span>预报日期有限；超出服务返回日期的行程不能据此判断天气。</span>`;
+        } catch (error) {
+          output.textContent = error.message;
+        } finally { button.disabled = false; }
+      });
+      panel.querySelectorAll('[data-daily-route]').forEach((routeButton) => routeButton.addEventListener('click', async () => {
+        const dayIndex = Number(routeButton.dataset.dailyRoute);
+        const day = plan.daily[dayIndex];
+        const routeCard = routeButton.closest('.service-card');
+        const mode = routeCard.querySelector('.daily-route-mode').value;
+        const output = routeCard.querySelector('.service-output');
+        routeButton.disabled = true;
+        output.textContent = '正在逐段查询景点间路线…';
+        const legs = [];
+        for (let index = 0; index < day.items.length - 1; index++) {
+          const origin = day.items[index].name;
+          const destination = day.items[index + 1].name;
+          const query = new URLSearchParams({city:plan.city,origin,destination,mode});
+          try {
+            const route = await getApi(`/api/route?${query}`);
+            legs.push({origin,destination,route,error:''});
+          } catch (error) {
+            legs.push({origin,destination,route:null,error:error.message});
+          }
+        }
+        const successful = legs.filter((leg) => leg.route);
+        const complete = successful.length === legs.length;
+        const routeMinutes = complete ? successful.reduce((sum,leg) => sum + leg.route.durationSeconds / 60, 0) : legs.length * 45;
+        const visitMinutes = day.items.reduce((sum,item) => sum + (Number(item.hours) || 0), 0);
+        const lunchMinutes = legs.length ? 60 : 0;
+        const totalHours = (routeMinutes + visitMinutes + lunchMinutes) / 60;
+        const feasibility = !complete ? '失败路段按 45 分钟/段暂估，完整用时仍需核实。' : totalHours > 8 ? '时间偏紧，建议减少景点或缩短游览时间。' : '时长供参考，请留出用餐和休息时间。';
+        const knownFareLegs = mode === 'transit' ? successful.filter((leg) => typeof leg.route.costCny === 'number' && Number.isFinite(leg.route.costCny)) : [];
+        day.routeCheck = {mode,legs,complete,totalHours,feasibility,knownFareCny:knownFareLegs.reduce((sum,leg) => sum + leg.route.costCny,0),knownFareLegCount:knownFareLegs.length,queriedAt:successful.length ? successful.at(-1).route.queriedAt : new Date().toISOString(),attractionNames:day.items.map(normalizeAttractionName)};
+        output.innerHTML = dailyRouteResultHtml(day.routeCheck);
+        const dayCard = routeButton.closest('.day-card');
+        dayCard.querySelectorAll('.stop-time').forEach((timeNode,index) => { timeNode.textContent = suggestedStopTimes(day)[index] || timeNode.textContent; });
+        const routeFareSummary = panel.querySelector('#route-fare-summary');
+        if (routeFareSummary) routeFareSummary.innerHTML = routeFareBudgetHtml(calculateBudget(request,plan));
+        sessionStorage.setItem('tripPlan', JSON.stringify(plan));
+        routeButton.disabled = false;
+      }));
+      panel.querySelector('#route-form').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const routeForm = event.currentTarget;
+        const button = routeForm.querySelector('button');
+        const output = panel.querySelector('#route-output');
+        const formData = new FormData(routeForm);
+        button.disabled = true;
+        output.textContent = '正在计算路线…';
+        const query = new URLSearchParams({city:plan.city,origin:String(formData.get('origin')),destination:String(formData.get('destination')),mode:String(formData.get('mode'))});
+        try {
+          const route = await getApi(`/api/route?${query}`);
+          output.innerHTML = `<strong>${escapeHtml(route.origin)} → ${escapeHtml(route.destination)}</strong><br>地图匹配：${escapeHtml(route.resolvedOrigin || route.origin)} → ${escapeHtml(route.resolvedDestination || route.destination)}<br>约 ${(route.distanceMeters / 1000).toFixed(1)} 公里 · ${(route.durationSeconds / 60).toFixed(0)} 分钟${route.costCny === null ? '' : ` · 费用参考 ¥${route.costCny}`}<br>${escapeHtml(route.summary || '服务未返回路线分段说明')}<br><small>查询时间：${escapeHtml(new Date(route.queriedAt).toLocaleString('zh-CN'))}。请检查地图匹配地点是否正确。</small>`;
+        } catch (error) {
+          output.textContent = error.message;
+        } finally { button.disabled = false; }
+      });
+      const adjustForm = panel.querySelector('#adjust-form');
+      adjustForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const eventText = String(new FormData(adjustForm).get('event') || '').trim();
+        const submitButton = adjustForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = '正在分析变化…';
+        let result = adjustPlanForEvent(request, plan, eventText);
+        const context = findAdjustmentContext(plan, eventText);
+        if (context && result.plan.changeSummary && !(context.eventType === 'rain' && context.affectedCount > 1)) {
+          try {
+            const modelStatus = await getApi('/api/llm/status');
+            if (modelStatus.configured) {
+              const suggestion = await postApi('/api/llm/react', {
+                event:eventText,
+                eventType:context.eventType,
+                impactedDay:context.dayIndex,
+                affectedId:context.affectedId,
+                eligibleCandidates:context.eligibleCandidates
+              });
+              result = applyLlmAdjustment(plan, context, suggestion.replacementId, eventText, suggestion.model);
+            }
+          } catch (error) {
+            result.message += `（大模型调整未成功，已采用本地规则结果：${error.message}）`;
+          }
+        }
+        sessionStorage.setItem('tripPlan', JSON.stringify(result.plan));
+        renderPlan(request, result.plan);
+        const resultBox = panel.querySelector('#adjust-result');
+        if (resultBox) resultBox.textContent = result.message;
+      });
+      sessionStorage.setItem('tripPlan', JSON.stringify(plan));
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      document.querySelector('#itinerary').classList.remove('show');
+      const data = new FormData(form);
+      const destination = String(data.get('destination') || '').trim();
+      if (unsupported.some((region) => destination.includes(region))) {
+        statusBox.classList.add('show');
+        statusBox.innerHTML = '<strong>这个目的地当前不在支持范围内。</strong><br>山海行目前只规划中国大陆省、自治区、直辖市及其景区，请填写大陆目的地。';
+        return;
+      }
+      const request = {
+        destination,
+        startDate: data.get('startDate') || null,
+        days: Number(data.get('days')),
+        travelers: Number(data.get('travelers') || 1),
+        budget: { amount: Number(data.get('budget')), currency: 'CNY', includes: data.get('budgetIncludes') },
+        preferences: data.getAll('preferences'),
+        pace: data.get('pace'),
+        walkingTolerance: data.get('walking'),
+        assumptions: {
+          hotelPerNight: estimateInput(data, 'hotelPerNight'),
+          foodPerDay: estimateInput(data, 'foodPerDay'),
+          localTransitPerDay: estimateInput(data, 'localTransitPerDay')
+        },
+        avoid: String(data.get('avoid') || '').trim(),
+        scope: 'mainland_china'
+      };
+      if (rememberHabits.checked) {
+        localStorage.setItem('travelHabits', JSON.stringify({preferences:request.preferences,pace:request.pace,walkingTolerance:request.walkingTolerance}));
+      } else {
+        localStorage.removeItem('travelHabits');
+      }
+      sessionStorage.setItem('tripRequest', JSON.stringify(request));
+      statusBox.classList.add('show');
+      statusBox.textContent = '正在按目的地检索景点知识库并生成行程框架…';
+      try {
+        const plan = await makePlan(request);
+        sessionStorage.setItem('tripPlan', JSON.stringify(plan));
+        statusBox.textContent = '景点已从本地知识库检索，第一版行程框架已生成。';
+        renderPlan(request, plan);
+      } catch (error) {
+        statusBox.textContent = `生成行程失败：${error.message}`;
+      }
+    });
+
+    try {
+      const savedRequest = JSON.parse(sessionStorage.getItem('tripRequest') || 'null');
+      const savedPlan = JSON.parse(sessionStorage.getItem('tripPlan') || 'null');
+      if (savedRequest && savedRequest.destination && savedRequest.budget) {
+        const restoredRequest = {...savedRequest,preferences:savedRequest.preferences || [],pace:savedRequest.pace || 'balanced',walkingTolerance:savedRequest.walkingTolerance || 'medium',assumptions:{hotelPerNight:savedRequest.assumptions?.hotelPerNight || 350,foodPerDay:savedRequest.assumptions?.foodPerDay || 120,localTransitPerDay:savedRequest.assumptions?.localTransitPerDay || 60},avoid:savedRequest.avoid || ''};
+        for (const [name, value] of Object.entries({destination:restoredRequest.destination,startDate:restoredRequest.startDate || '',days:restoredRequest.days,travelers:restoredRequest.travelers || 1,budget:restoredRequest.budget.amount,budgetIncludes:restoredRequest.budget.includes || 'all',pace:restoredRequest.pace,walking:restoredRequest.walkingTolerance,hotelPerNight:restoredRequest.assumptions.hotelPerNight,foodPerDay:restoredRequest.assumptions.foodPerDay,localTransitPerDay:restoredRequest.assumptions.localTransitPerDay,avoid:restoredRequest.avoid})) {
+          const field = form.elements.namedItem(name);
+          if (field) field.value = value;
+        }
+        for (const option of form.querySelectorAll('input[name="preferences"]')) option.checked = restoredRequest.preferences.includes(option.value);
+        statusBox.classList.add('show');
+        if (savedPlan && savedPlan.daily && savedPlan.retrievalSource === 'kb-hybrid-v4') {
+          statusBox.textContent = '已恢复本次浏览器会话中的旅行需求和行程。';
+          renderPlan(restoredRequest, savedPlan);
+        } else {
+          statusBox.textContent = '已恢复旅行需求，正在根据当前景点知识库更新行程…';
+          makePlan(restoredRequest).then((plan) => {
+            sessionStorage.setItem('tripRequest', JSON.stringify(restoredRequest));
+            sessionStorage.setItem('tripPlan', JSON.stringify(plan));
+            statusBox.textContent = '旅行需求和行程已从当前知识库恢复。';
+            renderPlan(restoredRequest, plan);
+          }).catch((error) => { statusBox.textContent = `恢复行程失败：${error.message}`; });
+        }
+      }
+    } catch (error) {
+      sessionStorage.removeItem('tripPlan');
+      sessionStorage.removeItem('tripRequest');
+    }
+  </script>
+</body>
+</html>

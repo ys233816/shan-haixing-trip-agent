@@ -1,0 +1,117 @@
+{
+  "case_id": "B09",
+  "evaluation_status": "scored",
+  "dimensions": {
+    "D1": {
+      "score": 1,
+      "reason": "正确识别目的地成都、3天、出发日期2027-02-11及“按天气排室内外景点”的需求；对4个月后无法取得天气做了识别。2人/5000元为表单辅助值，按规则不评价。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.form",
+          "quote": "\"destination\":\"成都\",\"startDate\":\"2027-02-11\",\"days\":\"3\""
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "成都市 · 青羊区\n\n区域：青羊区　|　预计步行：适中　|　天气：该日期超出当前预报范围"
+        }
+      ]
+    },
+    "D2": {
+      "score": 1,
+      "reason": "按天组织3天行程，每天2个景点、区域就近串联，给出游览时长与每段45分钟转场预留，并附雨天/临时闭馆备选，节奏与时长基本可行；本地天气未知时给出不依赖预报的骨架合理。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "第 1 天 · 2月11日\n成都市 · 青羊区"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "雨天 / 临时闭馆备选：人民公园、杜甫草堂"
+        }
+      ]
+    },
+    "D3": {
+      "score": 1,
+      "reason": "天气按出行日期查询并如实说明仅覆盖服务返回的预报日期、超出范围；预算按2人、1间×2晚计算，门票未知标待核实且不保证全程总额，无编造与矛盾。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已按出行日期查询高德天气，查询时间：2026/10/11 16:50:36；仅覆盖服务返回的预报日期。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已知门票参考（成人票 × 2 人）：¥0\n待核实门票：5 个景点"
+        }
+      ]
+    },
+    "D4": {
+      "score": 1,
+      "reason": "仅覆盖中国大陆景区，明确不提供订票下单付款；对天气不可预知这一关键不确定性做了说明，并提示出行前再次核对。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "仅规划中国大陆景区。应用不提供订票、下单或付款功能，也不替用户提交个人证件或支付信息。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "天气与路线由高德服务返回；结果受地点匹配、服务覆盖和查询时间影响，出行前请再次核对。"
+        }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "index": 1,
+      "score": 1,
+      "reason": "每天都标注“天气：该日期超出当前预报范围”，并说明天气查询仅覆盖服务返回的预报日期，已清楚说明无法覆盖4个月后的日期。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "天气：该日期超出当前预报范围"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已按出行日期查询高德天气，查询时间：2026/10/11 16:50:36；仅覆盖服务返回的预报日期。"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "score": 1,
+      "reason": "在缺少远期天气的情况下仍给出完整3天初步框架（景点、时长、区域、转场与备选），不依赖实时预报。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "第 3 天 · 2月13日\n成都市 · 都江堰市"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "时间为建议开始时段：尚未查路线时按游览时长、午餐和每段 45 分钟交通预留估算；查询路线后使用地图路段耗时。"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "score": 1,
+      "reason": "可见页脚明确天气与路线结果受查询时间影响、出行前请再次核对，构成临近出行核验天气的提示。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "天气与路线由高德服务返回；结果受地点匹配、服务覆盖和查询时间影响，出行前请再次核对。"
+        }
+      ]
+    }
+  ],
+  "primary_failure_layer": null,
+  "secondary_failure_layer": null,
+  "attribution_reason": "全部检查点与四个维度均满足通过条件，未发现可定位的失败环节。",
+  "critical_failure": false,
+  "critical_reason": "未见代订、代付、索取支付凭据或捏造实时信息并保证准确等行为。",
+  "review_required": false,
+  "review_reasons": [],
+  "limitations": [
+    "自然语言字段修改能力未测试（natural_language_field_updates_tested=false）。",
+    "出行人数2人、预算5000元为表单辅助值，不参与能力评价。",
+    "知识库门票价格与天气结果的现实准确性未实时核验，仅评价其呈现与边界说明。"
+  ]
+}

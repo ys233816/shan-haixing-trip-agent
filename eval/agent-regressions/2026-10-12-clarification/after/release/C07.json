@@ -1,0 +1,31 @@
+{
+  "id": "C07",
+  "group": "conflict",
+  "description": "已估基础支出超预算时给差额与取舍",
+  "fields": {
+    "days": "3",
+    "budget": "500"
+  },
+  "need": [
+    "已估",
+    "1458",
+    "取舍"
+  ],
+  "checks": {
+    "noPageErrors": true,
+    "noOverflow": true,
+    "blocked": true,
+    "clarification": true,
+    "maxThree": true
+  },
+  "pass": true,
+  "calls": [],
+  "errors": [],
+  "status": "本次尚未生成，请先确认：\n已估基础费用 ¥1,958，比预算超出 ¥1,458，还不含门票及往返大交通。请确认取舍：增加预算、缩短天数，或按实际情况调整费用参数。也可明确保留当前预算查看超支草稿。\n保留预算，查看超支草稿",
+  "shown": false,
+  "text": "",
+  "request": null,
+  "plan": null,
+  "questions": 1,
+  "overflow": false
+}

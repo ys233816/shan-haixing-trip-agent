@@ -1,0 +1,370 @@
+{
+  "recordedAt": "2026-10-12T10:14:55.379Z",
+  "method": "7个固定场景×桌面/手机，重放本地API返回真实景点；受控模型遗漏草稿；会话恢复、渲染、实际下载。未调用外部模型。",
+  "versions": [
+    {
+      "version": "before",
+      "sha256": "46f6859626c732be7ff9117184783b9939f304c0061095d60da26b326db541b2",
+      "total": 14,
+      "passed": 0
+    },
+    {
+      "version": "after",
+      "sha256": "694d54f564e09df7b8f5374428427ef4723ab0c45e2369cd3d8e60e9a098d990",
+      "total": 14,
+      "passed": 14
+    }
+  ],
+  "records": [
+    {
+      "version": "before",
+      "id": "hangzhou-food",
+      "viewport": "desktop",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "fulfilled:美食": false,
+        "stableOnReload": true
+      },
+      "pass": false
+    },
+    {
+      "version": "before",
+      "id": "shanghai-architecture",
+      "viewport": "desktop",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "fulfilled:博物馆": false,
+        "fulfilled:建筑": false,
+        "stableOnReload": true
+      },
+      "pass": false
+    },
+    {
+      "version": "before",
+      "id": "beijing-science-gap",
+      "viewport": "desktop",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:科技": false,
+        "stableOnReload": true
+      },
+      "pass": false
+    },
+    {
+      "version": "before",
+      "id": "xiamen-indoor-family",
+      "viewport": "desktop",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:室内亲子活动": false,
+        "stableOnReload": true
+      },
+      "pass": false
+    },
+    {
+      "version": "before",
+      "id": "rain-food-gap",
+      "viewport": "desktop",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:美食": false,
+        "rainSafety": true,
+        "stableOnReload": true
+      },
+      "pass": false
+    },
+    {
+      "version": "before",
+      "id": "closure-no-refill",
+      "viewport": "desktop",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:美食": false,
+        "noRefill": true,
+        "stableOnReload": true
+      },
+      "pass": false
+    },
+    {
+      "version": "before",
+      "id": "no-candidates",
+      "viewport": "desktop",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:亲子活动": false,
+        "stableOnReload": true
+      },
+      "pass": false
+    },
+    {
+      "version": "before",
+      "id": "hangzhou-food",
+      "viewport": "mobile",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "fulfilled:美食": false,
+        "stableOnReload": true
+      },
+      "pass": false
+    },
+    {
+      "version": "before",
+      "id": "shanghai-architecture",
+      "viewport": "mobile",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "fulfilled:博物馆": false,
+        "fulfilled:建筑": false,
+        "stableOnReload": true
+      },
+      "pass": false
+    },
+    {
+      "version": "before",
+      "id": "beijing-science-gap",
+      "viewport": "mobile",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:科技": false,
+        "stableOnReload": true
+      },
+      "pass": false
+    },
+    {
+      "version": "before",
+      "id": "xiamen-indoor-family",
+      "viewport": "mobile",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:室内亲子活动": false,
+        "stableOnReload": true
+      },
+      "pass": false
+    },
+    {
+      "version": "before",
+      "id": "rain-food-gap",
+      "viewport": "mobile",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:美食": false,
+        "rainSafety": true,
+        "stableOnReload": true
+      },
+      "pass": false
+    },
+    {
+      "version": "before",
+      "id": "closure-no-refill",
+      "viewport": "mobile",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:美食": false,
+        "noRefill": true,
+        "stableOnReload": true
+      },
+      "pass": false
+    },
+    {
+      "version": "before",
+      "id": "no-candidates",
+      "viewport": "mobile",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:亲子活动": false,
+        "stableOnReload": true
+      },
+      "pass": false
+    },
+    {
+      "version": "after",
+      "id": "hangzhou-food",
+      "viewport": "desktop",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "fulfilled:美食": true,
+        "downloadMatches": true,
+        "stableOnReload": true
+      },
+      "pass": true
+    },
+    {
+      "version": "after",
+      "id": "shanghai-architecture",
+      "viewport": "desktop",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "fulfilled:博物馆": true,
+        "fulfilled:建筑": true,
+        "stableOnReload": true
+      },
+      "pass": true
+    },
+    {
+      "version": "after",
+      "id": "beijing-science-gap",
+      "viewport": "desktop",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:科技": true,
+        "stableOnReload": true
+      },
+      "pass": true
+    },
+    {
+      "version": "after",
+      "id": "xiamen-indoor-family",
+      "viewport": "desktop",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:室内亲子活动": true,
+        "stableOnReload": true
+      },
+      "pass": true
+    },
+    {
+      "version": "after",
+      "id": "rain-food-gap",
+      "viewport": "desktop",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:美食": true,
+        "rainSafety": true,
+        "stableOnReload": true
+      },
+      "pass": true
+    },
+    {
+      "version": "after",
+      "id": "closure-no-refill",
+      "viewport": "desktop",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:美食": true,
+        "noRefill": true,
+        "stableOnReload": true
+      },
+      "pass": true
+    },
+    {
+      "version": "after",
+      "id": "no-candidates",
+      "viewport": "desktop",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:亲子活动": true,
+        "stableOnReload": true
+      },
+      "pass": true
+    },
+    {
+      "version": "after",
+      "id": "hangzhou-food",
+      "viewport": "mobile",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "fulfilled:美食": true,
+        "downloadMatches": true,
+        "stableOnReload": true
+      },
+      "pass": true
+    },
+    {
+      "version": "after",
+      "id": "shanghai-architecture",
+      "viewport": "mobile",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "fulfilled:博物馆": true,
+        "fulfilled:建筑": true,
+        "stableOnReload": true
+      },
+      "pass": true
+    },
+    {
+      "version": "after",
+      "id": "beijing-science-gap",
+      "viewport": "mobile",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:科技": true,
+        "stableOnReload": true
+      },
+      "pass": true
+    },
+    {
+      "version": "after",
+      "id": "xiamen-indoor-family",
+      "viewport": "mobile",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:室内亲子活动": true,
+        "stableOnReload": true
+      },
+      "pass": true
+    },
+    {
+      "version": "after",
+      "id": "rain-food-gap",
+      "viewport": "mobile",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:美食": true,
+        "rainSafety": true,
+        "stableOnReload": true
+      },
+      "pass": true
+    },
+    {
+      "version": "after",
+      "id": "closure-no-refill",
+      "viewport": "mobile",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:美食": true,
+        "noRefill": true,
+        "stableOnReload": true
+      },
+      "pass": true
+    },
+    {
+      "version": "after",
+      "id": "no-candidates",
+      "viewport": "mobile",
+      "checks": {
+        "noPageErrors": true,
+        "noHorizontalOverflow": true,
+        "missing:亲子活动": true,
+        "stableOnReload": true
+      },
+      "pass": true
+    }
+  ]
+}

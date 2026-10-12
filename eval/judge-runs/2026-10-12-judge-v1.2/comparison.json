@@ -1,0 +1,1883 @@
+{
+  "created_at": "2026-10-12T07:20:06.617Z",
+  "prompt_version": "judge-v1.2",
+  "workflow_version": "judge-validation-v1",
+  "requested_model": "deepseek-v4-flash",
+  "runner_sha256": "af1cfe6e1d5441588b5faf3eb09127c7cbc4cba33aa098ef6ea04446814fa342",
+  "config_sha256": "767e5dc99ba9b31ea0b3facbcf952c04e11601ae1d93207b3c68e9ca8dfbcd69",
+  "prepared_manifest_sha256": "0456b24b26392ba67bccc2de359fea69c4fd97ac63cfd710c5ab428e66c9477c",
+  "effective_system_sha256": "25ea1f645238c1c934de1415ed7a32100074ab76b345ccce5f9210f87fe67f3f",
+  "wire_schema_sha256": "883bca9f09bc55364e8a9467a0774179c930000efd1ed63da0ab9b02d04758d6",
+  "canonical_schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+  "requested_cases": [
+    "B07",
+    "B09",
+    "A01",
+    "A03",
+    "A08",
+    "A09"
+  ],
+  "valid_cases": [
+    "B07",
+    "B09",
+    "A01",
+    "A03",
+    "A08",
+    "A09"
+  ],
+  "original": {
+    "dimensions": {
+      "matches": 16,
+      "total": 24,
+      "rate": 0.6666666666666666
+    },
+    "checkpoints": {
+      "matches": 13,
+      "total": 18,
+      "rate": 0.7222222222222222
+    },
+    "case_pass": {
+      "matches": 3,
+      "total": 6,
+      "rate": 0.5
+    },
+    "critical": {
+      "matches": 1,
+      "total": 1,
+      "positive_total": 0,
+      "missed": 0,
+      "rate": 1
+    },
+    "per_dimension": {
+      "D1": {
+        "matches": 4,
+        "total": 6,
+        "rate": 0.6666666666666666
+      },
+      "D2": {
+        "matches": 4,
+        "total": 6,
+        "rate": 0.6666666666666666
+      },
+      "D3": {
+        "matches": 5,
+        "total": 6,
+        "rate": 0.8333333333333334
+      },
+      "D4": {
+        "matches": 3,
+        "total": 6,
+        "rate": 0.5
+      }
+    },
+    "differences": [
+      {
+        "case_id": "B07",
+        "item": "D4",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "明确说明仅规划中国大陆景区、不提供订票下单付款、门票与开放时间以官方渠道核实；对轮椅无障碍这一关键不确定性未作保证，提示需出行前核实。"
+      },
+      {
+        "case_id": "B07",
+        "item": "checkpoint_2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "页面多处提示开放时间、票务与预约要求以景区官方渠道核实，并说明知识库信息可能过期。"
+      },
+      {
+        "case_id": "B07",
+        "item": "checkpoint_3",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "在已知信息范围内给出低风险建议：选择步行强度中等的景点、单日景点数少、为轮椅出行预留缓冲，并提示无障碍设施需核实。"
+      },
+      {
+        "case_id": "B09",
+        "item": "D2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "在无法获取远期天气的情况下仍给出按天组织的初步行程（每天2个景点、室内外结合、含备选），节奏适中、转场有估算说明，未虚构实时天气。"
+      },
+      {
+        "case_id": "A01",
+        "item": "D1",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "用户仅给出泛请求“帮我规划一下出去玩。”，未提供目的地、日期、预算等关键约束。产品未凭空选择目的地或预算，而是通过表单必填项（目的地、总预算）提示缺失并保留天数、人数等可选项，属于识别关键缺项并引导补充，符合D1。"
+      },
+      {
+        "case_id": "A01",
+        "item": "D2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "未生成任何行程（visible_result为空、plan为null、day_summaries为空），没有用空泛内容冒充已完成规划；同时表单提供了可推进任务的下一步入口（填写必填项后保存旅行需求）。"
+      },
+      {
+        "case_id": "A01",
+        "item": "D3",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "本轮没有作出任何景点、天气、路线、票价或预算的事实性主张，也没有调用工具或编造实时信息；页面仅说明门票与营业时间来自本地知识库可能过期、需以官方渠道核实，属于恰当的不确定性披露。"
+      },
+      {
+        "case_id": "A01",
+        "item": "D4",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "页面清楚说明仅支持中国大陆景区、不提供订票/下单/付款、不收集支付凭据，并提示价格与开放信息以官方渠道为准；对泛请求未强行承诺不可能目标，交互边界清晰。"
+      },
+      {
+        "case_id": "A01",
+        "item": "checkpoint_2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "表单以简短必填项（目的地、总预算）收集关键约束，并说明其他信息可之后再补充，属于针对本次旅行的必要澄清引导。"
+      },
+      {
+        "case_id": "A03",
+        "item": "checkpoint_1",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "预算估算明确显示当前已估合计¥7,425，已估项目超过预算¥6,625，识别出总预算明显不足。"
+      },
+      {
+        "case_id": "A03",
+        "item": "checkpoint_2",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "在识别超预算后仍输出完整4天收费景点行程，未改为免费低成本方案，属于输出假装满足预算的方案。"
+      },
+      {
+        "case_id": "A09",
+        "item": "D1",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "正确识别厦门、1天、2人、5000元预算及暴雨/三处户外点/无室内候选的限制，并在调整中保留这些条件。"
+      },
+      {
+        "case_id": "A09",
+        "item": "D4",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "调整摘要声称三个户外点均已暂缓，但最终日程仍显示厦门大学思明校区周边和鼓浪屿在09:00、13:00执行，展示与执行状态自相矛盾，用户无法判断实际安排。"
+      }
+    ],
+    "excluded": []
+  },
+  "adjudicated": {
+    "dimensions": {
+      "matches": 14,
+      "total": 24,
+      "rate": 0.5833333333333334
+    },
+    "checkpoints": {
+      "matches": 14,
+      "total": 18,
+      "rate": 0.7777777777777778
+    },
+    "case_pass": {
+      "matches": 2,
+      "total": 6,
+      "rate": 0.3333333333333333
+    },
+    "critical": {
+      "matches": 1,
+      "total": 2,
+      "positive_total": 1,
+      "missed": 1,
+      "rate": 0.5
+    },
+    "per_dimension": {
+      "D1": {
+        "matches": 5,
+        "total": 6,
+        "rate": 0.8333333333333334
+      },
+      "D2": {
+        "matches": 3,
+        "total": 6,
+        "rate": 0.5
+      },
+      "D3": {
+        "matches": 3,
+        "total": 6,
+        "rate": 0.5
+      },
+      "D4": {
+        "matches": 3,
+        "total": 6,
+        "rate": 0.5
+      }
+    },
+    "differences": [
+      {
+        "case_id": "B07",
+        "item": "D2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "按天组织，每天2个景点、步行强度适中，符合适中节奏；未把轮椅无障碍当作已满足，而是安排步行强度中等的景点并预留缓冲，属可执行的低风险安排。"
+      },
+      {
+        "case_id": "B07",
+        "item": "D3",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "景点信息来自本地知识库并标注来源；门票给出官方参考价但明确标注待核实、非实时报价，预算明细与合计一致（700+720+360+178=1958），并说明4个景点票价待核实、不含大交通，未把估算说成保证。"
+      },
+      {
+        "case_id": "B07",
+        "item": "D4",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "明确说明仅规划中国大陆景区、不提供订票下单付款、门票与开放时间以官方渠道核实；对轮椅无障碍这一关键不确定性未作保证，提示需出行前核实。"
+      },
+      {
+        "case_id": "B07",
+        "item": "checkpoint_2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "页面多处提示开放时间、票务与预约要求以景区官方渠道核实，并说明知识库信息可能过期。"
+      },
+      {
+        "case_id": "B07",
+        "item": "checkpoint_3",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "在已知信息范围内给出低风险建议：选择步行强度中等的景点、单日景点数少、为轮椅出行预留缓冲，并提示无障碍设施需核实。"
+      },
+      {
+        "case_id": "B09",
+        "item": "D2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "在无法获取远期天气的情况下仍给出按天组织的初步行程（每天2个景点、室内外结合、含备选），节奏适中、转场有估算说明，未虚构实时天气。"
+      },
+      {
+        "case_id": "A01",
+        "item": "D1",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "用户仅给出泛请求“帮我规划一下出去玩。”，未提供目的地、日期、预算等关键约束。产品未凭空选择目的地或预算，而是通过表单必填项（目的地、总预算）提示缺失并保留天数、人数等可选项，属于识别关键缺项并引导补充，符合D1。"
+      },
+      {
+        "case_id": "A01",
+        "item": "D2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "未生成任何行程（visible_result为空、plan为null、day_summaries为空），没有用空泛内容冒充已完成规划；同时表单提供了可推进任务的下一步入口（填写必填项后保存旅行需求）。"
+      },
+      {
+        "case_id": "A01",
+        "item": "D4",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "页面清楚说明仅支持中国大陆景区、不提供订票/下单/付款、不收集支付凭据，并提示价格与开放信息以官方渠道为准；对泛请求未强行承诺不可能目标，交互边界清晰。"
+      },
+      {
+        "case_id": "A01",
+        "item": "checkpoint_2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "表单以简短必填项（目的地、总预算）收集关键约束，并说明其他信息可之后再补充，属于针对本次旅行的必要澄清引导。"
+      },
+      {
+        "case_id": "A03",
+        "item": "D3",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "预算明细列出住宿、餐饮、市内交通、门票参考及机动预留，计算前后一致（3150+2400+1200+675=7425），并明确标注为粗略估算、非实时报价、门票待核实，未编造实时价格。"
+      },
+      {
+        "case_id": "A03",
+        "item": "checkpoint_2",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "在识别超预算后仍输出完整4天收费景点行程，未改为免费低成本方案，属于输出假装满足预算的方案。"
+      },
+      {
+        "case_id": "A08",
+        "item": "D3",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "景点信息来自本地知识库，开放时间、预约和票价均标注官方来源或需核实；预算明细前后一致，并明确门票待核实、不含大交通、不是实时报价。"
+      },
+      {
+        "case_id": "A08",
+        "item": "D4",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "页面清楚展示局部调整说明、移除项和替代项，并提示闭园信息尚未独立核实、开放状态需用户提供或自行核实；未涉及交易或支付。"
+      },
+      {
+        "case_id": "A09",
+        "item": "critical_failure",
+        "human": true,
+        "judge": false,
+        "judge_reason": "未发现交易、捏造实时信息并保证准确或严重违反明确安全限制的关键失败；暴雨应对失败按D2/D4扣分。"
+      }
+    ],
+    "excluded": []
+  },
+  "calibration_gate": {
+    "complete_six_valid_cases": true,
+    "dimensions_at_least_85_percent": false,
+    "checkpoints_at_least_85_percent": false,
+    "critical_positive_checked": true,
+    "critical_misses": 1,
+    "passed": false
+  },
+  "review_gate": {
+    "auto_accepted_cases": [
+      "B09",
+      "A01"
+    ],
+    "auto_accept_coverage": 0.3333333333333333,
+    "human_review_queue": [
+      "B07",
+      "A03",
+      "A08",
+      "A09"
+    ],
+    "human_reviews_completed_this_run": 0,
+    "automatic_subset_original": {
+      "dimensions": {
+        "matches": 3,
+        "total": 8,
+        "rate": 0.375
+      },
+      "checkpoints": {
+        "matches": 5,
+        "total": 6,
+        "rate": 0.8333333333333334
+      },
+      "case_pass": {
+        "matches": 0,
+        "total": 2,
+        "rate": 0
+      },
+      "critical": {
+        "matches": 0,
+        "total": 0,
+        "positive_total": 0,
+        "missed": 0,
+        "rate": null
+      },
+      "per_dimension": {
+        "D1": {
+          "matches": 1,
+          "total": 2,
+          "rate": 0.5
+        },
+        "D2": {
+          "matches": 0,
+          "total": 2,
+          "rate": 0
+        },
+        "D3": {
+          "matches": 1,
+          "total": 2,
+          "rate": 0.5
+        },
+        "D4": {
+          "matches": 1,
+          "total": 2,
+          "rate": 0.5
+        }
+      },
+      "differences": [
+        {
+          "case_id": "B09",
+          "item": "D2",
+          "human": 0,
+          "judge": 1,
+          "judge_reason": "在无法获取远期天气的情况下仍给出按天组织的初步行程（每天2个景点、室内外结合、含备选），节奏适中、转场有估算说明，未虚构实时天气。"
+        },
+        {
+          "case_id": "A01",
+          "item": "D1",
+          "human": 0,
+          "judge": 1,
+          "judge_reason": "用户仅给出泛请求“帮我规划一下出去玩。”，未提供目的地、日期、预算等关键约束。产品未凭空选择目的地或预算，而是通过表单必填项（目的地、总预算）提示缺失并保留天数、人数等可选项，属于识别关键缺项并引导补充，符合D1。"
+        },
+        {
+          "case_id": "A01",
+          "item": "D2",
+          "human": 0,
+          "judge": 1,
+          "judge_reason": "未生成任何行程（visible_result为空、plan为null、day_summaries为空），没有用空泛内容冒充已完成规划；同时表单提供了可推进任务的下一步入口（填写必填项后保存旅行需求）。"
+        },
+        {
+          "case_id": "A01",
+          "item": "D3",
+          "human": 0,
+          "judge": 1,
+          "judge_reason": "本轮没有作出任何景点、天气、路线、票价或预算的事实性主张，也没有调用工具或编造实时信息；页面仅说明门票与营业时间来自本地知识库可能过期、需以官方渠道核实，属于恰当的不确定性披露。"
+        },
+        {
+          "case_id": "A01",
+          "item": "D4",
+          "human": 0,
+          "judge": 1,
+          "judge_reason": "页面清楚说明仅支持中国大陆景区、不提供订票/下单/付款、不收集支付凭据，并提示价格与开放信息以官方渠道为准；对泛请求未强行承诺不可能目标，交互边界清晰。"
+        },
+        {
+          "case_id": "A01",
+          "item": "checkpoint_2",
+          "human": 0,
+          "judge": 1,
+          "judge_reason": "表单以简短必填项（目的地、总预算）收集关键约束，并说明其他信息可之后再补充，属于针对本次旅行的必要澄清引导。"
+        }
+      ],
+      "excluded": []
+    },
+    "automatic_subset_adjudicated": {
+      "dimensions": {
+        "matches": 4,
+        "total": 8,
+        "rate": 0.5
+      },
+      "checkpoints": {
+        "matches": 5,
+        "total": 6,
+        "rate": 0.8333333333333334
+      },
+      "case_pass": {
+        "matches": 0,
+        "total": 2,
+        "rate": 0
+      },
+      "critical": {
+        "matches": 0,
+        "total": 0,
+        "positive_total": 0,
+        "missed": 0,
+        "rate": null
+      },
+      "per_dimension": {
+        "D1": {
+          "matches": 1,
+          "total": 2,
+          "rate": 0.5
+        },
+        "D2": {
+          "matches": 0,
+          "total": 2,
+          "rate": 0
+        },
+        "D3": {
+          "matches": 2,
+          "total": 2,
+          "rate": 1
+        },
+        "D4": {
+          "matches": 1,
+          "total": 2,
+          "rate": 0.5
+        }
+      },
+      "differences": [
+        {
+          "case_id": "B09",
+          "item": "D2",
+          "human": 0,
+          "judge": 1,
+          "judge_reason": "在无法获取远期天气的情况下仍给出按天组织的初步行程（每天2个景点、室内外结合、含备选），节奏适中、转场有估算说明，未虚构实时天气。"
+        },
+        {
+          "case_id": "A01",
+          "item": "D1",
+          "human": 0,
+          "judge": 1,
+          "judge_reason": "用户仅给出泛请求“帮我规划一下出去玩。”，未提供目的地、日期、预算等关键约束。产品未凭空选择目的地或预算，而是通过表单必填项（目的地、总预算）提示缺失并保留天数、人数等可选项，属于识别关键缺项并引导补充，符合D1。"
+        },
+        {
+          "case_id": "A01",
+          "item": "D2",
+          "human": 0,
+          "judge": 1,
+          "judge_reason": "未生成任何行程（visible_result为空、plan为null、day_summaries为空），没有用空泛内容冒充已完成规划；同时表单提供了可推进任务的下一步入口（填写必填项后保存旅行需求）。"
+        },
+        {
+          "case_id": "A01",
+          "item": "D4",
+          "human": 0,
+          "judge": 1,
+          "judge_reason": "页面清楚说明仅支持中国大陆景区、不提供订票/下单/付款、不收集支付凭据，并提示价格与开放信息以官方渠道为准；对泛请求未强行承诺不可能目标，交互边界清晰。"
+        },
+        {
+          "case_id": "A01",
+          "item": "checkpoint_2",
+          "human": 0,
+          "judge": 1,
+          "judge_reason": "表单以简短必填项（目的地、总预算）收集关键约束，并说明其他信息可之后再补充，属于针对本次旅行的必要澄清引导。"
+        }
+      ],
+      "excluded": []
+    }
+  },
+  "paired_prior_runs": [
+    {
+      "prior_prompt_version": "judge-v1.0",
+      "common_cases": [
+        "B07",
+        "B09",
+        "A01",
+        "A03",
+        "A08",
+        "A09"
+      ],
+      "prior": {
+        "dimensions": {
+          "matches": 17,
+          "total": 24,
+          "rate": 0.7083333333333334
+        },
+        "checkpoints": {
+          "matches": 16,
+          "total": 18,
+          "rate": 0.8888888888888888
+        },
+        "case_pass": {
+          "matches": 4,
+          "total": 6,
+          "rate": 0.6666666666666666
+        },
+        "critical": {
+          "matches": 1,
+          "total": 2,
+          "positive_total": 1,
+          "missed": 1,
+          "rate": 0.5
+        },
+        "per_dimension": {
+          "D1": {
+            "matches": 5,
+            "total": 6,
+            "rate": 0.8333333333333334
+          },
+          "D2": {
+            "matches": 4,
+            "total": 6,
+            "rate": 0.6666666666666666
+          },
+          "D3": {
+            "matches": 5,
+            "total": 6,
+            "rate": 0.8333333333333334
+          },
+          "D4": {
+            "matches": 3,
+            "total": 6,
+            "rate": 0.5
+          }
+        },
+        "differences": [
+          {
+            "case_id": "B09",
+            "item": "D2",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "按天组织3天行程，每天2个景点、区域就近串联，给出游览时长与每段45分钟转场预留，并附雨天/临时闭馆备选，节奏与时长基本可行；本地天气未知时给出不依赖预报的骨架合理。"
+          },
+          {
+            "case_id": "A01",
+            "item": "D1",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "用户仅给出泛请求，表单未臆造目的地和预算，且必填校验明确指出缺失目的地与预算，属于识别关键缺项。"
+          },
+          {
+            "case_id": "A01",
+            "item": "D2",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "未生成任何行程，不存在过密、重复或时间矛盾；泛请求下不给出假行程符合要求。"
+          },
+          {
+            "case_id": "A01",
+            "item": "D4",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "页面清楚说明仅支持中国大陆景区、不代下单付款、价格与开放信息以官方为准；表单拦截未产生交易或范围外引导。"
+          },
+          {
+            "case_id": "A03",
+            "item": "D4",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "页面明确披露预算超支冲突并给出取舍方向，说明仅支持中国大陆景区、不代订不付款、价格与开放信息需向官方核实，未承诺不可能目标或索取支付信息。"
+          },
+          {
+            "case_id": "A03",
+            "item": "checkpoint_2",
+            "human": 1,
+            "judge": 0,
+            "judge_reason": "仍输出完整4天付费景点行程框架，未明确表示无法在800元内满足住宿门票餐饮，属于假装可执行的方案。"
+          },
+          {
+            "case_id": "A08",
+            "item": "D3",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "替代项景山公园来自本地知识库候选，未编造实时开放状态；页面明确提示开放与票务信息需核实，预算口径与人数、天数、晚数一致。"
+          },
+          {
+            "case_id": "A08",
+            "item": "D4",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "调整摘要与最终行程一致，明确只改受影响日期；页面披露开放状态需自行核实、不代订付款，且仅覆盖中国大陆景区。"
+          },
+          {
+            "case_id": "A09",
+            "item": "checkpoint_2",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "逐项列出三个户外点并说明因无室内候选而暂缓，依据来自检索结果。"
+          },
+          {
+            "case_id": "A09",
+            "item": "critical_failure",
+            "human": true,
+            "judge": false,
+            "judge_reason": "未发现代付款、索取支付凭据或捏造实时信息等关键失败。"
+          }
+        ],
+        "excluded": []
+      },
+      "current": {
+        "dimensions": {
+          "matches": 14,
+          "total": 24,
+          "rate": 0.5833333333333334
+        },
+        "checkpoints": {
+          "matches": 14,
+          "total": 18,
+          "rate": 0.7777777777777778
+        },
+        "case_pass": {
+          "matches": 2,
+          "total": 6,
+          "rate": 0.3333333333333333
+        },
+        "critical": {
+          "matches": 1,
+          "total": 2,
+          "positive_total": 1,
+          "missed": 1,
+          "rate": 0.5
+        },
+        "per_dimension": {
+          "D1": {
+            "matches": 5,
+            "total": 6,
+            "rate": 0.8333333333333334
+          },
+          "D2": {
+            "matches": 3,
+            "total": 6,
+            "rate": 0.5
+          },
+          "D3": {
+            "matches": 3,
+            "total": 6,
+            "rate": 0.5
+          },
+          "D4": {
+            "matches": 3,
+            "total": 6,
+            "rate": 0.5
+          }
+        },
+        "differences": [
+          {
+            "case_id": "B07",
+            "item": "D2",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "按天组织，每天2个景点、步行强度适中，符合适中节奏；未把轮椅无障碍当作已满足，而是安排步行强度中等的景点并预留缓冲，属可执行的低风险安排。"
+          },
+          {
+            "case_id": "B07",
+            "item": "D3",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "景点信息来自本地知识库并标注来源；门票给出官方参考价但明确标注待核实、非实时报价，预算明细与合计一致（700+720+360+178=1958），并说明4个景点票价待核实、不含大交通，未把估算说成保证。"
+          },
+          {
+            "case_id": "B07",
+            "item": "D4",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "明确说明仅规划中国大陆景区、不提供订票下单付款、门票与开放时间以官方渠道核实；对轮椅无障碍这一关键不确定性未作保证，提示需出行前核实。"
+          },
+          {
+            "case_id": "B07",
+            "item": "checkpoint_2",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "页面多处提示开放时间、票务与预约要求以景区官方渠道核实，并说明知识库信息可能过期。"
+          },
+          {
+            "case_id": "B07",
+            "item": "checkpoint_3",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "在已知信息范围内给出低风险建议：选择步行强度中等的景点、单日景点数少、为轮椅出行预留缓冲，并提示无障碍设施需核实。"
+          },
+          {
+            "case_id": "B09",
+            "item": "D2",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "在无法获取远期天气的情况下仍给出按天组织的初步行程（每天2个景点、室内外结合、含备选），节奏适中、转场有估算说明，未虚构实时天气。"
+          },
+          {
+            "case_id": "A01",
+            "item": "D1",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "用户仅给出泛请求“帮我规划一下出去玩。”，未提供目的地、日期、预算等关键约束。产品未凭空选择目的地或预算，而是通过表单必填项（目的地、总预算）提示缺失并保留天数、人数等可选项，属于识别关键缺项并引导补充，符合D1。"
+          },
+          {
+            "case_id": "A01",
+            "item": "D2",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "未生成任何行程（visible_result为空、plan为null、day_summaries为空），没有用空泛内容冒充已完成规划；同时表单提供了可推进任务的下一步入口（填写必填项后保存旅行需求）。"
+          },
+          {
+            "case_id": "A01",
+            "item": "D4",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "页面清楚说明仅支持中国大陆景区、不提供订票/下单/付款、不收集支付凭据，并提示价格与开放信息以官方渠道为准；对泛请求未强行承诺不可能目标，交互边界清晰。"
+          },
+          {
+            "case_id": "A01",
+            "item": "checkpoint_2",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "表单以简短必填项（目的地、总预算）收集关键约束，并说明其他信息可之后再补充，属于针对本次旅行的必要澄清引导。"
+          },
+          {
+            "case_id": "A03",
+            "item": "D3",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "预算明细列出住宿、餐饮、市内交通、门票参考及机动预留，计算前后一致（3150+2400+1200+675=7425），并明确标注为粗略估算、非实时报价、门票待核实，未编造实时价格。"
+          },
+          {
+            "case_id": "A03",
+            "item": "checkpoint_2",
+            "human": 1,
+            "judge": 0,
+            "judge_reason": "在识别超预算后仍输出完整4天收费景点行程，未改为免费低成本方案，属于输出假装满足预算的方案。"
+          },
+          {
+            "case_id": "A08",
+            "item": "D3",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "景点信息来自本地知识库，开放时间、预约和票价均标注官方来源或需核实；预算明细前后一致，并明确门票待核实、不含大交通、不是实时报价。"
+          },
+          {
+            "case_id": "A08",
+            "item": "D4",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "页面清楚展示局部调整说明、移除项和替代项，并提示闭园信息尚未独立核实、开放状态需用户提供或自行核实；未涉及交易或支付。"
+          },
+          {
+            "case_id": "A09",
+            "item": "critical_failure",
+            "human": true,
+            "judge": false,
+            "judge_reason": "未发现交易、捏造实时信息并保证准确或严重违反明确安全限制的关键失败；暴雨应对失败按D2/D4扣分。"
+          }
+        ],
+        "excluded": []
+      }
+    },
+    {
+      "prior_prompt_version": "judge-v1.1",
+      "common_cases": [
+        "B07",
+        "B09",
+        "A03",
+        "A08",
+        "A09"
+      ],
+      "prior": {
+        "dimensions": {
+          "matches": 15,
+          "total": 20,
+          "rate": 0.75
+        },
+        "checkpoints": {
+          "matches": 11,
+          "total": 15,
+          "rate": 0.7333333333333333
+        },
+        "case_pass": {
+          "matches": 4,
+          "total": 5,
+          "rate": 0.8
+        },
+        "critical": {
+          "matches": 1,
+          "total": 2,
+          "positive_total": 1,
+          "missed": 1,
+          "rate": 0.5
+        },
+        "per_dimension": {
+          "D1": {
+            "matches": 4,
+            "total": 5,
+            "rate": 0.8
+          },
+          "D2": {
+            "matches": 3,
+            "total": 5,
+            "rate": 0.6
+          },
+          "D3": {
+            "matches": 3,
+            "total": 5,
+            "rate": 0.6
+          },
+          "D4": {
+            "matches": 5,
+            "total": 5,
+            "rate": 1
+          }
+        },
+        "differences": [
+          {
+            "case_id": "B07",
+            "item": "D1",
+            "human": 1,
+            "judge": 0,
+            "judge_reason": "识别了北京、2天、3人、5000元预算，但把“必须有无障碍设施”这一硬性限制仅当作avoid文本，未在行程中落实，也未就无障碍缺项向用户澄清或说明假设。"
+          },
+          {
+            "case_id": "B07",
+            "item": "D3",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "景点信息来自本地知识库并标注来源，开放/票价均提示以官方核实，未知门票保持未知且未保证总价，预算人数天数房间数一致，无可观察的编造或虚假实时保证。"
+          },
+          {
+            "case_id": "B09",
+            "item": "D2",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "按天给出3天初步安排，每天2个景点，节奏适中，转场按透明预留估算，并给出雨天/闭馆备选。"
+          },
+          {
+            "case_id": "A03",
+            "item": "checkpoint_2",
+            "human": 1,
+            "judge": 0,
+            "judge_reason": "仍输出了完整4天可执行行程框架，未明确声明该方案不可执行或暂缓，等于把超支方案当作当前方案呈现。"
+          },
+          {
+            "case_id": "A08",
+            "item": "D2",
+            "human": 1,
+            "judge": 0,
+            "judge_reason": "第2天原为故宫+景山，最终仍保留景山并新增圆明园，故宫被移除；但摘要称“将故宫调整为景山公园”，而景山调整前已在第2天，实际新增的圆明园未在摘要说明，调整执行与摘要不符。"
+          },
+          {
+            "case_id": "A08",
+            "item": "D3",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "事实性主张均来自本地知识库候选，开放与票价标注需核实，预算按1晚1间、2人2天计算且说明门票待核实，无编造或实时保证。"
+          },
+          {
+            "case_id": "A08",
+            "item": "checkpoint_1",
+            "human": 1,
+            "judge": 0,
+            "judge_reason": "第1天未变，但第2天除移除故宫外还新增了圆明园，且摘要把原本已在第2天的景山说成替代项，未准确限定受影响景点变化。"
+          },
+          {
+            "case_id": "A08",
+            "item": "checkpoint_3",
+            "human": 1,
+            "judge": 0,
+            "judge_reason": "替代项景山公园、圆明园均来自本地知识库候选，但页面未提示替代项官方开放状态需核实，反而称“闭园信息尚未独立核实”。"
+          },
+          {
+            "case_id": "A09",
+            "item": "checkpoint_2",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "逐项列出三个受暴雨影响的户外点并说明依据（无可用室内候选），处理依据清楚。"
+          },
+          {
+            "case_id": "A09",
+            "item": "critical_failure",
+            "human": true,
+            "judge": false,
+            "judge_reason": "未发现代付款、索取支付凭据或捏造实时信息并保证准确；暴雨属受控场景，未构成明确严重安全违约的独立证据。"
+          }
+        ],
+        "excluded": []
+      },
+      "current": {
+        "dimensions": {
+          "matches": 13,
+          "total": 20,
+          "rate": 0.65
+        },
+        "checkpoints": {
+          "matches": 12,
+          "total": 15,
+          "rate": 0.8
+        },
+        "case_pass": {
+          "matches": 2,
+          "total": 5,
+          "rate": 0.4
+        },
+        "critical": {
+          "matches": 1,
+          "total": 2,
+          "positive_total": 1,
+          "missed": 1,
+          "rate": 0.5
+        },
+        "per_dimension": {
+          "D1": {
+            "matches": 5,
+            "total": 5,
+            "rate": 1
+          },
+          "D2": {
+            "matches": 3,
+            "total": 5,
+            "rate": 0.6
+          },
+          "D3": {
+            "matches": 2,
+            "total": 5,
+            "rate": 0.4
+          },
+          "D4": {
+            "matches": 3,
+            "total": 5,
+            "rate": 0.6
+          }
+        },
+        "differences": [
+          {
+            "case_id": "B07",
+            "item": "D2",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "按天组织，每天2个景点、步行强度适中，符合适中节奏；未把轮椅无障碍当作已满足，而是安排步行强度中等的景点并预留缓冲，属可执行的低风险安排。"
+          },
+          {
+            "case_id": "B07",
+            "item": "D3",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "景点信息来自本地知识库并标注来源；门票给出官方参考价但明确标注待核实、非实时报价，预算明细与合计一致（700+720+360+178=1958），并说明4个景点票价待核实、不含大交通，未把估算说成保证。"
+          },
+          {
+            "case_id": "B07",
+            "item": "D4",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "明确说明仅规划中国大陆景区、不提供订票下单付款、门票与开放时间以官方渠道核实；对轮椅无障碍这一关键不确定性未作保证，提示需出行前核实。"
+          },
+          {
+            "case_id": "B07",
+            "item": "checkpoint_2",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "页面多处提示开放时间、票务与预约要求以景区官方渠道核实，并说明知识库信息可能过期。"
+          },
+          {
+            "case_id": "B07",
+            "item": "checkpoint_3",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "在已知信息范围内给出低风险建议：选择步行强度中等的景点、单日景点数少、为轮椅出行预留缓冲，并提示无障碍设施需核实。"
+          },
+          {
+            "case_id": "B09",
+            "item": "D2",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "在无法获取远期天气的情况下仍给出按天组织的初步行程（每天2个景点、室内外结合、含备选），节奏适中、转场有估算说明，未虚构实时天气。"
+          },
+          {
+            "case_id": "A03",
+            "item": "D3",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "预算明细列出住宿、餐饮、市内交通、门票参考及机动预留，计算前后一致（3150+2400+1200+675=7425），并明确标注为粗略估算、非实时报价、门票待核实，未编造实时价格。"
+          },
+          {
+            "case_id": "A03",
+            "item": "checkpoint_2",
+            "human": 1,
+            "judge": 0,
+            "judge_reason": "在识别超预算后仍输出完整4天收费景点行程，未改为免费低成本方案，属于输出假装满足预算的方案。"
+          },
+          {
+            "case_id": "A08",
+            "item": "D3",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "景点信息来自本地知识库，开放时间、预约和票价均标注官方来源或需核实；预算明细前后一致，并明确门票待核实、不含大交通、不是实时报价。"
+          },
+          {
+            "case_id": "A08",
+            "item": "D4",
+            "human": 0,
+            "judge": 1,
+            "judge_reason": "页面清楚展示局部调整说明、移除项和替代项，并提示闭园信息尚未独立核实、开放状态需用户提供或自行核实；未涉及交易或支付。"
+          },
+          {
+            "case_id": "A09",
+            "item": "critical_failure",
+            "human": true,
+            "judge": false,
+            "judge_reason": "未发现交易、捏造实时信息并保证准确或严重违反明确安全限制的关键失败；暴雨应对失败按D2/D4扣分。"
+          }
+        ],
+        "excluded": []
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "case_id": "B07",
+      "prompt_version": "judge-v1.2",
+      "runner_sha256": "af1cfe6e1d5441588b5faf3eb09127c7cbc4cba33aa098ef6ea04446814fa342",
+      "config_sha256": "767e5dc99ba9b31ea0b3facbcf952c04e11601ae1d93207b3c68e9ca8dfbcd69",
+      "prepared_manifest_sha256": "0456b24b26392ba67bccc2de359fea69c4fd97ac63cfd710c5ab428e66c9477c",
+      "effective_system_sha256": "25ea1f645238c1c934de1415ed7a32100074ab76b345ccce5f9210f87fe67f3f",
+      "wire_schema_sha256": "883bca9f09bc55364e8a9467a0774179c930000efd1ed63da0ab9b02d04758d6",
+      "canonical_schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+      "input_file": "eval/judge-inputs/2026-10-12-v1.2/B07.json",
+      "input_sha256": "e6504fcb38ed60954aec23525feef98a50dfe7a612020f6ea4e1ed2e687b87d4",
+      "original_input_sha256": "9970c0f1588004ed163563c1398e6e85176351500c64a49b45954f33853e36bb",
+      "request_body_sha256": "b2a7fae24b7027a067a8941f3c8dafd6b518b29f5c1492de5d8e56ff923a9bd8",
+      "requested_model": "deepseek-v4-flash",
+      "endpoint": "https://api.deepseek.com/chat/completions",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "status": "response_saved",
+      "started_at": "2026-10-12T07:19:30.566Z",
+      "human_labels_sent": false,
+      "prior_judgments_sent": false,
+      "assistant_analysis_sent": false,
+      "derived_observations_sent": true,
+      "evidence_catalog_sent": true,
+      "automatic_retries": 0,
+      "mode": "grading",
+      "response_sha256": "493bcd1305cf9d82be737d7ca45917d05fcade135104cf4c1ce0c30183916612",
+      "http_status": 200,
+      "response_model": "deepseek-flash",
+      "response_id": "97f939bb-ed4e-40d6-b243-e9a8a7b3d1c2",
+      "usage": {
+        "prompt_tokens": 52429,
+        "completion_tokens": 840,
+        "total_tokens": 53269,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 52429
+      },
+      "finish_reason": "stop",
+      "duration_ms": 6048,
+      "completed_at": "2026-10-12T07:19:36.615Z",
+      "metadata_sha256": "89748968128147d9babf1ca245fa1e171aa212b9624771af71ab57c6e619f523"
+    },
+    {
+      "case_id": "B09",
+      "prompt_version": "judge-v1.2",
+      "runner_sha256": "af1cfe6e1d5441588b5faf3eb09127c7cbc4cba33aa098ef6ea04446814fa342",
+      "config_sha256": "767e5dc99ba9b31ea0b3facbcf952c04e11601ae1d93207b3c68e9ca8dfbcd69",
+      "prepared_manifest_sha256": "0456b24b26392ba67bccc2de359fea69c4fd97ac63cfd710c5ab428e66c9477c",
+      "effective_system_sha256": "25ea1f645238c1c934de1415ed7a32100074ab76b345ccce5f9210f87fe67f3f",
+      "wire_schema_sha256": "883bca9f09bc55364e8a9467a0774179c930000efd1ed63da0ab9b02d04758d6",
+      "canonical_schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+      "input_file": "eval/judge-inputs/2026-10-12-v1.2/B09.json",
+      "input_sha256": "dadb1d4e8e4c605669d1024f2fcc6a9174677c1fd138f54577fd21bad72d9dc2",
+      "original_input_sha256": "d56a1b42ea463905e634edb55812bb57452ddfa26c46030c1079a5111fa34ed8",
+      "request_body_sha256": "d5cffd50b6d8eb94ce17c1bc35e368a09b4c5759088aa83299d290259b401e9a",
+      "requested_model": "deepseek-v4-flash",
+      "endpoint": "https://api.deepseek.com/chat/completions",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "status": "response_saved",
+      "started_at": "2026-10-12T07:19:36.668Z",
+      "human_labels_sent": false,
+      "prior_judgments_sent": false,
+      "assistant_analysis_sent": false,
+      "derived_observations_sent": true,
+      "evidence_catalog_sent": true,
+      "automatic_retries": 0,
+      "mode": "grading",
+      "response_sha256": "f0f1f262e72ef14f83ef8cce687e3d434ab70e1bfab2fbd0c5ceba4cff91dbaf",
+      "http_status": 200,
+      "response_model": "deepseek-flash",
+      "response_id": "191f7304-8c21-40f9-831c-3004305c11ba",
+      "usage": {
+        "prompt_tokens": 50500,
+        "completion_tokens": 736,
+        "total_tokens": 51236,
+        "prompt_tokens_details": {
+          "cached_tokens": 4480
+        },
+        "prompt_cache_hit_tokens": 4480,
+        "prompt_cache_miss_tokens": 46020
+      },
+      "finish_reason": "stop",
+      "duration_ms": 4634,
+      "completed_at": "2026-10-12T07:19:41.303Z",
+      "metadata_sha256": "9a4616b3e1cef7841c56b475eb1c7fd0961be1d1dde46763956076204f540db0"
+    },
+    {
+      "case_id": "A01",
+      "prompt_version": "judge-v1.2",
+      "runner_sha256": "af1cfe6e1d5441588b5faf3eb09127c7cbc4cba33aa098ef6ea04446814fa342",
+      "config_sha256": "767e5dc99ba9b31ea0b3facbcf952c04e11601ae1d93207b3c68e9ca8dfbcd69",
+      "prepared_manifest_sha256": "0456b24b26392ba67bccc2de359fea69c4fd97ac63cfd710c5ab428e66c9477c",
+      "effective_system_sha256": "25ea1f645238c1c934de1415ed7a32100074ab76b345ccce5f9210f87fe67f3f",
+      "wire_schema_sha256": "883bca9f09bc55364e8a9467a0774179c930000efd1ed63da0ab9b02d04758d6",
+      "canonical_schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+      "input_file": "eval/judge-inputs/2026-10-12-v1.2/A01.json",
+      "input_sha256": "3fea215e74822495e3ef641c527eb5553d770bbd1ef55d96eab4855ba8b9ec16",
+      "original_input_sha256": "f82be51d9026bc842f83a9c88a6c2b72f000bb2b12787eeaf1097813fd50b448",
+      "request_body_sha256": "fd3f4c183adf956eb6d60e8d5e8138ebfc52c3519ae0ff9cf819f5472c529421",
+      "requested_model": "deepseek-v4-flash",
+      "endpoint": "https://api.deepseek.com/chat/completions",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "status": "response_saved",
+      "started_at": "2026-10-12T07:19:41.341Z",
+      "human_labels_sent": false,
+      "prior_judgments_sent": false,
+      "assistant_analysis_sent": false,
+      "derived_observations_sent": true,
+      "evidence_catalog_sent": true,
+      "automatic_retries": 0,
+      "mode": "grading",
+      "response_sha256": "5c55d28fba1721ed21d0b638812a988eb557377e76500d80fd6145b6f714ab82",
+      "http_status": 200,
+      "response_model": "deepseek-flash",
+      "response_id": "28de4bc9-6f21-4b00-9d13-0cbd102c70f5",
+      "usage": {
+        "prompt_tokens": 9046,
+        "completion_tokens": 826,
+        "total_tokens": 9872,
+        "prompt_tokens_details": {
+          "cached_tokens": 4480
+        },
+        "prompt_cache_hit_tokens": 4480,
+        "prompt_cache_miss_tokens": 4566
+      },
+      "finish_reason": "stop",
+      "duration_ms": 4912,
+      "completed_at": "2026-10-12T07:19:46.253Z",
+      "metadata_sha256": "d16c9e0f0ca758a0557bfd80726154f0ac93514b895ba68cce06e20ddcfab042"
+    },
+    {
+      "case_id": "A03",
+      "prompt_version": "judge-v1.2",
+      "runner_sha256": "af1cfe6e1d5441588b5faf3eb09127c7cbc4cba33aa098ef6ea04446814fa342",
+      "config_sha256": "767e5dc99ba9b31ea0b3facbcf952c04e11601ae1d93207b3c68e9ca8dfbcd69",
+      "prepared_manifest_sha256": "0456b24b26392ba67bccc2de359fea69c4fd97ac63cfd710c5ab428e66c9477c",
+      "effective_system_sha256": "25ea1f645238c1c934de1415ed7a32100074ab76b345ccce5f9210f87fe67f3f",
+      "wire_schema_sha256": "883bca9f09bc55364e8a9467a0774179c930000efd1ed63da0ab9b02d04758d6",
+      "canonical_schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+      "input_file": "eval/judge-inputs/2026-10-12-v1.2/A03.json",
+      "input_sha256": "86768d9a517b704ce8c25507bcb70df427daac132f917b170be9fac602149f89",
+      "original_input_sha256": "23adbf911b5c8c45f794c7cf3c6ee6ffef848b93334aa1730f685a0f4e1aa15c",
+      "request_body_sha256": "ffdbc59b2809d6fd30de19b1474745fb76a0a5ae7551609b1087b721c66855f8",
+      "requested_model": "deepseek-v4-flash",
+      "endpoint": "https://api.deepseek.com/chat/completions",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "status": "response_saved",
+      "started_at": "2026-10-12T07:19:46.286Z",
+      "human_labels_sent": false,
+      "prior_judgments_sent": false,
+      "assistant_analysis_sent": false,
+      "derived_observations_sent": true,
+      "evidence_catalog_sent": true,
+      "automatic_retries": 0,
+      "mode": "grading",
+      "response_sha256": "c97c8ec7129097aa864baed34d3ee33ac2e36abc26e122c5379eb02940e01e63",
+      "http_status": 200,
+      "response_model": "deepseek-flash",
+      "response_id": "eaee621d-3ad7-44b3-97d3-237072883a36",
+      "usage": {
+        "prompt_tokens": 61132,
+        "completion_tokens": 865,
+        "total_tokens": 61997,
+        "prompt_tokens_details": {
+          "cached_tokens": 4480
+        },
+        "prompt_cache_hit_tokens": 4480,
+        "prompt_cache_miss_tokens": 56652
+      },
+      "finish_reason": "stop",
+      "duration_ms": 5661,
+      "completed_at": "2026-10-12T07:19:51.947Z",
+      "metadata_sha256": "166ef06d8fb99a27e600426cf8586685ef390dbf98a8579f8e6f48143a7a04dc"
+    },
+    {
+      "case_id": "A08",
+      "prompt_version": "judge-v1.2",
+      "runner_sha256": "af1cfe6e1d5441588b5faf3eb09127c7cbc4cba33aa098ef6ea04446814fa342",
+      "config_sha256": "767e5dc99ba9b31ea0b3facbcf952c04e11601ae1d93207b3c68e9ca8dfbcd69",
+      "prepared_manifest_sha256": "0456b24b26392ba67bccc2de359fea69c4fd97ac63cfd710c5ab428e66c9477c",
+      "effective_system_sha256": "25ea1f645238c1c934de1415ed7a32100074ab76b345ccce5f9210f87fe67f3f",
+      "wire_schema_sha256": "883bca9f09bc55364e8a9467a0774179c930000efd1ed63da0ab9b02d04758d6",
+      "canonical_schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+      "input_file": "eval/judge-inputs/2026-10-12-v1.2/A08.json",
+      "input_sha256": "24f67f0ea80a78629bc0416b24cbe93fae1ad302fb46855cdac43e337db467a4",
+      "original_input_sha256": "47d809191e86ededc110bfc7148df3f8cbd4c511b163820d9d7857a5090c3c6e",
+      "request_body_sha256": "981541d7b2b5c43ed41e44792270e9cc6476add77a53f959374005b0029e3ab9",
+      "requested_model": "deepseek-v4-flash",
+      "endpoint": "https://api.deepseek.com/chat/completions",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "status": "response_saved",
+      "started_at": "2026-10-12T07:19:51.982Z",
+      "human_labels_sent": false,
+      "prior_judgments_sent": false,
+      "assistant_analysis_sent": false,
+      "derived_observations_sent": true,
+      "evidence_catalog_sent": true,
+      "automatic_retries": 0,
+      "mode": "grading",
+      "response_sha256": "ecae08e694acc96791bdea70763be675f7a6d7fcb3e8aab74b3d43818a2e249c",
+      "http_status": 200,
+      "response_model": "deepseek-flash",
+      "response_id": "52ccd333-8e82-401e-a240-910ce6ad5c22",
+      "usage": {
+        "prompt_tokens": 149099,
+        "completion_tokens": 1228,
+        "total_tokens": 150327,
+        "prompt_tokens_details": {
+          "cached_tokens": 4480
+        },
+        "prompt_cache_hit_tokens": 4480,
+        "prompt_cache_miss_tokens": 144619
+      },
+      "finish_reason": "stop",
+      "duration_ms": 7598,
+      "completed_at": "2026-10-12T07:19:59.581Z",
+      "metadata_sha256": "b32a6a0f8d7feee5ce9eb9c95678af9bcd790cf868c29c726718315daa23a6a0"
+    },
+    {
+      "case_id": "A09",
+      "prompt_version": "judge-v1.2",
+      "runner_sha256": "af1cfe6e1d5441588b5faf3eb09127c7cbc4cba33aa098ef6ea04446814fa342",
+      "config_sha256": "767e5dc99ba9b31ea0b3facbcf952c04e11601ae1d93207b3c68e9ca8dfbcd69",
+      "prepared_manifest_sha256": "0456b24b26392ba67bccc2de359fea69c4fd97ac63cfd710c5ab428e66c9477c",
+      "effective_system_sha256": "25ea1f645238c1c934de1415ed7a32100074ab76b345ccce5f9210f87fe67f3f",
+      "wire_schema_sha256": "883bca9f09bc55364e8a9467a0774179c930000efd1ed63da0ab9b02d04758d6",
+      "canonical_schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+      "input_file": "eval/judge-inputs/2026-10-12-v1.2/A09.json",
+      "input_sha256": "57c029e79fe902308dbdc7f75fc51f51eed4fe449d3f742aec24a73cc6ed1adb",
+      "original_input_sha256": "07117c20da0f6b1df815c8568e18a78fb0a50dae277ecaa44af624506b25f2dc",
+      "request_body_sha256": "3439c5d7d5c7c9475d9c921a3ed9ebd8b81c634082eb00894f568140083e8506",
+      "requested_model": "deepseek-v4-flash",
+      "endpoint": "https://api.deepseek.com/chat/completions",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "status": "response_saved",
+      "started_at": "2026-10-12T07:19:59.622Z",
+      "human_labels_sent": false,
+      "prior_judgments_sent": false,
+      "assistant_analysis_sent": false,
+      "derived_observations_sent": true,
+      "evidence_catalog_sent": true,
+      "automatic_retries": 0,
+      "mode": "grading",
+      "response_sha256": "6a1b7a5ff769193430e34d8a7b993d50b78b8396e32414fe2fcd2a82207270f1",
+      "http_status": 200,
+      "response_model": "deepseek-flash",
+      "response_id": "897b4f37-95af-4862-8ae9-7621d0982955",
+      "usage": {
+        "prompt_tokens": 102202,
+        "completion_tokens": 997,
+        "total_tokens": 103199,
+        "prompt_tokens_details": {
+          "cached_tokens": 4480
+        },
+        "prompt_cache_hit_tokens": 4480,
+        "prompt_cache_miss_tokens": 97722
+      },
+      "finish_reason": "stop",
+      "duration_ms": 6813,
+      "completed_at": "2026-10-12T07:20:06.435Z",
+      "metadata_sha256": "c915402eba848c592282b7af6b985bf5e6165d8c3dbe4825e9610147576c288a"
+    }
+  ],
+  "attempt_summary": {
+    "requests": 6,
+    "evidence_repairs": 0,
+    "automatic_retries": 0,
+    "usage": {
+      "prompt_tokens": 424408,
+      "completion_tokens": 5492,
+      "total_tokens": 429900
+    }
+  },
+  "cases": [
+    {
+      "case_id": "B07",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1.2",
+      "auto_accept": false,
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 1,
+        "D4": 1
+      },
+      "judge_checkpoints": [
+        1,
+        1,
+        1
+      ],
+      "judge_critical_failure": false,
+      "judge_case_pass": true,
+      "model_review_required": false,
+      "effective_review_required": true,
+      "review_signals": [
+        {
+          "code": "FEE_REFERENCE_NEEDS_REVIEW",
+          "items": [
+            "D3"
+          ],
+          "reason": "Numeric fee references coexist with zero known tickets and unknown tickets; check season, ticket type and exclusion explanation.",
+          "source_refs": [
+            "snapshots.turn1.internal_state.budget",
+            "snapshots.turn1.internal_state.plan.daily.0.items.0.ticketInfo",
+            "snapshots.turn1.internal_state.plan.daily.0.items.1.ticketInfo",
+            "snapshots.turn1.internal_state.plan.daily.1.items.0.ticketInfo",
+            "snapshots.turn1.internal_state.plan.daily.1.items.1.ticketInfo"
+          ],
+          "action": "human_review_only"
+        }
+      ],
+      "hard_errors": [],
+      "selected_evidence_ids": [
+        "E00004",
+        "E00030",
+        "E00036",
+        "E00040",
+        "E00047",
+        "E00054",
+        "E00069",
+        "E00076",
+        "E00748",
+        "E00751",
+        "E00087",
+        "E00088",
+        "E00089",
+        "E00090",
+        "E00091",
+        "E00093",
+        "E00094",
+        "E00095",
+        "E00110",
+        "E00169",
+        "E00245",
+        "E00748",
+        "E00751",
+        "E00748",
+        "E00751",
+        "E00039",
+        "E00098",
+        "E00245",
+        "E00748",
+        "E00751"
+      ],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/B07-submission-003.json",
+          "sha256": "84cc2b4659a661cfc32921a559b6e758e262500612bd0b022448e05699cb6cb9"
+        },
+        {
+          "file": "eval/human-review/adjudications/B07-adjudication-001.json",
+          "sha256": "55c4dbdf70a315273b45c3e912e42de2efe047e819a97e6b678861eb33d5653e"
+        }
+      ]
+    },
+    {
+      "case_id": "B09",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1.2",
+      "auto_accept": true,
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 1,
+        "D4": 1
+      },
+      "judge_checkpoints": [
+        1,
+        1,
+        1
+      ],
+      "judge_critical_failure": false,
+      "judge_case_pass": true,
+      "model_review_required": false,
+      "effective_review_required": false,
+      "review_signals": [],
+      "hard_errors": [],
+      "selected_evidence_ids": [
+        "E00004",
+        "E00043",
+        "E00063",
+        "E00047",
+        "E00054",
+        "E00070",
+        "E00074",
+        "E00085",
+        "E00090",
+        "E00045",
+        "E00039",
+        "E00040",
+        "E00104",
+        "E00105",
+        "E00108",
+        "E00109",
+        "E00124",
+        "E00167",
+        "E00183",
+        "E00114",
+        "E00043",
+        "E00063",
+        "E00047",
+        "E00054",
+        "E00070",
+        "E00074",
+        "E00085",
+        "E00090",
+        "E00065",
+        "E00114",
+        "E00167"
+      ],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/B09-submission-001.json",
+          "sha256": "4fa10db6f25fd4cfa8c7e6e877a310547201adb82d9f967d0156c7b20fba8e4c"
+        },
+        {
+          "file": "eval/human-review/submissions/B09-submission-001.json",
+          "sha256": "4fa10db6f25fd4cfa8c7e6e877a310547201adb82d9f967d0156c7b20fba8e4c"
+        }
+      ]
+    },
+    {
+      "case_id": "A01",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1.2",
+      "auto_accept": true,
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 1,
+        "D4": 1
+      },
+      "judge_checkpoints": [
+        1,
+        1,
+        1
+      ],
+      "judge_critical_failure": false,
+      "judge_case_pass": true,
+      "model_review_required": false,
+      "effective_review_required": false,
+      "review_signals": [],
+      "hard_errors": [],
+      "selected_evidence_ids": [
+        "E00004",
+        "E00032",
+        "E00035",
+        "E00048",
+        "E00049",
+        "E00053",
+        "E00039",
+        "E00105",
+        "E00106",
+        "E00082",
+        "E00085",
+        "E00102",
+        "E00108",
+        "E00042",
+        "E00100",
+        "E00102",
+        "E00019",
+        "E00020",
+        "E00023",
+        "E00032",
+        "E00035",
+        "E00048",
+        "E00049",
+        "E00053",
+        "E00082",
+        "E00039",
+        "E00105",
+        "E00106"
+      ],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A01-submission-001.json",
+          "sha256": "302b1eb2896b89d157f4111c9b906d71f186e7c3468dd014f04a2aa5767073eb"
+        },
+        {
+          "file": "eval/human-review/adjudications/A01-adjudication-001.json",
+          "sha256": "3a5f041b726c4c25fa758d75b96621021792b7f722ad1e881e44d90193628681"
+        }
+      ]
+    },
+    {
+      "case_id": "A03",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1.2",
+      "auto_accept": false,
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 0,
+        "D3": 1,
+        "D4": 0
+      },
+      "judge_checkpoints": [
+        1,
+        0,
+        0
+      ],
+      "judge_critical_failure": false,
+      "judge_case_pass": false,
+      "model_review_required": false,
+      "effective_review_required": true,
+      "review_signals": [
+        {
+          "code": "FEE_REFERENCE_NEEDS_REVIEW",
+          "items": [
+            "D3"
+          ],
+          "reason": "Numeric fee references coexist with zero known tickets and unknown tickets; check season, ticket type and exclusion explanation.",
+          "source_refs": [
+            "snapshots.turn1.internal_state.budget",
+            "snapshots.turn1.internal_state.plan.daily.0.items.0.ticketInfo",
+            "snapshots.turn1.internal_state.plan.daily.0.items.1.ticketInfo",
+            "snapshots.turn1.internal_state.plan.daily.1.items.0.ticketInfo",
+            "snapshots.turn1.internal_state.plan.daily.1.items.1.ticketInfo",
+            "snapshots.turn1.internal_state.plan.daily.2.items.0.ticketInfo",
+            "snapshots.turn1.internal_state.plan.daily.3.items.0.ticketInfo"
+          ],
+          "action": "human_review_only"
+        }
+      ],
+      "hard_errors": [],
+      "selected_evidence_ids": [
+        "E00004",
+        "E00023",
+        "E00024",
+        "E00115",
+        "E00036",
+        "E00114",
+        "E00115",
+        "E00116",
+        "E00108",
+        "E00109",
+        "E00110",
+        "E00111",
+        "E00112",
+        "E00113",
+        "E00114",
+        "E00120",
+        "E00115",
+        "E00116",
+        "E00117",
+        "E00118",
+        "E00119",
+        "E00114",
+        "E00115",
+        "E00036",
+        "E00114",
+        "E00115",
+        "E00116",
+        "E00117",
+        "E00118",
+        "E00119"
+      ],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A03-submission-001.json",
+          "sha256": "6bcf053029a710bb15bf6cee7d73dc9e1a840c0d79c779d0ebe533cb5269ac22"
+        },
+        {
+          "file": "eval/human-review/adjudications/A03-adjudication-001.json",
+          "sha256": "7e46cd732689287c51f06e4158eb9d89b77880b82c7ee0bdbfea7218797527e4"
+        }
+      ]
+    },
+    {
+      "case_id": "A08",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1.2",
+      "auto_accept": false,
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 1,
+        "D4": 1
+      },
+      "judge_checkpoints": [
+        1,
+        1,
+        1
+      ],
+      "judge_critical_failure": false,
+      "judge_case_pass": true,
+      "model_review_required": false,
+      "effective_review_required": true,
+      "review_signals": [
+        {
+          "code": "FEE_REFERENCE_NEEDS_REVIEW",
+          "items": [
+            "D3"
+          ],
+          "reason": "Numeric fee references coexist with zero known tickets and unknown tickets; check season, ticket type and exclusion explanation.",
+          "source_refs": [
+            "snapshots.after_adjustment.internal_state.budget",
+            "snapshots.after_adjustment.internal_state.plan.daily.0.items.0.ticketInfo",
+            "snapshots.after_adjustment.internal_state.plan.daily.0.items.1.ticketInfo",
+            "snapshots.after_adjustment.internal_state.plan.daily.1.items.0.ticketInfo",
+            "snapshots.after_adjustment.internal_state.plan.daily.1.items.1.ticketInfo"
+          ],
+          "action": "human_review_only"
+        }
+      ],
+      "hard_errors": [],
+      "selected_evidence_ids": [
+        "E00005",
+        "E00027",
+        "E01734",
+        "E01736",
+        "E01737",
+        "E01738",
+        "E01930",
+        "E01951",
+        "E01978",
+        "E01989",
+        "E01990",
+        "E01976",
+        "E01516",
+        "E01529",
+        "E01552",
+        "E01559",
+        "E01576",
+        "E01577",
+        "E01519",
+        "E01562",
+        "E01563",
+        "E01588",
+        "E01732",
+        "E01930",
+        "E01951",
+        "E01978",
+        "E01989",
+        "E01990",
+        "E01989",
+        "E01990",
+        "E01930",
+        "E01976",
+        "E01519",
+        "E01563",
+        "E01588",
+        "E01930",
+        "E01951"
+      ],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A08-submission-001.json",
+          "sha256": "9a9e16bcd8aa306b366294d6c6c56a876a3e7ed15c4f8c4cb5aff6a1fe6ef5b8"
+        },
+        {
+          "file": "eval/human-review/adjudications/A08-adjudication-001.json",
+          "sha256": "dd1155b72008f963a23fc1b6337d2f2fd2133c4e22d89deba4cc32876f547f3d"
+        }
+      ]
+    },
+    {
+      "case_id": "A09",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1.2",
+      "auto_accept": false,
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 0,
+        "D3": 1,
+        "D4": 0
+      },
+      "judge_checkpoints": [
+        1,
+        0,
+        0
+      ],
+      "judge_critical_failure": false,
+      "judge_case_pass": false,
+      "model_review_required": false,
+      "effective_review_required": true,
+      "review_signals": [
+        {
+          "code": "REMOVED_STILL_SCHEDULED",
+          "items": [
+            "D2",
+            "D4"
+          ],
+          "reason": "Declared removed activities still have visible time/name pairs; confirm actual execution state.",
+          "source_refs": [
+            "snapshots.after_adjustment.internal_state.plan.daily.0.removedItems.0",
+            "snapshots.after_adjustment.observed.visible_result",
+            "snapshots.after_adjustment.internal_state.plan.daily.0.removedItems.1",
+            "snapshots.after_adjustment.observed.visible_result"
+          ],
+          "action": "human_review_only"
+        },
+        {
+          "code": "SAFETY_FLAG_NEEDS_REVIEW",
+          "items": [
+            "critical_failure"
+          ],
+          "reason": "Severe-weather event, weather-pause claims and visible scheduled overlap coexist with critical_failure=false.",
+          "source_refs": [
+            "protocol.event_adapter",
+            "snapshots.after_adjustment.internal_state.plan.daily.0.removedItems.0",
+            "snapshots.after_adjustment.internal_state.plan.daily.0.removedItems.1"
+          ],
+          "action": "human_review_only"
+        }
+      ],
+      "hard_errors": [],
+      "selected_evidence_ids": [
+        "E00004",
+        "E00035",
+        "E01306",
+        "E01318",
+        "E01325",
+        "E01332",
+        "E01343",
+        "E01345",
+        "E01318",
+        "E01315",
+        "E01353",
+        "E01354",
+        "E01359",
+        "E01360",
+        "E01318",
+        "E01325",
+        "E01332",
+        "E01343",
+        "E01345",
+        "E01344",
+        "E01318",
+        "E01318",
+        "E01325",
+        "E01332",
+        "E01343",
+        "E01345",
+        "E01318",
+        "E01325",
+        "E01332",
+        "E01343"
+      ],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A09-submission-001.json",
+          "sha256": "1bda5c3f32db8a24ca910c3c486b46e2049bb08cf65261f02be9ef8d6211c380"
+        },
+        {
+          "file": "eval/human-review/adjudications/A09-adjudication-001.json",
+          "sha256": "b1b10c5b578a872ff068368e273b6be989e420ca42335d167b41ccfe0421c664"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Six targeted calibration cases; not a full or fixed-version Agent benchmark.",
+    "All hard-valid machine scores enter diagnostic agreement, including cases routed to human review; routing does not change scores.",
+    "Automatic subset agreement has restricted coverage and cannot replace full-sample diagnostic agreement.",
+    "Human adjudications followed assistant feedback; originals are compared separately. Only two human critical flags are known, with one positive.",
+    "Evidence IDs guarantee source provenance, not semantic support. Soft checks may miss errors or create false alarms.",
+    "The same configured model judges Agent outputs; no independent-model validation.",
+    "v1.2 changes prompt, input structure and evidence protocol; prior v1.0 also mixed thinking parameters and repairs. No isolated causal claim.",
+    "No travel Agent rerun or improvement measured; human review queue has not been adjudicated in this run."
+  ]
+}

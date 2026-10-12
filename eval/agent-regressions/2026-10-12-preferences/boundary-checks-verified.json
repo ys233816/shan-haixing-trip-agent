@@ -1,0 +1,504 @@
+{
+  "sha256": "c8e04ce0de04dcd33805fd0fd8779fe708242a5b13c3d47cc36a04e5095d2439",
+  "total": 6,
+  "passed": 6,
+  "tests": [
+    {
+      "id": "unknown-ticket-disclosure",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "avoid": "",
+          "preferences": [
+            "美食"
+          ]
+        },
+        "plan": {
+          "city": "北京市",
+          "plannerMode": "llm",
+          "daily": [
+            {
+              "city": "北京市",
+              "items": [
+                {
+                  "name": "馆",
+                  "kind": "博物馆",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "walk": "低",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                },
+                {
+                  "name": "餐饮馆",
+                  "kind": "美食",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "walk": "低",
+                  "hours": 90,
+                  "cost": null,
+                  "ticketPriceCny": ""
+                }
+              ],
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "walk": "适中",
+              "planningHoursLimit": 8,
+              "routeCheck": null
+            }
+          ],
+          "candidates": [
+            {
+              "name": "餐饮馆",
+              "kind": "美食",
+              "indoor": "室内",
+              "rain": "高",
+              "walk": "低",
+              "hours": 90,
+              "cost": null,
+              "ticketPriceCny": ""
+            }
+          ],
+          "preferenceCoverage": {
+            "requirements": [
+              {
+                "label": "美食",
+                "category": "美食"
+              }
+            ],
+            "fulfilled": [
+              {
+                "label": "美食",
+                "category": "美食",
+                "attractions": [
+                  "餐饮馆"
+                ]
+              }
+            ],
+            "missing": []
+          }
+        }
+      }
+    },
+    {
+      "id": "photography",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "avoid": "",
+          "preferences": [
+            "拍照打卡"
+          ]
+        },
+        "plan": {
+          "city": "北京市",
+          "plannerMode": "llm",
+          "daily": [
+            {
+              "city": "北京市",
+              "items": [
+                {
+                  "name": "馆",
+                  "kind": "博物馆",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "walk": "低",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                },
+                {
+                  "name": "摄影点",
+                  "kind": "园林",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "walk": "低",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0,
+                  "tags": "摄影"
+                }
+              ],
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "walk": "适中",
+              "planningHoursLimit": 8,
+              "routeCheck": null
+            }
+          ],
+          "candidates": [
+            {
+              "name": "摄影点",
+              "kind": "园林",
+              "indoor": "室内",
+              "rain": "高",
+              "walk": "低",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0,
+              "tags": "摄影"
+            }
+          ],
+          "preferenceCoverage": {
+            "requirements": [
+              {
+                "label": "拍照打卡",
+                "category": "拍照打卡"
+              }
+            ],
+            "fulfilled": [
+              {
+                "label": "拍照打卡",
+                "category": "拍照打卡",
+                "attractions": [
+                  "摄影点"
+                ]
+              }
+            ],
+            "missing": []
+          }
+        }
+      }
+    },
+    {
+      "id": "cross-city-no-refill",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "avoid": "",
+          "preferences": [
+            "美食"
+          ]
+        },
+        "plan": {
+          "city": "北京市",
+          "plannerMode": "llm",
+          "daily": [
+            {
+              "city": "北京市",
+              "items": [
+                {
+                  "name": "馆",
+                  "kind": "博物馆",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "walk": "低",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "walk": "适中",
+              "planningHoursLimit": 8
+            }
+          ],
+          "candidates": [
+            {
+              "name": "异地美食",
+              "kind": "美食",
+              "indoor": "室内",
+              "rain": "高",
+              "walk": "低",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0,
+              "city": "上海市"
+            }
+          ],
+          "preferenceCoverage": {
+            "requirements": [
+              {
+                "label": "美食",
+                "category": "美食"
+              }
+            ],
+            "fulfilled": [],
+            "missing": [
+              {
+                "label": "美食",
+                "category": "美食",
+                "reason": "已有匹配候选，但在当前时长、步行、天气、预算或局部调整限制下未排入；请确认取舍。"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "summary-not-evidence",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "avoid": "",
+          "preferences": [
+            "美食"
+          ]
+        },
+        "plan": {
+          "city": "北京市",
+          "plannerMode": "llm",
+          "daily": [
+            {
+              "city": "北京市",
+              "items": [
+                {
+                  "name": "街",
+                  "kind": "历史街区",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "walk": "低",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0,
+                  "reason": "美食推荐",
+                  "backup": "美食街"
+                }
+              ],
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "walk": "适中",
+              "planningHoursLimit": 8
+            }
+          ],
+          "candidates": [],
+          "preferenceCoverage": {
+            "requirements": [
+              {
+                "label": "美食",
+                "category": "美食"
+              }
+            ],
+            "fulfilled": [],
+            "missing": [
+              {
+                "label": "美食",
+                "category": "美食",
+                "reason": "当前候选资料不足，未找到有对应类型依据的景点；请补充资料或调整偏好。"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "negative-tags",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "avoid": "",
+          "preferences": [
+            "亲子活动"
+          ]
+        },
+        "plan": {
+          "city": "北京市",
+          "plannerMode": "llm",
+          "daily": [
+            {
+              "city": "北京市",
+              "items": [
+                {
+                  "name": "馆",
+                  "kind": "展馆",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "walk": "低",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0,
+                  "suitability": "不适合亲子"
+                }
+              ],
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "walk": "适中",
+              "planningHoursLimit": 8
+            }
+          ],
+          "candidates": [],
+          "preferenceCoverage": {
+            "requirements": [
+              {
+                "label": "亲子活动",
+                "category": "亲子活动"
+              }
+            ],
+            "fulfilled": [],
+            "missing": [
+              {
+                "label": "亲子活动",
+                "category": "亲子活动",
+                "reason": "当前候选资料不足，未找到有对应类型依据的景点；请补充资料或调整偏好。"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "invalidate-route-after-repair",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "北京",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "pace": "balanced",
+          "walkingTolerance": "medium",
+          "avoid": "",
+          "preferences": [
+            "美食"
+          ]
+        },
+        "plan": {
+          "city": "北京市",
+          "plannerMode": "llm",
+          "daily": [
+            {
+              "city": "北京市",
+              "items": [
+                {
+                  "name": "馆",
+                  "kind": "博物馆",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "walk": "低",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                },
+                {
+                  "name": "餐饮",
+                  "kind": "美食",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "walk": "低",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "routeCheck": null,
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "walk": "适中",
+              "planningHoursLimit": 8
+            }
+          ],
+          "candidates": [
+            {
+              "name": "餐饮",
+              "kind": "美食",
+              "indoor": "室内",
+              "rain": "高",
+              "walk": "低",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "preferenceCoverage": {
+            "requirements": [
+              {
+                "label": "美食",
+                "category": "美食"
+              }
+            ],
+            "fulfilled": [
+              {
+                "label": "美食",
+                "category": "美食",
+                "attractions": [
+                  "餐饮"
+                ]
+              }
+            ],
+            "missing": []
+          }
+        }
+      }
+    }
+  ]
+}

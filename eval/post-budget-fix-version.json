@@ -1,0 +1,28 @@
+{
+  "version": "post-budget-fix",
+  "recordedAt": "2026-10-10T23:11:04.0313350+08:00",
+  "scoredCases": [],
+  "nextCase": "T04",
+  "files": [
+    {
+      "file": "index.html",
+      "sha256": "723B5977B50E0DDAE170634D60291A7ED7D90ACD6564EF550A6AAEE17641FFFB"
+    },
+    {
+      "file": "server.js",
+      "sha256": "E8650FB16883550195597643E509D87CE11F7BA38E8DC102B3C59FB3E6884424"
+    },
+    {
+      "file": "中国大陆景点知识库_初版.md",
+      "sha256": "FA9343E13CEC8D2D3944274A522855352998ED63B3B5392764DE1969B22A3637"
+    },
+    {
+      "file": "eval/test-cases.json",
+      "sha256": "E39FC1529081581A9880056249BDC3836B0D0A9C6F602BD4E43A877721E2D78D"
+    },
+    {
+      "file": "eval/rubric.md",
+      "sha256": "3B6BDE636B43F45ACA080995E02640AEE83D36FA90334CA017F2E85415A6921D"
+    }
+  ]
+}

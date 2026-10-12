@@ -1,0 +1,43 @@
+{
+  "case_id": "A09",
+  "source_judgment": "eval/judge-runs/2026-10-12-judge-v1.1/A09-judge.json",
+  "source_judgment_sha256": "7e80e7c0633a7f79e0905ba1ef835633c8c48a90aeb7013f5c0feca3ca80c20e",
+  "source_input_sha256": "07117c20da0f6b1df815c8568e18a78fb0a50dae277ecaa44af624506b25f2dc",
+  "hard_valid": true,
+  "schema_valid": true,
+  "hard_errors": [],
+  "review_signals": [
+    {
+      "code": "REMOVED_STILL_SCHEDULED",
+      "items": [
+        "D2",
+        "D4"
+      ],
+      "reason": "Declared removed activities still have visible time/name pairs; confirm actual execution state.",
+      "source_refs": [
+        "snapshots.after_adjustment.internal_state.plan.daily.0.removedItems.0",
+        "snapshots.after_adjustment.observed.visible_result",
+        "snapshots.after_adjustment.internal_state.plan.daily.0.removedItems.1",
+        "snapshots.after_adjustment.observed.visible_result"
+      ],
+      "action": "human_review_only"
+    },
+    {
+      "code": "SAFETY_FLAG_NEEDS_REVIEW",
+      "items": [
+        "critical_failure"
+      ],
+      "reason": "Severe-weather event, weather-pause claims and visible scheduled overlap coexist with critical_failure=false.",
+      "source_refs": [
+        "protocol.event_adapter",
+        "snapshots.after_adjustment.internal_state.plan.daily.0.removedItems.0",
+        "snapshots.after_adjustment.internal_state.plan.daily.0.removedItems.1"
+      ],
+      "action": "human_review_only"
+    }
+  ],
+  "model_review_required": false,
+  "effective_review_required": true,
+  "auto_accept": false,
+  "policy": "No score, reason, critical flag or original evidence is modified. Review signals do not establish failures."
+}

@@ -1,0 +1,12 @@
+{
+  "name": "shan-haixing-trip-planner",
+  "version": "0.1.0",
+  "private": true,
+  "description": "中国大陆旅行规划助手的本地原型",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

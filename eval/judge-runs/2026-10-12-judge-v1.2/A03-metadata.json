@@ -1,0 +1,52 @@
+{
+  "case_id": "A03",
+  "prompt_version": "judge-v1.2",
+  "runner_sha256": "af1cfe6e1d5441588b5faf3eb09127c7cbc4cba33aa098ef6ea04446814fa342",
+  "config_sha256": "767e5dc99ba9b31ea0b3facbcf952c04e11601ae1d93207b3c68e9ca8dfbcd69",
+  "prepared_manifest_sha256": "0456b24b26392ba67bccc2de359fea69c4fd97ac63cfd710c5ab428e66c9477c",
+  "effective_system_sha256": "25ea1f645238c1c934de1415ed7a32100074ab76b345ccce5f9210f87fe67f3f",
+  "wire_schema_sha256": "883bca9f09bc55364e8a9467a0774179c930000efd1ed63da0ab9b02d04758d6",
+  "canonical_schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+  "input_file": "eval/judge-inputs/2026-10-12-v1.2/A03.json",
+  "input_sha256": "86768d9a517b704ce8c25507bcb70df427daac132f917b170be9fac602149f89",
+  "original_input_sha256": "23adbf911b5c8c45f794c7cf3c6ee6ffef848b93334aa1730f685a0f4e1aa15c",
+  "request_body_sha256": "ffdbc59b2809d6fd30de19b1474745fb76a0a5ae7551609b1087b721c66855f8",
+  "requested_model": "deepseek-v4-flash",
+  "endpoint": "https://api.deepseek.com/chat/completions",
+  "parameters": {
+    "temperature": 0,
+    "max_tokens": 8192,
+    "response_format": {
+      "type": "json_object"
+    },
+    "thinking": {
+      "type": "disabled"
+    }
+  },
+  "status": "response_saved",
+  "started_at": "2026-10-12T07:19:46.286Z",
+  "human_labels_sent": false,
+  "prior_judgments_sent": false,
+  "assistant_analysis_sent": false,
+  "derived_observations_sent": true,
+  "evidence_catalog_sent": true,
+  "automatic_retries": 0,
+  "mode": "grading",
+  "response_sha256": "c97c8ec7129097aa864baed34d3ee33ac2e36abc26e122c5379eb02940e01e63",
+  "http_status": 200,
+  "response_model": "deepseek-flash",
+  "response_id": "eaee621d-3ad7-44b3-97d3-237072883a36",
+  "usage": {
+    "prompt_tokens": 61132,
+    "completion_tokens": 865,
+    "total_tokens": 61997,
+    "prompt_tokens_details": {
+      "cached_tokens": 4480
+    },
+    "prompt_cache_hit_tokens": 4480,
+    "prompt_cache_miss_tokens": 56652
+  },
+  "finish_reason": "stop",
+  "duration_ms": 5661,
+  "completed_at": "2026-10-12T07:19:51.947Z"
+}

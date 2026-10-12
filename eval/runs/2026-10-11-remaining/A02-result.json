@@ -1,0 +1,219 @@
+{
+  "id": "A02",
+  "name": "极低预算五星酒店",
+  "rawTurns": [
+    "预算 500 元，去三亚玩 3 天，2 个人，每晚住五星级酒店，还要玩遍主要景点。"
+  ],
+  "checkpoints": [
+    "明确预算与住宿/景点要求冲突",
+    "不保证能够实现",
+    "请用户调整预算或优先级并提供可选方向"
+  ],
+  "auxiliaryInputs": null,
+  "turns": [
+    {
+      "form": {
+        "destination": "三亚",
+        "startDate": "",
+        "days": "3",
+        "travelers": "2",
+        "budget": "500",
+        "budgetIncludes": "all",
+        "hotelPerNight": "",
+        "foodPerDay": "",
+        "localTransitPerDay": "",
+        "pace": "balanced",
+        "walking": "medium",
+        "avoid": "预算 500 元，去三亚玩 3 天，2 个人，每晚住五星级酒店，还要玩遍主要景点。",
+        "preferences": []
+      },
+      "invalidFields": [],
+      "status": "景点已从本地知识库检索，第一版行程框架已生成。",
+      "visibleResult": "PLAN DRAFT\n需求已整理，景点资料暂缺\n\n本地知识库中暂时没有找到与“三亚”匹配的景点条目。请补充景点资料后再规划；我不会凭空编造景点、开放时间、门票或路线。\n\n规划原则\n只根据本地景点知识库中的条目生成日程。",
+      "pageText": "山\n山海行\n仅支持中国大陆景区\nTRAVEL, THOUGHTFULLY\n把旅程，交给\n慢慢想清楚。\n\n告诉我这趟旅行的想法。我会结合你的时间、预算和偏好，先搭出清晰的行程，再根据天气与临时变化灵活调整。\n\n先说说这趟旅行\n\n带 * 的项目需要填写。其他信息可以之后再补充。\n\n目的地城市或地区 *\n出发日期\n旅行天数 *\n出行人数\n总预算（人民币）*\n预算包含\n住宿、市内交通、餐饮和门票（不含大交通）\n市内交通、餐饮和门票（不含住宿与大交通）\n暂不确定，先按全部估算\n预算估算参考（可按你的预期修改）\n每间住宿 / 晚（元）\n每人餐饮 / 天（元）\n每人市内交通 / 天（元）\n留空或填 0 时按住宿 ¥350 / 间 / 晚、餐饮 ¥120 / 人 / 天、市内交通 ¥60 / 人 / 天估算。住宿按每间最多 2 人、天数减 1 晚估算。大交通费用暂不计入。\n旅行偏好（可多选）\n历史文化\n自然风光\n美食\n亲子活动\n博物馆\n拍照打卡\n旅行节奏\n慢节奏：每天约 1 个主要景点\n适中：每天约 2 个主要景点\n紧凑：每天最多 3 个主要景点\n步行接受度\n少走路\n适中\n可以多步行\n在此设备记住我的出行习惯\n清除已记住的习惯\n只保存你选择的旅行偏好、旅行节奏和步行接受度，用于下次预填。仅存于当前浏览器设备；不保存预算、日期、目的地、人数或特殊要求。默认不启用。\n不想安排的内容或其他要求\n保存旅行需求　→\n✳\n行程范围与信息说明\n目前只规划中国大陆景区。天气和路线可查询高德服务；门票与营业时间来自本地知识库，可能过期，请以景区官方渠道核实。\n景点已从本地知识库检索，第一版行程框架已生成。\nHOW IT WORKS\n认真计划，\n也留一点余地。\n⌖\n先规划整体\n先按天数、区域和预算形成行程骨架。\n☼\n变化时再调整\n遇到天气或闭馆变化，只重排受影响的部分。\n¥\n预算清楚可查\n拆分交通、餐饮、门票和住宿，展示估算依据。\n◇\n由你做最后决定\n不替你下单或付款；价格与开放信息以官方渠道为准。\nPLAN DRAFT\n需求已整理，景点资料暂缺\n\n本地知识库中暂时没有找到与“三亚”匹配的景点条目。请补充景点资料后再规划；我不会凭空编造景点、开放时间、门票或路线。\n\n规划原则\n只根据本地景点知识库中的条目生成日程。\n服务范围与使用边界\n\n仅规划中国大陆景区。应用不提供订票、下单或付款功能，也不替用户提交个人证件或支付信息。天气预报和路线耗时是查询时的服务结果，可能变化；门票、库存、预约要求和开放时间以景区官方渠道为准。知识库未覆盖的地区不会凭空补造景点资料。\n\n山海行 · 中国大陆旅行规划助手",
+      "request": {
+        "destination": "三亚",
+        "startDate": null,
+        "days": 3,
+        "travelers": 2,
+        "budget": {
+          "amount": 500,
+          "currency": "CNY",
+          "includes": "all"
+        },
+        "preferences": [],
+        "pace": "balanced",
+        "walkingTolerance": "medium",
+        "assumptions": {
+          "hotelPerNight": 350,
+          "foodPerDay": 120,
+          "localTransitPerDay": 60
+        },
+        "avoid": "预算 500 元，去三亚玩 3 天，2 个人，每晚住五星级酒店，还要玩遍主要景点。",
+        "scope": "mainland_china"
+      },
+      "plan": {
+        "city": "三亚",
+        "candidates": [],
+        "daily": [
+          {
+            "date": "第 1 天",
+            "isoDate": null,
+            "city": "三亚",
+            "items": [],
+            "weather": null,
+            "weatherNote": "未提供日期，未按天气排序",
+            "weatherUnavailable": false,
+            "walk": "适中",
+            "reason": "大模型从知识库候选中安排了自由活动；按适中节奏最多 2 个景点/天编排，并按偏好和天气排序。景点开放状态与价格仍需核实。"
+          },
+          {
+            "date": "第 2 天",
+            "isoDate": null,
+            "city": "三亚",
+            "items": [],
+            "weather": null,
+            "weatherNote": "未提供日期，未按天气排序",
+            "weatherUnavailable": false,
+            "walk": "适中",
+            "reason": "大模型从知识库候选中安排了自由活动；按适中节奏最多 2 个景点/天编排，并按偏好和天气排序。景点开放状态与价格仍需核实。"
+          },
+          {
+            "date": "第 3 天",
+            "isoDate": null,
+            "city": "三亚",
+            "items": [],
+            "weather": null,
+            "weatherNote": "未提供日期，未按天气排序",
+            "weatherUnavailable": false,
+            "walk": "适中",
+            "reason": "大模型从知识库候选中安排了自由活动；按适中节奏最多 2 个景点/天编排，并按偏好和天气排序。景点开放状态与价格仍需核实。"
+          }
+        ],
+        "weatherData": null,
+        "weatherError": "",
+        "retrievalSource": "kb-hybrid-v4",
+        "retrievalMethod": "metadata + keyword and character-bigram hybrid retrieval (no embeddings)",
+        "retrievalQuery": "预算 500 元，去三亚玩 3 天，2 个人，每晚住五星级酒店，还要玩遍主要景点。",
+        "plannerMode": "llm",
+        "modelNote": "已由 deepseek-v4-flash 生成行程顺序；景点来自本地知识库，开放和票价信息仍需核实。"
+      },
+      "daySummaries": [
+        {
+          "date": "第 1 天",
+          "names": [],
+          "hours": 0,
+          "weatherNote": "未提供日期，未按天气排序",
+          "walk": "适中"
+        },
+        {
+          "date": "第 2 天",
+          "names": [],
+          "hours": 0,
+          "weatherNote": "未提供日期，未按天气排序",
+          "walk": "适中"
+        },
+        {
+          "date": "第 3 天",
+          "names": [],
+          "hours": 0,
+          "weatherNote": "未提供日期，未按天气排序",
+          "walk": "适中"
+        }
+      ],
+      "budget": {
+        "nights": 2,
+        "rooms": 1,
+        "lodgingRaw": 700,
+        "lodgingIncluded": true,
+        "lodging": 700,
+        "food": 720,
+        "localTransit": 360,
+        "knownTickets": 0,
+        "unknownTicketCount": 0,
+        "routeFareReference": 0,
+        "knownRouteFareLegCount": 0,
+        "unknownRouteFareLegCount": 0,
+        "subtotal": 1780,
+        "reserve": 178,
+        "estimate": 1958
+      },
+      "capturedAt": "2026-10-11T08:51:48.264Z",
+      "network": [
+        {
+          "path": "/api/attractions",
+          "query": "?city=%E4%B8%89%E4%BA%9A&q=%E9%A2%84%E7%AE%97+500+%E5%85%83%EF%BC%8C%E5%8E%BB%E4%B8%89%E4%BA%9A%E7%8E%A9+3+%E5%A4%A9%EF%BC%8C2+%E4%B8%AA%E4%BA%BA%EF%BC%8C%E6%AF%8F%E6%99%9A%E4%BD%8F%E4%BA%94%E6%98%9F%E7%BA%A7%E9%85%92%E5%BA%97%EF%BC%8C%E8%BF%98%E8%A6%81%E7%8E%A9%E9%81%8D%E4%B8%BB%E8%A6%81%E6%99%AF%E7%82%B9%E3%80%82&limit=20",
+          "status": 200,
+          "requestBody": null,
+          "body": {
+            "query": "预算 500 元，去三亚玩 3 天，2 个人，每晚住五星级酒店，还要玩遍主要景点。",
+            "city": "三亚",
+            "method": "metadata + keyword and character-bigram hybrid retrieval (no embeddings)",
+            "retrievedAt": "2026-10-11T08:51:46.491Z",
+            "count": 0,
+            "hits": []
+          }
+        },
+        {
+          "path": "/api/llm/status",
+          "query": "",
+          "status": 200,
+          "requestBody": null,
+          "body": {
+            "configured": true,
+            "model": "deepseek-v4-flash"
+          }
+        },
+        {
+          "path": "/api/llm/plan",
+          "query": "",
+          "status": 200,
+          "requestBody": {
+            "destination": "三亚",
+            "days": [
+              {
+                "date": "第 1 天",
+                "weather": "暂无该日期预报"
+              },
+              {
+                "date": "第 2 天",
+                "weather": "暂无该日期预报"
+              },
+              {
+                "date": "第 3 天",
+                "weather": "暂无该日期预报"
+              }
+            ],
+            "preferences": [],
+            "pace": "balanced",
+            "walkingTolerance": "medium",
+            "budgetCny": 500,
+            "avoid": "预算 500 元，去三亚玩 3 天，2 个人，每晚住五星级酒店，还要玩遍主要景点。",
+            "candidates": []
+          },
+          "body": {
+            "days": [
+              {
+                "day": 1,
+                "attractionIds": [],
+                "reason": "候选景点列表为空，无可安排景点；预算限制下建议优先解决住宿与交通支出。"
+              },
+              {
+                "day": 2,
+                "attractionIds": [],
+                "reason": "候选景点列表为空，无可安排景点；按平衡节奏预留机动时间。"
+              },
+              {
+                "day": 3,
+                "attractionIds": [],
+                "reason": "候选景点列表为空，无可安排景点；行程结束前预留返程时间。"
+              }
+            ],
+            "model": "deepseek-v4-flash"
+          }
+        }
+      ]
+    }
+  ],
+  "status": "captured"
+}

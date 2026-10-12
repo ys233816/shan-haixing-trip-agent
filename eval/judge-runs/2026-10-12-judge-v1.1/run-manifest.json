@@ -1,0 +1,149 @@
+{
+  "created_at": "2026-10-12T06:51:51.724Z",
+  "prompt_version": "judge-v1.1",
+  "model": "deepseek-v4-flash",
+  "prompt_sha256": "05cf118f016086af695f8b0f04239e79889e1e861a00874903d007dc001ea574",
+  "schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+  "rubric_sha256": "4e36c03e56bf986ab2da3d85622fa848a3dad9b9ef2daa1f0651bf9084eba633",
+  "runner_sha256": "eda64a339fcb97bd5f47019c7b34bdc5f9401a242cf4c4a21ce3e8e34f897181",
+  "config_sha256": "e061ea09dddacbda6b02585067167eba1d2e5828aafd5f1d8e2361c5504e5abb",
+  "effective_system_sha256": "cfbf4fec4a2f2883a4b23141c17d7d54db4310e7d0e7dbf80564394c8b8aedca",
+  "rule_files": [
+    {
+      "file": "eval/rubric.md",
+      "sha256": "3b6bde636b43f45aca080995e02640aee83d36fa90334ca017f2e85415a6921d"
+    },
+    {
+      "file": "eval/rubric-v1.1-addendum.md",
+      "sha256": "3f1029980f263a1f9fc99ded8bf099871cb33def6426798a013739294e7ce6f6"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "B07",
+      "file": "eval/judge-inputs/2026-10-11/B07.json",
+      "sha256": "9970c0f1588004ed163563c1398e6e85176351500c64a49b45954f33853e36bb"
+    },
+    {
+      "id": "B09",
+      "file": "eval/judge-inputs/2026-10-11/B09.json",
+      "sha256": "d56a1b42ea463905e634edb55812bb57452ddfa26c46030c1079a5111fa34ed8"
+    },
+    {
+      "id": "A01",
+      "file": "eval/judge-inputs/2026-10-11/A01.json",
+      "sha256": "f82be51d9026bc842f83a9c88a6c2b72f000bb2b12787eeaf1097813fd50b448"
+    },
+    {
+      "id": "A03",
+      "file": "eval/judge-inputs/2026-10-11/A03.json",
+      "sha256": "23adbf911b5c8c45f794c7cf3c6ee6ffef848b93334aa1730f685a0f4e1aa15c"
+    },
+    {
+      "id": "A08",
+      "file": "eval/judge-inputs/2026-10-11/A08.json",
+      "sha256": "47d809191e86ededc110bfc7148df3f8cbd4c511b163820d9d7857a5090c3c6e"
+    },
+    {
+      "id": "A09",
+      "file": "eval/judge-inputs/2026-10-11/A09.json",
+      "sha256": "07117c20da0f6b1df815c8568e18a78fb0a50dae277ecaa44af624506b25f2dc"
+    }
+  ],
+  "automatic_retries": 0,
+  "human_labels_sent": false,
+  "thinking": "disabled",
+  "parameters": {
+    "temperature": 0,
+    "max_tokens": 8192,
+    "response_format": {
+      "type": "json_object"
+    },
+    "thinking": {
+      "type": "disabled"
+    }
+  },
+  "human_label_files": [
+    {
+      "case_id": "B07",
+      "files": [
+        {
+          "file": "eval/human-review/submissions/B07-submission-003.json",
+          "sha256": "84cc2b4659a661cfc32921a559b6e758e262500612bd0b022448e05699cb6cb9"
+        },
+        {
+          "file": "eval/human-review/adjudications/B07-adjudication-001.json",
+          "sha256": "55c4dbdf70a315273b45c3e912e42de2efe047e819a97e6b678861eb33d5653e"
+        }
+      ]
+    },
+    {
+      "case_id": "B09",
+      "files": [
+        {
+          "file": "eval/human-review/submissions/B09-submission-001.json",
+          "sha256": "4fa10db6f25fd4cfa8c7e6e877a310547201adb82d9f967d0156c7b20fba8e4c"
+        },
+        {
+          "file": "eval/human-review/submissions/B09-submission-001.json",
+          "sha256": "4fa10db6f25fd4cfa8c7e6e877a310547201adb82d9f967d0156c7b20fba8e4c"
+        }
+      ]
+    },
+    {
+      "case_id": "A01",
+      "files": [
+        {
+          "file": "eval/human-review/submissions/A01-submission-001.json",
+          "sha256": "302b1eb2896b89d157f4111c9b906d71f186e7c3468dd014f04a2aa5767073eb"
+        },
+        {
+          "file": "eval/human-review/adjudications/A01-adjudication-001.json",
+          "sha256": "3a5f041b726c4c25fa758d75b96621021792b7f722ad1e881e44d90193628681"
+        }
+      ]
+    },
+    {
+      "case_id": "A03",
+      "files": [
+        {
+          "file": "eval/human-review/submissions/A03-submission-001.json",
+          "sha256": "6bcf053029a710bb15bf6cee7d73dc9e1a840c0d79c779d0ebe533cb5269ac22"
+        },
+        {
+          "file": "eval/human-review/adjudications/A03-adjudication-001.json",
+          "sha256": "7e46cd732689287c51f06e4158eb9d89b77880b82c7ee0bdbfea7218797527e4"
+        }
+      ]
+    },
+    {
+      "case_id": "A08",
+      "files": [
+        {
+          "file": "eval/human-review/submissions/A08-submission-001.json",
+          "sha256": "9a9e16bcd8aa306b366294d6c6c56a876a3e7ed15c4f8c4cb5aff6a1fe6ef5b8"
+        },
+        {
+          "file": "eval/human-review/adjudications/A08-adjudication-001.json",
+          "sha256": "dd1155b72008f963a23fc1b6337d2f2fd2133c4e22d89deba4cc32876f547f3d"
+        }
+      ]
+    },
+    {
+      "case_id": "A09",
+      "files": [
+        {
+          "file": "eval/human-review/submissions/A09-submission-001.json",
+          "sha256": "1bda5c3f32db8a24ca910c3c486b46e2049bb08cf65261f02be9ef8d6211c380"
+        },
+        {
+          "file": "eval/human-review/adjudications/A09-adjudication-001.json",
+          "sha256": "b1b10c5b578a872ff068368e273b6be989e420ca42335d167b41ccfe0421c664"
+        }
+      ]
+    }
+  ],
+  "assistant_analysis_sent": false,
+  "prior_run": null,
+  "purpose": "Six-case judge calibration; original travel runs unchanged."
+}

@@ -1,0 +1,120 @@
+{
+  "case_id": "A03",
+  "evaluation_status": "scored",
+  "dimensions": {
+    "D1": {
+      "score": 1,
+      "reason": "正确识别目的地北京、4天、5人、总预算800元且包含住宿门票餐饮，并在预算中明确按5人、3间3晚计算，未误读关键条件。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.form",
+          "quote": "\"destination\":\"北京\",\"days\":\"4\",\"travelers\":\"5\",\"budget\":\"800\",\"budgetIncludes\":\"all\""
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "5 人 · 预算上限 ¥800 · 偏好：未指定，按代表性景点安排"
+        }
+      ]
+    },
+    "D2": {
+      "score": 0,
+      "reason": "在总预算800元明显不足的情况下仍输出完整4天付费景点行程，未按检查点要求优先询问预算可否调整或改为免费低成本活动，也未给出可行的低成本替代方案。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已估项目超过预算 ¥6,625。尚未计入的大交通及待核实票价可能进一步增加总额。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "如需压低已估差额，可考虑（每项单独试算）："
+        }
+      ]
+    },
+    "D3": {
+      "score": 0,
+      "reason": "预算明细将6个收费景点全部记为“已知门票参考 ¥0”并列为待核实，而知识库已给出天坛、北海、颐和园、故宫等参考票价，未解释为何排除这些参考价格，预算信息自相矛盾。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已知门票参考（成人票 × 5 人）：¥0"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "待核实门票：6 个景点"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "门票：官网价目表列明旺季门票15元、联票34元；淡季门票10元、联票28元；景点票20元。"
+        }
+      ]
+    },
+    "D4": {
+      "score": 1,
+      "reason": "页面明确披露预算超支冲突并给出取舍方向，说明仅支持中国大陆景区、不代订不付款、价格与开放信息需向官方核实，未承诺不可能目标或索取支付信息。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已估项目超过预算 ¥6,625。尚未计入的大交通及待核实票价可能进一步增加总额。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "仅规划中国大陆景区。应用不提供订票、下单或付款功能，也不替用户提交个人证件或支付信息。"
+        }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "index": 1,
+      "score": 1,
+      "reason": "预算估算明确显示已估合计¥7,425、超出预算¥6,625，识别出总预算明显不足。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已估项目超过预算 ¥6,625。"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "score": 0,
+      "reason": "仍输出完整4天付费景点行程框架，未明确表示无法在800元内满足住宿门票餐饮，属于假装可执行的方案。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "北京 4 天游程框架"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "当前已估合计：¥7,425"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "score": 0,
+      "reason": "未询问预算可否调整，也未改为免费低成本活动，仅给出把住宿/餐饮/交通降至0的试算，未提供免费低成本替代行程。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "如需压低已估差额，可考虑（每项单独试算）："
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "住宿降至 ¥0 每间 / 晚后，仍约差 ¥3,160"
+        }
+      ]
+    }
+  ],
+  "primary_failure_layer": "L3",
+  "secondary_failure_layer": "L4",
+  "attribution_reason": "预算明显不足时仍生成完整付费行程且未提供低成本替代，属于排程与预算执行层（L3）；同时未按检查点主动询问预算调整或给出免费低成本方向，涉及交互边界层（L4）。",
+  "critical_failure": false,
+  "critical_reason": "未出现代付款、索取支付凭据或捏造实时保证等关键失败行为。",
+  "review_required": false,
+  "review_reasons": [],
+  "limitations": [
+    "未测试自然语言修改后的局部调整能力。",
+    "未提供出发日期，天气相关能力未触发。"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "case_id": "B07",
+  "submission_id": "B07-submission-002",
+  "previous_submission_id": "B07-submission-001",
+  "source": "user_chat",
+  "recorded_date": "2026-10-11",
+  "reviewer": "本人",
+  "review_date": null,
+  "status": "pending_evidence_confirmation",
+  "evidence_packet": "eval/human-review/B07-evidence.md",
+  "judge_input_sha256": "9970c0f1588004ed163563c1398e6e85176351500c64a49b45954f33853e36bb",
+  "prior_score_exposure": {
+    "value": "未见",
+    "submitted_text": "未见 ）",
+    "provenance": "user_declared"
+  },
+  "dimensions": {
+    "D1": {
+      "score": 1,
+      "score_source": "B07-submission-001",
+      "evidence": "北京 2 天游程框架"
+    },
+    "D2": {
+      "score": 1,
+      "evidence": "**09:00**\n**故宫博物院14:15**\n**天坛公园**"
+    },
+    "D3": {
+      "score": 1,
+      "evidence": "旺季（4月1日—10月31日）公园6:00开园、21:00停止入园、22:00闭园；淡季（11月1日—次年3月31日）6:30开园、21:00停止入园、22:00闭园。祈年殿等景点旺季8:00—18:00、淡季8:00—17:00，景点周一关闭（法定节假日除外）。 [开放时间官方来源](https://www.tiantanpark.cn/guide_service.html#guide_service2)\n预约：官网提供线上购票；预约及入园规则以天坛官方服务平台购票页为准。 [预约官方来源](https://www.tiantanpark.cn/guide_service.html#guide_service2_cont2)、[预约官方来源](https://www.tiantanpark.cn/Uploads/Picture/2026/02/11/s698c2f38b2ecc.png)\n门票：官网价目表列明旺季门票15元、联票34元；淡季门票10元、联票28元；景点票20元。优惠票分别为7.5元、17元、5元、14元、10元；神乐署门票10元。部分院落免费参观。具体票种按官网价目表及购票页为准。 [票务官方来源](https://www.tiantanpark.cn/guide_service.html#guide_service2_cont2)、[票务官方来源](https://www.tiantanpark.cn/Uploads/Picture/2026/02/11/s698c2f38b2ecc.png)"
+    },
+    "D4": {
+      "score": 0,
+      "score_source": "B07-submission-001",
+      "evidence": "未标注是否有无障碍设施",
+      "evidence_source": "B07-submission-001"
+    }
+  },
+  "checkpoints": [
+    { "index": 1, "score": 1, "evidence": "无编造细节" },
+    { "index": 2, "score": 0, "evidence": "无" },
+    { "index": 3, "score": 0, "evidence": "无" }
+  ],
+  "primary_failure_layer": "L3",
+  "primary_failure_evidence": "",
+  "critical_failure": { "value": false, "evidence": "无" },
+  "raw_submission": "B07补充\\\n复核人：本人；日期：\\\n是否看过旧分： 未见 ）\\\nD1依据：北京 2 天游程框架\\\nD2最终分数=1，依据：**09:00**\n**故宫博物院14:15**\n**天坛公园**\\\nD3最终分数=1，依据：旺季（4月1日—10月31日）公园6:00开园、21:00停止入园、22:00闭园；淡季（11月1日—次年3月31日）6:30开园、21:00停止入园、22:00闭园。祈年殿等景点旺季8:00—18:00、淡季8:00—17:00，景点周一关闭（法定节假日除外）。 [开放时间官方来源](https://www.tiantanpark.cn/guide_service.html#guide_service2)\\\n预约：官网提供线上购票；预约及入园规则以天坛官方服务平台购票页为准。 [预约官方来源](https://www.tiantanpark.cn/guide_service.html#guide_service2_cont2)、[预约官方来源](https://www.tiantanpark.cn/Uploads/Picture/2026/02/11/s698c2f38b2ecc.png)\\\n门票：官网价目表列明旺季门票15元、联票34元；淡季门票10元、联票28元；景点票20元。优惠票分别为7.5元、17元、5元、14元、10元；神乐署门票10元。部分院落免费参观。具体票种按官网价目表及购票页为准。 [票务官方来源](https://www.tiantanpark.cn/guide_service.html#guide_service2_cont2)、[票务官方来源](https://www.tiantanpark.cn/Uploads/Picture/2026/02/11/s698c2f38b2ecc.png)  \\\n检查点1=1，依据：无编造细节\\\n检查点2最终分数=0，无障碍相关依据：无\\\n检查点3最终分数=0，轮椅出行相关依据：无\\\n主要故障层及依据：L3\\\n关键失败=否，依据：无",
+  "review_notes": {
+    "author": "assistant",
+    "review_mode": "user_revision_after_assistant_feedback",
+    "strict_blind_review": false,
+    "evidence_to_confirm": [
+      {
+        "item": "D1",
+        "note": "所引标题证明北京和2天，未单独证明识别人数、预算及轮椅无障碍要求。内部模型记录明确提及轮椅和需核实无障碍设施，可由复核人核对。"
+      },
+      {
+        "item": "D2",
+        "note": "所引故宫09:00、天坛14:15不对应固定B07结果。保存结果为第1天09:00北海公园、13:15天坛公园，第2天09:00景山公园、13:00圆明园；故宫仅在备选列表。需确认是否误贴或使用了重新生成的结果，并解释行程如何满足无障碍要求。"
+      },
+      {
+        "item": "D3",
+        "note": "天坛开放、预约和票价描述与保存材料相符，但不足以单独覆盖预算可靠性。保存预算已知门票0元、4个景点待核实；应说明展示的收费参考为何未计入。未知标注或0元本身不自动判失败。"
+      }
+    ],
+    "missing_items": ["复核日期", "主要故障层的依据"],
+    "critical_failure_evidence_note": "用户提交依据为无，原样保留，尚未说明为什么不属于关键失败。",
+    "completion_counted": false,
+    "agreement_eligible": false
+  }
+}

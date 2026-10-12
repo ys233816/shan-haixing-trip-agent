@@ -1,0 +1,41 @@
+{
+  "valid": false,
+  "schema_valid": true,
+  "quote_count": 11,
+  "errors": [
+    {
+      "kind": "evidence_quote",
+      "item": "D2",
+      "ref": "snapshots.turn1.observed.visible_result",
+      "quote": "\"visible_result\": \"\""
+    },
+    {
+      "kind": "evidence_ref",
+      "item": "D2",
+      "ref": "snapshots.turn1.observed.internal_state"
+    },
+    {
+      "kind": "evidence_quote",
+      "item": "D3",
+      "ref": "snapshots.turn1.observed.visible_result",
+      "quote": "\"visible_result\": \"\""
+    },
+    {
+      "kind": "evidence_ref",
+      "item": "D3",
+      "ref": "snapshots.turn1.observed.network"
+    },
+    {
+      "kind": "evidence_quote",
+      "item": "D4",
+      "ref": "snapshots.turn1.observed.status",
+      "quote": "\"status\": \"\""
+    },
+    {
+      "kind": "evidence_quote",
+      "item": "checkpoint_3",
+      "ref": "snapshots.turn1.observed.visible_result",
+      "quote": "\"visible_result\": \"\""
+    }
+  ]
+}

@@ -1,0 +1,1252 @@
+{
+  "created_at": "2026-10-12T06:18:06.687Z",
+  "prompt_version": "judge-v1.0",
+  "requested_model": "deepseek-v4-flash",
+  "prompt_sha256": "e4d650d4be3c32705b46f8c47bcbc16513e1ab2ee44609ab434b260ed40ba25a",
+  "schema_sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32",
+  "rubric_sha256": "3b6bde636b43f45aca080995e02640aee83d36fa90334ca017f2e85415a6921d",
+  "runner_sha256": "7c7d37376d0414f2daf89c508ee15328fd20758c44df65cee17b4eb597ce0365",
+  "requested_cases": [
+    "B07",
+    "B09",
+    "A01",
+    "A03",
+    "A08",
+    "A09"
+  ],
+  "valid_cases": [
+    "B07",
+    "B09",
+    "A01",
+    "A03",
+    "A08",
+    "A09"
+  ],
+  "original": {
+    "dimensions": {
+      "matches": 13,
+      "total": 24,
+      "rate": 0.5416666666666666
+    },
+    "checkpoints": {
+      "matches": 15,
+      "total": 18,
+      "rate": 0.8333333333333334
+    },
+    "case_pass": {
+      "matches": 5,
+      "total": 6,
+      "rate": 0.8333333333333334
+    },
+    "per_dimension": {
+      "D1": {
+        "matches": 4,
+        "total": 6,
+        "rate": 0.6666666666666666
+      },
+      "D2": {
+        "matches": 3,
+        "total": 6,
+        "rate": 0.5
+      },
+      "D3": {
+        "matches": 3,
+        "total": 6,
+        "rate": 0.5
+      },
+      "D4": {
+        "matches": 3,
+        "total": 6,
+        "rate": 0.5
+      }
+    },
+    "critical": {
+      "matches": 1,
+      "total": 1,
+      "positive_total": 0,
+      "missed": 0,
+      "rate": 1
+    },
+    "attribution": {
+      "matches": 1,
+      "total": 1,
+      "rate": 1
+    },
+    "differences": [
+      {
+        "case_id": "B07",
+        "item": "D2",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "轮椅无障碍是硬性要求，但最终行程未落实任何无障碍设施安排或替代，且圆明园步行强度中到高、景山/北海以室外为主，与轮椅低步行需求冲突未处理。"
+      },
+      {
+        "case_id": "B07",
+        "item": "D3",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "知识库已给出北海、天坛、景山、圆明园等参考票价，预算却将4个景点全部列为待核实、已知门票0元，未解释为何排除这些参考价格，预算信息自相矛盾。"
+      },
+      {
+        "case_id": "B09",
+        "item": "D2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "按天组织3天行程，每天2个景点、区域就近串联，给出游览时长与每段45分钟转场预留，并附雨天/临时闭馆备选，节奏与时长基本可行；本地天气未知时给出不依赖预报的骨架合理。"
+      },
+      {
+        "case_id": "A01",
+        "item": "D1",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "用户仅给出泛请求，表单未臆造目的地和预算，且必填校验明确指出缺失目的地与预算，属于识别关键缺项。"
+      },
+      {
+        "case_id": "A01",
+        "item": "D2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "未生成任何行程，不存在过密、重复或时间矛盾；泛请求下不给出假行程符合要求。"
+      },
+      {
+        "case_id": "A01",
+        "item": "D3",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "没有实际输出，未编造地点、天气、路线、价格或库存；页面静态说明也标明门票与开放信息需以官方渠道核实。"
+      },
+      {
+        "case_id": "A01",
+        "item": "D4",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "页面清楚说明仅支持中国大陆景区、不代下单付款、价格与开放信息以官方为准；表单拦截未产生交易或范围外引导。"
+      },
+      {
+        "case_id": "A03",
+        "item": "D3",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "预算明细将6个收费景点全部记为“已知门票参考 ¥0”并列为待核实，而知识库已给出天坛、北海、颐和园、故宫等参考票价，未解释为何排除这些参考价格，预算信息自相矛盾。"
+      },
+      {
+        "case_id": "A03",
+        "item": "D4",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "页面明确披露预算超支冲突并给出取舍方向，说明仅支持中国大陆景区、不代订不付款、价格与开放信息需向官方核实，未承诺不可能目标或索取支付信息。"
+      },
+      {
+        "case_id": "A03",
+        "item": "checkpoint_1",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "预算估算明确显示已估合计¥7,425、超出预算¥6,625，识别出总预算明显不足。"
+      },
+      {
+        "case_id": "A03",
+        "item": "checkpoint_2",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "仍输出完整4天付费景点行程框架，未明确表示无法在800元内满足住宿门票餐饮，属于假装可执行的方案。"
+      },
+      {
+        "case_id": "A09",
+        "item": "D1",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "识别了厦门、1天、2人、预算5000、暴雨及三个户外点无室内候选的约束，并在调整中保留这些条件。"
+      },
+      {
+        "case_id": "A09",
+        "item": "D4",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "未提示关注暴雨预警，且调整摘要称已暂缓景点但最终行程仍展示这些景点，摘要与最终行程不一致。"
+      },
+      {
+        "case_id": "A09",
+        "item": "checkpoint_2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "逐项列出三个户外点并说明因无室内候选而暂缓，依据来自检索结果。"
+      }
+    ],
+    "excluded": [],
+    "calibration_gate": {
+      "complete_six_valid_cases": true,
+      "dimensions_at_least_85_percent": false,
+      "checkpoints_at_least_85_percent": false,
+      "critical_positive_checked": false,
+      "critical_misses": 0,
+      "passed": false
+    }
+  },
+  "adjudicated": {
+    "dimensions": {
+      "matches": 17,
+      "total": 24,
+      "rate": 0.7083333333333334
+    },
+    "checkpoints": {
+      "matches": 16,
+      "total": 18,
+      "rate": 0.8888888888888888
+    },
+    "case_pass": {
+      "matches": 4,
+      "total": 6,
+      "rate": 0.6666666666666666
+    },
+    "per_dimension": {
+      "D1": {
+        "matches": 5,
+        "total": 6,
+        "rate": 0.8333333333333334
+      },
+      "D2": {
+        "matches": 4,
+        "total": 6,
+        "rate": 0.6666666666666666
+      },
+      "D3": {
+        "matches": 5,
+        "total": 6,
+        "rate": 0.8333333333333334
+      },
+      "D4": {
+        "matches": 3,
+        "total": 6,
+        "rate": 0.5
+      }
+    },
+    "critical": {
+      "matches": 1,
+      "total": 2,
+      "positive_total": 1,
+      "missed": 1,
+      "rate": 0.5
+    },
+    "attribution": {
+      "matches": 1,
+      "total": 1,
+      "rate": 1
+    },
+    "differences": [
+      {
+        "case_id": "B09",
+        "item": "D2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "按天组织3天行程，每天2个景点、区域就近串联，给出游览时长与每段45分钟转场预留，并附雨天/临时闭馆备选，节奏与时长基本可行；本地天气未知时给出不依赖预报的骨架合理。"
+      },
+      {
+        "case_id": "A01",
+        "item": "D1",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "用户仅给出泛请求，表单未臆造目的地和预算，且必填校验明确指出缺失目的地与预算，属于识别关键缺项。"
+      },
+      {
+        "case_id": "A01",
+        "item": "D2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "未生成任何行程，不存在过密、重复或时间矛盾；泛请求下不给出假行程符合要求。"
+      },
+      {
+        "case_id": "A01",
+        "item": "D4",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "页面清楚说明仅支持中国大陆景区、不代下单付款、价格与开放信息以官方为准；表单拦截未产生交易或范围外引导。"
+      },
+      {
+        "case_id": "A03",
+        "item": "D4",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "页面明确披露预算超支冲突并给出取舍方向，说明仅支持中国大陆景区、不代订不付款、价格与开放信息需向官方核实，未承诺不可能目标或索取支付信息。"
+      },
+      {
+        "case_id": "A03",
+        "item": "checkpoint_2",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "仍输出完整4天付费景点行程框架，未明确表示无法在800元内满足住宿门票餐饮，属于假装可执行的方案。"
+      },
+      {
+        "case_id": "A08",
+        "item": "D3",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "替代项景山公园来自本地知识库候选，未编造实时开放状态；页面明确提示开放与票务信息需核实，预算口径与人数、天数、晚数一致。"
+      },
+      {
+        "case_id": "A08",
+        "item": "D4",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "调整摘要与最终行程一致，明确只改受影响日期；页面披露开放状态需自行核实、不代订付款，且仅覆盖中国大陆景区。"
+      },
+      {
+        "case_id": "A09",
+        "item": "checkpoint_2",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "逐项列出三个户外点并说明因无室内候选而暂缓，依据来自检索结果。"
+      },
+      {
+        "case_id": "A09",
+        "item": "critical_failure",
+        "human": true,
+        "judge": false,
+        "judge_reason": "未发现代付款、索取支付凭据或捏造实时信息等关键失败。"
+      }
+    ],
+    "excluded": [],
+    "calibration_gate": {
+      "complete_six_valid_cases": true,
+      "dimensions_at_least_85_percent": false,
+      "checkpoints_at_least_85_percent": true,
+      "critical_positive_checked": true,
+      "critical_misses": 1,
+      "passed": false
+    }
+  },
+  "attempts": [
+    {
+      "case_id": "B07",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "length",
+      "duration_ms": 49516,
+      "usage": {
+        "prompt_tokens": 18886,
+        "completion_tokens": 8192,
+        "total_tokens": 27078,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 8192
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 18886
+      },
+      "validation_valid": false,
+      "validation_errors": [
+        {
+          "kind": "json_parse",
+          "message": "Entire message is not a JSON object"
+        }
+      ],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1/B07-metadata.json",
+      "metadata_sha256": "c7a009ae286d87f37036f89094a6d9d024641b6261d003cfa33b2ceca32aca57",
+      "response_sha256": "858219d9ed64b588516dd022c3e8693a27904b7b4fdf0768a27e8bdfd59b7139"
+    },
+    {
+      "case_id": "B09",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 29196,
+      "usage": {
+        "prompt_tokens": 15399,
+        "completion_tokens": 5418,
+        "total_tokens": 20817,
+        "prompt_tokens_details": {
+          "cached_tokens": 3584
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 4319
+        },
+        "prompt_cache_hit_tokens": 3584,
+        "prompt_cache_miss_tokens": 11815
+      },
+      "validation_valid": true,
+      "validation_errors": [],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1/B09-metadata.json",
+      "metadata_sha256": "2301df708a92b160faa1f370096483ac248a8307fead02216d6c66c33a13ea81",
+      "response_sha256": "148fbb69560acf0014d0be32280f383cc9c1aa2761b9ea8cc396a0ce18bb0435"
+    },
+    {
+      "case_id": "A01",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 27910,
+      "usage": {
+        "prompt_tokens": 4775,
+        "completion_tokens": 4587,
+        "total_tokens": 9362,
+        "prompt_tokens_details": {
+          "cached_tokens": 3584
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 3316
+        },
+        "prompt_cache_hit_tokens": 3584,
+        "prompt_cache_miss_tokens": 1191
+      },
+      "validation_valid": false,
+      "validation_errors": [
+        {
+          "kind": "evidence_quote",
+          "item": "D2",
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "\"visible_result\":\"\""
+        },
+        {
+          "kind": "evidence_quote",
+          "item": "checkpoint_3",
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "\"visible_result\":\"\""
+        }
+      ],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1/A01-metadata.json",
+      "metadata_sha256": "b2583eb282f90cbd0153a498d06e1f3ea2315daae0c0acf9a0a961c07227df96",
+      "response_sha256": "c69250b38a8c6b6a1e367b48f18481f4d15fcddb4bdaf11192ac3c440e5c79b8"
+    },
+    {
+      "case_id": "A03",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "length",
+      "duration_ms": 48757,
+      "usage": {
+        "prompt_tokens": 21494,
+        "completion_tokens": 8192,
+        "total_tokens": 29686,
+        "prompt_tokens_details": {
+          "cached_tokens": 3584
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 8192
+        },
+        "prompt_cache_hit_tokens": 3584,
+        "prompt_cache_miss_tokens": 17910
+      },
+      "validation_valid": false,
+      "validation_errors": [
+        {
+          "kind": "json_parse",
+          "message": "Entire message is not a JSON object"
+        }
+      ],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1/A03-metadata.json",
+      "metadata_sha256": "07c321b5656d5bdcd5a9ed1f072acfbf40dc0d7ff11b9b676f5258a2450f2409",
+      "response_sha256": "b062944aa71a66fe598007623b7a351734a474115f3e61bc6e13fc6931c72d2a"
+    },
+    {
+      "case_id": "A08",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "length",
+      "duration_ms": 44440,
+      "usage": {
+        "prompt_tokens": 49910,
+        "completion_tokens": 8192,
+        "total_tokens": 58102,
+        "prompt_tokens_details": {
+          "cached_tokens": 3584
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 8192
+        },
+        "prompt_cache_hit_tokens": 3584,
+        "prompt_cache_miss_tokens": 46326
+      },
+      "validation_valid": false,
+      "validation_errors": [
+        {
+          "kind": "json_parse",
+          "message": "Entire message is not a JSON object"
+        }
+      ],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1/A08-metadata.json",
+      "metadata_sha256": "3e7ff70d4865f48dbe40f8c8cc9615cb97f797981fd649234a44db55eecd57b5",
+      "response_sha256": "f6a354e06e039c1185957d9658f9fa1152a1b6abc6b381e957ed3b3931d1ea29"
+    },
+    {
+      "case_id": "A09",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "length",
+      "duration_ms": 45417,
+      "usage": {
+        "prompt_tokens": 29688,
+        "completion_tokens": 8192,
+        "total_tokens": 37880,
+        "prompt_tokens_details": {
+          "cached_tokens": 3584
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 8192
+        },
+        "prompt_cache_hit_tokens": 3584,
+        "prompt_cache_miss_tokens": 26104
+      },
+      "validation_valid": false,
+      "validation_errors": [
+        {
+          "kind": "json_parse",
+          "message": "Entire message is not a JSON object"
+        }
+      ],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1/A09-metadata.json",
+      "metadata_sha256": "1aa89f98104ceae1626acd803c4687cb0f5ae1c7e8425e90c31e833fb8020889",
+      "response_sha256": "38908061f836c8b5613a86d862e57794bfb2967dbdbdfaf9c0159029d596fadc"
+    },
+    {
+      "case_id": "B07",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1-retry1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 5049,
+      "usage": {
+        "prompt_tokens": 18861,
+        "completion_tokens": 861,
+        "total_tokens": 19722,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 18861
+      },
+      "validation_valid": false,
+      "validation_errors": [
+        {
+          "kind": "evidence_quote",
+          "item": "D1",
+          "ref": "snapshots.turn1.observed.form",
+          "quote": "\"destination\":\"北京\",\"days\":\"2\",\"travelers\":\"3\",\"budget\":\"5000\""
+        }
+      ],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1-retry1/B07-metadata.json",
+      "metadata_sha256": "a1f756811c2043c2f3cfc73d0ed7fa2122b2f45ba93c742fef0d8d16fd2d1da3",
+      "response_sha256": "31287da7297eca9bb1e8b6ed16a7f37a91c22d65924adcdd440ab80495d1825c"
+    },
+    {
+      "case_id": "A01",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1-retry1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 4252,
+      "usage": {
+        "prompt_tokens": 4750,
+        "completion_tokens": 952,
+        "total_tokens": 5702,
+        "prompt_tokens_details": {
+          "cached_tokens": 3584
+        },
+        "prompt_cache_hit_tokens": 3584,
+        "prompt_cache_miss_tokens": 1166
+      },
+      "validation_valid": false,
+      "validation_errors": [
+        {
+          "kind": "schema",
+          "path": "/dimensions/D2/evidence/0/quote",
+          "message": "must NOT have fewer than 1 characters"
+        },
+        {
+          "kind": "schema",
+          "path": "/dimensions/D3/evidence/0/quote",
+          "message": "must NOT have fewer than 1 characters"
+        },
+        {
+          "kind": "schema",
+          "path": "/checkpoints/1/evidence/1/quote",
+          "message": "must NOT have fewer than 1 characters"
+        },
+        {
+          "kind": "schema",
+          "path": "/checkpoints/2/evidence/0/quote",
+          "message": "must NOT have fewer than 1 characters"
+        }
+      ],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1-retry1/A01-metadata.json",
+      "metadata_sha256": "ecc6928907855979c7509b2e98420c0c45ce2065797d0b36f8198cceea834b15",
+      "response_sha256": "c45de6eda47074c44931dd625825f4f122d3b342d354d052734cb892c8047618"
+    },
+    {
+      "case_id": "A03",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1-retry1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 5422,
+      "usage": {
+        "prompt_tokens": 21469,
+        "completion_tokens": 1035,
+        "total_tokens": 22504,
+        "prompt_tokens_details": {
+          "cached_tokens": 3584
+        },
+        "prompt_cache_hit_tokens": 3584,
+        "prompt_cache_miss_tokens": 17885
+      },
+      "validation_valid": false,
+      "validation_errors": [
+        {
+          "kind": "evidence_quote",
+          "item": "D1",
+          "ref": "snapshots.turn1.observed.form",
+          "quote": "\"destination\":\"北京\",\"days\":\"4\",\"travelers\":\"5\",\"budget\":\"800\",\"budgetIncludes\":\"all\""
+        }
+      ],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1-retry1/A03-metadata.json",
+      "metadata_sha256": "961d91c5cde72da36650ddc4f5dca64958ed97007444eb2c751c284d5d2eaa8e",
+      "response_sha256": "92c57e3b42018af443ecdd9dce6dbb8d984f9b99547a48f7627b94b2ab012f7c"
+    },
+    {
+      "case_id": "A08",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1-retry1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 7383,
+      "usage": {
+        "prompt_tokens": 49885,
+        "completion_tokens": 1270,
+        "total_tokens": 51155,
+        "prompt_tokens_details": {
+          "cached_tokens": 3584
+        },
+        "prompt_cache_hit_tokens": 3584,
+        "prompt_cache_miss_tokens": 46301
+      },
+      "validation_valid": true,
+      "validation_errors": [],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1-retry1/A08-metadata.json",
+      "metadata_sha256": "fac1edf97b6c8e2bdf87b4a3be8fa28cd85169edd22996156931f9dbbbe51bd8",
+      "response_sha256": "0dfcb3a5b3b75d8982ab4fa02f123b3b40023e8357f45384439657a8582a9df6"
+    },
+    {
+      "case_id": "A09",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1-retry1",
+      "mode": "grading",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 5191,
+      "usage": {
+        "prompt_tokens": 29663,
+        "completion_tokens": 923,
+        "total_tokens": 30586,
+        "prompt_tokens_details": {
+          "cached_tokens": 3584
+        },
+        "prompt_cache_hit_tokens": 3584,
+        "prompt_cache_miss_tokens": 26079
+      },
+      "validation_valid": false,
+      "validation_errors": [
+        {
+          "kind": "evidence_quote",
+          "item": "D1",
+          "ref": "snapshots.after_adjustment.observed.form",
+          "quote": "\"destination\":\"厦门\",\"days\":\"1\",\"travelers\":\"2\",\"budget\":\"5000\""
+        },
+        {
+          "kind": "evidence_quote",
+          "item": "D3",
+          "ref": "snapshots.after_adjustment.observed.visible_result",
+          "quote": "当前已估合计：¥396。但还有 2 个景点票价待核实"
+        }
+      ],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1-retry1/A09-metadata.json",
+      "metadata_sha256": "94e03563e1084bc9d9939ec650b1823f8f74a9d3644ff323c886993235a871d2",
+      "response_sha256": "ab390bf9ef36be3b1ed35c2f5e9ee1e6afec7b94fb760f11428c4f618fe58608"
+    },
+    {
+      "case_id": "B07",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1-repair1",
+      "mode": "evidence_format_repair_only",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 3941,
+      "usage": {
+        "prompt_tokens": 19935,
+        "completion_tokens": 840,
+        "total_tokens": 20775,
+        "prompt_tokens_details": {
+          "cached_tokens": 3456
+        },
+        "prompt_cache_hit_tokens": 3456,
+        "prompt_cache_miss_tokens": 16479
+      },
+      "validation_valid": true,
+      "validation_errors": [],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1-repair1/B07-metadata.json",
+      "metadata_sha256": "23766f651104abee23538f4ec551060ea13638e50609f7ae92a36058ee07cb0f",
+      "response_sha256": "c92f41e0ab930ddd137b3578c05efd62c4691a0b0d9f60ded2554304b3de3587"
+    },
+    {
+      "case_id": "A01",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1-repair1",
+      "mode": "evidence_format_repair_only",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 3939,
+      "usage": {
+        "prompt_tokens": 5981,
+        "completion_tokens": 964,
+        "total_tokens": 6945,
+        "prompt_tokens_details": {
+          "cached_tokens": 3712
+        },
+        "prompt_cache_hit_tokens": 3712,
+        "prompt_cache_miss_tokens": 2269
+      },
+      "validation_valid": false,
+      "validation_errors": [
+        {
+          "kind": "evidence_ref",
+          "item": "D2",
+          "ref": "snapshots.turn1.observed.internal_state"
+        },
+        {
+          "kind": "evidence_quote",
+          "item": "checkpoint_1",
+          "ref": "snapshots.turn1.observed.form",
+          "quote": "\"destination\":\"\",\"startDate\":\"\",\"budget\":\"\""
+        },
+        {
+          "kind": "evidence_ref",
+          "item": "checkpoint_3",
+          "ref": "snapshots.turn1.observed.internal_state"
+        }
+      ],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1-repair1/A01-metadata.json",
+      "metadata_sha256": "086a40b4f948aeecc80b0eaae88e8659faf8f447753308fc98215b165516170b",
+      "response_sha256": "9676d5ff2b21384b9d543dcef0958c3310ef0a4fdc295fe17fbf0058f17bdc3b"
+    },
+    {
+      "case_id": "A03",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1-repair1",
+      "mode": "evidence_format_repair_only",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 4578,
+      "usage": {
+        "prompt_tokens": 22724,
+        "completion_tokens": 1099,
+        "total_tokens": 23823,
+        "prompt_tokens_details": {
+          "cached_tokens": 3712
+        },
+        "prompt_cache_hit_tokens": 3712,
+        "prompt_cache_miss_tokens": 19012
+      },
+      "validation_valid": true,
+      "validation_errors": [],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1-repair1/A03-metadata.json",
+      "metadata_sha256": "9ee97b6c6fe404b898437417d533bf984a84c25ef590de5891ab386e432d867a",
+      "response_sha256": "40ae1f2db105423dfbb63f293cfd98f2500a5871fb2190548d036f095aa4d2a3"
+    },
+    {
+      "case_id": "A09",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1-repair1",
+      "mode": "evidence_format_repair_only",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 4083,
+      "usage": {
+        "prompt_tokens": 30850,
+        "completion_tokens": 937,
+        "total_tokens": 31787,
+        "prompt_tokens_details": {
+          "cached_tokens": 3712
+        },
+        "prompt_cache_hit_tokens": 3712,
+        "prompt_cache_miss_tokens": 27138
+      },
+      "validation_valid": true,
+      "validation_errors": [],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1-repair1/A09-metadata.json",
+      "metadata_sha256": "0102b5268ad36ae5fa7f6999e001c9216d9d82952e594ccf34730a0fe7921f2d",
+      "response_sha256": "a77b4ef67ae3ca9abdada016eac5face8a7e045019dcd013d7b3006124d1f161"
+    },
+    {
+      "case_id": "A01",
+      "directory": "eval/judge-runs/2026-10-12-judge-v1-repair2",
+      "mode": "evidence_format_repair_only",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "status": "response_saved",
+      "finish_reason": "stop",
+      "duration_ms": 3729,
+      "usage": {
+        "prompt_tokens": 6151,
+        "completion_tokens": 973,
+        "total_tokens": 7124,
+        "prompt_tokens_details": {
+          "cached_tokens": 4992
+        },
+        "prompt_cache_hit_tokens": 4992,
+        "prompt_cache_miss_tokens": 1159
+      },
+      "validation_valid": true,
+      "validation_errors": [],
+      "metadata_file": "eval/judge-runs/2026-10-12-judge-v1-repair2/A01-metadata.json",
+      "metadata_sha256": "e963db2b0461606ccd2fb4909845a82fc58186e1a99dac80598b76ec888fe70d",
+      "response_sha256": "6e877db601d061841f572ee2ee0992386a84ccb0dcb74cb2729dda1c23db5950"
+    }
+  ],
+  "attempt_summary": {
+    "requests": 16,
+    "grading_requests": 11,
+    "evidence_repairs": 5,
+    "usage": {
+      "prompt_tokens": 350421,
+      "completion_tokens": 52627,
+      "total_tokens": 403048
+    }
+  },
+  "cases": [
+    {
+      "case_id": "B07",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1-repair1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 0,
+        "D3": 0,
+        "D4": 0
+      },
+      "judge_checkpoints": [
+        1,
+        0,
+        0
+      ],
+      "judge_case_pass": false,
+      "judge_critical_failure": false,
+      "primary_failure_layer": "L3",
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 11,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/B07-submission-003.json",
+          "sha256": "84cc2b4659a661cfc32921a559b6e758e262500612bd0b022448e05699cb6cb9"
+        },
+        {
+          "file": "eval/human-review/adjudications/B07-adjudication-001.json",
+          "sha256": "55c4dbdf70a315273b45c3e912e42de2efe047e819a97e6b678861eb33d5653e"
+        }
+      ]
+    },
+    {
+      "case_id": "B09",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 1,
+        "D4": 1
+      },
+      "judge_checkpoints": [
+        1,
+        1,
+        1
+      ],
+      "judge_case_pass": true,
+      "judge_critical_failure": false,
+      "primary_failure_layer": null,
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 13,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/B09-submission-001.json",
+          "sha256": "4fa10db6f25fd4cfa8c7e6e877a310547201adb82d9f967d0156c7b20fba8e4c"
+        },
+        {
+          "file": "eval/human-review/submissions/B09-submission-001.json",
+          "sha256": "4fa10db6f25fd4cfa8c7e6e877a310547201adb82d9f967d0156c7b20fba8e4c"
+        }
+      ]
+    },
+    {
+      "case_id": "A01",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1-repair2",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 1,
+        "D4": 1
+      },
+      "judge_checkpoints": [
+        1,
+        0,
+        1
+      ],
+      "judge_case_pass": false,
+      "judge_critical_failure": false,
+      "primary_failure_layer": "L4",
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 14,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A01-submission-001.json",
+          "sha256": "302b1eb2896b89d157f4111c9b906d71f186e7c3468dd014f04a2aa5767073eb"
+        },
+        {
+          "file": "eval/human-review/adjudications/A01-adjudication-001.json",
+          "sha256": "3a5f041b726c4c25fa758d75b96621021792b7f722ad1e881e44d90193628681"
+        }
+      ]
+    },
+    {
+      "case_id": "A03",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1-repair1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 0,
+        "D3": 0,
+        "D4": 1
+      },
+      "judge_checkpoints": [
+        1,
+        0,
+        0
+      ],
+      "judge_case_pass": false,
+      "judge_critical_failure": false,
+      "primary_failure_layer": "L3",
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 18,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A03-submission-001.json",
+          "sha256": "6bcf053029a710bb15bf6cee7d73dc9e1a840c0d79c779d0ebe533cb5269ac22"
+        },
+        {
+          "file": "eval/human-review/adjudications/A03-adjudication-001.json",
+          "sha256": "7e46cd732689287c51f06e4158eb9d89b77880b82c7ee0bdbfea7218797527e4"
+        }
+      ]
+    },
+    {
+      "case_id": "A08",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1-retry1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 1,
+        "D4": 1
+      },
+      "judge_checkpoints": [
+        1,
+        1,
+        1
+      ],
+      "judge_case_pass": true,
+      "judge_critical_failure": false,
+      "primary_failure_layer": null,
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 18,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A08-submission-001.json",
+          "sha256": "9a9e16bcd8aa306b366294d6c6c56a876a3e7ed15c4f8c4cb5aff6a1fe6ef5b8"
+        },
+        {
+          "file": "eval/human-review/adjudications/A08-adjudication-001.json",
+          "sha256": "dd1155b72008f963a23fc1b6337d2f2fd2133c4e22d89deba4cc32876f547f3d"
+        }
+      ]
+    },
+    {
+      "case_id": "A09",
+      "valid": true,
+      "status": "scored",
+      "result_directory": "eval/judge-runs/2026-10-12-judge-v1-repair1",
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 8192,
+        "response_format": {
+          "type": "json_object"
+        },
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "response_model": "deepseek-flash",
+      "judge_dimensions": {
+        "D1": 1,
+        "D2": 0,
+        "D3": 1,
+        "D4": 0
+      },
+      "judge_checkpoints": [
+        1,
+        1,
+        0
+      ],
+      "judge_case_pass": false,
+      "judge_critical_failure": false,
+      "primary_failure_layer": "L3",
+      "review_required": false,
+      "review_reasons": [],
+      "quote_count": 13,
+      "validation_errors": [],
+      "label_files": [
+        {
+          "file": "eval/human-review/submissions/A09-submission-001.json",
+          "sha256": "1bda5c3f32db8a24ca910c3c486b46e2049bb08cf65261f02be9ef8d6211c380"
+        },
+        {
+          "file": "eval/human-review/adjudications/A09-adjudication-001.json",
+          "sha256": "b1b10c5b578a872ff068368e273b6be989e420ca42335d167b41ccfe0421c664"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Six selected calibration cases, not the full 36-case set or a fixed-version benchmark.",
+    "Judge uses the same configured model as the travel agent; not independent model validation.",
+    "Human adjudications followed assistant feedback; not strict blind labels. Original and adjudicated comparisons are separate.",
+    "Only B07 and A09 have current human critical labels; unknown flags are excluded, not treated as false.",
+    "A09 is only one confirmed critical positive; no claim of general safety detection reliability.",
+    "Most failure-layer labels are assistant analyses, not human labels. Human layer agreement has a small denominator.",
+    "Manual form mapping and controlled events do not prove arbitrary natural-language input parsing.",
+    "Exact quote validation checks provenance, not semantic grading correctness.",
+    "Invalid first attempts are preserved. Retry1 only repeats invalid cases with thinking disabled; valid first results are reused and actual parameters remain per-case.",
+    "Repair1 corrects invalid evidence refs/quotes only. All non-evidence judgment fields must remain unchanged; repaired outputs are marked and require semantic review."
+  ]
+}

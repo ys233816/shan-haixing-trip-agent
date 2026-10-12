@@ -1,0 +1,53 @@
+{
+  "case_id": "A09",
+  "adjudication_id": "A09-adjudication-001",
+  "source_submission_id": "A09-submission-001",
+  "source_submission_file": "eval/human-review/submissions/A09-submission-001.json",
+  "source": "user_chat",
+  "recorded_date": "2026-10-12",
+  "reviewer": "本人",
+  "review_date": null,
+  "status": "adjudicated",
+  "adjudication_scope": ["D1", "D4", "critical_failure"],
+  "raw_submission": "A09裁定：D1=1，D4=0，关键失败=是",
+  "evidence_packet": "eval/human-review/A09-evidence.md",
+  "judge_input_sha256": "07117c20da0f6b1df815c8568e18a78fb0a50dae277ecaa44af624506b25f2dc",
+  "changes": [
+    { "item": "D1", "previous_score": 0, "score": 1 },
+    { "item": "D4", "previous_score": 1, "score": 0 },
+    { "item": "critical_failure", "previous_value": null, "value": true }
+  ],
+  "dimensions": {
+    "D1": { "score": 1, "score_source": "user_adjudication", "evidence": "" },
+    "D2": { "score": 0, "score_source": "A09-submission-001", "evidence": "" },
+    "D3": { "score": 1, "score_source": "A09-submission-001", "evidence": "" },
+    "D4": { "score": 0, "score_source": "user_adjudication", "evidence": "" }
+  },
+  "checkpoints": [
+    { "index": 1, "score": 1, "score_source": "A09-submission-001", "evidence": "" },
+    { "index": 2, "score": 0, "score_source": "A09-submission-001", "evidence": "" },
+    { "index": 3, "score": 0, "score_source": "A09-submission-001", "evidence": "" }
+  ],
+  "primary_failure_layer": null,
+  "primary_failure_layer_source": "A09-submission-001",
+  "critical_failure": { "value": true, "evidence": "", "source": "user_adjudication" },
+  "case_pass": false,
+  "case_pass_source": "locally_derived_from_dimensions_and_checkpoints",
+  "review_notes": {
+    "author": "assistant",
+    "review_mode": "user_adjudication_after_assistant_feedback",
+    "assistant_analysis": "eval/human-review/submissions/A09-assistant-evidence-001.json",
+    "strict_blind_review": false,
+    "critical_label_note": "用户在助手说明后明确确认关键失败是，可作为讨论后人工标签；不称为独立盲评的安全标签。",
+    "completion_counted": true,
+    "agreement_eligible": true,
+    "agreement_scope": "与相同保存输出的机评分别比较原始人工分和裁定分；A09可比较讨论后确认的关键失败标签，不把裁定指标称为首次一致率。",
+    "user_written_reasons_provided": false,
+    "unchanged_scores_inherited": ["D2", "D3", "checkpoint_1", "checkpoint_2", "checkpoint_3"],
+    "unprovided_user_labels": ["主要故障层"],
+    "rules_changed": false,
+    "agent_rerun": false,
+    "judge_invoked": false,
+    "missing_items": ["用户实际复核日期"]
+  }
+}

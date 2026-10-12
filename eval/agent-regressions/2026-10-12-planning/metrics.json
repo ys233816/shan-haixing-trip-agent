@@ -1,0 +1,105 @@
+{
+  "recordedAt": "2026-10-12T09:10:43.808Z",
+  "iteration": "initial-plan-constraints-2026-10-12",
+  "scope": "首次规划时长、步行、轮椅提示、天气候选和夜游时段专项；不覆盖全部36条任务",
+  "primaryFailureLayer": "L3",
+  "fixedRegression": {
+    "total": 17,
+    "beforePassed": 3,
+    "afterPassed": 17,
+    "beforeRatePercent": 17.65,
+    "afterRatePercent": 100,
+    "gainPercentagePoints": 82.35,
+    "newlyPassingCaseIds": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10",
+      "P11",
+      "P13",
+      "P16",
+      "P17"
+    ],
+    "method": "17条固定专项回归；受控候选和模型响应；运行真实前端函数，无付费API。不是36条全量或真实大模型成功率。"
+  },
+  "browserVerification": {
+    "method": "历史结构化状态重放+两个受控场景；桌面/手机各一次，未重新调用真实规划模型或地图",
+    "versions": [
+      {
+        "version": "before",
+        "sha256": "2a3d5207eef027ff76bb00b172891fadc3f7b2113bb1ccc056ae5c09446f8d6e",
+        "total": 10,
+        "passed": 2
+      },
+      {
+        "version": "after",
+        "sha256": "c3e64826e0fc43c38e4a256f93097710205b0b7eb65da820ed11a97f4dd2b404",
+        "total": 10,
+        "passed": 10
+      }
+    ],
+    "gainPercentagePoints": 80,
+    "note": "5个场景×2种视口，共10次验证/版本；不是10条独立用户需求"
+  },
+  "examples": {
+    "A11": {
+      "source": "eval/runs/2026-10-11-remaining/A11-turn1.json",
+      "beforeDay1Hours": 10.25,
+      "afterDay1Hours": 4.5,
+      "overEightHoursDaysBefore": 1,
+      "overEightHoursDaysAfter": 0
+    },
+    "B07": {
+      "beforeStopsPerDay": [
+        2,
+        2
+      ],
+      "afterStopsPerDay": [
+        1,
+        1
+      ],
+      "accessibilityNoticeVisible": true,
+      "accessibilityConfirmed": false
+    },
+    "controlledNight": {
+      "before": [
+        "09:00",
+        "13:00"
+      ],
+      "after": [
+        "09:00",
+        "18:00"
+      ],
+      "realOfficialHoursVerified": false
+    }
+  },
+  "additionalBoundaries": {
+    "passed": 5,
+    "total": 5,
+    "note": "最终版额外边界检查，未建立修改前基准，不纳入17条改善指标"
+  },
+  "previousWeatherRegression": {
+    "passed": 11,
+    "total": 12,
+    "unchangedWeatherSafetyChecksPassed": 11,
+    "legacyExpectationConflict": "R12旧断言要求大模型少排后仍补齐每日数量，本轮明确改为保留模型缓冲；原分保留，不改断言追求100%"
+  },
+  "full36CaseTaskCompletionRate": null,
+  "limitations": [
+    "固定受控专项，未重新运行真实大模型、天气和路线网络调用。",
+    "5个浏览器场景为A11、B07、A08事件前草稿和2个受控场景；没有冒称T04等原样全链路重跑。",
+    "夜游18:00/22:00为保守建议，不是实时官方开放时间；少步行按知识库等级，不是精确里程；无障碍尚未官方确认。",
+    "偏好落实、跨城市、缺项澄清、人均预算、住宿晚数、实时票务以及评委一致率仍待后续迭代。"
+  ],
+  "sha256": {
+    "before": "2a3d5207eef027ff76bb00b172891fadc3f7b2113bb1ccc056ae5c09446f8d6e",
+    "after": "c3e64826e0fc43c38e4a256f93097710205b0b7eb65da820ed11a97f4dd2b404",
+    "runner": "d4a6eee1674a8911fb8dfcba1f4d4ef69fefad6ebb836552ce2ffd482ebee694"
+  }
+}

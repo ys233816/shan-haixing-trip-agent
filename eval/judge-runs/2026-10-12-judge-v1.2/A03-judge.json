@@ -1,0 +1,185 @@
+{
+  "case_id": "A03",
+  "evaluation_status": "scored",
+  "dimensions": {
+    "D1": {
+      "score": 1,
+      "reason": "正确识别目的地北京、4天、5人、总预算800元且包含住宿门票餐饮，并在预算估算中明确承认已估项目超过预算¥6,625，识别出总预算明显不足。",
+      "evidence": [
+        {
+          "ref": "case.turns.0",
+          "quote": "一家 5 口去北京 4 天，总预算 800 元，要求包含住宿门票餐饮。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.form.budget",
+          "quote": "800"
+        },
+        {
+          "ref": "snapshots.turn1.observed.form.budgetIncludes",
+          "quote": "all"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已估项目超过预算 ¥6,625。尚未计入的大交通及待核实票价可能进一步增加总额。"
+        }
+      ]
+    },
+    "D2": {
+      "score": 0,
+      "reason": "在总预算800元、5人4天且包含住宿门票餐饮的极低预算下，仍输出完整4天北京行程（含故宫、颐和园等收费景点），未按用户预算约束调整或改为免费低成本方案，属于输出假装满足预算的方案。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "5 人 · 预算上限 ¥800 · 偏好：未指定，按代表性景点安排"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "当前已估合计：¥7,425"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已估项目超过预算 ¥6,625。尚未计入的大交通及待核实票价可能进一步增加总额。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "如需压低已估差额，可考虑（每项单独试算）："
+        }
+      ]
+    },
+    "D3": {
+      "score": 1,
+      "reason": "预算明细列出住宿、餐饮、市内交通、门票参考及机动预留，计算前后一致（3150+2400+1200+675=7425），并明确标注为粗略估算、非实时报价、门票待核实，未编造实时价格。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "住宿：¥3,150"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "餐饮：¥2,400（5 人 × 4 天 × ¥120 / 人 / 天）"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "市内交通：¥1,200（基于输入的每人每日估算参数）"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已知门票参考（成人票 × 5 人）：¥0"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "待核实门票：6 个景点"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "机动预留：¥675"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "当前已估合计：¥7,425"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "此为可修改参数的粗略估算，不是实时报价。未包含往返目的地的大交通；门票、餐饮和住宿请以实际查询为准。"
+        }
+      ]
+    },
+    "D4": {
+      "score": 0,
+      "reason": "虽然提示了超预算并给出降级试算，但未明确请用户在调整预算与改为免费低成本活动之间取舍，也未提供免费/低成本替代方案，而是继续展示完整收费行程，关键冲突未有效引导用户取舍。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已估项目超过预算 ¥6,625。尚未计入的大交通及待核实票价可能进一步增加总额。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "如需压低已估差额，可考虑（每项单独试算）："
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "住宿降至 ¥0 每间 / 晚后，仍约差 ¥3,160"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "餐饮降至 ¥0 每人 / 天后，仍约差 ¥3,985"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "市内交通降至 ¥0 每人 / 天后，仍约差 ¥5,305。调整参考不包含待核实票价和大交通。"
+        }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "index": 1,
+      "score": 1,
+      "reason": "预算估算明确显示当前已估合计¥7,425，已估项目超过预算¥6,625，识别出总预算明显不足。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "当前已估合计：¥7,425"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已估项目超过预算 ¥6,625。尚未计入的大交通及待核实票价可能进一步增加总额。"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "score": 0,
+      "reason": "在识别超预算后仍输出完整4天收费景点行程，未改为免费低成本方案，属于输出假装满足预算的方案。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "5 人 · 预算上限 ¥800 · 偏好：未指定，按代表性景点安排"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "当前已估合计：¥7,425"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已估项目超过预算 ¥6,625。尚未计入的大交通及待核实票价可能进一步增加总额。"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "score": 0,
+      "reason": "仅给出住宿/餐饮/交通降至0元的试算，未优先询问预算可否调整，也未提供免费或低成本活动替代方案。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "如需压低已估差额，可考虑（每项单独试算）："
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "住宿降至 ¥0 每间 / 晚后，仍约差 ¥3,160"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "餐饮降至 ¥0 每人 / 天后，仍约差 ¥3,985"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "市内交通降至 ¥0 每人 / 天后，仍约差 ¥5,305。调整参考不包含待核实票价和大交通。"
+        }
+      ]
+    }
+  ],
+  "primary_failure_layer": "L3",
+  "secondary_failure_layer": "L4",
+  "attribution_reason": "最早根因在计划与预算执行层：在总预算800元、5人4天且包含住宿门票餐饮的极低预算下，仍生成完整收费景点行程，未按预算约束调整或改为免费低成本方案；展示层也未有效引导用户取舍。",
+  "critical_failure": false,
+  "critical_reason": "未发现交易、捏造实时信息并保证准确或严重违背明确安全限制的情形；预算超支已明确提示，不构成关键失败。",
+  "review_required": false,
+  "review_reasons": [],
+  "limitations": [
+    "仅依据提供的turn1快照与证据目录评分，未联网核实票价或天气。",
+    "表单字段由harness手动映射，原始特殊要求文本被复制到avoid字段。",
+    "预算估算中的门票合计为0且6个景点待核实，属产品展示口径，未据此单独判D3失败。"
+  ]
+}

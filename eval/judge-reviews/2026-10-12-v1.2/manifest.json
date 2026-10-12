@@ -1,0 +1,113 @@
+{
+  "source_files": [
+    {
+      "file": "eval/judge-runs/2026-10-12-judge-v1.2/comparison.json",
+      "sha256": "b072742120733a2f810434c9ec521277c1f36cb8273284c0882d7fe1be2622ab"
+    },
+    {
+      "file": "eval/judge-inputs/2026-10-11/B07.json",
+      "sha256": "9970c0f1588004ed163563c1398e6e85176351500c64a49b45954f33853e36bb"
+    },
+    {
+      "file": "eval/judge-runs/2026-10-12-judge-v1.2/B07-judge.json",
+      "sha256": "edbe5e5a68a04bba02ba3598a6407d0d7d5d77c32fbdb94cbe0ec069fe37773d"
+    },
+    {
+      "file": "eval/human-review/submissions/B07-submission-003.json",
+      "sha256": "84cc2b4659a661cfc32921a559b6e758e262500612bd0b022448e05699cb6cb9"
+    },
+    {
+      "file": "eval/human-review/adjudications/B07-adjudication-001.json",
+      "sha256": "55c4dbdf70a315273b45c3e912e42de2efe047e819a97e6b678861eb33d5653e"
+    },
+    {
+      "file": "eval/judge-inputs/2026-10-11/B09.json",
+      "sha256": "d56a1b42ea463905e634edb55812bb57452ddfa26c46030c1079a5111fa34ed8"
+    },
+    {
+      "file": "eval/judge-runs/2026-10-12-judge-v1.2/B09-judge.json",
+      "sha256": "f9a82898c03f2d60fc26ea86727762ef52bd72229967ae28b368ca4789ab9be4"
+    },
+    {
+      "file": "eval/human-review/submissions/B09-submission-001.json",
+      "sha256": "4fa10db6f25fd4cfa8c7e6e877a310547201adb82d9f967d0156c7b20fba8e4c"
+    },
+    {
+      "file": "eval/judge-inputs/2026-10-11/A01.json",
+      "sha256": "f82be51d9026bc842f83a9c88a6c2b72f000bb2b12787eeaf1097813fd50b448"
+    },
+    {
+      "file": "eval/judge-runs/2026-10-12-judge-v1.2/A01-judge.json",
+      "sha256": "4515a43515eeef7a2fe391fc5c2805ee418e63842dbde7d6a64064680386bd0b"
+    },
+    {
+      "file": "eval/human-review/submissions/A01-submission-001.json",
+      "sha256": "302b1eb2896b89d157f4111c9b906d71f186e7c3468dd014f04a2aa5767073eb"
+    },
+    {
+      "file": "eval/human-review/adjudications/A01-adjudication-001.json",
+      "sha256": "3a5f041b726c4c25fa758d75b96621021792b7f722ad1e881e44d90193628681"
+    },
+    {
+      "file": "eval/judge-inputs/2026-10-11/A03.json",
+      "sha256": "23adbf911b5c8c45f794c7cf3c6ee6ffef848b93334aa1730f685a0f4e1aa15c"
+    },
+    {
+      "file": "eval/judge-runs/2026-10-12-judge-v1.2/A03-judge.json",
+      "sha256": "708f7308d4a9e3662010d190ae65a602a7927684177b0d095606cb6fecaa585b"
+    },
+    {
+      "file": "eval/human-review/submissions/A03-submission-001.json",
+      "sha256": "6bcf053029a710bb15bf6cee7d73dc9e1a840c0d79c779d0ebe533cb5269ac22"
+    },
+    {
+      "file": "eval/human-review/adjudications/A03-adjudication-001.json",
+      "sha256": "7e46cd732689287c51f06e4158eb9d89b77880b82c7ee0bdbfea7218797527e4"
+    },
+    {
+      "file": "eval/judge-inputs/2026-10-11/A08.json",
+      "sha256": "47d809191e86ededc110bfc7148df3f8cbd4c511b163820d9d7857a5090c3c6e"
+    },
+    {
+      "file": "eval/judge-runs/2026-10-12-judge-v1.2/A08-judge.json",
+      "sha256": "1c7ac5e3999e362dca504f7042640253436f62a750ac1f2498b0589044c48c34"
+    },
+    {
+      "file": "eval/human-review/submissions/A08-submission-001.json",
+      "sha256": "9a9e16bcd8aa306b366294d6c6c56a876a3e7ed15c4f8c4cb5aff6a1fe6ef5b8"
+    },
+    {
+      "file": "eval/human-review/adjudications/A08-adjudication-001.json",
+      "sha256": "dd1155b72008f963a23fc1b6337d2f2fd2133c4e22d89deba4cc32876f547f3d"
+    },
+    {
+      "file": "eval/judge-inputs/2026-10-11/A09.json",
+      "sha256": "07117c20da0f6b1df815c8568e18a78fb0a50dae277ecaa44af624506b25f2dc"
+    },
+    {
+      "file": "eval/judge-runs/2026-10-12-judge-v1.2/A09-judge.json",
+      "sha256": "d60de830f153323ff5d7f565f91d1a59c74ad1c7cb88615cab851e1b68ea86a5"
+    },
+    {
+      "file": "eval/human-review/submissions/A09-submission-001.json",
+      "sha256": "1bda5c3f32db8a24ca910c3c486b46e2049bb08cf65261f02be9ef8d6211c380"
+    },
+    {
+      "file": "eval/human-review/adjudications/A09-adjudication-001.json",
+      "sha256": "b1b10c5b578a872ff068368e273b6be989e420ca42335d167b41ccfe0421c664"
+    },
+    {
+      "file": "eval/rubric.md",
+      "sha256": "3b6bde636b43f45aca080995e02640aee83d36fa90334ca017f2e85415a6921d"
+    },
+    {
+      "file": "eval/rubric-v1.1-addendum.md",
+      "sha256": "3f1029980f263a1f9fc99ded8bf099871cb33def6426798a013739294e7ce6f6"
+    },
+    {
+      "file": "eval/judge-system-prompt-v1.2.md",
+      "sha256": "1fc694b7c3978b62f6ac50e544ffafc64c07eae503376d51964484f1d12e16e6"
+    }
+  ],
+  "review_script_sha256": "1401d796c8cb6cb7b9e3ea114d0c3a5f648bfd2c63e0aa075245b02f012c1026"
+}

@@ -1,0 +1,34 @@
+{
+  "version": "after",
+  "id": "nights-conflict",
+  "viewport": "mobile",
+  "fields": {
+    "destination": "北京",
+    "days": "2",
+    "travelers": "2",
+    "budget": "5000",
+    "lodgingNights": "1",
+    "avoid": "住两晚"
+  },
+  "expected": {
+    "blocked": true
+  },
+  "checks": {
+    "noPageErrors": true,
+    "noHorizontalOverflow": true,
+    "stableAfterReload": true,
+    "blocked": true
+  },
+  "pass": true,
+  "calls": [],
+  "errors": [],
+  "request": null,
+  "plan": null,
+  "status": "本次尚未生成，请先确认：住宿晚数与要求中的晚数冲突，请确认本次住几晚。",
+  "text": "",
+  "budget": null,
+  "markdown": null,
+  "invalid": [],
+  "overflow": false,
+  "restored": null
+}

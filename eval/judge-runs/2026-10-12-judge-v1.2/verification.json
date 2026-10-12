@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-12",
+  "requests": 6,
+  "hard_valid_cases": 6,
+  "selected_evidence_refs_verified": 186,
+  "wire_to_canonical_non_evidence_fields_preserved": true,
+  "uniform_parameters": true,
+  "human_labels_sent": false,
+  "prior_judgments_sent": false,
+  "assistant_analysis_sent": false,
+  "derived_observations_sent": true,
+  "existing_files_sha256_verified": 304,
+  "existing_files_changed": 0,
+  "credential_matches_in_run_artifacts": 0,
+  "automatic_retries": 0,
+  "evidence_repairs": 0,
+  "verification_api_calls": 0,
+  "calibration_passed": false,
+  "limitation": "Source provenance and unchanged fields do not prove semantic grading correctness."
+}

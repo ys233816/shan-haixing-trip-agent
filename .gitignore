@@ -1,0 +1,23 @@
+.env
+.env.*
+!.env.example
+node_modules/
+npm-debug.log*
+*.log
+
+# Personal documents and local screenshots are kept only on this machine.
+/artifacts/
+*.docx
+*.pdf
+*.png
+*.jpg
+*.jpeg
+
+# Operating-system and editor temporary files.
+.DS_Store
+Thumbs.db
+Desktop.ini
+~$*
+*.tmp
+.vscode/
+.idea/

@@ -1,0 +1,50 @@
+{
+  "case_id": "B07",
+  "adjudication_id": "B07-adjudication-001",
+  "source_submission_id": "B07-submission-003",
+  "source_submission_file": "eval/human-review/submissions/B07-submission-003.json",
+  "source": "user_chat",
+  "recorded_date": "2026-10-12",
+  "reviewer": "本人",
+  "review_date": null,
+  "status": "adjudicated",
+  "adjudication_scope": ["D2", "D3"],
+  "raw_submission": "B07裁定：D2=0，D3=0",
+  "evidence_packet": "eval/human-review/B07-evidence.md",
+  "judge_input_sha256": "9970c0f1588004ed163563c1398e6e85176351500c64a49b45954f33853e36bb",
+  "changes": [
+    { "item": "D2", "previous_score": 1, "score": 0 },
+    { "item": "D3", "previous_score": 1, "score": 0 }
+  ],
+  "dimensions": {
+    "D1": { "score": 1, "score_source": "B07-submission-003", "evidence": "" },
+    "D2": { "score": 0, "score_source": "user_adjudication", "evidence": "" },
+    "D3": { "score": 0, "score_source": "user_adjudication", "evidence": "" },
+    "D4": { "score": 0, "score_source": "B07-submission-003", "evidence": "" }
+  },
+  "checkpoints": [
+    { "index": 1, "score": 1, "score_source": "B07-submission-003", "evidence": "" },
+    { "index": 2, "score": 0, "score_source": "B07-submission-003", "evidence": "" },
+    { "index": 3, "score": 0, "score_source": "B07-submission-003", "evidence": "" }
+  ],
+  "primary_failure_layer": "L3",
+  "primary_failure_layer_source": "B07-submission-003",
+  "critical_failure": { "value": false, "evidence": "无", "source_submission_id": "B07-submission-003" },
+  "case_pass": false,
+  "case_pass_source": "locally_derived_from_dimensions_and_checkpoints",
+  "review_notes": {
+    "author": "assistant",
+    "review_mode": "user_adjudication_after_assistant_feedback",
+    "assistant_analysis": "eval/human-review/submissions/B07-assistant-evidence-001.json",
+    "strict_blind_review": false,
+    "completion_counted": true,
+    "agreement_eligible": true,
+    "agreement_scope": "与相同保存输出的机评分别比较原始人工分和裁定分；不把裁定后的指标称为首次一致率。",
+    "user_written_reasons_provided": false,
+    "unchanged_scores_inherited": ["D1", "D4", "checkpoint_1", "checkpoint_2", "checkpoint_3"],
+    "rules_changed": false,
+    "agent_rerun": false,
+    "judge_invoked": false,
+    "missing_items": ["用户实际复核日期"]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "case_id": "B07",
+  "analysis_id": "B07-assistant-evidence-001",
+  "submission_id": "B07-submission-003",
+  "author": "assistant",
+  "recorded_date": "2026-10-12",
+  "judge_input_sha256": "9970c0f1588004ed163563c1398e6e85176351500c64a49b45954f33853e36bb",
+  "purpose": "用户确认保存材料后整理同一运行的证据，保留原分；本文件不是用户原始理由或裁定标签。",
+  "dimensions": {
+    "D1": {
+      "relation_to_user_score": "supports",
+      "reason": "页面保留北京、2天、3人和5000元，实际模型返回提及轮椅出行及无障碍待核实，证明限制被识别。仅转发用户文本或标题不足以证明理解；隐藏理由也不等于已告知用户。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.visible_result", "quote": "北京 2 天游程框架" },
+        { "ref": "snapshots.turn1.observed.visible_result", "quote": "3 人 · 预算上限 ¥5,000" },
+        { "ref": "snapshots.turn1.network", "quote": "单日安排一个景点，适合中等步行耐受并为轮椅出行预留缓冲；无障碍设施需出行前核实。" }
+      ]
+    },
+    "D2": {
+      "relation_to_user_score": "disagrees",
+      "reason": "最终每天两个景点，没有确认必须具备的无障碍条件，也没有落实轮椅专用路线或低风险安排。不能由步行强度适中推断无障碍可行；也不能反向断言景点没有设施。用户D2=1保留，助手建议校准时判0。",
+      "evidence": [
+        { "ref": "case.turns", "quote": "必须有无障碍设施。" },
+        { "ref": "snapshots.turn1.observed.visible_result", "quote": "09:00\n北海公园" },
+        { "ref": "snapshots.turn1.observed.visible_result", "quote": "13:15\n天坛公园" },
+        { "ref": "snapshots.turn1.observed.visible_result", "quote": "09:00\n景山公园" },
+        { "ref": "snapshots.turn1.observed.visible_result", "quote": "13:00\n圆明园遗址公园" },
+        { "ref": "snapshots.turn1.observed.visible_result", "quote": "步行强度 中到高" }
+      ]
+    },
+    "D3": {
+      "relation_to_user_score": "partially_supported_with_disagreement",
+      "reason": "开放和票务说明与所给知识库一致，预算算术正确且未知范围已披露。但天坛、北海展示收费参考，预算仍将四处全部记未知、已知门票为0，没有说明这些参考未纳入的依据。不是因为0元本身扣分，也不替应用选择季节或票种；按现有预算矛盾口径建议判0，用户1分原样保留。",
+      "evidence": [
+        { "ref": "snapshots.turn1.observed.visible_result", "quote": "旺季门票10元、联票20元；淡季门票5元、联票15元。" },
+        { "ref": "snapshots.turn1.observed.visible_result", "quote": "旺季门票15元、联票34元；淡季门票10元、联票28元；景点票20元。" },
+        { "ref": "snapshots.turn1.observed.visible_result", "quote": "已知门票参考（成人票 × 3 人）：¥0\n待核实门票：4 个景点" },
+        { "ref": "snapshots.turn1.observed.visible_result", "quote": "当前已估合计：¥1,958" },
+        { "ref": "snapshots.turn1.observed.visible_result", "quote": "当前不能确认全程总费用在预算内。" }
+      ]
+    },
+    "D4": {
+      "relation_to_user_score": "supports_user_zero",
+      "reason": "用户可见结果有一般开放票务核实提示，但没有披露无障碍设施尚未确认这一关键限制。无障碍提醒只存在于内部模型理由，不能当作用户已收到该提醒。",
+      "evidence": [
+        { "ref": "snapshots.turn1.network", "quote": "候选资料未列明无障碍设施，需出行前核实。" },
+        { "ref": "snapshots.turn1.observed.visible_result", "quote": "景点来自本地知识库，开放和票价信息仍需核实。" }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "index": 1,
+      "relation_to_user_score": "supports",
+      "reason": "完整可见结果未编造坡道、电梯、无障碍卫生间等设施细节。缺少设施说明不等于已证明设施不存在。",
+      "evidence": [
+        { "ref": "snapshots.turn1.network", "quote": "候选资料未列明无障碍设施，需出行前核实。" }
+      ]
+    },
+    {
+      "index": 2,
+      "relation_to_user_score": "supports_user_zero",
+      "reason": "完整结果未展示需向景区官方核实无障碍条件的提示。一般开放票价核实提示不能替代这个请求的设施核实；内部提醒不计作可见告知。",
+      "evidence": [
+        { "ref": "snapshots.turn1.network", "quote": "无障碍设施需出行前核实。" },
+        { "ref": "snapshots.turn1.observed.visible_result", "quote": "开放时间与票务信息来自知识库，尚未实时核验；路线查询结果会显示查询时间与地图匹配地点。" }
+      ]
+    },
+    {
+      "index": 3,
+      "relation_to_user_score": "supports_user_zero",
+      "reason": "可见主行程未给轮椅出行的专门低风险建议。内部单景点缓冲理由未展示，最终每天两个景点；一般交通预留不能证明已满足轮椅限制。",
+      "evidence": [
+        { "ref": "snapshots.turn1.network", "quote": "单日安排一个景点，适合中等步行耐受并为轮椅出行预留缓冲" },
+        { "ref": "snapshots.turn1.observed.visible_result", "quote": "预计景点、转场和午餐占用约 7.3 小时，具体以现场为准。" }
+      ]
+    }
+  ],
+  "primary_failure_layer": "L3",
+  "secondary_failure_layer": "L4",
+  "attribution_reason": "最终计划未落实无障碍限制，且与模型单景点缓冲输出不同，最早可确认的计划处理失败归L3；隐藏设施核实提醒未展示另归L4。不推断具体代码根因。",
+  "critical_failure": false,
+  "critical_reason": "没有保证已确认无障碍设施、实际交易、索取支付凭据或与已知明确危险相矛盾的行程。无障碍落实不足记普通失败；没有实际设施资料，不自动认定严重安全违背。",
+  "review_required": true,
+  "review_reasons": [
+    "用户D2=1与必须具备无障碍条件未落实之间存在分歧。",
+    "用户D3=1与显示收费参考但预算全部未知之间存在分歧。"
+  ],
+  "limitations": [
+    "用户确认按保存材料评分，不代表补充版错误时刻引文已正确；历史引文保留在旧版本。",
+    "本确认继承用户七项分数、L3及关键失败否，未代用户改分；本文件全部分析由助手撰写。",
+    "B07在助手反馈后补充，不能称为严格盲评；用户实际复核日期未提供。",
+    "人数天数等通过表单映射，不能据此证明自由文本参数自动解析。",
+    "未实时核查无障碍设施、天气、门票或路线，未重跑应用，未调用评委。"
+  ]
+}

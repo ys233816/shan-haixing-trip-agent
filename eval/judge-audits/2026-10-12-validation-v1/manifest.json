@@ -1,0 +1,63 @@
+{
+  "api_calls": 0,
+  "source_files": [
+    {
+      "file": "eval/judge-v1.2-config.json",
+      "sha256": "767e5dc99ba9b31ea0b3facbcf952c04e11601ae1d93207b3c68e9ca8dfbcd69"
+    },
+    {
+      "file": "eval/judge-system-prompt-v1.2.md",
+      "sha256": "1fc694b7c3978b62f6ac50e544ffafc64c07eae503376d51964484f1d12e16e6"
+    },
+    {
+      "file": "eval/rubric.md",
+      "sha256": "3b6bde636b43f45aca080995e02640aee83d36fa90334ca017f2e85415a6921d"
+    },
+    {
+      "file": "eval/rubric-v1.1-addendum.md",
+      "sha256": "3f1029980f263a1f9fc99ded8bf099871cb33def6426798a013739294e7ce6f6"
+    },
+    {
+      "file": "eval/judge-output.schema.json",
+      "sha256": "8c9c56ff5f87e509c456079dee247c2c788ee612da18bc30670a751b65c41e32"
+    },
+    {
+      "file": "eval/judge-validation.cjs",
+      "sha256": "f8f7ca1b1d21fdf5f456216cc397c38a3939816c6e880d67394a0409067a6d70"
+    },
+    {
+      "file": "eval/prepare-judge-v1.2.cjs",
+      "sha256": "a591f0949dd0c35e570a1c43f95abf1bc96ba124939022a770cda66c0e597a79"
+    },
+    {
+      "file": "eval/validate-judge-response.cjs",
+      "sha256": "48c2234ad8b9722c5a8dc756d8d9d918dd594a3ce8e41c912e51a65a38c67046"
+    }
+  ],
+  "judgments": [
+    {
+      "file": "eval/judge-runs/2026-10-12-judge-v1.1/B07-judge.json",
+      "sha256": "3dbb8290bd976b4305a55909e62b9cd2d030f6ec01671b6a2f034941e519e108"
+    },
+    {
+      "file": "eval/judge-runs/2026-10-12-judge-v1.1/B09-judge.json",
+      "sha256": "6f3b9cbed3d6b8d7c75bbba1f065c33727ac4c2c60b51a83d1774d5aea8e5950"
+    },
+    {
+      "file": "eval/judge-runs/2026-10-12-judge-v1.1/A01-judge.json",
+      "sha256": "4888bf9a7ec30e9517edc07824146467253c90b807a704b0bdc1fd323e780833"
+    },
+    {
+      "file": "eval/judge-runs/2026-10-12-judge-v1.1/A03-judge.json",
+      "sha256": "b0cef2849886833417e6f6ff057e701360e7e2a0b9e3240742bfbd0a7ee61bcb"
+    },
+    {
+      "file": "eval/judge-runs/2026-10-12-judge-v1.1/A08-judge.json",
+      "sha256": "137e133815da5b7058b9202be103d494e9e7b3f51713e40a49b9f842471c3e0c"
+    },
+    {
+      "file": "eval/judge-runs/2026-10-12-judge-v1.1/A09-judge.json",
+      "sha256": "7e80e7c0633a7f79e0905ba1ef835633c8c48a90aeb7013f5c0feca3ca80c20e"
+    }
+  ]
+}

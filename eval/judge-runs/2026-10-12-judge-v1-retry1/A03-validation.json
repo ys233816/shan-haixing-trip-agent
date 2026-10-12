@@ -1,0 +1,13 @@
+{
+  "valid": false,
+  "schema_valid": true,
+  "quote_count": 14,
+  "errors": [
+    {
+      "kind": "evidence_quote",
+      "item": "D1",
+      "ref": "snapshots.turn1.observed.form",
+      "quote": "\"destination\":\"北京\",\"days\":\"4\",\"travelers\":\"5\",\"budget\":\"800\",\"budgetIncludes\":\"all\""
+    }
+  ]
+}

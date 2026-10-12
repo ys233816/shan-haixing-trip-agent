@@ -1,0 +1,1492 @@
+{
+  "version": "before",
+  "revision": "initial",
+  "recordedAt": "2026-10-12T09:57:49.359Z",
+  "method": "18条偏好专项，固定受控候选，真实应用函数，无外部模型调用，不是36条全量完成率",
+  "sha256": "46f6859626c732be7ff9117184783b9939f304c0061095d60da26b326db541b2",
+  "total": 18,
+  "passed": 2,
+  "tests": [
+    {
+      "id": "F01",
+      "group": "coverage",
+      "description": "美食偏好从摘要落实为主行程",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(f.plan.daily[0].items.some(x=>x.name===food.name))\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [
+            "美食"
+          ],
+          "avoid": "",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            },
+            {
+              "name": "美食街",
+              "kind": "美食、城市休闲",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室外为主",
+              "rain": "低",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": null,
+              "walk": "适中",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F02",
+      "group": "coverage",
+      "description": "博物馆和建筑分别覆盖，备选建筑不算",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(f.plan.daily[0].items.some(x=>x.name===architecture.name))\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [
+            "博物馆"
+          ],
+          "avoid": "想看城市建筑",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            },
+            {
+              "name": "建筑街区",
+              "kind": "城市建筑、人文景观",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室外为主",
+              "rain": "低",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0,
+                  "backup": "建筑街区"
+                }
+              ],
+              "weather": null,
+              "walk": "适中",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F03",
+      "group": "coverage",
+      "description": "历史与科技两项都落实",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(f.plan.daily[0].items.some(x=>x.name===science.name))\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [
+            "历史文化"
+          ],
+          "avoid": "想看历史和科技类景点",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            },
+            {
+              "name": "科技馆",
+              "kind": "科技、科普教育",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                },
+                {
+                  "name": "历史公园",
+                  "kind": "历史文化",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室外为主",
+                  "rain": "低",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": null,
+              "walk": "适中",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F04",
+      "group": "coverage",
+      "description": "室内亲子必须同一候选同时满足",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(f.plan.daily[0].items.some(x=>x.name===child.name))\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [
+            "亲子活动"
+          ],
+          "avoid": "要室内亲子活动",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "户外亲子",
+              "kind": "亲子",
+              "tags": "亲子",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室外为主",
+              "rain": "低",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            },
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            },
+            {
+              "name": "室内亲子馆",
+              "kind": "亲子活动",
+              "tags": "亲子",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "户外亲子",
+                  "kind": "亲子",
+                  "tags": "亲子",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室外为主",
+                  "rain": "低",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                },
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": null,
+              "walk": "适中",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F05",
+      "group": "gaps",
+      "description": "只有普通街区不能冒称满足美食偏好",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(report(f).missing.some(x=>x.label==='美食'))\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [
+            "美食"
+          ],
+          "avoid": "",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "普通街区",
+              "kind": "历史街区",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室外为主",
+              "rain": "低",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "普通街区",
+                  "kind": "历史街区",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室外为主",
+                  "rain": "低",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": null,
+              "walk": "适中",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F06",
+      "group": "gaps",
+      "description": "科技候选不足时明确缺口",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(report(f).missing.some(x=>x.label==='科技'))\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [],
+          "avoid": "喜欢科技类景点",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": null,
+              "walk": "适中",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F07",
+      "group": "constraints",
+      "description": "满足偏好不能破坏少步行",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(report(f).missing.length)\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [
+            "美食"
+          ],
+          "avoid": "",
+          "pace": "balanced",
+          "walkingTolerance": "low"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            },
+            {
+              "name": "美食街",
+              "kind": "美食、城市休闲",
+              "tags": "",
+              "suitability": "",
+              "walk": "高",
+              "indoor": "室外为主",
+              "rain": "低",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": null,
+              "walk": "按少走路筛选，实际步行距离待核实",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F08",
+      "group": "constraints",
+      "description": "满足偏好不能排回雨天户外",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(report(f).missing.length)\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [
+            "美食"
+          ],
+          "avoid": "",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            },
+            {
+              "name": "美食街",
+              "kind": "美食、城市休闲",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室外为主",
+              "rain": "低",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": {
+                "dayWeather": "暴雨"
+              },
+              "walk": "适中",
+              "constraintDeferred": [],
+              "constraintNotes": [
+                "当天仅保留知识库未标为明显户外或低雨天适合度的候选；开放状态和抵达路线安全仍需核实。没有适合候选时留作休息。"
+              ],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F09",
+      "group": "constraints",
+      "description": "长时科技体验无法容纳时明确未覆盖",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(report(f).missing.length)\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [],
+          "avoid": "想看科技",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            },
+            {
+              "name": "科技馆",
+              "kind": "科技、科普教育",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 600,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": null,
+              "walk": "适中",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F10",
+      "group": "constraints",
+      "description": "偏好修复不能扩大既有超支",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(report(f).missing.length)\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 800,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [
+            "美食"
+          ],
+          "avoid": "",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            },
+            {
+              "name": "美食街",
+              "kind": "美食、城市休闲",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室外为主",
+              "rain": "低",
+              "hours": 90,
+              "cost": 1000,
+              "ticketPriceCny": 1000
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": null,
+              "walk": "适中",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F11",
+      "group": "gaps",
+      "description": "闭馆局部调整后只更新覆盖状态，不改别的日程",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(report(f).missing.length)\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [
+            "美食"
+          ],
+          "avoid": "",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            },
+            {
+              "name": "美食街",
+              "kind": "美食、城市休闲",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室外为主",
+              "rain": "低",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": null,
+              "walk": "适中",
+              "removedItems": [
+                {
+                  "name": "美食街",
+                  "reason": "闭馆"
+                }
+              ]
+            }
+          ],
+          "changeSummary": "临时闭馆已调整"
+        }
+      }
+    },
+    {
+      "id": "F12",
+      "group": "coverage",
+      "description": "一个复合候选可覆盖美食与建筑",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(f.plan.daily[0].items.some(x=>x.name===both.name))\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [
+            "美食"
+          ],
+          "avoid": "想看建筑",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            },
+            {
+              "name": "复合街区",
+              "kind": "美食、城市建筑",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室外为主",
+              "rain": "低",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": null,
+              "walk": "适中",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F13",
+      "group": "constraints",
+      "description": "无缺口时不为数量强行补点",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [
+            "博物馆"
+          ],
+          "avoid": "",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            },
+            {
+              "name": "美食街",
+              "kind": "美食、城市休闲",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室外为主",
+              "rain": "低",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": null,
+              "walk": "适中",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F14",
+      "group": "coverage",
+      "description": "不喜欢美食不被提取为正向要求",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(report(f).fulfilled.some(x=>x.label==='博物馆'))\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [],
+          "avoid": "不喜欢美食，喜欢博物馆",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            },
+            {
+              "name": "美食街",
+              "kind": "美食、城市休闲",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室外为主",
+              "rain": "低",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": null,
+              "walk": "适中",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F15",
+      "group": "gaps",
+      "description": "轮椅单点上限无法同时覆盖两项时显示缺口",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(report(f).missing.length)\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [
+            "博物馆",
+            "美食"
+          ],
+          "avoid": "轮椅出行",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            },
+            {
+              "name": "美食街",
+              "kind": "美食、城市休闲",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室外为主",
+              "rain": "低",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": null,
+              "walk": "按少走路筛选，实际步行距离待核实",
+              "constraintDeferred": [],
+              "constraintNotes": [
+                "知识库未核实无障碍设施，不能保证轮椅可达；出发前请向景区核实坡道、电梯、无障碍卫生间及抵达路线。每天最多安排一个候选，留出休息缓冲。"
+              ],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F16",
+      "group": "constraints",
+      "description": "重复渲染稳定且不重复景点",
+      "pass": true,
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [
+            "美食"
+          ],
+          "avoid": "",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            },
+            {
+              "name": "美食街",
+              "kind": "美食、城市休闲",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室外为主",
+              "rain": "低",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": null,
+              "walk": "适中",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F17",
+      "group": "gaps",
+      "description": "导出包含偏好缺口及候选不足说明",
+      "pass": false,
+      "error": "The input did not match the regular expression /未覆盖.*美食|美食.*未覆盖/. Input:\n\n'# 山海行｜受控城市 1 天游程\\n' +\n  '\\n' +\n  '- 出发日期：未指定\\n' +\n  '- 人数：2 人\\n' +\n  '- 预算上限：¥10,000\\n' +\n  '- 行程引擎：DeepSeek 大模型编排\\n' +\n  '- 景点来源：本地中国大陆景点知识库\\n' +\n  '\\n' +\n  '## 每日行程\\n' +\n  '\\n' +\n  '### 第1天 · 受控城市\\n' +\n  '天气：未查询\\n' +\n  '\\n' +\n  '预计当天占用：约 1.5 小时（景点游览、景点间交通及约 60 分钟午餐预留；未查全路线时，缺失路段按 45 分钟/段暂估）\\n' +\n  '\\n' +\n  '1. **历史场馆**（）\\n' +\n  '   - 建议开始：09:00；类型：历史文化、博物馆；建议游览约 90 分钟；步行强度 低；室内\\n' +\n  '   - 开放时间：知识库未注明，请查官方公告\\n' +\n  '   - 预约要求：知识库未注明，请查官方购票页面\\n' +\n  '   - 门票：知识库未注明，请查官方渠道\\n' +\n  '   - 预算参考成人票价：¥0 / 人（以官方售票页为准）\\n' +\n  '\\n' +\n  '## 预算估算\\n' +\n  '\\n' +\n  '- 住宿：¥0\\n' +\n  '- 餐饮：¥240\\n' +\n  '- 市内交通：¥120\\n' +\n  '- 已知门票参考（成人票 × 2 人）：¥0\\n' +\n  '- 待核实票价景点：0 个\\n' +\n  '- 机动预留：¥36\\n' +\n  '- **当前已估合计：¥396**\\n' +\n  '\\n' +\n  '已估项目暂未超过预算；待核实票价和往返大交通可能增加总额。\\n' +\n  '\\n' +\n  '## 出行前核对\\n' +\n  '\\n' +\n  '- 门票、预约、库存和开放时间请以景区官方渠道为准。\\n' +\n  '- 天气与路线结果会变化；确认地图匹配地点后再出发。\\n' +\n  '- 预算未包含往返目的地的大交通，实际费用可能变化。\\n' +\n  '- 本助手不代替用户订票、下单、付款或提交证件。\\n'\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [
+            "美食"
+          ],
+          "avoid": "",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [
+            {
+              "name": "历史场馆",
+              "kind": "历史文化、博物馆",
+              "tags": "",
+              "suitability": "",
+              "walk": "低",
+              "indoor": "室内",
+              "rain": "高",
+              "hours": 90,
+              "cost": 0,
+              "ticketPriceCny": 0
+            }
+          ],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [
+                {
+                  "name": "历史场馆",
+                  "kind": "历史文化、博物馆",
+                  "tags": "",
+                  "suitability": "",
+                  "walk": "低",
+                  "indoor": "室内",
+                  "rain": "高",
+                  "hours": 90,
+                  "cost": 0,
+                  "ticketPriceCny": 0
+                }
+              ],
+              "weather": null,
+              "walk": "适中",
+              "constraintDeferred": [],
+              "constraintNotes": [],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F18",
+      "group": "gaps",
+      "description": "没有候选也返回偏好缺口",
+      "pass": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(report(f).missing.some(x=>x.label==='亲子活动'))\n",
+      "evidence": {
+        "request": {
+          "destination": "受控城市",
+          "days": 1,
+          "travelers": 2,
+          "budget": {
+            "amount": 10000,
+            "includes": "all"
+          },
+          "assumptions": {
+            "hotelPerNight": 350,
+            "foodPerDay": 120,
+            "localTransitPerDay": 60
+          },
+          "preferences": [
+            "亲子活动"
+          ],
+          "avoid": "",
+          "pace": "balanced",
+          "walkingTolerance": "medium"
+        },
+        "plan": {
+          "city": "受控城市",
+          "plannerMode": "llm",
+          "candidates": [],
+          "daily": [
+            {
+              "date": "第1天",
+              "city": "受控城市",
+              "items": [],
+              "weather": null,
+              "walk": "适中",
+              "constraintDeferred": [],
+              "constraintNotes": [
+                "当前候选无法满足本次限制，已留出休息时间；可调整日期、要求或补充景点资料。"
+              ],
+              "planningHoursLimit": 8
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "ratePercent": 11.11
+}

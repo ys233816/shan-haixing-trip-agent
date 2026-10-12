@@ -1,0 +1,56 @@
+{
+  "case_id": "B07",
+  "submission_id": "B07-submission-001",
+  "source": "user_chat",
+  "recorded_date": "2026-10-11",
+  "reviewer": null,
+  "review_date": null,
+  "status": "pending",
+  "prior_score_exposure": {
+    "value": null,
+    "submitted_text": "已见 / 未见 / 不确定"
+  },
+  "dimensions": {
+    "D1": { "score": 1, "evidence": "" },
+    "D2": { "score": 1, "evidence": "" },
+    "D3": { "score": 1, "evidence": "" },
+    "D4": { "score": 0, "evidence": "未标注是否有无障碍设施" }
+  },
+  "checkpoints": [
+    { "index": 1, "score": null, "evidence": "" },
+    {
+      "index": 2,
+      "score": 1,
+      "evidence": "官网票价及优惠政策页面（2025-09-02更新）列明：旺季门票10元、联票20元；淡季门票5元、联票15元。首次办理台胞证（签发次数为01）的台湾同胞一年内免门票；其他优惠按官网政策执行。"
+    },
+    {
+      "index": 3,
+      "score": 1,
+      "evidence": "官网说明可在“畅游公园”微信公众号（唯一官方线上购票平台）提前购票；按购票日期和时段刷身份证原件入园。 [预约官方来源](https://www.bjjspark.cn/#/serviceGuide)、[预约官方来源](https://www.bjgyol.com.cn/)"
+    }
+  ],
+  "additional_ticket_note": "门票：官网门票栏目当前可见的2元全价、1元半价信息对应2025年牡丹文化节公告；不据此认定为2026年常态票价。出行日票价以“畅游公园”官方购票页为准。",
+  "primary_failure_layer": "L3",
+  "primary_failure_evidence": "",
+  "critical_failure": { "value": false, "evidence": "" },
+  "raw_submission": "B07\\\n是否看过旧分：已见 / 未见 / 不确定\\\nD1=1，依据：\\\nD2=1，依据：\\\nD3=1，依据：\\\nD4=0，依据：未标注是否有无障碍设施\\\n检查点1=，依据：\\\n检查点2=1，依据：官网票价及优惠政策页面（2025-09-02更新）列明：旺季门票10元、联票20元；淡季门票5元、联票15元。首次办理台胞证（签发次数为01）的台湾同胞一年内免门票；其他优惠按官网政策执行。\\\n检查点3=1，依据：官网说明可在“畅游公园”微信公众号（唯一官方线上购票平台）提前购票；按购票日期和时段刷身份证原件入园。 [预约官方来源](https://www.bjjspark.cn/#/serviceGuide)、[预约官方来源](https://www.bjgyol.com.cn/)\\\n门票：官网门票栏目当前可见的2元全价、1元半价信息对应2025年牡丹文化节公告；不据此认定为2026年常态票价。出行日票价以“畅游公园”官方购票页为准。  \\\n主要故障层：L3\\\n关键失败： 否 ；依据：",
+  "review_notes": {
+    "author": "assistant",
+    "missing_items": [
+      "复核人和复核日期",
+      "是否看过旧分的明确选择",
+      "D1、D2、D3的依据",
+      "检查点1的分数和依据",
+      "主要故障层的依据",
+      "关键失败判断的依据"
+    ],
+    "evidence_to_reconsider": [
+      "检查点2要求针对无障碍设施向景区官方核实，所提交的票价政策不能证明这一项。",
+      "检查点3要求针对轮椅出行提供低风险建议，所提交的预约购票说明不能证明这一项。",
+      "D2需核对最终行程是否落实必须有无障碍设施的要求。",
+      "D3需核对已展示的门票参考与预算中已知门票0元、4个待核实景点之间的处理依据。"
+    ],
+    "completion_counted": false,
+    "agreement_eligible": false
+  }
+}

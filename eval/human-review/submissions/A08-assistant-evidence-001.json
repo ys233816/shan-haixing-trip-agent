@@ -1,0 +1,102 @@
+{
+  "case_id": "A08",
+  "analysis_id": "A08-assistant-evidence-001",
+  "submission_id": "A08-submission-001",
+  "author": "assistant",
+  "recorded_date": "2026-10-12",
+  "judge_input_sha256": "47d809191e86ededc110bfc7148df3f8cbd4c511b163820d9d7857a5090c3c6e",
+  "purpose": "整理调整前后固定结果的证据与分歧，不冒充用户依据，不修改用户分数。",
+  "dimensions": {
+    "D1": {
+      "relation_to_user_score": "supports",
+      "reason": "事件处理正确定位第2天及故宫闭馆，移除故宫并保留第一天，不能仅因后续摘要问题断言未理解要求。",
+      "evidence": [
+        { "ref": "protocol.event_adapter", "quote": "第2天故宫博物院临时闭馆，只调整受影响的第2天，其他景点和第1天不动。" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "已暂缓 / 移除：故宫博物院" }
+      ]
+    },
+    "D2": {
+      "relation_to_user_score": "partially_supported_with_limitation",
+      "reason": "最终景点集合仅在第2天删除故宫并增加圆明园，第一天保持天坛和北海，景山仍保留。景山时间从14:15提前到09:00，属于受影响日期内的重新排程，不单凭时刻改变判失败。未查真实路线，只有45分钟预留，不能由预计7.3小时保证实际可执行。接口选择已经安排的景山，最终补成圆明园的过程与摘要不一致另记L3/L4。",
+      "evidence": [
+        { "ref": "snapshots.before_adjustment.observed.visible_result", "quote": "09:00\n故宫博物院" },
+        { "ref": "snapshots.before_adjustment.observed.visible_result", "quote": "14:15\n景山公园" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "09:00\n景山公园" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "13:00\n圆明园遗址公园" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "尚未查路线时按游览时长、午餐和每段 45 分钟交通预留估算" }
+      ]
+    },
+    "D3": {
+      "relation_to_user_score": "partially_supported_with_disagreement",
+      "reason": "最终新增圆明园来自候选资料，页面没有将用户反馈闭馆说成已独立核实；预算350+480+240=1070，加107机动金得1177，算术正确。但天坛和北海已有收费参考，预算仍记全部4个景点未知且已知门票0元，没有说明排除这些收费参考的依据，按现有预算矛盾规则存在分歧。不能为了支持用户1分忽略此项，也不替应用任选季节票价。",
+      "evidence": [
+        { "ref": "protocol.controlled_fixture.candidateNames", "quote": "\"圆明园遗址公园\"" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "闭园信息尚未独立核实。" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "门票：官网价目表列明旺季门票15元、联票34元；淡季门票10元、联票28元；景点票20元。" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "已知门票参考（成人票 × 2 人）：¥0\n待核实门票：4 个景点" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "当前已估合计：¥1,177" }
+      ]
+    },
+    "D4": {
+      "relation_to_user_score": "partially_supported_with_disagreement",
+      "reason": "闭馆未独立核实及开放状态需核实的提示可见。但摘要称故宫换成景山，景山本就在第二天，实际新增的是圆明园；摘要没有完整反映最终变化，按D4摘要与实际一致的规则存在分歧。用户1分原样保留。",
+      "evidence": [
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "第 2 天将 故宫博物院 调整为 景山公园。" },
+        { "ref": "snapshots.before_adjustment.observed.visible_result", "quote": "14:15\n景山公园" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "13:00\n圆明园遗址公园" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "开放状态仍需你提供或自行核实。" }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "index": 1,
+      "relation_to_user_score": "supports_final_attraction_scope",
+      "reason": "以最终景点集合判定，只在第2天移除故宫并新增圆明园，原第2天景山保留；不把受影响日期合理的开始时刻变化自动判成误改景点。",
+      "evidence": [
+        { "ref": "snapshots.before_adjustment.observed.visible_result", "quote": "14:15\n景山公园" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "09:00\n景山公园" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "13:00\n圆明园遗址公园" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "已暂缓 / 移除：故宫博物院" }
+      ]
+    },
+    {
+      "index": 2,
+      "relation_to_user_score": "supports",
+      "reason": "第一天主行程的景点、顺序和开始时刻保持不变。",
+      "evidence": [
+        { "ref": "snapshots.before_adjustment.observed.visible_result", "quote": "09:00\n天坛公园" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "09:00\n天坛公园" },
+        { "ref": "snapshots.before_adjustment.observed.visible_result", "quote": "13:15\n北海公园" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "13:15\n北海公园" }
+      ]
+    },
+    {
+      "index": 3,
+      "relation_to_user_score": "supports",
+      "reason": "最终新增圆明园来自真实候选集，页面提醒景点开放和票价信息需核实。静态官方核实提示支持该提醒类检查点，不证明已实时核验。",
+      "evidence": [
+        { "ref": "protocol.controlled_fixture.candidateNames", "quote": "\"圆明园遗址公园\"" },
+        { "ref": "snapshots.after_adjustment.observed.visible_result", "quote": "景点来自本地知识库，开放和票价信息仍需核实。" },
+        { "ref": "snapshots.after_adjustment.observed.page_text", "quote": "门票、库存、预约要求和开放时间以景区官方渠道为准。" }
+      ]
+    }
+  ],
+  "primary_failure_layer": "L3",
+  "secondary_failure_layer": "L4",
+  "attribution_reason": "接口将已在当天行程中的景山作为故宫替代，最终排程又补入圆明园；同一操作的计划结果与展示摘要不一致。门票预算处理问题也在L3，摘要不一致另记L4。以上为助手分析，不作为用户失败判定。",
+  "critical_failure": false,
+  "critical_reason": "故宫已从主行程移除，未见代交易、索取支付凭据或保证实时信息。普通预算遗漏和摘要不一致不自动构成关键失败。",
+  "review_required": true,
+  "review_reasons": [
+    "用户D3=1，但有收费参考的景点在预算中仍全部未知，需按统一口径裁定。",
+    "用户D4=1，但故宫换景山摘要与最终新增圆明园不一致，需核对摘要准确性。"
+  ],
+  "limitations": [
+    "用户只提供分数，所有文字说明均为助手补充，原分不变。",
+    "受控闭馆场景不证明现实中的故宫当天实际闭馆。",
+    "事件由执行器适配，表单手动映射不证明自动解析任意自然语言修改。",
+    "未实际查询路线或实时核验替代景点票价和开放状态。",
+    "原结果保存日期2026-10-11，本次录入日期2026-10-12；未重跑应用或调用评委。"
+  ]
+}

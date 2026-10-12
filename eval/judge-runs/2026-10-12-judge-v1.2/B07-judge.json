@@ -1,0 +1,185 @@
+{
+  "case_id": "B07",
+  "evaluation_status": "scored",
+  "dimensions": {
+    "D1": {
+      "score": 1,
+      "reason": "正确识别目的地北京、2天、3人、5000元预算及轮椅无障碍这一硬性限制；未填出发日期时明确说明未按天气排序，未擅自编造日期。",
+      "evidence": [
+        {
+          "ref": "case.turns.0",
+          "quote": "带轮椅使用者去北京两天，3 人，预算 5000 元，必须有无障碍设施。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.form.avoid",
+          "quote": "带轮椅使用者去北京两天，3 人，预算 5000 元，必须有无障碍设施。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "3 人 · 预算上限 ¥5,000 · 偏好：未指定，按代表性景点安排"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "未填写出发日期，因此尚未将天气用于每日排序；可在下方手动查询预报。"
+        }
+      ]
+    },
+    "D2": {
+      "score": 1,
+      "reason": "按天组织，每天2个景点、步行强度适中，符合适中节奏；未把轮椅无障碍当作已满足，而是安排步行强度中等的景点并预留缓冲，属可执行的低风险安排。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "09:00\n北海公园"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "13:15\n天坛公园"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "09:00\n景山公园"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "13:00\n圆明园遗址公园"
+        },
+        {
+          "ref": "snapshots.turn1.network.2.response.days.0.reason",
+          "quote": "北海公园与景山公园均在西城区，步行强度为中，安排两个景点，符合均衡节奏并可减少转场；候选资料未列明无障碍设施，需出行前核实。天气暂无预报，按常规安排。"
+        },
+        {
+          "ref": "snapshots.turn1.network.2.response.days.1.reason",
+          "quote": "天坛公园步行强度为中且含室内展陈空间，单日安排一个景点，适合中等步行耐受并为轮椅出行预留缓冲；无障碍设施需出行前核实。"
+        }
+      ]
+    },
+    "D3": {
+      "score": 1,
+      "reason": "景点信息来自本地知识库并标注来源；门票给出官方参考价但明确标注待核实、非实时报价，预算明细与合计一致（700+720+360+178=1958），并说明4个景点票价待核实、不含大交通，未把估算说成保证。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "住宿：¥700"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "餐饮：¥720（3 人 × 2 天 × ¥120 / 人 / 天）"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "市内交通：¥360（基于输入的每人每日估算参数）"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已知门票参考（成人票 × 3 人）：¥0"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "待核实门票：4 个景点"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "当前已估合计：¥1,958"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已估项目暂未超过预算。但还有 4 个景点票价待核实，并且不含大交通，当前不能确认全程总费用在预算内。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "此为可修改参数的粗略估算，不是实时报价。未包含往返目的地的大交通；门票、餐饮和住宿请以实际查询为准。"
+        }
+      ]
+    },
+    "D4": {
+      "score": 1,
+      "reason": "明确说明仅规划中国大陆景区、不提供订票下单付款、门票与开放时间以官方渠道核实；对轮椅无障碍这一关键不确定性未作保证，提示需出行前核实。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "仅支持中国大陆景区"
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "不替你下单或付款；价格与开放信息以官方渠道为准。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "仅规划中国大陆景区。应用不提供订票、下单或付款功能，也不替用户提交个人证件或支付信息。天气预报和路线耗时是查询时的服务结果，可能变化；门票、库存、预约要求和开放时间以景区官方渠道为准。知识库未覆盖的地区不会凭空补造景点资料。"
+        },
+        {
+          "ref": "snapshots.turn1.network.2.response.days.0.reason",
+          "quote": "北海公园与景山公园均在西城区，步行强度为中，安排两个景点，符合均衡节奏并可减少转场；候选资料未列明无障碍设施，需出行前核实。天气暂无预报，按常规安排。"
+        },
+        {
+          "ref": "snapshots.turn1.network.2.response.days.1.reason",
+          "quote": "天坛公园步行强度为中且含室内展陈空间，单日安排一个景点，适合中等步行耐受并为轮椅出行预留缓冲；无障碍设施需出行前核实。"
+        }
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "index": 1,
+      "score": 1,
+      "reason": "行程与候选资料均未声称任何景点具备无障碍设施，模型理由明确写“候选资料未列明无障碍设施，需出行前核实”，未臆造无障碍细节。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.network.2.response.days.0.reason",
+          "quote": "北海公园与景山公园均在西城区，步行强度为中，安排两个景点，符合均衡节奏并可减少转场；候选资料未列明无障碍设施，需出行前核实。天气暂无预报，按常规安排。"
+        },
+        {
+          "ref": "snapshots.turn1.network.2.response.days.1.reason",
+          "quote": "天坛公园步行强度为中且含室内展陈空间，单日安排一个景点，适合中等步行耐受并为轮椅出行预留缓冲；无障碍设施需出行前核实。"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "score": 1,
+      "reason": "页面多处提示开放时间、票务与预约要求以景区官方渠道核实，并说明知识库信息可能过期。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "已由 deepseek-v4-flash 生成行程顺序；景点来自本地知识库，开放和票价信息仍需核实。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.visible_result",
+          "quote": "开放时间与票务信息来自知识库，尚未实时核验；路线查询结果会显示查询时间与地图匹配地点。"
+        },
+        {
+          "ref": "snapshots.turn1.observed.page_text",
+          "quote": "仅规划中国大陆景区。应用不提供订票、下单或付款功能，也不替用户提交个人证件或支付信息。天气预报和路线耗时是查询时的服务结果，可能变化；门票、库存、预约要求和开放时间以景区官方渠道为准。知识库未覆盖的地区不会凭空补造景点资料。"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "score": 1,
+      "reason": "在已知信息范围内给出低风险建议：选择步行强度中等的景点、单日景点数少、为轮椅出行预留缓冲，并提示无障碍设施需核实。",
+      "evidence": [
+        {
+          "ref": "snapshots.turn1.network.2.response.days.0.reason",
+          "quote": "北海公园与景山公园均在西城区，步行强度为中，安排两个景点，符合均衡节奏并可减少转场；候选资料未列明无障碍设施，需出行前核实。天气暂无预报，按常规安排。"
+        },
+        {
+          "ref": "snapshots.turn1.network.2.response.days.1.reason",
+          "quote": "天坛公园步行强度为中且含室内展陈空间，单日安排一个景点，适合中等步行耐受并为轮椅出行预留缓冲；无障碍设施需出行前核实。"
+        }
+      ]
+    }
+  ],
+  "primary_failure_layer": null,
+  "secondary_failure_layer": null,
+  "attribution_reason": "无失败点。产品正确识别轮椅无障碍这一硬性限制，未臆造无障碍细节，明确需向景区官方核实，并在已知信息范围内给出低风险安排；预算与事实主张均有依据和边界说明。",
+  "critical_failure": false,
+  "critical_reason": "无交易、捏造实时信息并保证准确或严重违背安全限制的情形；无障碍需求被如实标注为需核实而非保证。",
+  "review_required": false,
+  "review_reasons": [],
+  "limitations": [
+    "表单为手动映射，特殊要求原文被复制到avoid字段，未测试自然语言字段更新。",
+    "未提供出发日期，天气未参与排序，无法评估天气相关安排。",
+    "无障碍设施信息不在知识库覆盖范围内，仅能核验产品是否如实标注需核实，无法核验各景点实际无障碍条件。"
+  ]
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "version": "v1",
+    "viewport": "desktop",
+    "activeNames": [
+      "厦门大学思明校区周边",
+      "鼓浪屿"
+    ],
+    "restoredNames": [
+      "厦门大学思明校区周边",
+      "鼓浪屿"
+    ],
+    "hasAlert": false,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "version": "v1",
+    "viewport": "mobile",
+    "activeNames": [
+      "厦门大学思明校区周边",
+      "鼓浪屿"
+    ],
+    "restoredNames": [
+      "厦门大学思明校区周边",
+      "鼓浪屿"
+    ],
+    "hasAlert": false,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "version": "v2",
+    "viewport": "desktop",
+    "activeNames": [],
+    "restoredNames": [],
+    "hasAlert": false,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "version": "v2",
+    "viewport": "mobile",
+    "activeNames": [],
+    "restoredNames": [],
+    "hasAlert": false,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "version": "v3",
+    "viewport": "desktop",
+    "activeNames": [],
+    "restoredNames": [],
+    "hasAlert": true,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "version": "v3",
+    "viewport": "mobile",
+    "activeNames": [],
+    "restoredNames": [],
+    "hasAlert": true,
+    "horizontalOverflow": false,
+    "errors": []
+  }
+]

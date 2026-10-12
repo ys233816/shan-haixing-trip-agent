@@ -1,0 +1,44 @@
+{
+  "caseId": "T05",
+  "recordedAt": "2026-10-11",
+  "status": "input_mismatch_requires_rerun",
+  "version": "screenshot-version-unverified",
+  "includedInBaselineMetrics": false,
+  "expectedInput": "成都两天一夜，1人，预算1800元，想吃当地小吃、逛公园，慢慢玩。",
+  "observedInput": {
+    "destination": "成都",
+    "days": 2,
+    "travelers": 1,
+    "budgetCny": 1800,
+    "startDate": null,
+    "preferences": ["历史文化"],
+    "pace": "适中：每天约2个主要景点",
+    "walkingTolerance": "适中",
+    "assumptions": {
+      "hotelPerNight": "留空，页面显示默认350",
+      "foodPerDay": "留空，页面显示默认120",
+      "localTransitPerDay": 0
+    }
+  },
+  "observedOutput": {
+    "day1": ["武侯祠博物馆", "锦里古街"],
+    "day2": ["杜甫草堂博物馆", "宽窄巷子"],
+    "dailyHours": [5.8, 6.3],
+    "lodgingCny": 350,
+    "foodCny": 240,
+    "localTransitCny": 0,
+    "knownTicketsCny": 0,
+    "unknownTicketCount": 4,
+    "reserveCny": 59,
+    "estimateCny": 649,
+    "boundaries": "未填写出发日期，未按天气排序；门票待核实；不含大交通，粗略估算非实时报价，不能确认全程在预算内。"
+  },
+  "reason": "截图选择历史文化和适中节奏，没有将T05的小吃、公园与慢节奏要求完整输入。不能把该运行的偏好差异归为Agent未遵守原测试要求，也不能作为T05通过记录。",
+  "rerunInstructions": "取消历史文化，选择美食、自然风光；节奏选择慢节奏；在特殊要求中写明想吃当地小吃、逛公园，慢慢玩。其余保持成都、2天、1人、1800元。重新生成并提交输入、完整行程及预算截图。",
+  "sources": [
+    "C:/Users/17330/AppData/Local/Temp/codex-clipboard-68904fab-bdc6-4000-9711-7e4e6c5ddd28.png",
+    "C:/Users/17330/AppData/Local/Temp/codex-clipboard-a22ebb44-283d-4464-b5f2-ec31cbc27650.png",
+    "C:/Users/17330/AppData/Local/Temp/codex-clipboard-f34f36f2-76a8-4440-828d-bcafe2ada0a2.png",
+    "C:/Users/17330/AppData/Local/Temp/codex-clipboard-9cd63f25-a0e4-434c-a285-e31829cbbe08.png"
+  ]
+}

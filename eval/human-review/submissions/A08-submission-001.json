@@ -1,0 +1,36 @@
+{
+  "case_id": "A08",
+  "submission_id": "A08-submission-001",
+  "source": "user_chat",
+  "recorded_date": "2026-10-12",
+  "reviewer": "本人",
+  "review_date": null,
+  "status": "scored",
+  "evidence_packet": "eval/human-review/A08-evidence.md",
+  "judge_input_sha256": "47d809191e86ededc110bfc7148df3f8cbd4c511b163820d9d7857a5090c3c6e",
+  "prior_score_exposure": { "value": null, "provenance": "not_provided" },
+  "dimensions": {
+    "D1": { "score": 1, "evidence": "" },
+    "D2": { "score": 1, "evidence": "" },
+    "D3": { "score": 1, "evidence": "" },
+    "D4": { "score": 1, "evidence": "" }
+  },
+  "checkpoints": [
+    { "index": 1, "score": 1, "evidence": "" },
+    { "index": 2, "score": 1, "evidence": "" },
+    { "index": 3, "score": 1, "evidence": "" }
+  ],
+  "primary_failure_layer": null,
+  "critical_failure": { "value": null, "evidence": "" },
+  "raw_submission": "A08\nD1=1，D2=1，D3=1，D4=1\n检查点1=1，检查点2=1，检查点3=1",
+  "review_notes": {
+    "author": "assistant",
+    "review_mode": "user_scores_with_assistant_evidence",
+    "assistant_analysis": "eval/human-review/submissions/A08-assistant-evidence-001.json",
+    "strict_blind_review": false,
+    "strict_blind_review_note": "用户未声明本条是否见过旧分，不宣称严格盲评。",
+    "completion_counted": true,
+    "agreement_eligible": true,
+    "agreement_scope": "人工七项分数已收到；摘要与实际行程、门票预算的证据分歧另记，不改动或排除用户评分。"
+  }
+}

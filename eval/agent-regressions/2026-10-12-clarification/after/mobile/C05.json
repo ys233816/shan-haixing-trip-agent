@@ -1,0 +1,31 @@
+{
+  "id": "C05",
+  "group": "crosscity",
+  "description": "多城市目的地先确认分配和交通，不混排",
+  "fields": {
+    "destination": "苏州、杭州",
+    "days": "3"
+  },
+  "need": [
+    "城市",
+    "天数",
+    "城际"
+  ],
+  "checks": {
+    "noPageErrors": true,
+    "noOverflow": true,
+    "blocked": true,
+    "clarification": true,
+    "maxThree": true
+  },
+  "pass": true,
+  "calls": [],
+  "errors": [],
+  "status": "本次尚未生成，请先确认：\n检测到多个城市。请确认城市顺序；当前按单城市生成，请先选择本次目的地，其余城市分别规划。\n请确认每个城市分配的天数，并将表单天数改为当前城市的停留天数。\n请确认城际交通是否计入总预算以及预留金额；当前估算不含城际交通，请先预留后填写当前城市预算。",
+  "shown": false,
+  "text": "",
+  "request": null,
+  "plan": null,
+  "questions": 3,
+  "overflow": false
+}

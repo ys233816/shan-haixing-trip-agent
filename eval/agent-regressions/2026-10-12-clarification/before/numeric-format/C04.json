@@ -1,0 +1,29 @@
+{
+  "id": "C04",
+  "group": "conflict",
+  "description": "多人预算不同需要确认口径",
+  "fields": {
+    "travelers": "2",
+    "avoid": "每人预算1000元，另一人每人预算2000元"
+  },
+  "need": [
+    "预算"
+  ],
+  "checks": {
+    "noPageErrors": true,
+    "noOverflow": true,
+    "blocked": true,
+    "clarification": true,
+    "maxThree": true
+  },
+  "pass": true,
+  "calls": [],
+  "errors": [],
+  "status": "本次尚未生成，请先确认：\n要求里出现了不同预算金额，请保留本次采用的金额和口径。 预算金额与文字中的人均预算不一致，请修改金额或明确总预算。",
+  "shown": false,
+  "text": "",
+  "request": null,
+  "plan": null,
+  "questions": 1,
+  "overflow": false
+}

@@ -1,0 +1,83 @@
+{
+  "recordedAt": "2026-10-12T08:09:46.686Z",
+  "historicalBaseline": {
+    "source": "eval/baseline-metrics.json",
+    "passed": 7,
+    "total": 36,
+    "taskCompletionRatePercent": 19.44,
+    "mainFailureLayer": "L3",
+    "l3Failures": 18,
+    "allFailures": 29,
+    "l3ShareOfFailuresPercent": 62.07,
+    "limitation": "混合历史版本、助手证据评分，不是冻结的全量V1"
+  },
+  "targetedRegression": {
+    "method": "固定12条离线专项回归，代码函数断言，无付费API；A09另有六次桌面/移动浏览器验证",
+    "versions": [
+      {
+        "version": "v1",
+        "passed": 2,
+        "total": 12,
+        "passRatePercent": 16.67,
+        "sha256": "723b5977b50e0ddae170634d60291a7ed7d90acd6564ef550a6aaee17641fffb"
+      },
+      {
+        "version": "v2",
+        "passed": 8,
+        "total": 12,
+        "passRatePercent": 66.67,
+        "sha256": "6fdd13e03b64d55e8f112e1d0c0d2ec1886899175b670792242ea54ab0b72498"
+      },
+      {
+        "version": "v3",
+        "passed": 12,
+        "total": 12,
+        "passRatePercent": 100,
+        "sha256": "2a3d5207eef027ff76bb00b172891fadc3f7b2113bb1ccc056ae5c09446f8d6e"
+      }
+    ],
+    "v3VsV1GainPercentagePoints": 83.33,
+    "v3FullDatasetTaskCompletionRatePercent": null,
+    "scope": "不可替代36条全量任务完成率，未运行当前Agent的全量机评或独立盲评"
+  },
+  "a09AssistantEvidenceReview": {
+    "rater": "assistant_evidence_review_of_fixed_browser_replay",
+    "version": "v3",
+    "scores": {
+      "D1": 1,
+      "D2": 1,
+      "D3": 1,
+      "D4": 1
+    },
+    "checkpoints": [
+      1,
+      1,
+      1
+    ],
+    "criticalFailure": false,
+    "casePass": true,
+    "evidence": [
+      "三个原户外点实际移除，活动列表为空",
+      "保留休息时间，用户报告未独立核实，显示官方预警提示",
+      "页面、导出与刷新后的状态一致，未编造室内候选"
+    ],
+    "limitations": "受控A09回放，禁用模型API；不是独立用户复核，不能代表实时天气接口或完整规划链路成功率"
+  },
+  "verification": {
+    "versionHashesMatch": true,
+    "sameTestDefinitions": true,
+    "finalCodeMatchesV3": true,
+    "browserRuns": 6,
+    "finalBrowserRunsPassed": 2
+  },
+  "sourceHashes": {
+    "index.html": "2a3d5207eef027ff76bb00b172891fadc3f7b2113bb1ccc056ae5c09446f8d6e",
+    "server.js": "e8650fb16883550195597643e509d87ce11f7ba38e8dc102b3c59fb3e6884424",
+    "eval/test-cases.json": "f26784d5f653ed769a0fbc3afe5b4a0001759a95389619615c0e0f3b0d88c188",
+    "eval/rubric.md": "3b6bde636b43f45aca080995e02640aee83d36fa90334ca017f2e85415a6921d",
+    "eval/baseline-metrics.json": "bfd2ec36a8d9d323a9034b945276ef141a46f28eee0460808c8b46ad04c75244",
+    "eval/run-weather-regression.cjs": "c22d2a9fe4230124fdf9c721b487b10643e0841e9e77e634d75a6a11f8daeada",
+    "eval/verify-weather-browser.cjs": "179422476a0e3bac142c8b0a27cd2280128d386f1196e2b2153432d9c03fb9bf",
+    "eval/runs/2026-10-11-remaining/A09-before-adjustment.json": "db69f3130e6d3935946f8668eeb6ce4173598e785e4c708af9edf8eeda70968e"
+  }
+}

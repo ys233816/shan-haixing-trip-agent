@@ -1,0 +1,18 @@
+{
+  "id": "B12",
+  "name": "多次修改偏好",
+  "rawTurns": [
+    "规划杭州 2 天、2 人、预算 2500 元，喜欢自然景观。",
+    "改成 3 天。",
+    "再改为慢节奏，并尽量安排室内备选。"
+  ],
+  "checkpoints": [
+    "三轮修改后的约束同时生效",
+    "保留目的地人数预算和自然偏好",
+    "新增慢节奏与室内备选要求"
+  ],
+  "auxiliaryInputs": null,
+  "turns": [],
+  "status": "execution_error",
+  "error": "locator.setChecked: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[name=\"preferences\"]').nth(1)\u001b[22m\n\u001b[2m    - locator resolved to <input value=\"自然风光\" type=\"checkbox\" name=\"preferences\"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    59 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at fill (D:\\tripplan agent\\eval\\run-remaining.cjs:72:96)\n    at async D:\\tripplan agent\\eval\\run-remaining.cjs:141:11"
+}

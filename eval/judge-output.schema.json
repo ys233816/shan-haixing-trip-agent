@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Trip Agent Judge v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["case_id", "evaluation_status", "dimensions", "checkpoints", "primary_failure_layer", "secondary_failure_layer", "attribution_reason", "critical_failure", "critical_reason", "review_required", "review_reasons", "limitations"],
+  "properties": {
+    "case_id": {"type": "string", "minLength": 1},
+    "evaluation_status": {"enum": ["scored", "insufficient_evidence"]},
+    "dimensions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["D1", "D2", "D3", "D4"],
+      "properties": {
+        "D1": {"$ref": "#/$defs/grade"}, "D2": {"$ref": "#/$defs/grade"},
+        "D3": {"$ref": "#/$defs/grade"}, "D4": {"$ref": "#/$defs/grade"}
+      }
+    },
+    "checkpoints": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["index", "score", "reason", "evidence"],
+        "properties": {
+          "index": {"type": "integer", "minimum": 1},
+          "score": {"enum": [0, 1, null]},
+          "reason": {"type": "string", "minLength": 1},
+          "evidence": {"$ref": "#/$defs/evidence"}
+        }
+      }
+    },
+    "primary_failure_layer": {"enum": ["L1", "L2", "L3", "L4", null]},
+    "secondary_failure_layer": {"enum": ["L1", "L2", "L3", "L4", null]},
+    "attribution_reason": {"type": "string", "minLength": 1},
+    "critical_failure": {"type": ["boolean", "null"]},
+    "critical_reason": {"type": "string", "minLength": 1},
+    "review_required": {"type": "boolean"},
+    "review_reasons": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "limitations": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["ref", "quote"],
+        "properties": {"ref": {"type": "string", "minLength": 1}, "quote": {"type": "string", "minLength": 1}}
+      }
+    },
+    "grade": {
+      "type": "object", "additionalProperties": false,
+      "required": ["score", "reason", "evidence"],
+      "properties": {
+        "score": {"enum": [0, 1, null]},
+        "reason": {"type": "string", "minLength": 1},
+        "evidence": {"$ref": "#/$defs/evidence"}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"evaluation_status": {"const": "scored"}}},
+      "then": {
+        "properties": {
+          "dimensions": {"properties": {
+            "D1": {"properties": {"score": {"enum": [0, 1]}, "evidence": {"minItems": 1}}},
+            "D2": {"properties": {"score": {"enum": [0, 1]}, "evidence": {"minItems": 1}}},
+            "D3": {"properties": {"score": {"enum": [0, 1]}, "evidence": {"minItems": 1}}},
+            "D4": {"properties": {"score": {"enum": [0, 1]}, "evidence": {"minItems": 1}}}
+          }},
+          "checkpoints": {"items": {"properties": {"score": {"enum": [0, 1]}, "evidence": {"minItems": 1}}}},
+          "critical_failure": {"type": "boolean"}
+        }
+      },
+      "else": {
+        "properties": {
+          "dimensions": {"properties": {
+            "D1": {"properties": {"score": {"const": null}}},
+            "D2": {"properties": {"score": {"const": null}}},
+            "D3": {"properties": {"score": {"const": null}}},
+            "D4": {"properties": {"score": {"const": null}}}
+          }},
+          "checkpoints": {"items": {"properties": {"score": {"const": null}}}},
+          "critical_failure": {"const": null},
+          "primary_failure_layer": {"const": null}, "secondary_failure_layer": {"const": null},
+          "review_required": {"const": true}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"review_required": {"const": true}}},
+      "then": {"properties": {"review_reasons": {"minItems": 1}}},
+      "else": {"properties": {"review_reasons": {"maxItems": 0}}}
+    },
+    {
+      "if": {"properties": {"critical_failure": {"const": true}}},
+      "then": {"properties": {
+        "dimensions": {"not": {"properties": {
+          "D1": {"properties": {"score": {"const": 1}}},
+          "D2": {"properties": {"score": {"const": 1}}},
+          "D3": {"properties": {"score": {"const": 1}}},
+          "D4": {"properties": {"score": {"const": 1}}}
+        }}}
+      }}
+    }
+  ]
+}

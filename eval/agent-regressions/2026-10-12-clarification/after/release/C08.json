@@ -1,0 +1,33 @@
+{
+  "id": "C08",
+  "group": "conflict",
+  "description": "五星酒店价格未查不能保证低预算可行",
+  "fields": {
+    "destination": "三亚",
+    "days": "1",
+    "budget": "500",
+    "avoid": "必须住五星酒店，预算500元"
+  },
+  "need": [
+    "五星",
+    "价格",
+    "确认"
+  ],
+  "checks": {
+    "noPageErrors": true,
+    "noOverflow": true,
+    "blocked": true,
+    "clarification": true,
+    "maxThree": true
+  },
+  "pass": true,
+  "calls": [],
+  "errors": [],
+  "status": "本次尚未生成，请先确认：\n五星酒店价格尚未查询，住宿参数不是五星报价。请确认已查询的每间每晚费用并移除未核实的星级要求，或放宽酒店星级后重新提交。",
+  "shown": false,
+  "text": "",
+  "request": null,
+  "plan": null,
+  "questions": 1,
+  "overflow": false
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "B07",
+  "source_judgment": "eval/judge-runs/2026-10-12-judge-v1.1/B07-judge.json",
+  "source_judgment_sha256": "3dbb8290bd976b4305a55909e62b9cd2d030f6ec01671b6a2f034941e519e108",
+  "source_input_sha256": "9970c0f1588004ed163563c1398e6e85176351500c64a49b45954f33853e36bb",
+  "hard_valid": true,
+  "schema_valid": true,
+  "hard_errors": [],
+  "review_signals": [
+    {
+      "code": "FEE_REFERENCE_NEEDS_REVIEW",
+      "items": [
+        "D3"
+      ],
+      "reason": "Numeric fee references coexist with zero known tickets and unknown tickets; check season, ticket type and exclusion explanation.",
+      "source_refs": [
+        "snapshots.turn1.internal_state.budget",
+        "snapshots.turn1.internal_state.plan.daily.0.items.0.ticketInfo",
+        "snapshots.turn1.internal_state.plan.daily.0.items.1.ticketInfo",
+        "snapshots.turn1.internal_state.plan.daily.1.items.0.ticketInfo",
+        "snapshots.turn1.internal_state.plan.daily.1.items.1.ticketInfo"
+      ],
+      "action": "human_review_only"
+    }
+  ],
+  "model_review_required": false,
+  "effective_review_required": true,
+  "auto_accept": false,
+  "policy": "No score, reason, critical flag or original evidence is modified. Review signals do not establish failures."
+}
